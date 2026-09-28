@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 // ISR: revalidate every hour
 export const revalidate = 3600;
-
+export const dynamic = "force-dynamic";
 // Glass type label mapping
 const glassTypeLabels: Record<string, string> = {
   tempered: "Tempered",
