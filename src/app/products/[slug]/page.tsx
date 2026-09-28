@@ -15,8 +15,12 @@ export const revalidate = 3600;
 
 // ─── SSG: pre-render all product pages at build time ─────
 export async function generateStaticParams() {
-  const slugs = await getAllProductSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await getAllProductSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
 }
 
 // ─── Dynamic metadata from Yoast SEO ────────────────────
