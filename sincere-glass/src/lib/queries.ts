@@ -83,7 +83,7 @@ export const GET_POST_BY_SLUG = gql`
   }
 `;
 
-// ─── Products (Custom Post Type — to be created) ────────
+// ─── Products (Custom Post Type + ACF Fields) ────────────
 export const GET_PRODUCTS = gql`
   query GetProducts($first: Int = 50) {
     products(first: $first) {
@@ -97,6 +97,15 @@ export const GET_PRODUCTS = gql`
             sourceUrl
             altText
           }
+        }
+        productSpecifications {
+          glassType
+          thicknessRange
+          maxSize
+          colorOptions
+          certifications
+          processing
+          applications
         }
       }
     }
@@ -115,6 +124,15 @@ export const GET_PRODUCT_BY_SLUG = gql`
           altText
         }
       }
+      productSpecifications {
+        glassType
+        thicknessRange
+        maxSize
+        colorOptions
+        certifications
+        processing
+        applications
+      }
       seo {
         title
         metaDesc
@@ -124,6 +142,16 @@ export const GET_PRODUCT_BY_SLUG = gql`
         opengraphImage {
           sourceUrl
         }
+      }
+    }
+  }
+`;
+
+export const GET_ALL_PRODUCT_SLUGS = gql`
+  query GetAllProductSlugs {
+    products(first: 100) {
+      nodes {
+        slug
       }
     }
   }

@@ -5,9 +5,11 @@ import {
   GET_POST_BY_SLUG,
   GET_PRODUCTS,
   GET_PRODUCT_BY_SLUG,
+  GET_ALL_PRODUCT_SLUGS,
   GET_MENU,
   GET_SETTINGS,
 } from "./queries";
+import type { WpProduct } from "@/types/wordpress";
 
 // ─── Pages ───────────────────────────────────────────────
 export async function getPageBySlug(slug: string) {
@@ -35,18 +37,25 @@ export async function getPostBySlug(slug: string) {
 
 // ─── Products ────────────────────────────────────────────
 export async function getProducts(first = 50) {
-  const data = await graphqlClient.request<{ products: any }>(GET_PRODUCTS, {
-    first,
-  });
+  const data = await graphqlClient.request<{
+    products: { nodes: WpProduct[] };
+  }>(GET_PRODUCTS, { first });
   return data.products;
 }
 
 export async function getProductBySlug(slug: string) {
-  const data = await graphqlClient.request<{ product: any }>(
+  const data = await graphqlClient.request<{ product: WpProduct | null }>(
     GET_PRODUCT_BY_SLUG,
     { slug }
   );
   return data.product;
+}
+
+export async function getAllProductSlugs() {
+  const data = await graphqlClient.request<{
+    products: { nodes: { slug: string }[] };
+  }>(GET_ALL_PRODUCT_SLUGS);
+  return data.products.nodes.map((node) => node.slug);
 }
 
 // ─── Menus ───────────────────────────────────────────────

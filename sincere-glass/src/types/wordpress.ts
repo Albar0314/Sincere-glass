@@ -43,6 +43,17 @@ export interface WpPage {
   seo: WpSeo;
 }
 
+// ─── ACF: Product Specifications ─────────────────────────
+export interface ProductSpecifications {
+  glassType: string | null;
+  thicknessRange: string | null;
+  maxSize: string | null;
+  colorOptions: string | null;
+  certifications: string | null;
+  processing: string | null;
+  applications: string | null;
+}
+
 // ─── Product (Custom Post Type) ──────────────────────────
 export interface WpProduct {
   id: string;
@@ -53,8 +64,8 @@ export interface WpProduct {
   featuredImage: {
     node: WpImage;
   } | null;
-  seo: WpSeo;
-  // ACF fields will be added here once configured
+  productSpecifications: ProductSpecifications;
+  seo?: WpSeo;
 }
 
 // ─── Menu ────────────────────────────────────────────────
