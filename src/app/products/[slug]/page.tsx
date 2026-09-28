@@ -12,7 +12,7 @@ import type { WpProduct, ProductSpecifications } from "@/types/wordpress";
 
 // ISR: revalidate every hour
 export const revalidate = 3600;
-
+export const dynamic = "force-dynamic";
 // ─── SSG: pre-render all product pages at build time ─────
 export async function generateStaticParams() {
   try {
