@@ -9,7 +9,7 @@ interface SeoInput {
   canonical?: string;
   opengraphTitle?: string;
   opengraphDescription?: string;
-  opengraphImage?: { sourceUrl: string };
+  opengraphImage?: { sourceUrl: string } | null;
 }
 
 /**
