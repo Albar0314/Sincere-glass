@@ -28,8 +28,13 @@ function getGlassTypeLabel(value: string | null): string {
 }
 
 export default async function ProductsPage() {
-  const productsData = await getProducts();
-  const products: WpProduct[] = productsData.nodes;
+  let products: WpProduct[] = [];
+  try {
+    const productsData = await getProducts();
+    products = productsData.nodes;
+  } catch (error) {
+    console.error("Failed to fetch products:", error);
+  }
 
   return (
     <section className="py-16 px-4">
