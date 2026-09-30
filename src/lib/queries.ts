@@ -92,6 +92,12 @@ export const GET_PRODUCTS = gql`
         title
         slug
         excerpt
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
         productSpecifications {
           glassType
           thicknessRange
@@ -112,7 +118,12 @@ export const GET_PRODUCT_BY_SLUG = gql`
       title
       content
       slug
-      
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }      
       productSpecifications {
         glassType
         thicknessRange
