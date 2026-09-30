@@ -5,6 +5,8 @@ const endpoint =
   "https://cms.sincereglass.com/graphql";
 
 export const graphqlClient = new GraphQLClient(endpoint, {
+  fetch: (url, options) =>
+    fetch(url, { ...options, cache: "no-store" }),
   headers: {
     "Content-Type": "application/json",
     "User-Agent":
