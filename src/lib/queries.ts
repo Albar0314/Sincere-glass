@@ -112,11 +112,6 @@ export const GET_PRODUCT_BY_SLUG = gql`
       title
       content
       slug
-      featuredImage {
-        node {
-          sourceUrl
-          altText
-        }
       }
       productSpecifications {
         glassType
