@@ -1,0 +1,1 @@
+const fs=require('fs');let c=fs.readFileSync('src/app/page.tsx','utf8');c=c.replace('import BlogTeaser from "@/components/home/BlogTeaser"','import BlogTeaserLive from "@/components/BlogTeaserLive"');fs.writeFileSync('src/app/page.tsx',c);console.log('done')

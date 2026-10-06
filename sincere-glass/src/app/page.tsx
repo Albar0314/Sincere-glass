@@ -7,7 +7,7 @@ import CompanySnapshot from "@/components/home/CompanySnapshot";
 import ProjectCases from "@/components/home/ProjectCases";
 import EquipmentGrid from "@/components/home/EquipmentGrid";
 import QuoteForm from "@/components/home/QuoteForm";
-import BlogTeaser from "@/components/home/BlogTeaser";
+import BlogTeaserLive from "@/components/BlogTeaserLive";
 
 export const metadata: Metadata = {
   title: "Sincere Glass | Architectural Glass Manufacturer in China",
