@@ -22,7 +22,7 @@ export default function BlogCTA({
         <p className="text-[#8B95A5] mb-6 leading-relaxed">{description}</p>
         <div className="flex flex-wrap gap-4">
           <button
-            onClick={openQuote}
+            onClick={() => openQuote()}
             className="px-6 py-3 bg-[#DAA745] text-[#1C1F26] font-medium rounded-lg hover:bg-[#DAA745]/90 transition-colors"
           >
             Request a Quote
