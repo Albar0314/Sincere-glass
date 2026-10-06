@@ -1,0 +1,97 @@
+/* Blog article prose styling
+ * Import this in globals.css: @import './blog-prose.css';
+ * Applied via className="prose-custom" on article wrapper
+ */
+
+.prose-custom {
+  color: #c8c8cc;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.prose-custom h2 {
+  color: #F2F0ED;
+  font-size: 1.625rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  scroll-margin-top: 5rem;
+}
+
+.prose-custom h3 {
+  color: #F2F0ED;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  scroll-margin-top: 5rem;
+}
+
+.prose-custom p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-custom a {
+  color: #DAA745;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.15s;
+}
+
+.prose-custom a:hover {
+  opacity: 0.8;
+}
+
+.prose-custom strong {
+  color: #F2F0ED;
+  font-weight: 600;
+}
+
+.prose-custom ul,
+.prose-custom ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose-custom li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-custom ul li::marker {
+  color: #DAA745;
+}
+
+.prose-custom ol li::marker {
+  color: #DAA745;
+  font-weight: 600;
+}
+
+.prose-custom blockquote {
+  border-left: 3px solid #DAA745;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #8B95A5;
+}
+
+.prose-custom img {
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
+.prose-custom hr {
+  border: none;
+  border-top: 1px solid #3A4250;
+  margin: 2.5rem 0;
+}
+
+.prose-custom code {
+  background: #3A4250/20;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  color: #DAA745;
+}

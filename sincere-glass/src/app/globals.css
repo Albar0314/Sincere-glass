@@ -1,42 +1,47 @@
+@import '../styles/blog-prose.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply text-brand-navy antialiased;
+    @apply text-brand-dark antialiased;
   }
+  .wp-content h2 { @apply text-2xl font-semibold mt-8 mb-4; }
+  .wp-content h3 { @apply text-xl font-semibold mt-6 mb-3; }
+  .wp-content p { @apply mb-4 leading-relaxed; }
+  .wp-content ul { @apply list-disc pl-6 mb-4; }
+  .wp-content ol { @apply list-decimal pl-6 mb-4; }
+  .wp-content img { @apply max-w-full h-auto rounded-lg my-6; }
+  .wp-content a { @apply text-brand-accent underline hover:no-underline; }
+  .wp-content table { @apply w-full border-collapse mb-6; }
+  .wp-content th, .wp-content td { @apply border border-gray-200 px-4 py-2 text-left; }
+  .wp-content th { @apply bg-brand-light font-semibold; }
+}
 
-  /* WordPress content rendering */
-  .wp-content h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  .wp-content h3 {
-    @apply text-xl font-semibold mt-6 mb-3;
-  }
-  .wp-content p {
-    @apply mb-4 leading-relaxed;
-  }
-  .wp-content ul {
-    @apply list-disc pl-6 mb-4;
-  }
-  .wp-content ol {
-    @apply list-decimal pl-6 mb-4;
-  }
-  .wp-content img {
-    @apply max-w-full h-auto rounded-lg my-6;
-  }
-  .wp-content a {
-    @apply text-brand-sky underline hover:no-underline;
-  }
-  .wp-content table {
-    @apply w-full border-collapse mb-6;
-  }
-  .wp-content th,
-  .wp-content td {
-    @apply border border-gray-200 px-4 py-2 text-left;
-  }
-  .wp-content th {
-    @apply bg-brand-glass font-semibold;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-up { animation: fadeUp 0.5s ease-out both; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out both; }
+.animate-scale-in { animation: scaleIn 0.4s ease-out both; }

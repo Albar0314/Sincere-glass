@@ -1,63 +1,101 @@
-import type { Metadata } from "next";
-// import { getPosts } from "@/lib/wordpress";
+import type { Metadata } from 'next';
+import {
+  getAllArticles,
+  getFeaturedArticle,
+  CATEGORY_LABELS,
+  type BlogCategory,
+} from '@/lib/blog-registry';
+import BlogCard from '@/components/blog/BlogCard';
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: 'Glass Industry Insights & Technical Guides | Sincere Glass Blog',
   description:
-    "Industry insights, glass knowledge, and project updates from Sincere Glass.",
+    'Expert articles on architectural glass: tempered, insulated, laminated, Low-E and enameled glass. Technical guides, buyer resources and industry news from Sincere Glass.',
+  keywords: [
+    'glass industry blog',
+    'architectural glass guide',
+    'tempered glass technical guide',
+    'insulated glass guide',
+    'glass manufacturer blog',
+  ],
 };
 
-// TODO: Enable once WordPress + WPGraphQL is configured
-// export const revalidate = 3600; // ISR: revalidate every hour
+export default function BlogPage() {
+  const articles = getAllArticles();
+  const featured = getFeaturedArticle();
+  const rest = articles.filter((a) => a.slug !== featured?.slug);
 
-export default async function BlogPage() {
-  // Uncomment when WPGraphQL is ready:
-  // const postsData = await getPosts(10);
-  // const posts = postsData.nodes;
+  // Collect unique categories from published articles
+  const categories = Array.from(new Set(articles.map((a) => a.category)));
 
   return (
-    <section className="py-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-semibold mb-4">Blog</h1>
-        <p className="text-brand-steel mb-12">
-          Industry insights, technical guides, and company updates.
-        </p>
-
-        {/* Placeholder until WPGraphQL connected */}
-        <div className="border border-dashed border-gray-300 rounded-lg p-12 text-center text-brand-steel">
-          <p className="text-lg mb-2">Blog posts will appear here</p>
-          <p className="text-sm">
-            Connected to WordPress via WPGraphQL — publish posts in wp-admin and
-            they show up automatically.
+    <>
+      {/* Hero */}
+      <section className="bg-[#1C1F26] pt-28 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#F2F0ED] mb-4">
+            Insights & Resources
+          </h1>
+          <p className="text-lg text-[#8B95A5] max-w-2xl leading-relaxed">
+            Technical guides, industry analysis, and practical knowledge
+            from 15+ years in architectural glass manufacturing.
           </p>
         </div>
+      </section>
 
-        {/* 
-        Uncomment when ready:
-        <div className="space-y-8">
-          {posts.map((post: any) => (
-            <article key={post.id} className="border-b border-gray-100 pb-8">
-              <a href={`/blog/${post.slug}`} className="group">
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-brand-sky transition-colors">
-                  {post.title}
-                </h2>
-                <time className="text-sm text-brand-steel">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-                <div
-                  className="mt-3 text-brand-steel line-clamp-3"
-                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                />
-              </a>
-            </article>
-          ))}
+      {/* Content */}
+      <section className="bg-[#1C1F26] pb-24">
+        <div className="max-w-6xl mx-auto px-6">
+          {articles.length === 0 ? (
+            /* Empty state */
+            <div className="text-center py-24">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#3A4250]/20 flex items-center justify-center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B95A5" strokeWidth="1.5">
+                  <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <h2 className="text-xl font-medium text-[#F2F0ED] mb-2">
+                Articles coming soon
+              </h2>
+              <p className="text-[#8B95A5] max-w-md mx-auto">
+                We&apos;re preparing in-depth technical guides and industry insights.
+                Check back shortly for our first publications.
+              </p>
+            </div>
+          ) : (
+            <>
+              {/* Featured article */}
+              {featured && (
+                <div className="mb-12">
+                  <BlogCard article={featured} featured />
+                </div>
+              )}
+
+              {/* Category filter — shown only if 2+ categories */}
+              {categories.length > 1 && (
+                <div className="flex flex-wrap gap-2 mb-10">
+                  <span className="text-xs text-[#8B95A5] self-center mr-2">Filter:</span>
+                  {categories.map((cat) => (
+                    <span
+                      key={cat}
+                      className="text-xs px-3 py-1.5 rounded-full border border-[#3A4250]/30 text-[#8B95A5] hover:border-[#DAA745]/40 hover:text-[#DAA745] transition-colors cursor-default"
+                    >
+                      {CATEGORY_LABELS[cat]}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Article grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rest.map((article) => (
+                  <BlogCard key={article.slug} article={article} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
-        */}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

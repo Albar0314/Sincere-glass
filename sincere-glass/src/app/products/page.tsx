@@ -1,149 +1,89 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getProducts } from "@/lib/wordpress";
-import type { WpProduct } from "@/types/wordpress";
+import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Glass Products",
+  title: "Glass Products — Tempered, Insulated, Laminated & Enameled",
   description:
-    "Tempered glass, insulated glass, laminated glass, ceramic frit glass and more. Explore the full range from Sincere Glass.",
+    "Explore Sincere Glass's full product range: tempered glass, insulated glass units, laminated safety glass, and enameled decorative glass. All 3C certified.",
+  openGraph: {
+    title: "Architectural Glass Products | Sincere Glass",
+    description: "Full range of 3C-certified architectural glass from China.",
+    url: "https://sincereglass.com/products",
+  },
 };
 
-// ISR: revalidate every hour
-export const revalidate = 3600;
-
-// Glass type label mapping
-const glassTypeLabels: Record<string, string> = {
-  tempered: "Tempered",
-  laminated: "Laminated",
-  insulated: "Insulated",
-  "low-e": "Low-E",
-  enameled: "Enameled / Ceramic Frit",
-};
-
-function getGlassTypeLabel(value: string | null): string {
-  if (!value) return "";
-  return glassTypeLabels[value] || value;
-}
-
-export default async function ProductsPage() {
-  const productsData = await getProducts();
-  const products: WpProduct[] = productsData.nodes;
-
+export default function ProductsPage() {
   return (
-    <section className="py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Page Header */}
-        <div className="mb-12">
-          <h1 className="text-3xl font-semibold mb-4">Our Glass Products</h1>
-          <p className="text-brand-steel max-w-2xl">
-            From standard tempered glass to high-performance Low-E coatings, we
-            manufacture a full range of architectural and industrial glass
-            products. All products are 3C certified and quality-inspected.
+    <main>
+      {/* Hero */}
+      <section className="bg-brand-dark pt-28 pb-16 md:pt-32 md:pb-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <p className="text-brand-accent text-sm font-semibold uppercase tracking-wider mb-3">Our Products</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight">
+            Architectural Glass Solutions
+          </h1>
+          <p className="mt-4 text-white/60 text-lg max-w-xl">
+            Every product is manufactured in-house across our two Hubei factories and carries China's 3C certification.
           </p>
         </div>
+      </section>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {products.map((product) => {
-            const specs = product.productSpecifications;
-            return (
+      {/* Product grid */}
+      <section className="py-16 md:py-24 bg-brand-lighter">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {products.map((product) => (
               <Link
-                key={product.id}
-                href={`/products/${product.slug}`}
-                className="group block border border-gray-200 rounded-lg overflow-hidden hover:border-brand-sky hover:shadow-lg transition-all"
+                key={product.slug}
+                href={"/products/" + product.slug}
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Featured Image */}
-                {product.featuredImage?.node && (
-                  <div className="relative h-56 bg-brand-glass overflow-hidden">
-                    <Image
-                      src={product.featuredImage.node.sourceUrl}
-                      alt={
-                        product.featuredImage.node.altText || product.title
-                      }
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                )}
-
-                {/* Content */}
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width:768px) 100vw, 50vw"
+                  />
+                </div>
                 <div className="p-6">
-                  {/* Glass Type Badge */}
-                  {specs?.glassType && (
-                    <span className="inline-block text-xs font-medium text-brand-sky bg-blue-50 px-2.5 py-1 rounded-full mb-3">
-                      {getGlassTypeLabel(specs.glassType)}
-                    </span>
-                  )}
-
-                  <h2 className="text-xl font-semibold mb-3 group-hover:text-brand-sky transition-colors">
-                    {product.title}
+                  <h2 className="font-display text-xl font-bold text-brand-dark group-hover:text-brand-accent transition-colors">
+                    {product.name}
                   </h2>
-
-                  {/* Excerpt */}
-                  {product.excerpt && (
-                    <div
-                      className="text-brand-steel text-sm leading-relaxed mb-4 line-clamp-2"
-                      dangerouslySetInnerHTML={{ __html: product.excerpt }}
-                    />
-                  )}
-
-                  {/* Quick Specs */}
-                  <div className="space-y-1.5 text-sm text-brand-steel">
-                    {specs?.thicknessRange && (
-                      <div className="flex gap-2">
-                        <span className="font-medium text-brand-navy w-24 shrink-0">
-                          Thickness:
-                        </span>
-                        <span>{specs.thicknessRange}</span>
-                      </div>
-                    )}
-                    {specs?.maxSize && (
-                      <div className="flex gap-2">
-                        <span className="font-medium text-brand-navy w-24 shrink-0">
-                          Max Size:
-                        </span>
-                        <span>{specs.maxSize}</span>
-                      </div>
-                    )}
-                    {specs?.applications && (
-                      <div className="flex gap-2">
-                        <span className="font-medium text-brand-navy w-24 shrink-0">
-                          Applications:
-                        </span>
-                        <span className="line-clamp-1">
-                          {specs.applications}
-                        </span>
-                      </div>
-                    )}
+                  <p className="mt-2 text-brand-muted text-sm leading-relaxed">{product.tagline}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {product.specs.slice(0, 3).map((s) => (
+                      <span key={s.label} className="px-2.5 py-1 bg-brand-lighter text-brand-muted text-xs rounded-full">
+                        {s.label}: {s.value}
+                      </span>
+                    ))}
                   </div>
-
-                  {/* CTA hint */}
-                  <div className="mt-4 text-brand-sky text-sm font-medium group-hover:underline">
-                    View Details →
-                  </div>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-brand-accent group-hover:text-brand-accent-hover transition-colors">
+                    View Details
+                    <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </div>
               </Link>
-            );
-          })}
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-brand-steel mb-4">
-            Need a custom glass solution? We can manufacture to your exact
-            specifications.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-brand-navy text-white font-medium px-8 py-3 rounded hover:bg-gray-800 transition-colors"
-          >
+      {/* CTA */}
+      <section className="py-16 md:py-20 bg-brand-dark text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Need a Custom Glass Solution?</h2>
+          <p className="mt-3 text-white/60">We manufacture to your specifications — size, coating, color, and configuration.</p>
+          <a href="/#quote" className="inline-flex items-center justify-center mt-6 px-7 py-3.5 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark font-semibold rounded-md transition-colors">
             Request a Quote
-          </Link>
+          </a>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

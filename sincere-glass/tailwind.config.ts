@@ -1,22 +1,33 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
-        // Sincere Glass brand palette
         brand: {
-          navy: "#0C2340",     // primary — trust, professionalism
-          steel: "#4A6274",    // secondary text
-          sky: "#5B9BD5",      // accent — links, CTAs
-          glass: "#E8F0F8",    // light tint — backgrounds
-          warm: "#D4A857",     // gold accent — premium feel
+          // Smoke Glass B3 — Soft Amber
+          dark: "#1C1F26",
+          primary: "#3A4250",
+          secondary: "#8B95A5",
+          accent: "#DAA745",
+          "accent-hover": "#C4963D",
+          light: "#F2F0ED",
+          lighter: "#FAFAF8",
+          muted: "#6B7280",
+          // Legacy aliases
+          navy: "#1C1F26",
+          sky: "#8B95A5",
+          glass: "#F2F0ED",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },
