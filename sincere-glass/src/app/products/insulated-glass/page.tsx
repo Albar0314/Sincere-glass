@@ -89,7 +89,7 @@ export default function InsulatedGlassPage() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight">Need Insulated Glass for Your Project?</h2>
             <p className="mt-4 text-white/60 text-lg">Tell us your thermal performance targets and we will recommend the optimal IGU configuration.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-7 py-3.5 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark font-semibold rounded-md transition-colors" onClick={() => document.querySelector('[data-quote-trigger]')?.click()}>
+              <button className="px-7 py-3.5 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark font-semibold rounded-md transition-colors" onClick={() => (document.querySelector('[data-quote-trigger]') as HTMLElement)?.click()}>
                 Get a Free Quote
               </button>
               <a href="mailto:xcglass@sina.cn" className="px-7 py-3.5 border border-white/20 hover:border-white/40 text-white font-medium rounded-md transition-colors text-center">Email Us Directly</a>
