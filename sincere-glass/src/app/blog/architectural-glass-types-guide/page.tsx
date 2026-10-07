@@ -8,8 +8,8 @@ import TLDRBox from '@/components/blog/TLDRBox';
 import LeadMagnetCTA from '@/components/blog/LeadMagnetCTA';
 import RelatedProductsCards from '@/components/blog/RelatedProductsCards';
 import { FAQ, TechNote } from '@/components/blog/blocks';
-import GlassSelectorFlowchart from '@/components/blog/pillar/GlassSelectorFlowchart';
-import GlassFamilyMap from '@/components/blog/pillar/GlassFamilyMap';
+import GlassFamilyMap from '@/components/blog/pillar-arch-glass/GlassFamilyMap';
+import GlassSelectorFlowchart from '@/components/blog/pillar-arch-glass/GlassSelectorFlowchart';
 
 const SLUG = 'architectural-glass-types-guide';
 const article: BlogArticle = blogArticles.find((a) => a.slug === SLUG)!;
@@ -17,35 +17,38 @@ const article: BlogArticle = blogArticles.find((a) => a.slug === SLUG)!;
 export const metadata = generateArticleMetadata(article);
 
 const toc: TOCItem[] = [
-  { id: 'why-pillar', text: 'Why This Guide Exists', level: 2 },
-  { id: 'family-map', text: 'The Five Families of Architectural Glass', level: 2 },
-  { id: 'selector', text: 'Interactive Selector: Find Your Glass in 3 Clicks', level: 2 },
-  { id: 'annealed-section', text: '1. Annealed Glass — The Starting Point', level: 2 },
-  { id: 'tempered-section', text: '2. Tempered Glass — The Default Safety Upgrade', level: 2 },
-  { id: 'laminated-section', text: '3. Laminated Glass — Fragment Retention + Sound', level: 2 },
-  { id: 'insulated-section', text: '4. Insulated Glass (IGU) — Thermal Performance', level: 2 },
-  { id: 'coated-section', text: '5. Low-E & Enameled — Functional Coatings', level: 2 },
-  { id: 'application-matrix', text: 'By Application: What to Spec Where', level: 2 },
-  { id: 'procurement', text: 'Procurement Checklist', level: 2 },
+  { id: 'selector', text: 'Start Here: Glass Selector', level: 2 },
+  { id: 'families', text: 'The 5 Families of Architectural Glass', level: 2 },
+  { id: 'annealed-family', text: '1. Annealed Float Glass', level: 3 },
+  { id: 'tempered-family', text: '2. Tempered Glass', level: 3 },
+  { id: 'laminated-family', text: '3. Laminated Glass', level: 3 },
+  { id: 'insulated-family', text: '4. Insulated Glass (IGU)', level: 3 },
+  { id: 'coated-family', text: '5. Coated Glass (Low-E / Enameled)', level: 3 },
+  { id: 'by-application', text: 'By Application: What to Spec Where', level: 2 },
+  { id: 'checklist', text: "Buyer's Procurement Checklist", level: 2 },
   { id: 'faq', text: 'FAQ', level: 2 },
 ];
 
 const faqItems = [
   {
-    q: 'What is the single most important factor when choosing architectural glass?',
-    a: 'It is almost always "where will this glass fail if it breaks, and who will be near it?" Building codes answer this question for you in most hazardous locations (doors, showers, overhead, railings), but for the remaining 50% of a project the question is cost vs performance across thermal, acoustic, and solar dimensions. Our 3-click selector above walks through this systematically.',
+    q: 'What is the most common type of architectural glass?',
+    a: 'Tempered glass is the most commonly specified architectural glass worldwide because most building codes require safety glass in doors, shower enclosures, low windows, railings, and other impact-prone locations. For commercial facades and energy-efficient buildings, insulated glass units (IGUs) with Low-E coating are now the baseline specification.',
   },
   {
-    q: 'Can one glass product do everything?',
-    a: 'No — but a combined laminated IGU comes closest. It bundles the fragment-retention safety of laminated glass, the thermal insulation of an IGU, and the solar control of a Low-E coating into a single build-up. This is why it is the default spec for premium facades. The trade-off is cost (roughly 2× a plain tempered IGU) and lead time (15-20 working days vs 10-15 for single-process orders).',
+    q: 'Can I combine multiple types of glass in a single pane?',
+    a: 'Yes — the most common combinations are tempered laminated (impact strength + fragment retention) and laminated IGU (safety + thermal). Our 20,000 m² Wuhan facility runs both tempering and lamination lines in parallel, so we can produce combined units in one production flow. This is standard for high-end facades and overhead installations.',
   },
   {
-    q: 'How do Chinese GB standards compare to US/EU standards for architectural glass?',
-    a: 'For tempered glass: GB 15763.2-2005 and ASTM C1048 define surface stress thresholds within 10% of each other. For laminated: GB 15763.3-2009 aligns closely with EN 14449 and ANSI Z97.1. For IGU: GB/T 11944-2012 covers similar durability tests to EN 1279. Export-grade Chinese factories (ours included) manufacture to the stricter of the applicable standards. Buyers should request third-party test reports for the specific standard required in their market.',
+    q: 'How do I know which glass type my building code requires?',
+    a: 'Most national building codes (IBC in the US, GB 50210 in China, EN 12600 in EU, AS 1288 in Australia) define "hazardous locations" where safety glass is mandatory — doors, shower enclosures, low windows, railings, overhead glazing. Our free "Global Architectural Glass Building Codes Comparison" PDF covers all four systems side by side (link in the article above).',
   },
   {
-    q: "What is the MOQ for custom architectural glass orders from Sincere Glass?",
-    a: 'Standard MOQ is 50 square meters per product configuration. For jumbo panels (up to 3m × 15m), we can handle smaller volumes on the same production line since the setup effort is similar. For trial orders from new buyers we accept smaller MOQs with a nominal setup fee. Contact us with your drawings for a specific quote.',
+    q: 'Does Sincere Glass handle both domestic and export orders?',
+    a: 'Our two Wuhan facilities (武汉欣城 and 湖北欣之城) have 15+ years of domestic market experience and are now building export capability. We produce 3C-certified glass per Chinese national standards, with test reports available for ASTM C1048, EN 12150, and AS/NZS 2208 compliance review. MOQ for export orders is 50 m².',
+  },
+  {
+    q: "What's the typical lead time for custom architectural glass orders?",
+    a: 'Our standard production cycles from order confirmation: annealed cuts 3-7 working days, tempered 7-12 days, laminated 10-15 days, insulated glass units 10-15 days, combined laminated IGU 15-20 days. Low-E coating availability can add 5-7 days for specialty coatings. All lead times exclude ocean freight transit.',
   },
 ];
 
@@ -62,275 +65,308 @@ export default function Page() {
 
       <BlogArticleLayout article={article} toc={toc}>
         <TLDRBox takeaways={[
-          'Architectural glass divides into 5 families: base material (annealed), strengthened (tempered, heat-strengthened), composite safety (laminated), thermal (insulated/IGU), and functional coatings (Low-E, enameled).',
-          'The right glass is a function of location, not preference — building codes dictate safety glass in doors, showers, overhead, and railings; thermal performance matters in most climates.',
-          'For most buyer scenarios the answer is a stack: a laminated outer lite + Low-E coated IGU + warm-edge spacer. This is the premium facade standard.',
-          'Each category below links to a dedicated deep-dive article and the matching product page.',
-          'Chinese GB standards align closely with US ASTM and EU EN standards — export-grade factories manufacture to the stricter of the applicable thresholds.',
+          'Architectural glass splits into 5 functional families: annealed (raw), tempered (safety strength), laminated (safety retention), insulated (energy), and coated (Low-E / decorative).',
+          'The selection logic is not about "which is best" — it is about which failure mode you cannot accept: impact injury, falling fragments, heat loss, or UV damage.',
+          'Most modern buildings use 2-3 types in combination (e.g., tempered doors + laminated overhead + insulated windows). Few projects spec a single type throughout.',
+          'Our 20,000 m² facility produces all 5 families in-house, including combined laminated-IGU on our 3m × 15m jumbo lines — among the largest in Hubei province.',
+          'This guide covers all 5 families, links to deep-dive comparison articles, and ends with an interactive selector tool and a procurement checklist.',
         ]} />
 
-        <h2 id="why-pillar">Why This Guide Exists</h2>
-
         <p>
-          "Which glass should I spec?" is the question we get more than any other. The honest
-          answer is: there is no universal best glass — there is only the right <em>stack</em> of
-          glass products for a specific location, climate, and budget. This guide gives you the
-          decision framework and routes you to the detailed comparisons for whichever branch of
-          the decision tree is relevant to your project.
+          "What type of glass should I use?" is a question with no universal answer — it depends
+          on what the glass needs to do. A shower screen, a curtain wall, a skylight, and a
+          decorative spandrel panel all have different failure modes, different code requirements,
+          and different performance economics. Choosing wrong wastes money at best and risks
+          lives at worst.
         </p>
 
         <p>
-          If you have landed here searching for "architectural glass types," what you actually
-          need is probably one of these three answers:
+          This guide is the entry point for architectural glass selection: a map of the 5
+          functional families, an interactive selector that asks the right questions, deep-dive
+          links to our full comparison articles, and a procurement checklist you can hand to
+          your supplier. It is written from the perspective of a mid-size Chinese float-glass
+          converter that produces all 5 families in one facility — not from a product-brochure
+          perspective of "every glass is premium."
         </p>
 
-        <ul>
-          <li>
-            <strong>A quick decision</strong> — use the interactive selector below (3 clicks)
-          </li>
-          <li>
-            <strong>A category overview</strong> — read the 5 family sections below, each ~200
-            words with links to deeper material
-          </li>
-          <li>
-            <strong>A deep technical comparison</strong> — follow the "Deep dive" links to our
-            full comparison articles
-          </li>
-        </ul>
-
-        <h2 id="family-map">The Five Families of Architectural Glass</h2>
+        <h2 id="selector">Start Here: Interactive Glass Selector</h2>
 
         <p>
-          Every architectural glass product is built from a base of annealed float glass with one
-          or more secondary processes applied. The processes stack: a product can be tempered,
-          then laminated, then assembled into an IGU with a Low-E coating. The map below shows
-          the five categories and which products belong to each.
-        </p>
-
-        <GlassFamilyMap />
-
-        <h2 id="selector">Interactive Selector: Find Your Glass in 3 Clicks</h2>
-
-        <p>
-          Answer three questions below. We will recommend a specific product configuration based
-          on your scenario — and route you to the detailed article or product page that goes
-          deeper.
+          If you want the fastest answer without reading the full guide, use the selector below.
+          It walks through three questions and recommends a glass type based on your primary
+          concern. Each result links to the relevant product page and deep-dive article.
         </p>
 
         <GlassSelectorFlowchart />
 
-        <h2 id="annealed-section">1. Annealed Glass — The Starting Point</h2>
-
-        <p>
-          Annealed glass is plain float glass straight off the production line — slowly cooled
-          to equalize internal stresses, resulting in a flat, optically clear sheet with almost
-          no residual compressive stress. It is the raw material from which every other glass
-          product is made. It is also the cheapest and fastest-lead-time option.
-        </p>
-
-        <p>
-          The catch: annealed glass is <strong>not legal</strong> in most code-defined safety
-          locations. It breaks into large, dagger-shaped shards. Modern building codes (IBC §2406,
-          GB 50210, EN 12600) forbid annealed glass in doors, shower enclosures, railings,
-          low-sill windows, and overhead glazing. It is still the correct choice for interior
-          framed artwork, mirrors, non-impact interior partitions, and any location that
-          doesn't qualify as code-defined "hazardous."
-        </p>
-
-        <TechNote type="tip" title="Deep dive available">
+        <TechNote type="tip" title="The selector's logic">
           <p>
-            Read our full comparison:{' '}
-            <a href="/blog/tempered-glass-vs-annealed-glass">
-              Tempered Glass vs Annealed Glass: Why 'Regular' Glass Isn't Safe Enough for Most
-              Modern Buildings
-            </a>{' '}
-            — covers code requirements, breakage patterns, and the specific scenarios where
-            annealed remains the right pick.
+            The three top-level branches — safety, energy, appearance — correspond to the three
+            dominant engineering goals in architectural glazing. Nearly every real project is
+            dominated by one of these, with the other two as secondary constraints. Starting
+            there, rather than at "what thickness do I need?", avoids 90% of specification
+            mistakes.
           </p>
         </TechNote>
 
-        <h2 id="tempered-section">2. Tempered Glass — The Default Safety Upgrade</h2>
+        <h2 id="families">The 5 Families of Architectural Glass</h2>
 
         <p>
-          Tempered glass takes annealed glass through a secondary heat-treatment: heated to
-          ~620°C, then rapidly quenched with high-pressure air jets. The surface cools faster
-          than the core, creating 90+ MPa of surface compressive stress. The result: 4-5× the
-          strength of annealed, with a safe granular breakage pattern that satisfies code "safety
-          glass" requirements.
+          All architectural glass products descend from one of these five families. Hover each
+          circle below for a brief description and a link to go deeper:
+        </p>
+
+        <GlassFamilyMap />
+
+        <p>
+          The connections in the map above are not arbitrary. <strong>Annealed</strong> at the
+          top is the raw material — every other family starts life as an annealed float glass
+          sheet. <strong>Tempered</strong> and <strong>laminated</strong> are the two safety-glass
+          upgrades, each addressing a different failure mode. <strong>Insulated</strong> units
+          are built from tempered or laminated lites (never annealed, for safety reasons).{' '}
+          <strong>Coated</strong> glass is a surface treatment that can be applied to any of
+          the other families but is most commonly deployed as Low-E inside an IGU.
+        </p>
+
+        <h3 id="annealed-family">1. Annealed Float Glass — The Raw Material</h3>
+
+        <p>
+          Annealed glass is the direct output of a float glass line: molten glass drawn across
+          a bed of molten tin, cooled slowly through an annealing lehr, and shipped as flat
+          sheets. It has essentially zero residual stress, which makes it easy to cut and
+          process — but also means it breaks into large, dangerous shards on impact.
         </p>
 
         <p>
-          Tempered is the default upgrade when a location requires safety glass but the specific
-          performance needs are modest. Shower enclosures, interior partition glass doors,
-          storefronts, low-rise curtain walls, furniture glass — all typically specced as
-          monolithic tempered. Our 3m × 15m tempering furnace in Wuhan is among the largest in
-          Hubei province, so we can handle both standard-size orders and jumbo architectural
-          panels.
+          Annealed glass is the correct choice for interior framed artwork, upper-story windows
+          above code-defined hazardous locations, greenhouse glazing (where thermal cycling
+          would stress tempered glass to spontaneous breakage), and any application where the
+          buyer needs to cut or drill the glass after purchase.
         </p>
 
-        <TechNote type="tip" title="Deep dives available">
-          <p>
-            <a href="/products/tempered-glass">Tempered Glass product page</a> — full specs,
-            thickness range, standards, applications. <br />
-            <a href="/blog/tempered-glass-vs-annealed-glass">Tempered vs Annealed</a> — when to
-            step up from annealed. <br />
-            <a href="/blog/tempered-glass-vs-laminated-glass">Tempered vs Laminated</a> — when
-            tempered is NOT enough and you need laminated instead.
-          </p>
-        </TechNote>
+        <p className="text-sm">
+          <strong>Deep dive:</strong>{' '}
+          <a href="/blog/tempered-glass-vs-annealed-glass">
+            Tempered Glass vs Annealed Glass: Why "Regular" Glass Isn't Safe Enough for Most
+            Modern Buildings
+          </a>
+        </p>
 
-        <LeadMagnetCTA variant="inline" articleSlug="architectural-glass-types-guide" />
+        <h3 id="tempered-family">2. Tempered Glass — The Safety Workhorse</h3>
 
-        <h2 id="laminated-section">3. Laminated Glass — Fragment Retention + Sound</h2>
+        <p>
+          Tempered glass is annealed glass that has been reheated to approximately 620°C and
+          then quenched with high-pressure air jets. This creates compressive stress on the
+          surface (~180 MPa) and tensile stress in the core, giving the glass 4-5× the strength
+          of annealed and — more importantly — a safe granular breakage pattern instead of
+          large shards.
+        </p>
+
+        <p>
+          Our 3m × 15m tempering furnace is among the largest in Hubei province, which allows
+          us to supply tempered glass for jumbo curtain walls and oversized facades that
+          smaller factories cannot handle. Tempered is the mandatory specification for doors,
+          shower enclosures, low windows, and railings in nearly every building code worldwide.
+        </p>
+
+        <p className="text-sm">
+          <strong>Product page:</strong>{' '}
+          <a href="/products/tempered-glass">Tempered Glass product details and specifications</a>
+        </p>
+
+        <h3 id="laminated-family">3. Laminated Glass — Fragment Retention</h3>
 
         <p>
           Laminated glass is two or more glass lites permanently bonded by a polymer interlayer
-          — PVB (polyvinyl butyral) as standard, SGP (SentryGlas) for structural and
-          hurricane-rated applications. When the glass breaks, the shards remain adhered to the
-          interlayer instead of becoming airborne.
+          — most commonly PVB (Polyvinyl Butyral) or SGP (SentryGlas, DuPont's structural
+          interlayer). The interlayer provides a dual function: it dampens airborne sound
+          (improving STC rating by 3-5 points vs plain glass) and it holds broken glass
+          fragments in place after impact.
         </p>
 
         <p>
-          This changes what laminated solves for. First, it is <em>required</em> by code for
-          overhead glazing and most structural balustrades — any location where falling glass
-          would be dangerous. Second, the PVB interlayer is a mechanical damper that absorbs
-          airborne sound, raising STC by 3-5 points vs plain glass of equal thickness. Third,
-          PVB inherently blocks 99% of UV radiation. For urban residential, acoustic-critical
-          commercial, and any high-exposure location, laminated is the default choice.
+          Laminated glass is code-required for overhead glazing (IBC §2405.5), hurricane and
+          cyclone-prone regions, structural glass floors, and most storefronts. The SGP variant
+          resists forced entry well enough to be classified as burglar-resistant glazing.
         </p>
 
-        <TechNote type="tip" title="Deep dives available">
-          <p>
-            <a href="/products/laminated-glass">Laminated Glass product page</a> — PVB vs SGP
-            selection, interlayer thickness options, standards. <br />
-            <a href="/blog/tempered-glass-vs-laminated-glass">Tempered vs Laminated</a> — side-by-side
-            comparison across 7 dimensions. <br />
-            <a href="/blog/insulated-glass-vs-laminated-glass">Insulated vs Laminated</a> — when to
-            pick laminated over IGU for the same project.
-          </p>
-        </TechNote>
+        <p className="text-sm">
+          <strong>Deep dive:</strong>{' '}
+          <a href="/blog/tempered-glass-vs-laminated-glass">
+            Tempered Glass vs Laminated Glass: 7 Differences Buyers Must Know
+          </a>{' '}
+          · <strong>Product page:</strong>{' '}
+          <a href="/products/laminated-glass">Laminated Glass details</a>
+        </p>
 
-        <h2 id="insulated-section">4. Insulated Glass (IGU) — Thermal Performance</h2>
+        <LeadMagnetCTA variant="inline" articleSlug="architectural-glass-types-guide" />
+
+        <h3 id="insulated-family">4. Insulated Glass (IGU) — Energy Performance</h3>
 
         <p>
-          An insulated glass unit is two or more glass lites with a sealed cavity between them,
-          filled with argon (standard) or krypton (premium) gas, and perimeter-sealed with a
-          warm-edge spacer to minimize thermal bridging. The IGU does one thing extremely well:
-          it reduces heat transfer across the glazing. A standard 6+12A+6 IGU achieves U-value
-          ~2.6 W/m²·K; with Low-E coating and argon fill, U-value drops to ~1.4-1.8.
+          An insulated glass unit (IGU) is two or more glass lites separated by a sealed cavity
+          filled with inert gas (typically argon) and bounded by a warm-edge spacer. The
+          engineering problem it solves is heat transfer: a basic 6+12A+6 IGU achieves U-value
+          of 2.6-2.8 W/m²·K; with Low-E coating, this drops to 1.4-1.8 — a 70% improvement
+          over single-pane glazing.
         </p>
 
         <p>
-          IGU is the thermal performance workhorse of modern facades. It is also the baseline
-          energy-code requirement in cold climates — single glazing is not permitted in most
-          jurisdictions for exterior residential or commercial glazing. In our Wuhan facility
-          we run two IGU production lines, including an ultra-large automatic argon-fill line
-          that handles jumbo panels for high-rise facades.
+          IGUs are the baseline specification for commercial office towers, residential windows
+          in temperate and cold climates, and any building where HVAC costs are a significant
+          operating expense. For premium facades combining IGU with laminated safety glass, the
+          result is a "laminated IGU" — the configuration we recommend for high-end projects.
         </p>
 
-        <TechNote type="tip" title="Deep dives available">
-          <p>
-            <a href="/products/insulated-glass">Insulated Glass product page</a> — build-up
-            configurations, U-value tables, SHGC values. <br />
-            <a href="/blog/insulated-glass-vs-laminated-glass">IGU vs Laminated</a> — buyer-scenario
-            decision guide for when to pick thermal vs safety glass (and when to combine them).
-          </p>
-        </TechNote>
+        <p className="text-sm">
+          <strong>Deep dive:</strong>{' '}
+          <a href="/blog/insulated-glass-vs-laminated-glass">
+            Insulated Glass vs Laminated Glass: Which One Does Your Project Actually Need?
+          </a>{' '}
+          · <strong>Product page:</strong>{' '}
+          <a href="/products/insulated-glass">Insulated Glass details</a>
+        </p>
 
-        <h2 id="coated-section">5. Low-E &amp; Enameled — Functional Coatings</h2>
+        <h3 id="coated-family">5. Coated Glass — Low-E and Enameled</h3>
 
         <p>
-          The fifth family is not standalone glass but <em>coatings applied to glass</em>, which
-          are then assembled into IGU or laminated units. Two main types:
+          Coated glass is a category defined by surface treatment rather than structural method.
+          The two most important categories for architectural buyers are:
         </p>
 
         <ul>
           <li>
-            <strong>Low-E (low-emissivity) coating</strong> — a microscopically thin metal-oxide
-            layer (sputtered soft-coat or pyrolytic hard-coat) that reflects long-wave infrared
-            heat radiation while transmitting visible light. Applied to the inner surface of a
-            glass lite within an IGU cavity. Does not change the appearance of the glass. Can
-            cut heating/cooling energy use by 30-50%.
+            <strong>Low-E (low-emissivity) coating</strong> — a microscopically thin metallic
+            layer (sputtered soft-coat or pyrolytic hard-coat) that reflects infrared heat
+            while transmitting visible light. Used almost exclusively as surface #2 or #3 of
+            an IGU to boost thermal performance.
           </li>
           <li>
-            <strong>Enameled (ceramic frit) coating</strong> — ceramic ink printed onto the
-            glass surface and fused in the tempering furnace. Used for solid color panels
-            (spandrel glass), decorative patterns, solar shading, and privacy. Fully opaque or
-            partially translucent based on dot pattern.
+            <strong>Enameled (ceramic frit) glass</strong> — ceramic ink baked onto the glass
+            surface at tempering temperature, creating a permanent decorative color or pattern.
+            Used for spandrel panels (opaque areas of a curtain wall hiding floor slabs),
+            feature walls, and decorative applications.
           </li>
         </ul>
 
-        <TechNote type="tip" title="Product pages">
-          <p>
-            <a href="/products/low-e-glass">Low-E Glass product page</a> —
-            soft-coat vs hard-coat, emissivity ranges, SHGC values. <br />
-            <a href="/products/enameled-glass">Enameled Glass product page</a> —
-            color options, pattern catalog, standards.
-          </p>
-        </TechNote>
+        <p className="text-sm">
+          <strong>Product pages:</strong>{' '}
+          <a href="/products/low-e-glass">Low-E Glass</a>{' '}·{' '}
+          <a href="/products/enameled-glass">Enameled Glass</a>
+        </p>
 
-        <h2 id="application-matrix">By Application: What to Spec Where</h2>
+        <h2 id="by-application">By Application: What to Spec Where</h2>
 
         <p>
-          Working backwards from building location — the most common framework buyers actually
-          use:
+          Reverse-mapped from the 5 families: here is what architects and specifiers typically
+          choose for common building applications. These are our recommendations based on
+          production experience — they align with code requirements but go beyond the minimum
+          where quality warrants.
         </p>
 
         <ul>
           <li>
-            <strong>Entrance doors and sidelights</strong>: Tempered minimum (code). Laminated
-            if sound or forced-entry resistance matters.
+            <strong>Curtain walls (high-rise commercial):</strong> Laminated IGU with Low-E
+            coating. Thermal performance for HVAC savings; laminated outer lite for
+            fall-arrest safety and wind-load reserve.
           </li>
           <li>
-            <strong>Curtain wall facades</strong>: Low-E coated IGU minimum. Add laminated
-            outer lite in acoustic-critical or seismic/wind zones.
+            <strong>Residential windows (temperate climate):</strong> Insulated glass with
+            Low-E coating. Argon fill if budget allows. No laminated layer unless street noise
+            is a specific issue.
           </li>
           <li>
-            <strong>Shower enclosures</strong>: Tempered (code requires safety glass; monolithic
-            tempered is standard).
+            <strong>Shower enclosures and glass doors:</strong> Tempered glass, minimum 8mm,
+            with polished edges. Laminated upgrade adds UV protection and shatter-stay for
+            frameless designs.
           </li>
           <li>
-            <strong>Skylights and overhead glazing</strong>: Laminated required by code. Add
-            IGU for thermal performance.
+            <strong>Skylights and overhead glazing:</strong> Laminated glass (mandatory per
+            IBC §2405.5) — typically laminated tempered for both impact strength and fragment
+            retention.
           </li>
           <li>
-            <strong>Structural balustrades</strong>: Laminated with SGP interlayer (code
-            requires post-breakage structural retention).
+            <strong>Railings and balustrades:</strong> Laminated tempered glass is the standard.
+            Code requires both safety strength and fragment retention for structural glazing.
           </li>
           <li>
-            <strong>Hurricane / impact zones</strong>: Laminated with SGP, tested per ASTM E1996
-            (US) or equivalent.
+            <strong>Spandrel panels (opaque facade areas):</strong> Enameled tempered glass
+            with ceramic frit on surface #2 (interior-facing). Color-matched to facade design.
           </li>
           <li>
-            <strong>Spandrel panels</strong>: Enameled (ceramic frit) tempered. Backs opaque,
-            front matches adjacent vision glass tint.
+            <strong>Storefronts and retail glazing:</strong> Laminated glass with SGP
+            interlayer for security; tempered as cost-conscious alternative in low-crime areas.
           </li>
           <li>
-            <strong>Interior partitions and furniture</strong>: Tempered monolithic. Annealed if
-            no impact risk and no code requirement.
+            <strong>Interior partitions (non-safety):</strong> Annealed glass if location is
+            above code-defined hazardous zones; tempered if partition includes a door or is
+            within 24in of a traffic path.
           </li>
         </ul>
 
-        <h2 id="procurement">Procurement Checklist</h2>
+        <h2 id="checklist">Buyer's Procurement Checklist</h2>
 
         <p>
-          When you issue an RFQ to any glass supplier (us included), the following details
-          minimize back-and-forth and get you accurate pricing:
+          When you request a quote for architectural glass — from Sincere Glass or any supplier
+          — these are the specifications your drawings should include. Missing any of these
+          typically leads to a quote based on assumptions, which creates problems at delivery:
         </p>
 
-        <ol>
-          <li><strong>Panel dimensions</strong> — width × height per panel, quantity per size</li>
-          <li><strong>Glass build-up</strong> — thickness of each lite, interlayer type &amp; thickness, cavity width &amp; gas, coating type &amp; surface position</li>
-          <li><strong>Edge treatment</strong> — polished flat, polished arrissed, pencil, bevel</li>
-          <li><strong>Holes and cutouts</strong> — all drill-through dimensions and cutout coordinates (must be done pre-tempering)</li>
-          <li><strong>Standards and certifications required</strong> — 3C, CE, SGCC, specific country compliance</li>
-          <li><strong>Delivery terms</strong> — FOB which port, DDP which address</li>
-          <li><strong>Target lead time</strong> — critical for jumbo orders where our furnace scheduling matters</li>
-        </ol>
+        <ul>
+          <li>
+            <strong>Glass type</strong> — annealed / tempered / laminated / IGU / combined
+            configuration (e.g., "tempered laminated IGU: 6mm Low-E tempered + 12mm argon +
+            6mm clear tempered + 1.52mm PVB + 6mm clear tempered")
+          </li>
+          <li>
+            <strong>Thickness per lite</strong> — each glass lite in the assembly separately
+          </li>
+          <li>
+            <strong>Overall dimensions</strong> — W × H per panel, and total quantity
+          </li>
+          <li>
+            <strong>Edge treatment</strong> — polished / ground / arrissed / exposed
+          </li>
+          <li>
+            <strong>Hole locations and sizes</strong> — if any; must be specified before tempering
+          </li>
+          <li>
+            <strong>Coating specification</strong> — Low-E type (soft-coat / hard-coat), coating
+            surface (#2 or #3), U-value and SHGC targets
+          </li>
+          <li>
+            <strong>Interlayer specification</strong> — PVB / SGP / acoustic PVB; thickness in mm
+          </li>
+          <li>
+            <strong>Gas fill</strong> — air / argon / krypton (for IGUs)
+          </li>
+          <li>
+            <strong>Spacer type</strong> — aluminum / warm-edge (TPS, Super Spacer, etc.)
+          </li>
+          <li>
+            <strong>Compliance target</strong> — which standard (IBC, EN, GB, AS) and which clauses
+          </li>
+          <li>
+            <strong>Delivery terms</strong> — FOB / CIF / DDP; port of destination
+          </li>
+          <li>
+            <strong>Packaging</strong> — pine crate standard; A-frame or L-frame for jumbo panels
+          </li>
+        </ul>
+
+        <TechNote type="warning" title="A note on sample orders">
+          <p>
+            For first-time buyers of any architectural glass product, we strongly recommend
+            ordering a small sample (typically 500mm × 500mm, 2-4 pieces) before placing a
+            production order. This verifies dimensional accuracy, edge quality, coating
+            uniformity, and visual appearance match your expectations. Sample orders ship in
+            5-7 days at nominal cost.
+          </p>
+        </TechNote>
 
         <FAQ items={faqItems} />
 
-        <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass']} heading="Explore the full product range" />
+        <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="architectural-glass-types-guide" />
       </BlogArticleLayout>
