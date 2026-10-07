@@ -177,7 +177,7 @@ export default function Page() {
           </li>
         </ul>
 
-        <LeadMagnetCTA variant="inline" />
+        <LeadMagnetCTA variant="inline" articleSlug="insulated-glass-vs-laminated-glass" />
 
         <h2 id="combine">The "Both" Answer: Laminated IGU</h2>
 
@@ -269,7 +269,7 @@ export default function Page() {
 
         <RelatedProductsCards slugs={['insulated-glass', 'laminated-glass', 'low-e-glass']} />
 
-        <LeadMagnetCTA variant="footer" />
+        <LeadMagnetCTA variant="footer" articleSlug="insulated-glass-vs-laminated-glass" />
       </BlogArticleLayout>
     </>
   );
