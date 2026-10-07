@@ -186,6 +186,39 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish' },
     ],
   },
+
+  {
+    slug: 'tempered-glass-vs-annealed-glass',
+    title: "Tempered Glass vs Annealed Glass: Why 'Regular' Glass Isn't Safe Enough for Most Modern Buildings",
+    excerpt: "Annealed is the raw float glass; tempered is annealed that's been heat-treated to 4-5× the strength with safe breakage. Here's where code forbids one and when annealed is still the right choice.",
+    targetKeyword: 'tempered glass vs annealed glass',
+    secondaryKeywords: ['annealed vs tempered glass', 'tempered vs regular glass', 'float glass vs tempered', 'what is annealed glass'],
+    searchKeywords: [
+      'tempered vs annealed', 'annealed vs tempered', 'tempered vs regular glass',
+      'tempered vs float glass', 'what is annealed glass', 'is annealed glass safe',
+      'float glass', 'annealed float', 'surface compressive stress',
+      'GB 15763', 'ASTM C1048', 'EN 12150',
+      '钢化玻璃 普通玻璃', '退火玻璃 钢化玻璃', '浮法玻璃 钢化', '安全玻璃 普通玻璃',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Buyer Guide' as const,
+    tags: ['tempered glass', 'annealed glass', 'float glass', 'safety glazing', 'building codes'],
+    heroImage: '/images/blog/tempered-vs-annealed-hero.webp',
+    heroImageAlt: 'Side-by-side comparison of annealed glass with large dagger-shaped shards versus tempered glass with small cuboid granules after breakage',
+    heroImagePrompt: 'Studio product photography, two broken architectural glass panels side by side on polished dark concrete surface. Left panel: 6mm annealed glass broken into large jagged dagger-shaped shards radiating from a center impact point, several pieces still standing upright, dangerous-looking sharp edges, muted blue-grey tone. Right panel: 6mm tempered glass broken into thousands of uniform small cuboid granules scattered like coarse salt or diced ice, warm amber under-lighting glowing through granule pile. 30-degree elevated camera angle, soft daylight from above-left, shallow depth of field. Clean neutral grey background, no humans, no text. 4K photorealistic, museum-exhibit quality, dramatic contrast between the two breakage patterns.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 12,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'comparison' as const,
+    cluster: 'comparison',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

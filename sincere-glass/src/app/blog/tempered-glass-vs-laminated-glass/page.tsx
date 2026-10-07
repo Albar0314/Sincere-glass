@@ -390,6 +390,13 @@ export default function TemperedVsLaminatedPage() {
           for the five buyer scenarios where one, the other, or both make sense.
         </p>
 
+        <p>
+          Not sure if you need safety glass at all? See our{' '}
+          <a href="/blog/tempered-glass-vs-annealed-glass">
+            tempered vs annealed glass guide
+          </a>{' '}
+          for where code forbids plain float glass and when annealed is still the right pick.
+        </p>
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass']} />
 
         {/* C7: Footer Lead Magnet CTA */}

@@ -267,6 +267,13 @@ export default function Page() {
 
         <FAQ items={buyerFaqItems} />
 
+        <p>
+          Starting further back in your decision? Our{' '}
+          <a href="/blog/tempered-glass-vs-annealed-glass">
+            tempered vs annealed glass comparison
+          </a>{' '}
+          covers why "regular" float glass is unsuitable for most modern building applications.
+        </p>
         <RelatedProductsCards slugs={['insulated-glass', 'laminated-glass', 'low-e-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="insulated-glass-vs-laminated-glass" />
