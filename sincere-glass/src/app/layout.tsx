@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { getOrganizationSchema, getWebsiteSchema } from "@/lib/schema";
 import Script from "next/script";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Header from "@/components/Header";
@@ -21,6 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable + " " + spaceGrotesk.variable}>
       <body className="font-sans text-brand-dark antialiased flex flex-col min-h-screen">
+        <JsonLd data={getOrganizationSchema()} />
+        <JsonLd data={getWebsiteSchema()} />
         <QuoteProvider>
           <Header />
           <main className="flex-1">{children}</main>
