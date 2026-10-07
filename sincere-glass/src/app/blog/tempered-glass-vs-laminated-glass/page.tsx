@@ -397,6 +397,17 @@ export default function TemperedVsLaminatedPage() {
           </a>{' '}
           for where code forbids plain float glass and when annealed is still the right pick.
         </p>
+        <TechNote type="note" title="Zoom out to the full picture">
+          <p>
+            This article is one of three deep-dives in our architectural glass comparison series.
+            For the full decision framework across all 9 architectural glass products — with an
+            interactive 3-click selector — see our{' '}
+            <a href="/blog/architectural-glass-types-guide">
+              complete architectural glass types buyer's guide
+            </a>.
+          </p>
+        </TechNote>
+
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass']} />
 
         {/* C7: Footer Lead Magnet CTA */}

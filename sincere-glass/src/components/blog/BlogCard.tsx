@@ -33,8 +33,12 @@ export default function BlogCard({ article, featured = false }: Props) {
               </svg>
             </div>
           )}
-          <span className="absolute top-4 left-4 text-xs bg-[#DAA745] text-[#1C1F26] px-3 py-1.5 rounded font-medium">
-            Featured
+          <span className={`absolute top-4 left-4 text-xs px-3 py-1.5 rounded font-medium ${
+            article.isPillar
+              ? 'bg-gradient-to-r from-[#DAA745] to-[#c4952e] text-[#1C1F26]'
+              : 'bg-[#DAA745] text-[#1C1F26]'
+          }`}>
+            {article.isPillar ? '✦ Pillar Guide' : 'Featured'}
           </span>
         </div>
         <div className="p-6 lg:p-10 flex flex-col justify-center">

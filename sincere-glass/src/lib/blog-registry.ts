@@ -39,6 +39,8 @@ export interface BlogArticle {
   changelog?: Array<{ date: string; note: string }>;
   readingTime: number;        // minutes
   featured?: boolean;
+  /** Pillar Page: hub article linking to all sub-articles in its cluster */
+  isPillar?: boolean;
 }
 
 export type BlogCategory =
@@ -217,6 +219,40 @@ export const blogArticles: BlogArticle[] = [
     translations: {},
     changelog: [
       { date: '2026-10-07', note: 'Initial publish' },
+    ],
+  },
+
+  {
+    slug: 'architectural-glass-types-guide',
+    title: "Architectural Glass Types: The Complete Buyer's Guide",
+    excerpt: "Five families of architectural glass, nine products, one decision framework. Interactive selector finds the right glass for your project in 3 clicks — with deep-dive links to every comparison.",
+    targetKeyword: 'architectural glass types',
+    secondaryKeywords: ['types of architectural glass', 'glass selection guide', 'architectural glass buyer guide', 'how to choose architectural glass'],
+    searchKeywords: [
+      'architectural glass types', 'types of architectural glass', 'glass selection guide',
+      'how to choose architectural glass', 'glass buyer guide', 'glass pillar guide',
+      'architectural glass family', 'glass selection framework',
+      'IGU', 'PVB', 'SGP', 'Low-E', 'tempered laminated insulated',
+      '建筑玻璃分类', '建筑玻璃选型', '建筑玻璃种类', '玻璃选型指南', '玻璃产品分类',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Buyer Guide' as const,
+    tags: ['pillar', 'architectural glass', 'buyer guide', 'glass selection', 'tempered', 'laminated', 'insulated', 'low-e'],
+    heroImage: '/images/blog/architectural-glass-types-hero.webp',
+    heroImageAlt: 'Five architectural glass samples arranged in a vertical stack — annealed, tempered, laminated, insulated, and Low-E — showing the family hierarchy of architectural glass products',
+    heroImagePrompt: 'Studio product photography, five rectangular architectural glass samples arranged in an elegant vertical stack on polished dark concrete, each sample slightly offset for visibility. Top to bottom: 1) plain clear annealed glass, 2) tempered glass with subtle optical distortion visible at edges, 3) laminated glass with visible PVB interlayer line, 4) insulated glass unit with visible aluminum spacer and dual panes, 5) Low-E coated glass with faint iridescent coating sheen. Each sample has a small warm amber label number (1-5) visible. Soft warm daylight from above-left, deep shadows below each sample, shallow depth of field on the stack. Clean neutral grey background, no humans, no text other than the small numbers. 4K photorealistic, museum-exhibit quality, museum catalog aesthetic.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 14,
+    featured: true,
+    isPillar: true,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'comparison',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial pillar publish' },
     ],
   },
 ];
