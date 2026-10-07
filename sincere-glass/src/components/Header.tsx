@@ -53,17 +53,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-[68px]">
           {/* Logo */}
-          <button
-                onClick={() => { setMobileOpen(false); openSearch(); }}
-                className="flex items-center gap-3 px-3 py-3 text-white/70 hover:text-white transition-colors w-full text-left"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <circle cx="11" cy="11" r="8" />
-                  <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
-                </svg>
-                Search
-              </button>
-              <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/images/logo.png"
               alt="Sincere Glass"
@@ -143,28 +133,53 @@ export default function Header() {
               </Link>
             ))}
 
+            {/* Search icon (desktop) */}
+            <button
+              onClick={openSearch}
+              className="ml-2 p-2 text-white/60 hover:text-white rounded-md hover:bg-white/5 transition-colors"
+              aria-label="Search"
+              title="Search (Ctrl+K)"
+            >
+              <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" />
+                <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+
             <a
               href="#quote"
-              className="ml-3 px-5 py-2 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark text-sm font-semibold rounded-md transition-colors"
+              className="ml-2 px-5 py-2 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark text-sm font-semibold rounded-md transition-colors"
             >
               Request Quote
             </a>
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden p-2 text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle navigation"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile right side: search icon + hamburger */}
+          <div className="flex items-center gap-1 lg:hidden">
+            <button
+              onClick={openSearch}
+              className="p-2 text-white/70 hover:text-white rounded-md"
+              aria-label="Search"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" />
+                <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+            <button
+              className="p-2 text-white"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle navigation"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
