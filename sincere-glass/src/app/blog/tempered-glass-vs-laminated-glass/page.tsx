@@ -218,7 +218,7 @@ export default function TemperedVsLaminatedPage() {
         </p>
 
         {/* C7: Mid-article lead magnet */}
-        <LeadMagnetCTA variant="inline" />
+        <LeadMagnetCTA variant="inline" articleSlug={SLUG} />
 
         {/* ---- SECTION 4: Applications ---- */}
         <h2 id="application-guide">Which Glass for Which Job? Application Decision Guide</h2>
@@ -384,7 +384,7 @@ export default function TemperedVsLaminatedPage() {
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass']} />
 
         {/* C7: Footer Lead Magnet CTA */}
-        <LeadMagnetCTA variant="footer" />
+        <LeadMagnetCTA variant="footer" articleSlug={SLUG} />
 
       </BlogArticleLayout>
     </>
