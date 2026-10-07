@@ -381,6 +381,15 @@ export default function TemperedVsLaminatedPage() {
         </div>
 
         {/* C6: Related Products */}
+        <p>
+          Already decided on laminated for safety? The next question is whether you also need
+          insulated glass for thermal performance — see our{' '}
+          <a href="/blog/insulated-glass-vs-laminated-glass">
+            insulated vs laminated glass selection guide
+          </a>{' '}
+          for the five buyer scenarios where one, the other, or both make sense.
+        </p>
+
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass']} />
 
         {/* C7: Footer Lead Magnet CTA */}

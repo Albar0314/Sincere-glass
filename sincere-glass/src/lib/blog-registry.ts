@@ -154,6 +154,38 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'SOP v2 rewrite: factory POV, standards citations, buyer FAQ, lead magnet CTA, related products' },
     ],
   },
+
+  {
+    slug: 'insulated-glass-vs-laminated-glass',
+    title: 'Insulated Glass vs Laminated Glass: Which One Does Your Project Actually Need?',
+    excerpt: 'IGU for thermal insulation. Laminated for safety and sound. Pick by scenario (not by spec sheet) with 5 buyer archetypes, performance radar comparison, and cost reality from a Wuhan factory.',
+    targetKeyword: 'insulated glass vs laminated glass',
+    secondaryKeywords: ['IGU vs laminated glass', 'laminated vs insulated', 'double glazing vs laminated', 'IG vs PVB glass'],
+    searchKeywords: [
+      'insulated vs laminated', 'laminated vs insulated', 'IGU vs laminated',
+      'IG vs laminated', 'double glazing vs laminated', 'thermal vs acoustic glass',
+      'IGU', 'PVB', 'SGP', 'U-value', 'STC', 'Low-E', 'argon fill',
+      '中空玻璃 夹胶玻璃', '中空 夹胶 对比', '隔音 隔热 玻璃', '玻璃选型 中空 夹胶',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Buyer Guide' as const,
+    tags: ['insulated glass', 'laminated glass', 'IGU', 'PVB', 'acoustic glass', 'thermal performance'],
+    heroImage: '/images/blog/insulated-vs-laminated-hero.webp',
+    heroImageAlt: 'Side-by-side cross-section comparison: insulated glass unit with argon gap vs laminated glass with PVB interlayer',
+    heroImagePrompt: 'Studio product photography, two architectural glass samples side by side on polished dark concrete surface. Left: insulated glass unit cross-section showing two glass panes separated by a visible aluminum spacer with argon-gap, Low-E coating gives subtle gold tint to inner surface. Right: laminated glass cross-section showing two glass panes bonded by thin translucent PVB interlayer with one small spider-web crack held in place by the interlayer. 45-degree camera angle, soft daylight from above-left, shallow depth of field. Neutral grey and warm amber accent lighting. No text, no humans, 4K photorealistic, museum-exhibit quality.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 11,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'comparison' as const,
+    cluster: 'comparison',
+    relatedProductSlugs: ['insulated-glass', 'laminated-glass', 'low-e-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
