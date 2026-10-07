@@ -15,17 +15,6 @@ import InsulatedFAQ from "@/components/products/insulated/InsulatedFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 
-export const metadata: Metadata = {
-  title: "Insulated Glass Manufacturer China — Double & Triple Glazing | Sincere Glass",
-  description: "Custom insulated glass units (IGUs) from China. Argon gas fill, Low-E coating options, spacers from 6-20mm. 1.5× wind resistance, 3C certified. Factory-direct pricing.",
-  openGraph: {
-    title: "Insulated Glass (IGU) Manufacturer — Sincere Glass",
-    description: "Energy-efficient insulated glass units with automated argon filling. Double-sealed, 3C certified.",
-    url: "https://sincereglass.com/products/insulated-glass",
-    images: [{ url: "https://sincereglass.com/images/products/insulated.jpg" }],
-  },
-};
-
 const faqItems = [
   { q: "What is insulated glass (IGU)?", a: "An insulated glass unit consists of two or more glass panes separated by a sealed air or gas-filled space. The sealed gap acts as thermal and acoustic insulation, significantly reducing heat transfer and noise compared to single-pane glass." },
   { q: "What gas fills do you offer?", a: "We offer both air-filled and argon gas-filled IGUs. Our Honghu factory has an automated argon gas-filling production line that ensures consistent fill rates. Argon reduces heat transfer by about 30% compared to air-filled units." },
