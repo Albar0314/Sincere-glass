@@ -115,7 +115,7 @@ export const blogArticles: BlogArticle[] = [
     featured: true,
     // SOP v2 fields
     reviewedBy: { name: 'Albar', title: 'Technical Lead' },
-    articleType: 'Comparison' as const,
+    articleType: 'comparison' as const,
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
     translations: {},
     changelog: [
