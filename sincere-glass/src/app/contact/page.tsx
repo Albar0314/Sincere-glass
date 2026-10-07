@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
 import ContactClient from "@/components/contact/ContactClient";
 
 export const metadata: Metadata = {
