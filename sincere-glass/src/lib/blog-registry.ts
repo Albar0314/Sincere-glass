@@ -288,6 +288,39 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish — first article in Technical Guides cluster' },
     ],
   },
+
+  {
+    slug: 'how-is-laminated-glass-made',
+    title: "How Is Laminated Glass Made? Inside the Autoclave That Chemically Fuses Glass to PVB",
+    excerpt: "Not just 'two panes with plastic between.' A factory walk-through of the lamination autoclave cycle: 140°C, 12 bar, 2.5 hours — plus the PVB vs SGP decision, dust-free assembly, and the defects nobody writes about.",
+    targetKeyword: 'how is laminated glass made',
+    secondaryKeywords: ['laminated glass manufacturing process', 'how laminated glass is made', 'laminated glass production', 'glass lamination process'],
+    searchKeywords: [
+      'how is laminated glass made', 'laminated glass manufacturing',
+      'glass lamination process', 'how to laminate glass', 'laminated glass production line',
+      'autoclave lamination', 'PVB lamination', 'SGP lamination',
+      'autoclave', 'PVB', 'SGP', 'SentryGlas', 'EVA interlayer', 'acoustic PVB',
+      '夹胶玻璃生产', '夹胶玻璃工艺', '玻璃夹胶流程', 'PVB夹胶',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Technical Guide' as const,
+    tags: ['laminated glass', 'manufacturing', 'autoclave', 'PVB', 'SGP', 'production process'],
+    heroImage: '/images/blog/how-laminated-glass-made-hero.webp',
+    heroImageAlt: 'Industrial glass lamination autoclave with large laminated glass panels being loaded into the cylindrical pressure vessel, viewed from the loading end',
+    heroImagePrompt: 'Industrial photography of a glass lamination autoclave facility. A large cylindrical autoclave (approximately 3m diameter, 15m long) in a modern factory, cylindrical door open at the loading end revealing a stack of multi-layer architectural glass panels on a loading rack ready to enter. The glass panels show the characteristic translucent PVB interlayer sandwich (3 layers: glass + PVB + glass) with slight blue-green tint. Industrial lighting from overhead fluorescents mixing with warm amber accent lighting on the autoclave shell. Visible pressure gauges, control panel, and safety barriers in the frame. 20-degree camera angle from the operator viewing position, shallow depth of field focused on the open autoclave door and loaded panels. Clean industrial environment, no humans in frame. 4K photorealistic, documentary-style, no text or watermarks.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 15,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'technical' as const,
+    cluster: 'technical',
+    relatedProductSlugs: ['laminated-glass', 'tempered-glass', 'insulated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish — second article in Technical Guides cluster' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

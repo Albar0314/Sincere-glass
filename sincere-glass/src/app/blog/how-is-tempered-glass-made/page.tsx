@@ -339,6 +339,19 @@ export default function Page() {
 
         <FAQ items={buyerFaqItems} />
 
+        
+        <TechNote type="note" title="Companion read">
+          <p>
+            Now that you know how tempered glass is made, see how its companion safety
+            product is produced in our{' '}
+            <a href="/blog/how-is-laminated-glass-made">
+              laminated glass production walk-through
+            </a>{' '}
+            — autoclave chemistry, PVB vs SGP interlayer selection, and the defects that
+            trace back to process discipline.
+          </p>
+        </TechNote>
+
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'low-e-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="how-is-tempered-glass-made" />
