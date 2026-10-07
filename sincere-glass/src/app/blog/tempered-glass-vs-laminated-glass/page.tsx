@@ -11,6 +11,7 @@ import LeadMagnetCTA from '@/components/blog/LeadMagnetCTA';
 import BreakagePatternSVG from './BreakagePatternSVG';
 import ManufacturingComparisonSVG from './ManufacturingComparisonSVG';
 import DecisionMatrix from './DecisionMatrix';
+import { TechNote } from '@/components/blog/blocks';
 
 const SLUG = 'tempered-glass-vs-laminated-glass';
 const article = blogArticles.find((a) => a.slug === SLUG)!;
