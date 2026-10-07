@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import {
   getAllArticles,
   getFeaturedArticle,
-  CATEGORY_LABELS,
-  type BlogCategory,
+  CLUSTER_LABELS,
+  type BlogCluster,
 } from '@/lib/blog-registry';
 import BlogCard from '@/components/blog/BlogCard';
 
@@ -20,13 +20,52 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function BlogPage() {
-  const articles = getAllArticles();
-  const featured = getFeaturedArticle();
-  const rest = articles.filter((a) => a.slug !== featured?.slug);
+function ClusterTabs({ active }: { active?: string }) {
+  const clusters = Object.entries(CLUSTER_LABELS) as [BlogCluster, string][];
+  return (
+    <div className="flex flex-wrap gap-2 mb-10">
+      <a
+        href="/blog"
+        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+          !active
+            ? 'bg-[#DAA745] text-[#1C1F26]'
+            : 'bg-[#1C1F26]/50 text-[#8B95A5] hover:text-white border border-[#3A4250]'
+        }`}
+      >
+        All
+      </a>
+      {clusters.map(([key, label]) => (
+        <a
+          key={key}
+          href={`/blog?cluster=${key}`}
+          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            active === key
+              ? 'bg-[#DAA745] text-[#1C1F26]'
+              : 'bg-[#1C1F26]/50 text-[#8B95A5] hover:text-white border border-[#3A4250]'
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  );
+}
 
-  // Collect unique categories from published articles
-  const categories = Array.from(new Set(articles.map((a) => a.category)));
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cluster?: string }>;
+}) {
+  const params = await searchParams;
+  const clusterFilter = params.cluster as BlogCluster | undefined;
+
+  const allArticles = getAllArticles();
+  const filtered = clusterFilter
+    ? allArticles.filter((a) => a.cluster === clusterFilter)
+    : allArticles;
+
+  const featured = !clusterFilter ? getFeaturedArticle() : filtered[0];
+  const rest = filtered.filter((a) => a.slug !== featured?.slug);
 
   return (
     <>
@@ -34,7 +73,7 @@ export default function BlogPage() {
       <section className="bg-[#1C1F26] pt-28 pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-[#F2F0ED] mb-4">
-            Insights & Resources
+            {clusterFilter ? CLUSTER_LABELS[clusterFilter] : 'Insights & Resources'}
           </h1>
           <p className="text-lg text-[#8B95A5] max-w-2xl leading-relaxed">
             Technical guides, industry analysis, and practical knowledge
@@ -46,7 +85,10 @@ export default function BlogPage() {
       {/* Content */}
       <section className="bg-[#1C1F26] pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          {articles.length === 0 ? (
+          {/* Cluster filter tabs */}
+          <ClusterTabs active={clusterFilter} />
+
+          {filtered.length === 0 ? (
             /* Empty state */
             <div className="text-center py-24">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#3A4250]/20 flex items-center justify-center">
@@ -55,12 +97,19 @@ export default function BlogPage() {
                 </svg>
               </div>
               <h2 className="text-xl font-medium text-[#F2F0ED] mb-2">
-                Articles coming soon
+                {clusterFilter
+                  ? `No articles in ${CLUSTER_LABELS[clusterFilter]} yet`
+                  : 'Articles coming soon'}
               </h2>
               <p className="text-[#8B95A5] max-w-md mx-auto">
                 We&apos;re preparing in-depth technical guides and industry insights.
-                Check back shortly for our first publications.
+                Check back shortly for new publications.
               </p>
+              {clusterFilter && (
+                <a href="/blog" className="inline-block mt-4 text-sm text-[#DAA745] hover:underline">
+                  ← View all articles
+                </a>
+              )}
             </div>
           ) : (
             <>
@@ -71,27 +120,14 @@ export default function BlogPage() {
                 </div>
               )}
 
-              {/* Category filter — shown only if 2+ categories */}
-              {categories.length > 1 && (
-                <div className="flex flex-wrap gap-2 mb-10">
-                  <span className="text-xs text-[#8B95A5] self-center mr-2">Filter:</span>
-                  {categories.map((cat) => (
-                    <span
-                      key={cat}
-                      className="text-xs px-3 py-1.5 rounded-full border border-[#3A4250]/30 text-[#8B95A5] hover:border-[#DAA745]/40 hover:text-[#DAA745] transition-colors cursor-default"
-                    >
-                      {CATEGORY_LABELS[cat]}
-                    </span>
+              {/* Article grid */}
+              {rest.length > 0 && (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {rest.map((article) => (
+                    <BlogCard key={article.slug} article={article} />
                   ))}
                 </div>
               )}
-
-              {/* Article grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {rest.map((article) => (
-                  <BlogCard key={article.slug} article={article} />
-                ))}
-              </div>
             </>
           )}
         </div>

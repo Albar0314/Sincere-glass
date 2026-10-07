@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { BlogArticle } from '@/lib/blog-registry';
-import { getRelatedArticles } from '@/lib/blog-registry';
+import { getRelatedArticles, CLUSTER_LABELS} from '@/lib/blog-registry';
 import ReadingProgress from './ReadingProgress';
 import TableOfContents from './TableOfContents';
 import AuthorCard from './AuthorCard';
@@ -99,7 +99,7 @@ export default function BlogArticleLayout({
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' },
-    { name: article.category, url: `/blog?category=${encodeURIComponent(article.category)}` },
+    { name: CLUSTER_LABELS[article.cluster] || article.category, url: `/blog?cluster=${article.cluster}` },
     { name: article.title, url: `/blog/${article.slug}` },
   ];
 

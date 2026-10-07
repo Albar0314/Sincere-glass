@@ -29,6 +29,8 @@ export interface BlogArticle {
   relatedProductSlugs?: string[];
   /** Article type — drives component template selection */
   articleType?: 'comparison' | 'technical' | 'buyer-guide' | 'case-study';
+  /** Topic cluster this article belongs to — drives breadcrumb hierarchy + listing filters */
+  cluster: BlogCluster;
   /** Translation slug map for hreflang. Add entries when translations publish. */
   translations?: Partial<Record<'es' | 'de' | 'ar' | 'fr' | 'ru', string>>;
   /** Changelog entries, shown at end of article in "Updated on" block */
@@ -52,6 +54,31 @@ export const CATEGORY_LABELS: Record<BlogCategory, string> = {
   'Project Case Study': 'Case Study',
   'Buyer Guide': "Buyer's Guide",
   'Manufacturing': 'Manufacturing',
+};
+
+// ─── Topic Clusters (URL stays flat; hierarchy via breadcrumbs only) ────────
+export type BlogCluster =
+  | 'comparison'      // Glass Comparisons — tempered vs laminated, etc.
+  | 'technical'       // Technical Guides — manufacturing, specs, standards
+  | 'application'     // Applications — curtain wall, shower, skylight
+  | 'buyer-guide'     // Buyer's Guide — sourcing, MOQ, logistics, certs
+  | 'product';        // Product Deep Dives — long-tail product keywords
+
+export const CLUSTER_LABELS: Record<BlogCluster, string> = {
+  comparison: 'Glass Comparisons',
+  technical: 'Technical Guides',
+  application: 'Applications',
+  'buyer-guide': "Buyer's Guide",
+  product: 'Product Deep Dives',
+};
+
+/** Cluster descriptions — used in future Pillar Pages and meta descriptions */
+export const CLUSTER_DESCRIPTIONS: Record<BlogCluster, string> = {
+  comparison: 'Side-by-side comparisons of architectural glass types to help you choose the right product for your project.',
+  technical: 'In-depth technical articles on glass manufacturing processes, standards, and specifications.',
+  application: 'How different glass types perform in real-world architectural applications.',
+  'buyer-guide': 'Practical guides for sourcing, importing, and specifying architectural glass from China.',
+  product: 'Detailed product guides covering specifications, pricing, and selection criteria.',
 };
 
 // Default author per project preferences
