@@ -3,6 +3,8 @@
 import { useState, FormEvent } from "react";
 import { useInView } from "@/lib/useInView";
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 const factories = [
   {
     name: "Wuhan Factory",
@@ -57,15 +59,43 @@ const contactMethods = [
 export default function ContactClient() {
   const { ref: formRef, isInView: formVisible } = useInView();
   const { ref: factRef, isInView: factVisible } = useInView();
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setStatus("submitting");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const data = {
+      firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value.trim(),
+      lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value.trim(),
+      email: (form.elements.namedItem("email") as HTMLInputElement).value.trim(),
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value.trim(),
+      subject: (form.elements.namedItem("subject") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim(),
+      // Honeypot
+      _hp_website: (form.elements.namedItem("_hp_website") as HTMLInputElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Submission failed");
+      }
+
+      setStatus("success");
+    } catch (err: unknown) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   }
 
   return (
@@ -76,7 +106,7 @@ export default function ContactClient() {
           <div className="max-w-3xl">
             <p className="text-brand-accent text-sm font-semibold uppercase tracking-wider mb-3">Contact Us</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight">
-              Let’s Talk About Your Project
+              Let&apos;s Talk About Your Project
             </h1>
             <p className="mt-4 text-white/60 text-lg">
               Whether you need a quick quote or want to discuss a complex specification — we respond within 24 hours.
@@ -118,7 +148,7 @@ export default function ContactClient() {
               <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-dark tracking-tight">Send Us a Message</h2>
               <p className="mt-2 text-brand-muted">Fill in the details below and we will get back to you within one business day.</p>
 
-              {submitted ? (
+              {status === "success" ? (
                 <div className="mt-10 p-8 rounded-2xl bg-brand-lighter border border-brand-light text-center">
                   <div className="w-14 h-14 mx-auto rounded-full bg-green-500/10 flex items-center justify-center">
                     <svg className="w-7 h-7 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -127,49 +157,77 @@ export default function ContactClient() {
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-brand-dark">Message sent!</h3>
                   <p className="mt-2 text-brand-muted text-sm">Our team will review your inquiry and respond within 24 hours.</p>
+                  <button
+                    onClick={() => { setStatus("idle"); setErrorMsg(""); }}
+                    className="mt-4 px-6 py-2 bg-brand-accent text-brand-dark font-semibold rounded-lg hover:bg-brand-accent-hover transition-colors text-sm"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                  {/* Honeypot — hidden from humans */}
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <label htmlFor="_hp_website">Do not fill this</label>
+                    <input type="text" id="_hp_website" name="_hp_website" tabIndex={-1} autoComplete="off" />
+                  </div>
+
+                  {status === "error" && (
+                    <div className="p-3 bg-red-50 text-red-700 text-sm rounded-lg border border-red-200">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-brand-dark mb-1.5">Full Name *</label>
-                      <input type="text" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your name" />
+                      <label className="block text-sm font-medium text-brand-dark mb-1.5">First Name *</label>
+                      <input type="text" name="firstName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your first name" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-brand-dark mb-1.5">Company</label>
-                      <input type="text" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Company name" />
+                      <label className="block text-sm font-medium text-brand-dark mb-1.5">Last Name *</label>
+                      <input type="text" name="lastName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your last name" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">Email *</label>
-                      <input type="email" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" />
+                      <input type="email" name="email" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">Phone / WhatsApp</label>
-                      <input type="tel" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="+country code" />
+                      <input type="tel" name="phone" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="+country code" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-brand-dark mb-1.5">Subject</label>
-                    <select className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark focus:outline-none focus:border-brand-accent transition-colors">
-                      <option value="">Select a topic</option>
-                      <option value="quote">Request a quote</option>
-                      <option value="sample">Request a sample</option>
-                      <option value="visit">Schedule a factory visit</option>
-                      <option value="technical">Technical consultation</option>
-                      <option value="partnership">Partnership inquiry</option>
-                      <option value="other">Other</option>
+                    <select name="subject" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark focus:outline-none focus:border-brand-accent transition-colors">
+                      <option value="General Inquiry">Select a topic</option>
+                      <option value="Product Quote Request">Request a quote</option>
+                      <option value="Sample Request">Request a sample</option>
+                      <option value="Factory Visit">Schedule a factory visit</option>
+                      <option value="Technical Specifications">Technical consultation</option>
+                      <option value="Partnership / Distribution">Partnership inquiry</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-brand-dark mb-1.5">Message *</label>
-                    <textarea required rows={5} className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors resize-none"
+                    <textarea name="message" required rows={5} className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors resize-none"
                       placeholder="Tell us about your project: glass type, dimensions, quantity, timeline..." />
                   </div>
-                  <button type="submit" disabled={loading}
-                    className="w-full sm:w-auto px-8 py-3 bg-brand-accent hover:bg-brand-accent-hover disabled:opacity-60 text-brand-dark font-semibold rounded-lg transition-colors text-sm">
-                    {loading ? "Sending..." : "Send Message"}
+                  <button type="submit" disabled={status === "submitting"}
+                    className="w-full sm:w-auto px-8 py-3 bg-brand-accent hover:bg-brand-accent-hover disabled:opacity-60 text-brand-dark font-semibold rounded-lg transition-colors text-sm flex items-center justify-center gap-2">
+                    {status === "submitting" ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               )}
