@@ -59,7 +59,7 @@ export default function Page() {
       ))}
 
       <BlogArticleLayout article={article} toc={toc}>
-        <TLDRBox items={[
+        <TLDRBox takeaways={[
           'Insulated glass (IGU) is for thermal insulation; laminated glass is for safety and sound.',
           'Low-E coated IGU can cut heating/cooling bills by 30-50% — laminated glass changes U-value negligibly.',
           'Laminated glass is code-required for overhead glazing, balustrades, and most storefronts; IGU is not.',
