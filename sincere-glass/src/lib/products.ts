@@ -8,6 +8,8 @@ export interface Product {
   features: { title: string; desc: string }[];
   applications: string[];
   standard: string;
+  /** Synonyms, abbreviations, industry terms, and CN translations for search */
+  searchKeywords: string[];
 }
 
 export const products: Product[] = [
@@ -21,7 +23,8 @@ export const products: Product[] = [
     ],
     image: "/images/products/tempered.jpg",
     specs: [
-      { label: "Thickness", value: "3.8mm – 19mm" },
+      { label: "Thickness", value: "3.8mm – 19mm"     searchKeywords: ["tempered", "toughened", "safety glass", "strengthened glass", "heat strengthened", "thermally toughened", "3C certified", "CCC", "curtain wall", "shower", "balustrade", "railing", "skylight", "钢化玻璃", "钢化", "安全玻璃", "强化玻璃"],
+  },
       { label: "Max Panel Size", value: "3,000mm × 15,000mm" },
       { label: "Strength", value: "4-5× ordinary glass" },
       { label: "Thermal Resistance", value: "3× ordinary float glass" },
@@ -54,7 +57,8 @@ export const products: Product[] = [
     ],
     image: "/images/products/insulated.jpg",
     specs: [
-      { label: "Spacer Options", value: "6mm, 9mm, 12mm, 15mm, 20mm" },
+      { label: "Spacer Options", value: "6mm, 9mm, 12mm, 15mm, 20mm"     searchKeywords: ["insulated", "insulating", "IGU", "double glazing", "triple glazing", "DGU", "double pane", "thermal", "energy efficient", "U-value", "argon filled", "warm edge", "spacer", "sealed unit", "中空玻璃", "中空", "双层玻璃", "节能玻璃"],
+  },
       { label: "Glass Options", value: "Clear, Low-E, tinted, reflective" },
       { label: "Gas Fill", value: "Air or Argon (automated filling line)" },
       { label: "Seal Type", value: "Dual-seal (PIB + structural silicone)" },
@@ -87,7 +91,8 @@ export const products: Product[] = [
     ],
     image: "/images/products/laminated.jpg",
     specs: [
-      { label: "Configuration", value: "2-layer, multi-layer, or jumbo laminated" },
+      { label: "Configuration", value: "2-layer, multi-layer, or jumbo laminated"     searchKeywords: ["laminated", "lami", "PVB", "SGP", "SentryGlas", "safety glass", "security glass", "soundproof", "acoustic", "sound reduction", "noise reduction", "STC", "hurricane", "impact resistant", "burglar proof", "bullet resistant", "bomb blast", "夹胶玻璃", "夹层玻璃", "夹胶", "隔音玻璃", "安全玻璃"],
+  },
       { label: "Interlayer", value: "PVB (standard) or SGP (structural)" },
       { label: "UV Blocking", value: "> 99% ultraviolet radiation" },
       { label: "Sound Insulation", value: "Filters 1000Hz – 2000Hz noise" },
@@ -120,7 +125,8 @@ export const products: Product[] = [
     ],
     image: "/images/products/enameled.jpg",
     specs: [
-      { label: "Colors", value: "Custom RAL / Pantone color matching" },
+      { label: "Colors", value: "Custom RAL / Pantone color matching"     searchKeywords: ["enameled", "enamelled", "ceramic frit", "frit", "spandrel", "back painted", "colored glass", "decorative glass", "silkscreen", "ceramic ink", "opaque glass", "spandrel panel", "彩釉玻璃", "彩釉", "釉面玻璃", "装饰玻璃", "丝印玻璃"],
+  },
       { label: "Patterns", value: "Dots, lines, gradients, custom designs" },
       { label: "Durability", value: "Will not fade, peel, or delaminate" },
       { label: "Resistance", value: "Acid, alkali, and abrasion resistant" },
@@ -154,7 +160,8 @@ export const products: Product[] = [
     ],
     image: "/images/products/insulated.jpg",
     specs: [
-      { label: "Coating Type", value: "Soft-coat (sputtered) or Hard-coat (pyrolytic)" },
+      { label: "Coating Type", value: "Soft-coat (sputtered) or Hard-coat (pyrolytic)"     searchKeywords: ["low-e", "low emissivity", "lowe", "low e", "coated glass", "soft coat", "hard coat", "pyrolytic", "sputtered", "magnetron", "solar control", "SHGC", "heat reflective", "energy saving", "LEED", "passive house", "green building", "Low-E玻璃", "低辐射玻璃", "镀膜玻璃", "节能玻璃"],
+  },
       { label: "Emissivity", value: "0.05 - 0.15 (vs 0.84 for uncoated glass)" },
       { label: "Visible Light Transmission", value: "60% - 80%" },
       { label: "Solar Heat Gain Coefficient", value: "0.22 - 0.49" },

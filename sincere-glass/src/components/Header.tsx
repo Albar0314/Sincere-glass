@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearch } from '@/components/SearchModal';
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
@@ -22,6 +23,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const { openSearch } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +53,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-[68px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
+          <button
+                onClick={() => { setMobileOpen(false); openSearch(); }}
+                className="flex items-center gap-3 px-3 py-3 text-white/70 hover:text-white transition-colors w-full text-left"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="11" cy="11" r="8" />
+                  <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
+                </svg>
+                Search
+              </button>
+              <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/images/logo.png"
               alt="Sincere Glass"

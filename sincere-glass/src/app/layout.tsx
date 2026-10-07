@@ -1,3 +1,4 @@
+import { SearchProvider } from '@/components/SearchModal';
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import { getOrganizationSchema, getWebsiteSchema } from "@/lib/schema";
@@ -25,13 +26,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans text-brand-dark antialiased flex flex-col min-h-screen">
         <JsonLd data={getOrganizationSchema()} />
         <JsonLd data={getWebsiteSchema()} />
-        <QuoteProvider>
+        <SearchProvider>
+          <QuoteProvider>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFloat />
           <QuoteModal />
         </QuoteProvider>
+          </SearchProvider>
         <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){

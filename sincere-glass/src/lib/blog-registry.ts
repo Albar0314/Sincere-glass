@@ -4,6 +4,8 @@ export interface BlogArticle {
   excerpt: string;
   targetKeyword: string;
   secondaryKeywords?: string[];
+  /** Synonyms, abbreviations, CN translations — powers fuzzy search */
+  searchKeywords: string[];
   publishDate: string;        // YYYY-MM-DD
   updatedDate?: string;
   category: BlogCategory;
@@ -123,6 +125,7 @@ export const blogArticles: BlogArticle[] = [
     title: 'Tempered Glass vs Laminated Glass: 7 Differences Buyers Must Know',
     excerpt: 'Compare breakage patterns, strength, cost, UV and sound performance side by side. Includes interactive visuals, an application decision matrix, and buyer procurement FAQ from a glass manufacturer.',
     targetKeyword: 'tempered glass vs laminated glass',
+    searchKeywords: ['tempered vs laminated', 'tempered or laminated', 'safety glass comparison', 'laminated vs tempered', 'glass selection', 'glass types', 'PVB vs tempered', 'breakage pattern', 'safety glazing', 'facade glass', '钢化 夹胶', '安全玻璃 对比', '钢化玻璃 夹胶玻璃', '玻璃选型'],
     secondaryKeywords: [
       'tempered vs laminated glass',
       'difference between tempered and laminated glass',

@@ -14,7 +14,8 @@
     "next": "^14.2.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "resend": "^6.32.1"
+    "resend": "^6.32.1",
+    "fuse.js": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
