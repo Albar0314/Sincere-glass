@@ -51,8 +51,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-[68px]">
           {/* Logo */}
-          <Link href="/" className="font-display text-xl font-bold text-white tracking-tight">
-            Sincere Glass
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image
+              src="/images/logo.png"
+              alt="Sincere Glass"
+              width={36}
+              height={36}
+              className="w-9 h-9 object-contain"
+              priority
+            />
+            <span className="font-display text-lg font-bold text-white tracking-tight">
+              Sincere Glass
+            </span>
           </Link>
 
           {/* Desktop nav */}

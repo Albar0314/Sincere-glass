@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const productLinks = [
   { label: "Tempered Glass", href: "/products/tempered-glass" },
@@ -23,9 +24,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-white text-lg font-bold mb-3">
-              Sincere Glass
-            </h3>
+            <div className="flex items-center gap-2.5 mb-3">
+              <Image
+                src="/images/logo.png"
+                alt="Sincere Glass"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain"
+              />
+              <h3 className="font-display text-white text-lg font-bold">
+                Sincere Glass
+              </h3>
+            </div>
             <p className="text-sm leading-relaxed">
               Architectural glass manufacturer in China with 15+ years of
               experience. Custom tempered, insulated, laminated, and enameled
