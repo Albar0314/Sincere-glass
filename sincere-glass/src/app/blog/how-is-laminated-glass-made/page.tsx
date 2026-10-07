@@ -350,6 +350,18 @@ export default function Page() {
 
         <FAQ items={buyerFaqItems} />
 
+        
+        <TechNote type="note" title="Complete the trilogy">
+          <p>
+            See the third fabrication process in our Technical Guides series:{' '}
+            <a href="/blog/how-is-insulated-glass-made">
+              how insulated glass units (IGUs) are made
+            </a>{' '}
+            — many of our customers specify laminated-IGU combined units, which run
+            through both the lamination autoclave and the IGU assembly line in sequence.
+          </p>
+        </TechNote>
+
         <RelatedProductsCards slugs={['laminated-glass', 'tempered-glass', 'insulated-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="how-is-laminated-glass-made" />

@@ -321,6 +321,39 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish — second article in Technical Guides cluster' },
     ],
   },
+
+  {
+    slug: 'how-is-insulated-glass-made',
+    title: "How Is Insulated Glass Made? Inside the 25-Year Sealed System That Cuts Heat Loss by 70%",
+    excerpt: "An IGU is not just two panes with a gap. Five components, 8 assembly stations, dual-seal chemistry, argon fill mechanics, and the QC tests that separate a 30-year unit from a 10-year failure. Factory walk-through from Wuhan.",
+    targetKeyword: 'how is insulated glass made',
+    secondaryKeywords: ['insulated glass manufacturing', 'IGU production process', 'how insulated glass is made', 'double glazing production', 'insulated glass assembly'],
+    searchKeywords: [
+      'how is insulated glass made', 'insulated glass manufacturing', 'IGU production',
+      'double glazing production', 'IGU assembly', 'insulated glass unit production',
+      'how to make IGU', 'argon fill IGU', 'warm edge spacer', 'IGU dual seal',
+      'IGU', 'DGU', 'spacer bar', 'desiccant', 'PIB', 'silicone secondary seal',
+      '中空玻璃生产', '中空玻璃工艺', '中空玻璃组装', '氩气填充',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Technical Guide' as const,
+    tags: ['insulated glass', 'IGU', 'manufacturing', 'argon fill', 'warm-edge spacer', 'production process'],
+    heroImage: '/images/blog/how-insulated-glass-made-hero.webp',
+    heroImageAlt: 'Industrial insulated glass unit assembly line showing a large IGU being sealed with argon gas injection and dual seal application',
+    heroImagePrompt: 'Industrial photography of a modern automated insulated glass unit (IGU) production line. Center frame: a large architectural glass panel (approximately 2m x 3m) with visible aluminum spacer bar being assembled into a sealed IGU. Fine jets of argon gas filling the cavity between two glass lites, with black butyl primary seal visible along the edges and silicone secondary seal being applied by robotic arm. Background: continuous production line with multiple IGU panels at various stations. Industrial lighting from overhead with warm amber accent lighting on the glass creating subtle reflections. 25-degree camera angle from the operator viewing position, shallow depth of field focused on the central panel. Clean modern factory environment, visible safety barriers, pressure gauges, and gas supply lines. No humans in frame. 4K photorealistic, documentary-style, no text or watermarks.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 16,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'technical' as const,
+    cluster: 'technical',
+    relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish — third article in Technical Guides cluster (unlocks Pillar)' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

@@ -352,6 +352,18 @@ export default function Page() {
           </p>
         </TechNote>
 
+        
+        <TechNote type="note" title="Complete the trilogy">
+          <p>
+            See the third fabrication process in our Technical Guides series:{' '}
+            <a href="/blog/how-is-insulated-glass-made">
+              how insulated glass units (IGUs) are made
+            </a>{' '}
+            — the 5-component sealed system, argon fill mechanics, and dual-seal
+            chemistry that determines whether an IGU lasts 10 or 30 years.
+          </p>
+        </TechNote>
+
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'low-e-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="how-is-tempered-glass-made" />
