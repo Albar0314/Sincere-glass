@@ -14,7 +14,25 @@ export interface BlogArticle {
   author: {
     name: string;
     url: string;
+    title?: string;   // v2: shown in AuthorBioBox
+    bio?: string;     // v2: short bio paragraph for AuthorBioBox
+    image?: string;   // v2: path under /public, e.g. /images/author-images.jpg
   };
+  // --- SOP v2 fields ---
+  /** Technical reviewer, shown as "Reviewed by:" in AuthorBioBox */
+  reviewedBy?: { name: string; title?: string };
+  /** 3-5 key takeaways rendered as a TLDRBox at top of article */
+  tldr?: string[];
+  /** Buyer-intent FAQ (MOQ / shipping / cert); separate from spec FAQ */
+  buyerFaq?: Array<{ q: string; a: string }>;
+  /** Product slugs to render in RelatedProductsCards at end of article */
+  relatedProductSlugs?: string[];
+  /** Article type — drives component template selection */
+  articleType?: 'comparison' | 'technical' | 'buyer-guide' | 'case-study';
+  /** Translation slug map for hreflang. Add entries when translations publish. */
+  translations?: Partial<Record<'es' | 'de' | 'ar' | 'fr' | 'ru', string>>;
+  /** Changelog entries, shown at end of article in "Updated on" block */
+  changelog?: Array<{ date: string; note: string }>;
   readingTime: number;        // minutes
   featured?: boolean;
 }
@@ -38,8 +56,11 @@ export const CATEGORY_LABELS: Record<BlogCategory, string> = {
 
 // Default author per project preferences
 export const DEFAULT_AUTHOR = {
-  name: 'Yang Ruosong',
+  name: 'Li Cheng',
   url: 'https://sincereglass.com/about',
+  title: 'CEO at Sincere Glass',
+  bio: 'CEO at Sincere Glass (\u6b23\u57ce\u73bb\u7483) with 10+ years in architectural glass. Oversees production and quality at our 20,000 m\u00b2 Wuhan facility.',
+  image: '/images/author-images.jpg',
 };
 
 /**
@@ -70,6 +91,38 @@ export const blogArticles: BlogArticle[] = [
   //   readingTime: 12,
   //   featured: true,
   // },
+  {
+    slug: 'tempered-glass-vs-laminated-glass',
+    title: 'Tempered Glass vs Laminated Glass: 7 Differences Buyers Must Know',
+    excerpt: 'Compare breakage patterns, strength, cost, UV and sound performance side by side. Includes interactive visuals, an application decision matrix, and buyer procurement FAQ from a glass manufacturer.',
+    targetKeyword: 'tempered glass vs laminated glass',
+    secondaryKeywords: [
+      'tempered vs laminated glass',
+      'difference between tempered and laminated glass',
+      'toughened glass vs laminated glass',
+      'tempered laminated glass',
+      'safety glass comparison',
+    ],
+    publishDate: '2026-10-06',
+    updatedDate: '2026-10-07',
+    category: 'Buyer Guide' as const,
+    tags: ['tempered glass', 'laminated glass', 'safety glass', 'glass comparison', 'building glass', 'architectural glass'],
+    heroImage: '/images/blog/tempered-vs-laminated-hero.jpg',
+    heroImageAlt: 'Tempered glass and laminated glass cross-section comparison showing breakage patterns',
+    heroImagePrompt: 'Professional product photography: two pieces of safety glass side by side on a clean light grey surface. Left: tempered glass with small cuboid fragments scattered showing breakage pattern. Right: laminated glass with spider-web crack pattern, all fragments bonded by visible PVB interlayer. Soft studio lighting from above-left, shallow depth of field on cross-sections. Neutral greys, warm amber accent light. 30-degree elevated angle. No text, no people. 4K photorealistic.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 14,
+    featured: true,
+    // SOP v2 fields
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'Comparison' as const,
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-06', note: 'Initial publish' },
+      { date: '2026-10-07', note: 'SOP v2 rewrite: factory POV, standards citations, buyer FAQ, lead magnet CTA, related products' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

@@ -6,6 +6,9 @@ import TableOfContents from './TableOfContents';
 import AuthorCard from './AuthorCard';
 import RelatedPosts from './RelatedPosts';
 import BlogCTA from './BlogCTA';
+import AuthorBioBox from './AuthorBioBox';
+import BreadcrumbSchema, { BreadcrumbTrail } from './BreadcrumbSchema';
+import { hreflangAlternates } from '@/lib/hreflang'; /* SOP-v2-injected */
 
 export interface TOCItem {
   id: string;
@@ -29,6 +32,10 @@ export function generateArticleMetadata(article: BlogArticle): Metadata {
     description: article.excerpt,
     keywords: [article.targetKeyword, ...(article.secondaryKeywords || []), ...article.tags],
     authors: [{ name: article.author.name, url: article.author.url }],
+    alternates: {
+      canonical: `https://sincereglass.com/blog/${article.slug}`,
+      languages: hreflangAlternates(article.slug, article.translations),
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -89,19 +96,23 @@ export default function BlogArticleLayout({
 }: Props) {
   const related = getRelatedArticles(article.slug);
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    { name: article.category, url: `/blog?category=${encodeURIComponent(article.category)}` },
+    { name: article.title, url: `/blog/${article.slug}` },
+  ];
+
   return (
     <>
+      <BreadcrumbSchema crumbs={breadcrumbs} />
       <ReadingProgress />
 
       {/* Hero */}
       <section className="relative bg-[#1C1F26] pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="flex items-center gap-3 text-sm mb-6">
-            <a href="/blog" className="text-[#8B95A5] hover:text-[#DAA745] transition-colors">
-              Blog
-            </a>
-            <span className="text-[#8B95A5]/40">/</span>
-            <span className="text-[#DAA745]">{article.category}</span>
+          <div className="mb-6">
+            <BreadcrumbTrail crumbs={breadcrumbs} />
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#F2F0ED] leading-tight mb-6">
@@ -146,6 +157,7 @@ export default function BlogArticleLayout({
             >
               {children}
 
+              <AuthorBioBox article={article} />
               <BlogCTA title={ctaTitle} description={ctaDescription} />
             </article>
 
