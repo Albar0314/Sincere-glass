@@ -354,6 +354,41 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish — third article in Technical Guides cluster (unlocks Pillar)' },
     ],
   },
+
+  {
+    slug: 'architectural-glass-manufacturing-guide',
+    title: "Architectural Glass Manufacturing: The Complete Buyer's Process Guide",
+    excerpt: "Three fabrication processes — tempering, lamination, IGU assembly — convert raw annealed glass into every architectural product. A buyer's map to which process creates what, which supplier capabilities matter, and how to audit a factory properly.",
+    targetKeyword: 'architectural glass manufacturing process',
+    secondaryKeywords: ['glass manufacturing process', 'how is architectural glass made', 'glass fabrication process', 'glass production processes', 'architectural glass fabrication'],
+    searchKeywords: [
+      'architectural glass manufacturing', 'glass manufacturing process',
+      'glass fabrication', 'glass production processes', 'how is glass made',
+      'tempering lamination IGU', 'glass processing', 'glass factory process',
+      'tempering', 'lamination', 'IGU assembly', 'autoclave', 'glass furnace',
+      'glass pillar guide', 'glass manufacturing hub',
+      '建筑玻璃生产', '建筑玻璃工艺', '玻璃深加工', '玻璃制造流程',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Technical Guide' as const,
+    tags: ['architectural glass', 'manufacturing', 'tempering', 'lamination', 'IGU', 'pillar page', 'supplier audit'],
+    heroImage: '/images/blog/architectural-glass-manufacturing-hero.webp',
+    heroImageAlt: 'Modern architectural glass factory interior showing three parallel production lines: tempering furnace, lamination autoclave, and IGU assembly line, with large glass panels at various production stages',
+    heroImagePrompt: 'Wide-angle industrial photography of a modern architectural glass factory interior. Three distinct production lines visible in parallel: left side a horizontal tempering furnace with a glowing orange glass panel inside visible through the operator window, center a large cylindrical lamination autoclave (door open, racked laminated panels inside with visible translucent PVB interlayer), right side an IGU assembly station with a technician robot arm applying silicone secondary seal to an insulated glass unit. High ceiling with industrial lighting, polished concrete floor, visible safety barriers and overhead crane rails. Warm amber accent lighting from the tempering furnace glow pooling on nearby surfaces. 20-degree camera angle from a mezzanine viewing position, deep depth of field showing all three lines in focus. Clean modern factory environment, no humans in frame. 4K photorealistic, documentary-style, no text or watermarks.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 17,
+    featured: true,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'technical',
+    isPillar: true,
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish — Pillar Page for Technical Guides cluster' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

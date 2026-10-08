@@ -364,6 +364,19 @@ export default function Page() {
           </p>
         </TechNote>
 
+        
+        {/* Technical Pillar back-link */}
+        <TechNote type="note" title="Zoom out to the full picture">
+          <p>
+            This article is one of three deep-dives in our Technical Guides series.
+            For the buyer-level overview of all 3 fabrication processes and how they
+            map to supplier capabilities, see our{' '}
+            <a href="/blog/architectural-glass-manufacturing-guide">
+              complete architectural glass manufacturing guide
+            </a>.
+          </p>
+        </TechNote>
+
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'low-e-glass']} />
 
         <LeadMagnetCTA variant="footer" articleSlug="how-is-tempered-glass-made" />
