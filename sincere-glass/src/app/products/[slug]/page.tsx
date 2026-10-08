@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "@/components/LocalizedLink";
 import { products, getProduct } from "@/lib/products";
 import ProductDetailClient from "@/components/products/ProductDetailClient";
-
+import { makeAlternates } from "@/lib/i18n";
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
@@ -21,6 +21,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       url: "https://sincereglass.com/products/" + product.slug,
       images: [{ url: "https://sincereglass.com" + product.image }],
     },
+    alternates: makeAlternates(`/products/${params.slug}`)
   };
 }
 
