@@ -1,0 +1,139 @@
+'use client';
+
+import { useState } from 'react';
+interface Gas {
+  key: string;
+  name: string;
+  conductivity: number; // W/m·K at 20°C
+  cost: string;
+  uValue: number; // U-value of 6+12G+6 IGU with Low-E, W/m²·K
+  description: string;
+  color: string;
+}
+const gases: Gas[] = [{
+  key: 'air',
+  name: "Aire Seco",
+  conductivity: 0.0253,
+  cost: 'Free',
+  uValue: 1.8,
+  description: "Referencia estándar. Se seca antes del sellado para evitar condensación interna. Adecuado para proyectos con presupuesto ajustado y aplicaciones residenciales en climas suaves.",
+  color: '#94A3B8'
+}, {
+  key: 'argon',
+  name: 'Argon',
+  conductivity: 0.0177,
+  cost: '~$2-3/m² added',
+  uValue: 1.4,
+  description: "Mejora estándar en la industria. Conductividad térmica ~30% menor que la del aire. Llena aproximadamente el 90-95% de la cavidad (una pequeña fracción permanece como aire). La mejor relación coste/rendimiento para acristalamiento comercial.",
+  color: '#60A5FA'
+}, {
+  key: 'krypton',
+  name: 'Krypton',
+  conductivity: 0.0094,
+  cost: '~$30-50/m² added',
+  uValue: 1.1,
+  description: "Gas premium. ~2,7× más aislante que el aire. Se utiliza principalmente en cámaras estrechas (6-10 mm) donde el argón pierde rendimiento por convección. Habitual en UVA (Unidad de Vidrio Aislante) de triple acristalamiento y en construcción Passive House.",
+  color: '#A78BFA'
+}, {
+  key: 'xenon',
+  name: 'Xenon',
+  conductivity: 0.0052,
+  cost: '~$200+/m² added',
+  uValue: 0.9,
+  description: "Calidad de investigación. Raro en uso comercial por su coste. Se especifica principalmente para aplicaciones aeroespaciales de espesor ultra reducido o en laboratorios especializados. No justificable económicamente para el acristalamiento de edificios.",
+  color: '#F59E0B'
+}];
+const MAX_COND = 0.03;
+const MAX_U = 2.0;
+export default function GasConductivityChart() {
+  const [active, setActive] = useState('argon');
+  const current = gases.find(g => g.key === active)!;
+  return <div className="my-10 bg-[#3A4250]/10 border border-[#3A4250]/20 rounded-xl p-6 md:p-8">
+      <p className="text-xs uppercase tracking-wider text-[#DAA745] font-medium mb-5">
+        Opciones de relleno de gas — Impacto térmico
+      </p>
+
+      <div className="flex flex-wrap gap-2 mb-6">
+        {gases.map(g => {
+        const isActive = active === g.key;
+        return <button key={g.key} onClick={() => setActive(g.key)} className={'px-4 py-2 rounded-full text-sm font-medium transition-all border ' + (isActive ? 'text-white' : 'text-[#8B95A5] hover:text-[#F2F0ED] border-[#3A4250]/40')} style={isActive ? {
+          backgroundColor: g.color,
+          borderColor: g.color
+        } : {}}>
+              {g.name}
+            </button>;
+      })}
+      </div>
+
+      {/* Two-bar comparison */}
+      <div className="space-y-5 mb-6">
+        {/* Thermal conductivity bar */}
+        <div>
+          <div className="flex justify-between items-baseline mb-2">
+            <span className="text-sm font-medium text-[#F2F0ED]">
+              Conductividad térmica
+            </span>
+            <span className="text-sm font-mono text-[#DAA745]">
+              {current.conductivity.toFixed(4)} W/m·K
+            </span>
+          </div>
+          <div className="relative h-8 bg-[#1C1F26]/60 rounded-full overflow-hidden">
+            {/* All gases shown as transparent reference bars */}
+            {gases.map(g => <div key={g.key} className="absolute top-0 bottom-0 border-r" style={{
+            left: 0,
+            width: g.conductivity / MAX_COND * 100 + '%',
+            borderColor: g.color + (g.key === active ? 'FF' : '40'),
+            opacity: g.key === active ? 1 : 0.15,
+            backgroundColor: g.color,
+            transition: 'all 0.4s'
+          }} />)}
+            <div className="absolute inset-0 flex items-center justify-end pr-3">
+              <span className="text-xs text-[#8B95A5]">Menor valor = mejor aislamiento</span>
+            </div>
+          </div>
+        </div>
+
+        {/* U-value bar */}
+        <div>
+          <div className="flex justify-between items-baseline mb-2">
+            <span className="text-sm font-medium text-[#F2F0ED]">
+              Valor U resultante de la UVA (Unidad de Vidrio Aislante) <span className="text-xs text-[#8B95A5]">(6+12G+6, vidrio de baja emisividad (Low-E))</span>
+            </span>
+            <span className="text-sm font-mono text-[#DAA745]">
+              {current.uValue.toFixed(1)} W/m²·K
+            </span>
+          </div>
+          <div className="relative h-8 bg-[#1C1F26]/60 rounded-full overflow-hidden">
+            {gases.map(g => <div key={g.key} className="absolute top-0 bottom-0 border-r" style={{
+            left: 0,
+            width: g.uValue / MAX_U * 100 + '%',
+            borderColor: g.color + (g.key === active ? 'FF' : '40'),
+            opacity: g.key === active ? 1 : 0.15,
+            backgroundColor: g.color,
+            transition: 'all 0.4s'
+          }} />)}
+            <div className="absolute inset-0 flex items-center justify-end pr-3">
+              <span className="text-xs text-[#8B95A5]">Menor valor U = mejor rendimiento térmico global</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Detail panel */}
+      <div className="bg-[#1C1F26]/40 rounded-lg p-5 border" style={{
+      borderColor: current.color + '50'
+    }}>
+        <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+          <h4 className="text-lg font-bold m-0" style={{
+          color: current.color
+        }}>
+            {current.name}
+          </h4>
+          <span className="text-xs font-mono text-[#8B95A5]">
+            Coste adicional: {current.cost}
+          </span>
+        </div>
+        <p className="text-sm text-[#F2F0ED] leading-relaxed m-0">{current.description}</p>
+      </div>
+    </div>;
+}

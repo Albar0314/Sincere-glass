@@ -1,0 +1,70 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { products } from "@/lib/products";
+export const metadata: Metadata = {
+  title: "Productos de Vidrio — Templado, Aislante, Laminado y Esmaltado",
+  description: "Explore la gama completa de productos de Sincere Glass: vidrio templado, unidades de vidrio aislante, vidrio laminado de seguridad y vidrio esmaltado decorativo. Todos con certificación 3C.",
+  openGraph: {
+    title: "Productos de Vidrio Arquitectónico | Sincere Glass",
+    description: "Gama completa de vidrio arquitectónico con certificación 3C fabricado en China.",
+    url: "https://sincereglass.com/products"
+  }
+};
+export default function ProductsPage() {
+  return <main>
+      {/* Hero */}
+      <section className="bg-brand-dark pt-28 pb-16 md:pt-32 md:pb-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <p className="text-brand-accent text-sm font-semibold uppercase tracking-wider mb-3">Nuestros Productos</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight">
+            Soluciones de Vidrio Arquitectónico
+          </h1>
+          <p className="mt-4 text-white/60 text-lg max-w-xl">
+            Cada producto se fabrica internamente en nuestras dos fábricas en Hubei y cuenta con la certificación 3C de China.
+          </p>
+        </div>
+      </section>
+
+      {/* Product grid */}
+      <section className="py-16 md:py-24 bg-brand-lighter">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {products.map(product => <Link key={product.slug} href={"/products/" + product.slug} className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                  <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:768px) 100vw, 50vw" />
+                </div>
+                <div className="p-6">
+                  <h2 className="font-display text-xl font-bold text-brand-dark group-hover:text-brand-accent transition-colors">
+                    {product.name}
+                  </h2>
+                  <p className="mt-2 text-brand-muted text-sm leading-relaxed">{product.tagline}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {product.specs.slice(0, 3).map(s => <span key={s.label} className="px-2.5 py-1 bg-brand-lighter text-brand-muted text-xs rounded-full">
+                        {s.label}: {s.value}
+                      </span>)}
+                  </div>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-brand-accent group-hover:text-brand-accent-hover transition-colors">
+                    Ver Detalles
+                    <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>)}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 md:py-20 bg-brand-dark text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white">¿Necesita una Solución de Vidrio Personalizada?</h2>
+          <p className="mt-3 text-white/60">Fabricamos según sus especificaciones: espesor, recubrimiento, color y configuración.</p>
+          <a href="/#quote" className="inline-flex items-center justify-center mt-6 px-7 py-3.5 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark font-semibold rounded-md transition-colors">
+            Solicitar Cotización
+          </a>
+        </div>
+      </section>
+    </main>;
+}
