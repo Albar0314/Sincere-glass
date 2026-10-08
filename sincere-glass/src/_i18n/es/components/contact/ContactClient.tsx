@@ -242,8 +242,8 @@ export default function ContactClient() {
                   Tiempo de respuesta
                 </h3>
                 <div className="mt-3 space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-brand-muted">WhatsApp</span><span className="text-brand-accent font-medium">< 2 horas</span></div>
-                  <div className="flex justify-between"><span className="text-brand-muted">Email</span><span className="text-brand-accent font-medium">< 24 horas</span></div>
+                  <div className="flex justify-between"><span className="text-brand-muted">WhatsApp</span><span className="text-brand-accent font-medium">{"< 2 horas"}</span></div>
+                  <div className="flex justify-between"><span className="text-brand-muted">Email</span><span className="text-brand-accent font-medium">{"< 24 horas"}</span></div>
                   <div className="flex justify-between"><span className="text-brand-muted">Cotización detallada</span><span className="text-brand-accent font-medium">1–2 días hábiles</span></div>
                 </div>
               </div>

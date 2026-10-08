@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { useInView } from "@/lib/useInView";
 const projects = [{
   name: "Estación de Tren de Wuhan",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearch } from '@/components/SearchModal';
-import Link from "next/link";
+import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";

@@ -11,6 +11,7 @@ import crypto from 'crypto';
 import { parse } from '@babel/parser';
 import traverseModule from '@babel/traverse';
 import generateModule from '@babel/generator';
+import * as typesModule from '@babel/types';
 import Anthropic from '@anthropic-ai/sdk';
 import dotenv from 'dotenv';
 
@@ -19,6 +20,7 @@ dotenv.config();
 
 const traverse = traverseModule.default || traverseModule;
 const generate = generateModule.default || generateModule;
+const t = typesModule.default || typesModule; // handles both ESM default and CJS namespace
 
 // ============================================================
 // Config
@@ -391,6 +393,24 @@ export function extractTranslatable(sourceCode) {
       }
     },
 
+    ExportNamedDeclaration(p) {
+      // export { X } from 'Y' / export { default as X } from 'Y'
+      if (p.node.source) {
+        const src = p.node.source.value;
+        if (src.startsWith('@/') || src.startsWith('./') || src.startsWith('../')) {
+          localImports.add(src);
+        }
+      }
+    },
+
+    ExportAllDeclaration(p) {
+      // export * from 'Y' / export * as X from 'Y'
+      const src = p.node.source.value;
+      if (src.startsWith('@/') || src.startsWith('./') || src.startsWith('../')) {
+        localImports.add(src);
+      }
+    },
+
     JSXText(p) {
       const raw = p.node.value;
       const trimmed = raw.trim();
@@ -487,7 +507,35 @@ export function applyTranslations(ast, items, translations) {
   return generateCode(ast);
 }
 
+/**
+ * Convert JSXText nodes containing dangerous characters (< > { })
+ * into JSXExpressionContainer with a string literal, so Babel's code
+ * generator produces output that SWC can parse without ambiguity.
+ *
+ * Example:
+ *   <span>< 2 horas</span>  (invalid when generated as raw JSXText)
+ * becomes:
+ *   <span>{"< 2 horas"}</span>  (unambiguous expression container)
+ */
+function fixDangerousJSXText(ast) {
+  traverse(ast, {
+    JSXText(path) {
+      const raw = path.node.value;
+      if (!raw) return;
+      const trimmed = raw.trim();
+      if (!trimmed) return;
+      if (!/[<>{}]/.test(trimmed)) return;
+      // Replace with { "trimmed" } expression container.
+      // Surrounding whitespace is intentionally dropped — JSX would
+      // collapse it anyway, and keeping it inside the string literal
+      // would print as literal whitespace.
+      path.replaceWith(t.jsxExpressionContainer(t.stringLiteral(trimmed)));
+    },
+  });
+}
+
 export function generateCode(ast) {
+  fixDangerousJSXText(ast);
   return generate(ast, {
     retainLines: false,
     jsescOption: { minimal: true },
@@ -556,6 +604,25 @@ export function rewriteImportsInPlace(ast, locale, mirrorSet, fromFile, projectR
   const rewrites = [];
   traverse(ast, {
     ImportDeclaration(p) {
+      const original = p.node.source.value;
+      const rewritten = rewriteImportSpec(original, locale, mirrorSet, fromFile, projectRoot);
+      if (rewritten !== original) {
+        p.node.source.value = rewritten;
+        rewrites.push({ from: original, to: rewritten });
+      }
+    },
+
+    ExportNamedDeclaration(p) {
+      if (!p.node.source) return;
+      const original = p.node.source.value;
+      const rewritten = rewriteImportSpec(original, locale, mirrorSet, fromFile, projectRoot);
+      if (rewritten !== original) {
+        p.node.source.value = rewritten;
+        rewrites.push({ from: original, to: rewritten });
+      }
+    },
+
+    ExportAllDeclaration(p) {
       const original = p.node.source.value;
       const rewritten = rewriteImportSpec(original, locale, mirrorSet, fromFile, projectRoot);
       if (rewritten !== original) {

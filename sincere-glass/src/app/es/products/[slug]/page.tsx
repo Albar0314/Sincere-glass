@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { products, getProduct } from "@/lib/products";
 import ProductDetailClient from "@/_i18n/es/components/products/ProductDetailClient";
 export function generateStaticParams() {

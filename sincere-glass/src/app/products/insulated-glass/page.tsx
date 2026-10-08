@@ -1,6 +1,6 @@
 'use client';
 import { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 import InsulatedHero from "@/components/products/insulated/InsulatedHero";

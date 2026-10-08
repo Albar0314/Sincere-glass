@@ -5,7 +5,7 @@
  * If no articles are published yet, it shows a placeholder state.
  */
 
-import Link from 'next/link';
+import Link from "@/components/LocalizedLink";
 import { getAllArticles, CATEGORY_LABELS } from '@/lib/blog-registry';
 
 export default function BlogTeaserLive() {

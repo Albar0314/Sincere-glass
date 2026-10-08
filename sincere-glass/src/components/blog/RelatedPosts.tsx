@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "@/components/LocalizedLink";
 import type { BlogArticle } from '@/lib/blog-registry';
 import { CATEGORY_LABELS } from '@/lib/blog-registry';
 

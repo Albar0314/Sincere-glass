@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { useInView } from "@/lib/useInView";
 export default function AboutCTA() {
   const {

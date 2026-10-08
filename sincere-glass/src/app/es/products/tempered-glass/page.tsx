@@ -14,7 +14,7 @@ import TemperedApplications from "@/_i18n/es/components/products/tempered/Temper
 import TemperedFAQ from "@/_i18n/es/components/products/tempered/TemperedFAQ";
 import SocialProof from "@/_i18n/es/components/products/tempered/SocialProof";
 import TemperedCTA from "@/_i18n/es/components/products/tempered/TemperedCTA";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { useQuote } from "@/lib/QuoteContext";
 export default function EnamelHero() {
   const [loaded, setLoaded] = useState(false);

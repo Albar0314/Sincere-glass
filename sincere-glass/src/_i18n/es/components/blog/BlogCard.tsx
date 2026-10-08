@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "@/_i18n/es/components/LocalizedLink";
 import type { BlogArticle } from '@/lib/blog-registry';
 import { CATEGORY_LABELS } from '@/lib/blog-registry';
 interface Props {

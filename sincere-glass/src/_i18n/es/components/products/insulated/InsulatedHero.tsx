@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { useQuote } from "@/lib/QuoteContext";
 export default function InsulatedHero() {
   const [loaded, setLoaded] = useState(false);

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 import LowEHero from "@/_i18n/es/components/products/low-e/LowEHero";

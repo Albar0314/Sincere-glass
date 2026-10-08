@@ -14,7 +14,7 @@ import TemperedApplications from "@/components/products/tempered/TemperedApplica
 import TemperedFAQ from "@/components/products/tempered/TemperedFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import TemperedCTA from "@/components/products/tempered/TemperedCTA";
-import Link from "next/link";
+import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 

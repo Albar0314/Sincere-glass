@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "@/_i18n/es/components/LocalizedLink";
 interface Props {
   name: string;
   url: string;

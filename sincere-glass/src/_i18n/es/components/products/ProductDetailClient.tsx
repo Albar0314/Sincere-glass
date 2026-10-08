@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/_i18n/es/components/LocalizedLink";
 import { useInView } from "@/lib/useInView";
 import type { Product } from "@/lib/products";
 export default function ProductDetailClient({
