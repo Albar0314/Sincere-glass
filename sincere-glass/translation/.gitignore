@@ -1,0 +1,8 @@
+# Keep API credentials out of version control
+config.mjs
+
+# Translation cache (regenerated on demand)
+cache/
+
+# Audit reports (useful locally, not for repo)
+reports/
