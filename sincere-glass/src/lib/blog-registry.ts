@@ -389,6 +389,39 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish — Pillar Page for Technical Guides cluster' },
     ],
   },
+
+  {
+    slug: 'curtain-wall-glass-specification',
+    title: "Curtain Wall Glass Specification: Build-ups, Codes, and the 4 Objectives Every Spec Must Satisfy",
+    excerpt: "The 4 objectives of curtain wall glass (safety, thermal, wind load, acoustic), 4 typical build-ups from basic to hurricane-rated, regional code requirements across IBC/EN/GB/AS, and the procurement pitfalls that create expensive problems later.",
+    targetKeyword: 'curtain wall glass specification',
+    secondaryKeywords: ['curtain wall glass', 'glass for curtain wall', 'curtain wall glazing', 'facade glass specification', 'curtain wall glass types'],
+    searchKeywords: [
+      'curtain wall glass', 'curtain wall glass specification', 'glass for curtain wall',
+      'curtain wall glazing', 'facade glass', 'curtain wall glass types', 'facade glass specification',
+      'curtain wall IGU', 'curtain wall laminated glass', 'high-rise glass spec',
+      'curtain wall', 'facade', 'Low-E IGU', 'laminated IGU', 'SGP curtain wall',
+      '幕墙玻璃', '幕墙玻璃规格', '建筑幕墙玻璃', '幕墙玻璃选型', '幕墙中空玻璃',
+    ],
+    publishDate: '2026-10-07',
+    updatedDate: '2026-10-07',
+    category: 'Buyer Guide' as const,
+    tags: ['curtain wall', 'facade glass', 'specification', 'IGU', 'laminated glass', 'building codes'],
+    heroImage: '/images/blog/curtain-wall-glass-hero.webp',
+    heroImageAlt: 'Modern high-rise commercial building facade with curtain wall glass system showing uniform reflective glass panels and aluminum framing against blue sky',
+    heroImagePrompt: 'Professional architectural photography of a modern commercial high-rise building facade featuring a glass curtain wall system. Clean geometric pattern of large rectangular glass panels (approximately 1.5m x 3m each) held in slim aluminum framing. The glass has a subtle blue-green reflective tint from Low-E coating, reflecting partial sky and adjacent buildings. 25-degree upward camera angle capturing the facade from street level, with the building extending beyond the frame upward. Clear blue sky background with soft afternoon sunlight creating warm reflections on the glass. Clean modern architecture, no cluttered background elements, no visible humans or vehicles. Shallow depth of field focused on the mid-facade panels. 4K photorealistic, documentary architectural photography style, no text or watermarks.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 16,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'application',
+    relatedProductSlugs: ['insulated-glass', 'laminated-glass', 'tempered-glass', 'low-e-glass', 'enameled-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-07', note: 'Initial publish — first article in Application cluster' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
