@@ -14,6 +14,7 @@ import EnamelApps from "@/_i18n/es/components/products/enameled/EnamelApps";
 import EnamelFAQ from "@/_i18n/es/components/products/enameled/EnamelFAQ";
 import SocialProof from "@/_i18n/es/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
+import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Fabricante de Vidrio Esmaltado en China — Colores y Patrones Personalizados | Sincere Glass",
   description: "Vidrio esmaltado (con frita cerámica) personalizado desde China. Igualación de color RAL/Pantone, patrones personalizados, resistente a ácidos y abrasión. Color permanente que nunca desaparece. Certificación 3C.",
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
     images: [{
       url: "https://sincereglass.com/images/products/enameled.jpg"
     }]
-  }
+  },
+  alternates: makeAlternates("/products/enameled-glass")
 };
 const faqItems = [{
   q: "What is enameled glass?",

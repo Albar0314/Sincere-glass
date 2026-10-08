@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "@/_i18n/es/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
+import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Productos de Vidrio — Templado, Aislante, Laminado y Esmaltado",
   description: "Explore la gama completa de productos de Sincere Glass: vidrio templado, unidades de vidrio aislante, vidrio laminado de seguridad y vidrio esmaltado decorativo. Todos con certificación 3C.",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
     title: "Productos de Vidrio Arquitectónico | Sincere Glass",
     description: "Gama completa de vidrio arquitectónico con certificación 3C fabricado en China.",
     url: "https://sincereglass.com/products"
-  }
+  },
+  alternates: makeAlternates("/products")
 };
 export default function ProductsPage() {
   return <main>

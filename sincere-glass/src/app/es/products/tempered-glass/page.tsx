@@ -17,6 +17,7 @@ import TemperedCTA from "@/_i18n/es/components/products/tempered/TemperedCTA";
 import Link from "@/_i18n/es/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
+import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Fabricante de Vidrio Templado en China — Medidas Personalizadas hasta 3m×15m | Sincere Glass",
   description: "Vidrio templado personalizado desde China. 3,8-19mm, paneles de hasta 3m×15m, certificación 3C. 4-5× más resistente que el vidrio recocido. Precios directos de fábrica, plazo de entrega de 7-15 días.",
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
     images: [{
       url: "https://sincereglass.com/images/products/tempered.jpg"
     }]
-  }
+  },
+  alternates: makeAlternates("/products/tempered-glass")
 };
 const faqItems = [{
   q: "What is the difference between tempered glass and normal glass?",

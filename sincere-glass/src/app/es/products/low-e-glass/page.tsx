@@ -13,6 +13,7 @@ import LowEApps from "@/_i18n/es/components/products/low-e/LowEApps";
 import LowEFAQ from "@/_i18n/es/components/products/low-e/LowEFAQ";
 import SocialProof from "@/_i18n/es/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
+import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Fabricante de Vidrio de Baja Emisividad (Low-E) en China — Vidrio con Recubrimiento Energéticamente Eficiente | Sincere Glass",
   description: "Vidrio de baja emisividad (Low-E) personalizado desde China. Opciones de capa blanda y capa dura, ahorro energético del 30–50%, alta transmitancia visible. Combinado con UVA (Unidad de Vidrio Aislante) para un rendimiento térmico máximo.",
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
     title: "Fabricante de Vidrio de Baja Emisividad (Low-E) — Sincere Glass",
     description: "Vidrio con recubrimiento de baja emisividad (Low-E) energéticamente eficiente. Refleja el calor, transmite la luz. Certificación 3C, directo de fábrica.",
     url: "https://sincereglass.com/products/low-e-glass"
-  }
+  },
+  alternates: makeAlternates("/products/low-e-glass")
 };
 const faqItems = [{
   q: "What does Low-E mean?",
