@@ -4,6 +4,7 @@ import { useSearch } from '@/components/SearchModal';
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const products = [
   { name: "Tempered Glass", href: "/products/tempered-glass", desc: "4-5× stronger, safe fragmentation", image: "/images/products/tempered.jpg" },
@@ -146,6 +147,8 @@ export default function Header() {
               </svg>
             </button>
 
+            <LanguageSwitcher className="ml-1" />
+
             <a
               href="#quote"
               className="ml-2 px-5 py-2 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark text-sm font-semibold rounded-md transition-colors"
@@ -199,6 +202,9 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+            </div>
+            <div className="border-t border-white/5 pt-3 mt-2 flex justify-center">
+              <LanguageSwitcher />
             </div>
             <a href="#quote" className="block bg-brand-accent text-brand-dark text-center py-2.5 rounded-md font-semibold text-sm mt-3" onClick={() => setMobileOpen(false)}>
               Request Quote
