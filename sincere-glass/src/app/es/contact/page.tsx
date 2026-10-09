@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Obtenga una cotización gratuita en 24 horas. Dos fábricas en Wuhan y Honghu, Hubei.",
     url: "https://sincereglass.com/contact"
   },
-  alternates: makeAlternates("/contact")
+  alternates: makeAlternates("/contact", "es")
 };
 export default function ContactPage() {
   return <ContactClient />;

@@ -30,7 +30,7 @@ export function generateMetadata({
         url: "https://sincereglass.com" + product.image
       }]
     },
-    alternates: makeAlternates(`/products/${params.slug}`)
+    alternates: makeAlternates(`/products/${params.slug}`, "es")
   };
 }
 export default function ProductDetailPage({

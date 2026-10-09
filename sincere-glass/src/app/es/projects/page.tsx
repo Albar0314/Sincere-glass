@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Más de 2.600 proyectos de vidrio en toda China. Vea nuestro trabajo en aeropuertos, hospitales, torres comerciales y desarrollos residenciales.",
     url: "https://sincereglass.com/projects"
   },
-  alternates: makeAlternates("/projects")
+  alternates: makeAlternates("/projects", "es")
 };
 export default function ProjectsPage() {
   return <ProjectsClient />;

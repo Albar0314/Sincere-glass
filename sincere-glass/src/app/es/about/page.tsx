@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "De un único taller en Wuhan a dos fábricas modernas en Hubei. Más de 15 años de excelencia en la fabricación de vidrio arquitectónico.",
     url: "https://sincereglass.com/about"
   },
-  alternates: makeAlternates("/about")
+  alternates: makeAlternates("/about", "es")
 };
 const jsonLd = {
   "@context": "https://schema.org",

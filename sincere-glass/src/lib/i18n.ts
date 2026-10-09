@@ -65,9 +65,23 @@ export const SITE_URL = 'https://sincereglass.com';
  * Build Next.js metadata.alternates for a given canonical path.
  * Emits <link rel="alternate" hreflang="en|es|x-default"> in the <head>.
  */
-export function makeAlternates(canonicalPath: string): {
+export function makeAlternates(
+  canonicalPath: string,
+  locale: Locale = DEFAULT_LOCALE,
+): {
   canonical: string;
   languages: Record<string, string>;
+} {
+  const languages: Record<string, string> = {};
+  for (const loc of LOCALES) {
+    const hreflang = loc === DEFAULT_LOCALE ? 'en' : loc;
+    languages[hreflang] = SITE_URL + localizedPath(canonicalPath, loc);
+  }
+  languages['x-default'] = SITE_URL + localizedPath(canonicalPath, DEFAULT_LOCALE);
+  return {
+    canonical: SITE_URL + localizedPath(canonicalPath, locale),
+    languages,
+  };
 } {
   const languages: Record<string, string> = {};
   for (const loc of LOCALES) {

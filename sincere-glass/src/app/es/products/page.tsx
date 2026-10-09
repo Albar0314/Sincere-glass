@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: "Gama completa de vidrio arquitectónico con certificación 3C fabricado en China.",
     url: "https://sincereglass.com/products"
   },
-  alternates: makeAlternates("/products")
+  alternates: makeAlternates("/products", "es")
 };
 export default function ProductsPage() {
   return <main>

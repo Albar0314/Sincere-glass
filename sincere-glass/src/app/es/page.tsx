@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Sincere Glass",
     type: "website"
   },
-  alternates: makeAlternates("/")
+  alternates: makeAlternates("/", "es")
 };
 const jsonLd = {
   "@context": "https://schema.org",

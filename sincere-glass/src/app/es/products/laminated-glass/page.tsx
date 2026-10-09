@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       url: "https://sincereglass.com/images/products/laminated.jpg"
     }]
   },
-  alternates: makeAlternates("/products/laminated-glass")
+  alternates: makeAlternates("/products/laminated-glass", "es")
 };
 const faqItems = [{
   q: "What is laminated glass?",

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Vidrio con recubrimiento de baja emisividad (Low-E) energéticamente eficiente. Refleja el calor, transmite la luz. Certificación 3C, directo de fábrica.",
     url: "https://sincereglass.com/products/low-e-glass"
   },
-  alternates: makeAlternates("/products/low-e-glass")
+  alternates: makeAlternates("/products/low-e-glass", "es")
 };
 const faqItems = [{
   q: "What does Low-E mean?",

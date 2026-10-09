@@ -29,6 +29,27 @@ import {
   getMirrorPath,
   rewriteImportsInPlace,
 } from './translation-lib.mjs';
+import traverseModule from '@babel/traverse';
+import * as typesModule from '@babel/types';
+const _traverse = traverseModule.default || traverseModule;
+const _t = typesModule.default || typesModule;
+
+/**
+ * In ES/other-locale mirrors, convert `makeAlternates(path)` calls to
+ * `makeAlternates(path, "<locale>")` so each mirror produces a canonical
+ * URL that points at itself (not the EN original).
+ */
+function injectLocaleIntoMakeAlternates(ast, targetLocale) {
+  _traverse(ast, {
+    CallExpression(p) {
+      const callee = p.node.callee;
+      if (callee.type !== 'Identifier' || callee.name !== 'makeAlternates') return;
+      // Only touch calls that have exactly one argument (don't double-inject)
+      if (p.node.arguments.length !== 1) return;
+      p.node.arguments.push(_t.stringLiteral(targetLocale));
+    },
+  });
+}
 
 const MAX_FILES = 500;
 const CHUNK_SIZE = 60; // strings per cache-save cycle
@@ -217,6 +238,7 @@ async function main() {
     try {
       applyTranslationsInPlace(parsedFile.items, translations);
       rewriteImportsInPlace(parsedFile.ast, locale, mirrorSet, parsedFile.absPath, projectRoot);
+      injectLocaleIntoMakeAlternates(parsedFile.ast, locale);
       const output = generateCode(parsedFile.ast);
       const outPath = getMirrorPath(parsedFile.absPath, locale, projectRoot);
       if (!dryRun) {

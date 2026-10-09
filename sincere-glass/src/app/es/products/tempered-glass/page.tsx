@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       url: "https://sincereglass.com/images/products/tempered.jpg"
     }]
   },
-  alternates: makeAlternates("/products/tempered-glass")
+  alternates: makeAlternates("/products/tempered-glass", "es")
 };
 const faqItems = [{
   q: "What is the difference between tempered glass and normal glass?",

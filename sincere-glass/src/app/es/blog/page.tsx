@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Perspectivas del sector del vidrio y guías técnicas | Blog de Sincere Glass",
   description: "Artículos especializados sobre vidrio arquitectónico: vidrio templado, vidrio aislante, vidrio laminado, vidrio de baja emisividad (Low-E) y vidrio esmaltado. Guías técnicas, recursos para compradores y noticias del sector de Sincere Glass.",
   keywords: ['glass industry blog', 'architectural glass guide', 'tempered glass technical guide', 'insulated glass guide', 'glass manufacturer blog'],
-  alternates: makeAlternates("/blog")
+  alternates: makeAlternates("/blog", "es")
 };
 function ClusterTabs({
   active

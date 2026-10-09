@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Equipamiento completo de procesamiento de vidrio en 20,000㎡. Corte CNC, pulido de bordes, templado, ensamblaje de UVA (Unidad de Vidrio Aislante), laminado y esmaltado.",
     url: "https://sincereglass.com/equipment"
   },
-  alternates: makeAlternates("/equipment")
+  alternates: makeAlternates("/equipment", "es")
 };
 export default function EquipmentPage() {
   return <EquipmentClient />;
