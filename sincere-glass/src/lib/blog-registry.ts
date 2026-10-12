@@ -422,6 +422,39 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-07', note: 'Initial publish — first article in Application cluster' },
     ],
   },
+  {
+    slug: 'shower-glass-thickness-guide',
+    title: "Shower Glass Thickness Guide: 5, 8, 10 or 12 mm — Which Is Right for Your Enclosure?",
+    excerpt: "Four variables decide shower glass thickness: support type, use case, panel geometry, and local code. Interactive selector, hardware-load math, and the global code map (CPSC / EN / GB / AS) in one factory-floor guide.",
+    targetKeyword: 'shower glass thickness guide',
+    secondaryKeywords: ['shower door glass thickness', 'frameless shower glass thickness', '10mm vs 12mm shower glass', 'shower enclosure glass thickness', 'how thick should shower glass be'],
+    searchKeywords: [
+      'shower glass thickness', 'shower door thickness', 'frameless shower glass thickness',
+      '10mm vs 12mm shower glass', 'how thick should shower glass be', 'shower enclosure glass',
+      'walk-in shower glass thickness', 'tempered shower door glass',
+      'CPSC 1201', 'EN 14428', 'GB 15763.2', 'AS 1288', 'tempered glass', 'safety glazing',
+      '淋浴房玻璃厚度', '淋浴玻璃', '钢化淋浴房', '无框淋浴房 厚度',
+    ],
+    publishDate: '2026-10-12',
+    updatedDate: '2026-10-12',
+    category: 'Buyer Guide' as const,
+    tags: ['shower glass', 'tempered glass', 'safety glass', 'frameless shower', 'bathroom glass', 'glass specification'],
+    heroImage: '/images/blog/shower-glass-thickness-hero.webp',
+    heroImageAlt: 'Frameless 10mm clear tempered shower enclosure with brass hinges, warm bathroom lighting, showing the typical panel geometry of a residential walk-in shower',
+    heroImagePrompt: 'Professional architectural interior photography of a modern luxury bathroom featuring a frameless walk-in shower enclosure. 10 mm clear tempered glass panels, approximately 2000 mm tall × 900 mm wide, held by brushed brass wall-mounted clamps and a single pivot hinge on the door. Edge of the glass visible showing the characteristic clean polished arris. Warm bathroom lighting from a wall sconce creates soft reflections and highlights the glass thickness at the edge. Background: matte beige large-format porcelain tile walls, polished brass fixtures, a floor-standing rainfall shower head. 30-degree camera angle from the bathroom entrance, shallow depth of field focused on the glass edge and hinge detail. No humans in frame. Clean neutral palette with warm amber accent lighting matching Sincere Glass brand (dark #1C1F26, amber #DAA745 undertones). 4K photorealistic, architectural digest style, no text or watermarks.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 15,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'application',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-12', note: 'Initial publish — second article in Application cluster' },
+    ],
+  },
+
 ];
 
 // ---- Utility functions ----
