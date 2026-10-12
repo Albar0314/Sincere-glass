@@ -6,6 +6,7 @@ import BlogArticleLayout, {
   articleJsonLd,
   type TOCItem,
 } from '@/components/blog/BlogArticleLayout';
+import { makeAlternates } from '@/lib/i18n';
 import TLDRBox from '@/components/blog/TLDRBox';
 import LeadMagnetCTA from '@/components/blog/LeadMagnetCTA';
 import RelatedProductsCards from '@/components/blog/RelatedProductsCards';
@@ -18,7 +19,10 @@ import GlobalCodeMatrix from '@/components/blog/article-10/GlobalCodeMatrix';
 const SLUG = 'shower-glass-thickness-guide';
 const article = blogArticles.find((a) => a.slug === SLUG)!;
 
-export const metadata: Metadata = generateArticleMetadata(article);
+export const metadata: Metadata = {
+  ...generateArticleMetadata(article),
+  alternates: makeAlternates(`/blog/${SLUG}`),
+};
 
 const toc: TOCItem[] = [
   { id: 'the-problem', text: 'Why the "right thickness" question keeps coming back', level: 2 },
