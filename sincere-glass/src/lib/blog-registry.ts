@@ -573,7 +573,7 @@ export const blogArticles: BlogArticle[] = [
         a: 'A typical project with 4-5 marks totalling 500–1500 m² ships 35–45 days from PO with full certification paperwork. Facade IGU and balustrade laminated are the critical-path items because they require the IGU line and the autoclave respectively — both operate on scheduled cycles. Shower and partition tempered run on the tempering line directly and are rarely the bottleneck. Sea freight to EU/US/AU adds 25–40 days.',
       },
       {
-        q: 'Can you work from an architect's drawing set directly, or do you need a glass schedule?',
+        q: "Can you work from an architect's drawing set directly, or do you need a glass schedule?",
         a: 'Both. Our estimating team routinely reads full drawing sets (plans, sections, elevations) and extracts a glass schedule when the architect has not provided one — this is included in the quote process for projects over 500 m². For smaller projects we ask for the schedule or a filled-in RFQ template; working from scratch for small volumes delays the quote by 2-3 days.',
       },
     ],
