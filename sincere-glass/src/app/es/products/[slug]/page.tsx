@@ -50,20 +50,20 @@ export default function ProductDetailPage({
     name: product.name,
     description: product.tagline,
     image: "https://sincereglass.com" + product.image,
-    category: "Architectural Glass",
+    category: "Vidrio arquitectónico",
     provider: {
       "@type": "Organization",
       name: "Sincere Glass",
-      url: "https://sincereglass.com",
+      url: "https://sincereglass.com"
     },
     areaServed: {
       "@type": "Place",
-      name: "Worldwide",
+      name: "Worldwide"
     },
     audience: {
       "@type": "BusinessAudience",
-      audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-    },
+      audienceType: "Architects, Contractors, Facade Engineers, Glass Importers"
+    }
   };
   return <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{

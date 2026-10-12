@@ -65,20 +65,20 @@ const productSchema = {
   name: "Vidrio laminado",
   description: "Vidrio laminado de seguridad con lámina intermedia PVB (polivinil butiral)/SGP (SentryGlas Plus). Bloqueo UV del 99%, aislamiento acústico superior.",
   image: "https://sincereglass.com/images/products/laminated.jpg",
-  category: "Architectural Glass",
+  category: "Vidrio arquitectónico",
   provider: {
     "@type": "Organization",
     name: "Sincere Glass",
-    url: "https://sincereglass.com",
+    url: "https://sincereglass.com"
   },
   areaServed: {
     "@type": "Place",
-    name: "Worldwide",
+    name: "Worldwide"
   },
   audience: {
     "@type": "BusinessAudience",
-    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-  },
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers"
+  }
 };
 const otherProducts = products.filter(p => p.slug !== "laminated-glass");
 export default function LaminatedGlassPage() {

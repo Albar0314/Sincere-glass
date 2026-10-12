@@ -66,20 +66,20 @@ const productSchema = {
   name: "Vidrio esmaltado",
   description: "Vidrio con frita cerámica decorativo de color permanente. Igualación personalizada RAL/Pantone.",
   image: "https://sincereglass.com/images/products/enameled.jpg",
-  category: "Architectural Glass",
+  category: "Vidrio arquitectónico",
   provider: {
     "@type": "Organization",
     name: "Sincere Glass",
-    url: "https://sincereglass.com",
+    url: "https://sincereglass.com"
   },
   areaServed: {
     "@type": "Place",
-    name: "Worldwide",
+    name: "Worldwide"
   },
   audience: {
     "@type": "BusinessAudience",
-    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-  },
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers"
+  }
 };
 const otherProducts = products.filter(p => p.slug !== "enameled-glass");
 export default function EnamelGlassPage() {
