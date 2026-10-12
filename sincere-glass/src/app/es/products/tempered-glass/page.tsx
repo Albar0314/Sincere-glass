@@ -64,17 +64,25 @@ const faqSchema = {
 };
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  serviceType: "Architectural Glass Manufacturing",
   name: "Vidrio templado",
   description: "Vidrio templado arquitectónico personalizado, 3,8-19mm, paneles de hasta 3m×15m. Certificación 3C.",
   image: "https://sincereglass.com/images/products/tempered.jpg",
-  brand: {
-    "@type": "Brand",
-    name: "Sincere Glass"
+  category: "Architectural Glass",
+  provider: {
+    "@type": "Organization",
+    name: "Sincere Glass",
+    url: "https://sincereglass.com",
   },
-  manufacturer: {
-    "@id": "https://sincereglass.com/#organization"
-  }
+  areaServed: {
+    "@type": "Place",
+    name: "Worldwide",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
+  },
 };
 const otherProducts = products.filter(p => p.slug !== "tempered-glass");
 export default function TemperedGlassPage() {

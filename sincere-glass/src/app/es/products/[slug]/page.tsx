@@ -45,17 +45,25 @@ export default function ProductDetailPage({
   const otherProducts = products.filter(p => p.slug !== product.slug);
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
+    serviceType: "Architectural Glass Manufacturing",
     name: product.name,
     description: product.tagline,
     image: "https://sincereglass.com" + product.image,
-    brand: {
-      "@type": "Brand",
-      name: "Sincere Glass"
+    category: "Architectural Glass",
+    provider: {
+      "@type": "Organization",
+      name: "Sincere Glass",
+      url: "https://sincereglass.com",
     },
-    manufacturer: {
-      "@id": "https://sincereglass.com/#organization"
-    }
+    areaServed: {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
+    },
   };
   return <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{

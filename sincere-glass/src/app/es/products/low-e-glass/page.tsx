@@ -57,17 +57,25 @@ const faqSchema = {
 };
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  serviceType: "Architectural Glass Manufacturing",
   name: "Vidrio de baja emisividad (Low-E)",
   description: "Vidrio con recubrimiento de baja emisividad energéticamente eficiente. Refleja el calor, transmite la luz.",
   image: "https://sincereglass.com/images/products/insulated.jpg",
-  brand: {
-    "@type": "Brand",
-    name: "Sincere Glass"
+  category: "Architectural Glass",
+  provider: {
+    "@type": "Organization",
+    name: "Sincere Glass",
+    url: "https://sincereglass.com",
   },
-  manufacturer: {
-    "@id": "https://sincereglass.com/#organization"
-  }
+  areaServed: {
+    "@type": "Place",
+    name: "Worldwide",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
+  },
 };
 const otherProducts = products.filter(p => p.slug !== "low-e-glass").slice(0, 3);
 export default function LowEGlassPage() {

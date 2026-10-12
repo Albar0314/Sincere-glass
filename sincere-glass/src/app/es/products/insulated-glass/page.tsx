@@ -48,17 +48,25 @@ const faqSchema = {
 };
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  serviceType: "Architectural Glass Manufacturing",
   name: "Unidad de Vidrio Aislante (UVA)",
   description: "Unidades de vidrio aislante de alta eficiencia energética con relleno de argón y tecnología de doble sello. Certificación 3C.",
   image: "https://sincereglass.com/images/products/insulated.jpg",
-  brand: {
-    "@type": "Brand",
-    name: "Sincere Glass"
+  category: "Architectural Glass",
+  provider: {
+    "@type": "Organization",
+    name: "Sincere Glass",
+    url: "https://sincereglass.com",
   },
-  manufacturer: {
-    "@id": "https://sincereglass.com/#organization"
-  }
+  areaServed: {
+    "@type": "Place",
+    name: "Worldwide",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
+  },
 };
 const otherProducts = products.filter(p => p.slug !== "insulated-glass");
 export default function InsulatedGlassPage() {

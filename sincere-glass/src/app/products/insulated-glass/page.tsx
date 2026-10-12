@@ -32,12 +32,25 @@ const faqSchema = {
 
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  serviceType: "Architectural Glass Manufacturing",
   name: "Insulated Glass Unit (IGU)",
   description: "Energy-efficient insulated glass units with argon gas fill and dual-seal technology. 3C certified.",
   image: "https://sincereglass.com/images/products/insulated.jpg",
-  brand: { "@type": "Brand", name: "Sincere Glass" },
-  manufacturer: { "@id": "https://sincereglass.com/#organization" },
+  category: "Architectural Glass",
+  provider: {
+    "@type": "Organization",
+    name: "Sincere Glass",
+    url: "https://sincereglass.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Worldwide",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
+  },
 };
 
 const otherProducts = products.filter(p => p.slug !== "insulated-glass");
