@@ -82,15 +82,4 @@ export function makeAlternates(
     canonical: SITE_URL + localizedPath(canonicalPath, locale),
     languages,
   };
-} {
-  const languages: Record<string, string> = {};
-  for (const loc of LOCALES) {
-    const hreflang = loc === DEFAULT_LOCALE ? 'en' : loc;
-    languages[hreflang] = SITE_URL + localizedPath(canonicalPath, loc);
-  }
-  languages['x-default'] = SITE_URL + localizedPath(canonicalPath, DEFAULT_LOCALE);
-  return {
-    canonical: SITE_URL + canonicalPath,
-    languages,
-  };
 }
