@@ -1,29 +1,32 @@
 "use client";
 
-import { useSearch } from '@/components/SearchModal';
+import { useSearch } from "@/components/SearchModal";
 import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useT } from "@/lib/useT";
 
+// Product routes + static image paths (names/descs come from dict)
 const products = [
-  { name: "Tempered Glass", href: "/products/tempered-glass", desc: "4-5× stronger, safe fragmentation", image: "/images/products/tempered.jpg" },
-  { name: "Insulated Glass", href: "/products/insulated-glass", desc: "Thermal & sound insulation", image: "/images/products/insulated.jpg" },
-  { name: "Laminated Glass", href: "/products/laminated-glass", desc: "Impact-resistant PVB interlayer", image: "/images/products/laminated.jpg" },
-  { name: "Enameled Glass", href: "/products/enameled-glass", desc: "Ceramic frit decorative finish", image: "/images/products/enameled.jpg" },
-  { name: "Low-E Glass", href: "/products/low-e-glass", desc: "Energy-efficient coating", image: "/images/products/low-e.jpg" },
+  { key: "tempered",  href: "/products/tempered-glass",  image: "/images/products/tempered.jpg" },
+  { key: "insulated", href: "/products/insulated-glass", image: "/images/products/insulated.jpg" },
+  { key: "laminated", href: "/products/laminated-glass", image: "/images/products/laminated.jpg" },
+  { key: "enameled",  href: "/products/enameled-glass",  image: "/images/products/enameled.jpg" },
+  { key: "lowE",      href: "/products/low-e-glass",     image: "/images/products/low-e.jpg" },
 ];
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Equipment", href: "/equipment" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { key: "home",      href: "/" },
+  { key: "about",     href: "/about" },
+  { key: "projects",  href: "/projects" },
+  { key: "equipment", href: "/equipment" },
+  { key: "blog",      href: "/blog" },
+  { key: "contact",   href: "/contact" },
 ];
 
 export default function Header() {
+  const t = useT();
   const { openSearch } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -81,7 +84,7 @@ export default function Header() {
                 href="/products"
                 className="flex items-center gap-1 px-3 py-2 text-sm text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-colors"
               >
-                Products
+                {t("nav.products")}
                 <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -96,7 +99,7 @@ export default function Header() {
                 onMouseLeave={megaLeave}
               >
                 <div className="p-5">
-                  <p className="text-xs text-white/40 font-medium uppercase tracking-wider mb-4">Our glass products</p>
+                  <p className="text-xs text-white/40 font-medium uppercase tracking-wider mb-4">{t("nav.ourGlassProducts")}</p>
                   <div className="grid grid-cols-2 gap-2">
                     {products.map((p) => (
                       <Link
@@ -109,15 +112,15 @@ export default function Header() {
                           <div className="w-full h-full bg-brand-primary/30" />
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-white group-hover:text-brand-accent transition-colors">{p.name}</span>
-                          <span className="block text-xs text-white/40 mt-0.5">{p.desc}</span>
+                          <span className="text-sm font-medium text-white group-hover:text-brand-accent transition-colors">{t(`product.${p.key}.name`)}</span>
+                          <span className="block text-xs text-white/40 mt-0.5">{t(`product.${p.key}.desc`)}</span>
                         </div>
                       </Link>
                     ))}
                   </div>
                   <div className="mt-4 pt-3 border-t border-white/5">
                     <Link href="/products" className="text-xs text-brand-accent hover:text-brand-accent-hover transition-colors" onClick={() => setMegaOpen(false)}>
-                      View all products &rarr;
+                      {t("nav.viewAllProducts")}
                     </Link>
                   </div>
                 </div>
@@ -130,7 +133,7 @@ export default function Header() {
                 href={link.href}
                 className="px-3 py-2 text-sm text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-colors"
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
 
@@ -138,8 +141,8 @@ export default function Header() {
             <button
               onClick={openSearch}
               className="ml-2 p-2 text-white/60 hover:text-white rounded-md hover:bg-white/5 transition-colors"
-              aria-label="Search"
-              title="Search (Ctrl+K)"
+              aria-label={t("nav.search")}
+              title={`${t("nav.search")} (Ctrl+K)`}
             >
               <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <circle cx="11" cy="11" r="8" />
@@ -153,7 +156,7 @@ export default function Header() {
               href="#quote"
               className="ml-2 px-5 py-2 bg-brand-accent hover:bg-brand-accent-hover text-brand-dark text-sm font-semibold rounded-md transition-colors"
             >
-              Request Quote
+              {t("nav.requestQuote")}
             </a>
           </nav>
 
@@ -162,7 +165,7 @@ export default function Header() {
             <button
               onClick={openSearch}
               className="p-2 text-white/70 hover:text-white rounded-md"
-              aria-label="Search"
+              aria-label={t("nav.search")}
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <circle cx="11" cy="11" r="8" />
@@ -172,7 +175,7 @@ export default function Header() {
             <button
               className="p-2 text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle navigation"
+              aria-label={t("nav.toggleNav")}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
@@ -188,18 +191,18 @@ export default function Header() {
         {/* Mobile menu */}
         {mobileOpen && (
           <nav className="lg:hidden pb-5 border-t border-white/10 pt-3">
-            <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-2 px-2">Products</p>
+            <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-2 px-2">{t("nav.products")}</p>
             <div className="grid grid-cols-2 gap-1 mb-3">
               {products.map((p) => (
                 <Link key={p.href} href={p.href} className="block text-white/70 hover:text-white text-sm py-2 px-2 rounded hover:bg-white/5" onClick={() => setMobileOpen(false)}>
-                  {p.name}
+                  {t(`product.${p.key}.name`)}
                 </Link>
               ))}
             </div>
             <div className="border-t border-white/5 pt-2">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="block text-white/70 hover:text-white py-2 px-2 text-sm rounded hover:bg-white/5" onClick={() => setMobileOpen(false)}>
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </Link>
               ))}
             </div>
@@ -207,7 +210,7 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
             <a href="#quote" className="block bg-brand-accent text-brand-dark text-center py-2.5 rounded-md font-semibold text-sm mt-3" onClick={() => setMobileOpen(false)}>
-              Request Quote
+              {t("nav.requestQuote")}
             </a>
           </nav>
         )}

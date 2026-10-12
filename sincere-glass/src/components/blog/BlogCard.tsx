@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "@/components/LocalizedLink";
-import type { BlogArticle } from '@/lib/blog-registry';
-import { CATEGORY_LABELS } from '@/lib/blog-registry';
+import type { BlogArticle } from "@/lib/blog-registry";
+import { useT, useLocale } from "@/lib/useT";
 
 interface Props {
   article: BlogArticle;
@@ -8,8 +10,17 @@ interface Props {
 }
 
 export default function BlogCard({ article, featured = false }: Props) {
+  const t = useT();
+  const locale = useLocale();
+
   const formatDate = (d: string) =>
-    new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    new Date(d).toLocaleDateString(locale === "es" ? "es-ES" : "en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+  const categoryLabel = t(`category.${article.category}`);
 
   if (featured) {
     return (
@@ -35,15 +46,15 @@ export default function BlogCard({ article, featured = false }: Props) {
           )}
           <span className={`absolute top-4 left-4 text-xs px-3 py-1.5 rounded font-medium ${
             article.isPillar
-              ? 'bg-gradient-to-r from-[#DAA745] to-[#c4952e] text-[#1C1F26]'
-              : 'bg-[#DAA745] text-[#1C1F26]'
+              ? "bg-gradient-to-r from-[#DAA745] to-[#c4952e] text-[#1C1F26]"
+              : "bg-[#DAA745] text-[#1C1F26]"
           }`}>
-            {article.isPillar ? '✦ Pillar Guide' : 'Featured'}
+            {article.isPillar ? t("blog.pillarGuide") : t("blog.featured")}
           </span>
         </div>
         <div className="p-6 lg:p-10 flex flex-col justify-center">
           <span className="text-xs text-[#DAA745] font-medium mb-3">
-            {CATEGORY_LABELS[article.category]}
+            {categoryLabel}
           </span>
           <h2 className="text-2xl lg:text-3xl font-semibold text-[#F2F0ED] group-hover:text-[#DAA745] transition-colors mb-4 leading-snug">
             {article.title}
@@ -54,7 +65,7 @@ export default function BlogCard({ article, featured = false }: Props) {
             <span className="w-1 h-1 rounded-full bg-[#8B95A5]/50" />
             <time dateTime={article.publishDate}>{formatDate(article.publishDate)}</time>
             <span className="w-1 h-1 rounded-full bg-[#8B95A5]/50" />
-            <span>{article.readingTime} min</span>
+            <span>{article.readingTime} {t("blog.min")}</span>
           </div>
         </div>
       </Link>
@@ -83,7 +94,7 @@ export default function BlogCard({ article, featured = false }: Props) {
           </div>
         )}
         <span className="absolute top-3 left-3 text-xs bg-[#1C1F26]/80 text-[#DAA745] px-2.5 py-1 rounded">
-          {CATEGORY_LABELS[article.category]}
+          {categoryLabel}
         </span>
       </div>
       <div className="p-5">
@@ -94,7 +105,7 @@ export default function BlogCard({ article, featured = false }: Props) {
         <div className="flex items-center gap-2 text-xs text-[#8B95A5]/70">
           <time dateTime={article.publishDate}>{formatDate(article.publishDate)}</time>
           <span className="w-1 h-1 rounded-full bg-[#8B95A5]/30" />
-          <span>{article.readingTime} min read</span>
+          <span>{article.readingTime} {t("blog.minRead")}</span>
         </div>
       </div>
     </Link>

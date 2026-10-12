@@ -1,23 +1,28 @@
+"use client";
+
 import Link from "@/components/LocalizedLink";
 import Image from "next/image";
+import { useT } from "@/lib/useT";
 
 const productLinks = [
-  { label: "Tempered Glass", href: "/products/tempered-glass" },
-  { label: "Insulated Glass", href: "/products/insulated-glass" },
-  { label: "Laminated Glass", href: "/products/laminated-glass" },
-  { label: "Enameled Glass", href: "/products/enameled-glass" },
-  { label: "Low-E Glass", href: "/products/low-e-glass" },
+  { key: "tempered",  href: "/products/tempered-glass" },
+  { key: "insulated", href: "/products/insulated-glass" },
+  { key: "laminated", href: "/products/laminated-glass" },
+  { key: "enameled",  href: "/products/enameled-glass" },
+  { key: "lowE",      href: "/products/low-e-glass" },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Equipment", href: "/equipment" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { key: "aboutUs",   href: "/about",     labelKey: "footer.aboutUs" },
+  { key: "projects",  href: "/projects",  labelKey: "nav.projects" },
+  { key: "equipment", href: "/equipment", labelKey: "nav.equipment" },
+  { key: "blog",      href: "/blog",      labelKey: "nav.blog" },
+  { key: "contact",   href: "/contact",   labelKey: "nav.contact" },
 ];
 
 export default function Footer() {
+  const t = useT();
+
   return (
     <footer className="bg-brand-dark text-white/60">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-14">
@@ -37,20 +42,18 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-sm leading-relaxed">
-              Architectural glass manufacturer in China with 15+ years of
-              experience. Custom tempered, insulated, laminated, and enameled
-              glass for global construction projects.
+              {t("footer.companyDesc")}
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Products</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">{t("footer.productsHeader")}</h4>
             <ul className="space-y-2">
               {productLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-white transition-colors">
-                    {link.label}
+                    {t(`product.${link.key}.name`)}
                   </Link>
                 </li>
               ))}
@@ -59,12 +62,12 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Company</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">{t("footer.companyHeader")}</h4>
             <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-white transition-colors">
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 </li>
               ))}
@@ -73,16 +76,16 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Contact</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">{t("footer.contactHeader")}</h4>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="text-brand-accent text-xs font-semibold uppercase tracking-wide mb-1">Wuhan Factory</p>
-                <p>Wujin Industrial Park, Hannan District</p>
+                <p className="text-brand-accent text-xs font-semibold uppercase tracking-wide mb-1">{t("footer.wuhanFactory")}</p>
+                <p>{t("footer.wuhanAddress")}</p>
                 <a href="mailto:xcglass@sina.cn" className="hover:text-white transition-colors">xcglass@sina.cn</a>
               </div>
               <div>
-                <p className="text-brand-accent text-xs font-semibold uppercase tracking-wide mb-1">Honghu Factory</p>
-                <p>Xintan Town Industrial Park, Honghu</p>
+                <p className="text-brand-accent text-xs font-semibold uppercase tracking-wide mb-1">{t("footer.honghuFactory")}</p>
+                <p>{t("footer.honghuAddress")}</p>
                 <a href="mailto:1348767121@qq.com" className="hover:text-white transition-colors">1348767121@qq.com</a>
               </div>
             </div>
@@ -90,7 +93,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-6 text-sm text-center text-white/40">
-          &copy; {new Date().getFullYear()} Sincere Glass. All rights reserved.
+          &copy; {new Date().getFullYear()} Sincere Glass. {t("footer.allRightsReserved")}
         </div>
       </div>
     </footer>

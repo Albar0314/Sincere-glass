@@ -2,10 +2,12 @@
 
 import { useQuote } from "@/lib/QuoteContext";
 import { useState, FormEvent } from "react";
+import { useT } from "@/lib/useT";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function QuoteModal() {
+  const t = useT();
   const { isOpen, closeQuote, preselectedProduct } = useQuote();
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -39,13 +41,13 @@ export default function QuoteModal() {
 
       if (!res.ok) {
         const err = await res.json();
-        throw new Error(err.error || "Submission failed");
+        throw new Error(err.error || t("quote.form.error.submission"));
       }
 
       setStatus("success");
     } catch (err: unknown) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setErrorMsg(err instanceof Error ? err.message : t("quote.form.error.generic"));
     }
   }
 
@@ -69,7 +71,7 @@ export default function QuoteModal() {
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
-          aria-label="Close"
+          aria-label={t("quote.form.closeAria")}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -84,22 +86,22 @@ export default function QuoteModal() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-[#1C1F26] mb-2">Quote Request Sent!</h3>
+            <h3 className="text-xl font-bold text-[#1C1F26] mb-2">{t("quote.success.title")}</h3>
             <p className="text-gray-600 mb-6">
-              Thank you for your interest. Our team will review your requirements and get back to you within 24 hours.
+              {t("quote.success.body")}
             </p>
             <button
               onClick={handleClose}
               className="px-6 py-2.5 bg-[#DAA745] text-[#1C1F26] font-semibold rounded-lg hover:bg-[#c4963e] transition-colors"
             >
-              Close
+              {t("quote.success.close")}
             </button>
           </div>
         ) : (
           /* ── Form ── */
           <form onSubmit={handleSubmit} className="p-6 sm:p-8">
-            <h2 className="text-2xl font-bold text-[#1C1F26] mb-1">Request a Quote</h2>
-            <p className="text-gray-500 text-sm mb-6">Fill in your details and we&apos;ll get back to you within 24 hours.</p>
+            <h2 className="text-2xl font-bold text-[#1C1F26] mb-1">{t("quote.form.title")}</h2>
+            <p className="text-gray-500 text-sm mb-6">{t("quote.form.subtitle")}</p>
 
             {/* Honeypot — hidden from humans */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
@@ -117,7 +119,7 @@ export default function QuoteModal() {
               {/* Name */}
               <div>
                 <label htmlFor="q-name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name <span className="text-red-500">*</span>
+                  {t("quote.form.fullName")} <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="q-name"
@@ -125,14 +127,14 @@ export default function QuoteModal() {
                   type="text"
                   required
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26]"
-                  placeholder="John Smith"
+                  placeholder={t("quote.form.fullNamePlaceholder")}
                 />
               </div>
 
               {/* Email */}
               <div>
                 <label htmlFor="q-email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email <span className="text-red-500">*</span>
+                  {t("quote.form.email")} <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="q-email"
@@ -140,30 +142,30 @@ export default function QuoteModal() {
                   type="email"
                   required
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26]"
-                  placeholder="john@company.com"
+                  placeholder={t("quote.form.emailPlaceholder")}
                 />
               </div>
 
               {/* Phone + Company row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="q-phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                  <label htmlFor="q-phone" className="block text-sm font-medium text-gray-700 mb-1">{t("quote.form.phone")}</label>
                   <input
                     id="q-phone"
                     name="phone"
                     type="tel"
                     className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26]"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder={t("quote.form.phonePlaceholder")}
                   />
                 </div>
                 <div>
-                  <label htmlFor="q-company" className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                  <label htmlFor="q-company" className="block text-sm font-medium text-gray-700 mb-1">{t("quote.form.company")}</label>
                   <input
                     id="q-company"
                     name="company"
                     type="text"
                     className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26]"
-                    placeholder="Company name"
+                    placeholder={t("quote.form.companyPlaceholder")}
                   />
                 </div>
               </div>
@@ -171,7 +173,7 @@ export default function QuoteModal() {
               {/* Product */}
               <div>
                 <label htmlFor="q-product" className="block text-sm font-medium text-gray-700 mb-1">
-                  Product <span className="text-red-500">*</span>
+                  {t("quote.form.product")} <span className="text-red-500">*</span>
                 </label>
                 <select
                   id="q-product"
@@ -180,37 +182,37 @@ export default function QuoteModal() {
                   defaultValue={preselectedProduct || ""}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26] bg-white"
                 >
-                  <option value="" disabled>Select a product</option>
-                  <option value="Tempered Glass">Tempered Glass</option>
-                  <option value="Insulated Glass">Insulated Glass</option>
-                  <option value="Laminated Glass">Laminated Glass</option>
-                  <option value="Ceramic Frit Glass">Ceramic Frit Glass (Enameled)</option>
-                  <option value="Low-E Glass">Low-E Glass</option>
-                  <option value="Other">Other / Custom</option>
+                  <option value="" disabled>{t("quote.form.selectProduct")}</option>
+                  <option value="Tempered Glass">{t("product.tempered.name")}</option>
+                  <option value="Insulated Glass">{t("product.insulated.name")}</option>
+                  <option value="Laminated Glass">{t("product.laminated.name")}</option>
+                  <option value="Ceramic Frit Glass">{t("quote.form.productCeramic")}</option>
+                  <option value="Low-E Glass">{t("product.lowE.name")}</option>
+                  <option value="Other">{t("quote.form.productOther")}</option>
                 </select>
               </div>
 
               {/* Quantity */}
               <div>
-                <label htmlFor="q-quantity" className="block text-sm font-medium text-gray-700 mb-1">Estimated Quantity</label>
+                <label htmlFor="q-quantity" className="block text-sm font-medium text-gray-700 mb-1">{t("quote.form.quantity")}</label>
                 <input
                   id="q-quantity"
                   name="quantity"
                   type="text"
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all text-[#1C1F26]"
-                  placeholder="e.g. 500 sqm, 200 panels"
+                  placeholder={t("quote.form.quantityPlaceholder")}
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="q-message" className="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
+                <label htmlFor="q-message" className="block text-sm font-medium text-gray-700 mb-1">{t("quote.form.message")}</label>
                 <textarea
                   id="q-message"
                   name="message"
                   rows={3}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all resize-none text-[#1C1F26]"
-                  placeholder="Specifications, sizes, project details..."
+                  placeholder={t("quote.form.messagePlaceholder")}
                 />
               </div>
             </div>
@@ -227,15 +229,15 @@ export default function QuoteModal() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
-                  Sending...
+                  {t("quote.form.submitting")}
                 </>
               ) : (
-                "Get Your Free Quote"
+                t("quote.form.submit")
               )}
             </button>
 
             <p className="text-center text-xs text-gray-400 mt-3">
-              We typically respond within 24 hours on business days.
+              {t("quote.form.responseTime")}
             </p>
           </form>
         )}
