@@ -14,15 +14,11 @@ import { FAQ } from '@/components/blog/blocks';
 import ThicknessCalculator from '@/components/blog/article-10/ThicknessCalculator';
 import HardwareLoadVisualizer from '@/components/blog/article-10/HardwareLoadVisualizer';
 import GlobalCodeMatrix from '@/components/blog/article-10/GlobalCodeMatrix';
-import { makeAlternates } from '@/lib/hreflang';
 
 const SLUG = 'shower-glass-thickness-guide';
 const article = blogArticles.find((a) => a.slug === SLUG)!;
 
-export const metadata: Metadata = {
-  ...generateArticleMetadata(article),
-  alternates: makeAlternates(`/blog/${SLUG}`),
-};
+export const metadata: Metadata = generateArticleMetadata(article);
 
 const toc: TOCItem[] = [
   { id: 'the-problem', text: 'Why the "right thickness" question keeps coming back', level: 2 },
