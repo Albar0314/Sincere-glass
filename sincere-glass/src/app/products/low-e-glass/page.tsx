@@ -56,27 +56,19 @@ const faqSchema = {
   }))
 };
 const productSchema = {
-const productSchema =   "@context": "https://schema.org",
-const productSchema =   "@type": "Service",
-const productSchema =   serviceType: "Architectural Glass Manufacturing",
-const productSchema =   name: "Low-E Glass",
-const productSchema =   description: "Energy-efficient low-emissivity coated glass. Reflects heat, transmits light.",
-const productSchema =   image: "https://sincereglass.com/images/products/insulated.jpg",
-const productSchema =   category: "Architectural Glass",
-const productSchema =   provider: {
-const productSchema =     "@type": "Organization",
-const productSchema =     name: "Sincere Glass",
-const productSchema =     url: "https://sincereglass.com",
-const productSchema =   },
-const productSchema =   areaServed: {
-const productSchema =     "@type": "Place",
-const productSchema =     name: "Worldwide",
-const productSchema =   },
-const productSchema =   audience: {
-const productSchema =     "@type": "BusinessAudience",
-const productSchema =     audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-const productSchema =   },
-const productSchema = };
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Low-E Glass",
+  description: "Energy-efficient low-emissivity coated glass. Reflects heat, transmits light.",
+  image: "https://sincereglass.com/images/products/insulated.jpg",
+  brand: {
+    "@type": "Brand",
+    name: "Sincere Glass"
+  },
+  manufacturer: {
+    "@id": "https://sincereglass.com/#organization"
+  }
+};
 const otherProducts = products.filter(p => p.slug !== "low-e-glass").slice(0, 3);
 export default function LowEGlassPage() {
   return <>

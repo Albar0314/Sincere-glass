@@ -63,27 +63,19 @@ const faqSchema = {
   }))
 };
 const productSchema = {
-const productSchema =   "@context": "https://schema.org",
-const productSchema =   "@type": "Service",
-const productSchema =   serviceType: "Architectural Glass Manufacturing",
-const productSchema =   name: "Tempered Glass",
-const productSchema =   description: "Custom architectural tempered glass, 3.8-19mm, panels up to 3m×15m. 3C certified.",
-const productSchema =   image: "https://sincereglass.com/images/products/tempered.jpg",
-const productSchema =   category: "Architectural Glass",
-const productSchema =   provider: {
-const productSchema =     "@type": "Organization",
-const productSchema =     name: "Sincere Glass",
-const productSchema =     url: "https://sincereglass.com",
-const productSchema =   },
-const productSchema =   areaServed: {
-const productSchema =     "@type": "Place",
-const productSchema =     name: "Worldwide",
-const productSchema =   },
-const productSchema =   audience: {
-const productSchema =     "@type": "BusinessAudience",
-const productSchema =     audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-const productSchema =   },
-const productSchema = };
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Tempered Glass",
+  description: "Custom architectural tempered glass, 3.8-19mm, panels up to 3m×15m. 3C certified.",
+  image: "https://sincereglass.com/images/products/tempered.jpg",
+  brand: {
+    "@type": "Brand",
+    name: "Sincere Glass"
+  },
+  manufacturer: {
+    "@id": "https://sincereglass.com/#organization"
+  }
+};
 const otherProducts = products.filter(p => p.slug !== "tempered-glass");
 export default function TemperedGlassPage() {
   return <>

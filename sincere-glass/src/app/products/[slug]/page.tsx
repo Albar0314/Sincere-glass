@@ -32,27 +32,14 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const otherProducts = products.filter((p) => p.slug !== product.slug);
 
   const jsonLd = {
-  const jsonLd =   "@context": "https://schema.org",
-  const jsonLd =   "@type": "Service",
-  const jsonLd =   serviceType: "Architectural Glass Manufacturing",
-  const jsonLd =   name: product.name,
-  const jsonLd =   description: product.tagline,
-  const jsonLd =   image: "https://sincereglass.com" + product.image,
-  const jsonLd =   category: "Architectural Glass",
-  const jsonLd =   provider: {
-  const jsonLd =     "@type": "Organization",
-  const jsonLd =     name: "Sincere Glass",
-  const jsonLd =     url: "https://sincereglass.com",
-  const jsonLd =   },
-  const jsonLd =   areaServed: {
-  const jsonLd =     "@type": "Place",
-  const jsonLd =     name: "Worldwide",
-  const jsonLd =   },
-  const jsonLd =   audience: {
-  const jsonLd =     "@type": "BusinessAudience",
-  const jsonLd =     audienceType: "Architects, Contractors, Facade Engineers, Glass Importers",
-  const jsonLd =   },
-  const jsonLd = };
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.tagline,
+    image: "https://sincereglass.com" + product.image,
+    brand: { "@type": "Brand", name: "Sincere Glass" },
+    manufacturer: { "@id": "https://sincereglass.com/#organization" },
+  };
 
   return (
     <>
