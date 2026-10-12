@@ -519,6 +519,70 @@ export const blogArticles: BlogArticle[] = [
     ],
   },
 
+  {
+    slug: 'architectural-glass-applications-guide',
+    title: "Architectural Glass Applications: The Complete Buyer's Zone Guide",
+    excerpt: "Six application zones cover 95% of commercial glazing — facade, interior, balustrade, shower, skylight, floor. Each has its own code, its own loads, its own default build-up. Interactive building explorer, decoded glazing schedule, and the zone-by-product decision matrix.",
+    targetKeyword: 'architectural glass applications',
+    secondaryKeywords: [
+      'glass by application',
+      'glass selection by application',
+      'architectural glazing applications',
+      'glass application guide',
+      'glazing applications guide',
+    ],
+    searchKeywords: [
+      'architectural glass applications', 'glass applications', 'glazing applications',
+      'glass by application', 'glass selection by application',
+      'application pillar guide', 'glass zone guide',
+      'glazing schedule', 'glass spec sheet', 'glass application matrix',
+      'facade glass', 'balustrade glass', 'shower glass', 'skylight glass', 'interior glass',
+      'glass floor', 'glass stair', 'IGU facade', 'laminated balustrade',
+      '建筑玻璃应用', '建筑玻璃选型', '幕墙 栏杆 淋浴 天窗', '玻璃应用场景', '按应用选玻璃',
+    ],
+    publishDate: '2026-10-12',
+    updatedDate: '2026-10-12',
+    category: 'Buyer Guide' as const,
+    tags: ['pillar', 'architectural glass', 'applications', 'facade', 'balustrade', 'shower', 'skylight', 'glazing schedule', 'specification'],
+    heroImage: '/images/blog/architectural-glass-applications-hero.webp',
+    heroImageAlt: 'Modern mixed-use commercial building interior cutaway showing six distinct glass application zones — curtain wall facade, interior glass partition, atrium balustrade, shower enclosure, overhead skylight, and glass floor landing — in one unified architectural scene',
+    heroImagePrompt: 'Wide-angle architectural illustration photograph of a modern mixed-use commercial building interior, cutaway cross-section view showing six distinct glass application zones in one scene: a floor-to-ceiling curtain wall facade on the far left reflecting cool daylight, an interior glass office partition center-left with subtle acoustic laminated edge visible, a frameless glass atrium balustrade with slim stainless base shoe center-right overlooking a lower atrium level, a frameless shower enclosure visible through an open bathroom door on the right, a geometric glass skylight overhead casting patterned light, and a small structural glass stair tread visible in the lower right. Clean modern architecture with polished concrete floors, warm wood accents, exposed structural steel. Each glass zone has subtle warm amber highlight showing its position. 25-degree camera angle with deep depth of field, cinematic daylight from the skylight above mixing with warm interior lighting. No humans in frame, no cluttered details, no text or watermarks. 4K photorealistic, museum-exhibit quality, documentary architectural style.',
+    author: DEFAULT_AUTHOR,
+    readingTime: 16,
+    featured: true,
+    isPillar: true,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'application' as const,
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
+    tldr: [
+      'Specify glass by application zone, not by product. Each of the six zones (facade / interior / balustrade / shower / skylight / floor) has its own code, loads, and default build-up.',
+      'A glazing schedule compresses an entire specification into one line of notation. Reading it correctly — especially the surface number (#2 vs #3) and interlayer type (PVB vs SGP) — is where most specification errors hide.',
+      'The decision flows in one direction: application → loads → required failure mode → build-up → certification. Starting from a product and working backward produces over-engineered facades and under-engineered balustrades.',
+      'Tempered monolithic is restricted or forbidden in most life-safety applications (balustrade, skylight, floor) because it offers zero post-breakage retention. The shower is the one zone where it dominates.',
+      'IGU and Low-E IGU dominate facade and overhead zones but are explicitly inappropriate for balustrade, shower, and floor applications. Any "IGU" outside facade/overhead is a probable specification error.',
+      'One project typically has 3–5 distinct glass marks. A single "project glass" is almost always wrong — it either over-specifies partitions or under-specifies safety-critical zones.',
+    ],
+    buyerFaq: [
+      {
+        q: 'Can one factory supply all glass marks on a project, or do I need multiple vendors?',
+        a: 'We can supply all five families (tempered, laminated, IGU, Low-E IGU, enameled) from the Wuhan plant for any project where the dimensions and quantities meet MOQ. The advantage of single-source is consistent certification paperwork, matched glass tint across marks (small colour differences between batches become visible when panels are adjacent), and consolidated shipping. For projects below 300 m² total, single-source is almost always more economical than multi-vendor.',
+      },
+      {
+        q: 'What is the fastest turnaround for a mixed-mark project?',
+        a: 'A typical project with 4-5 marks totalling 500–1500 m² ships 35–45 days from PO with full certification paperwork. Facade IGU and balustrade laminated are the critical-path items because they require the IGU line and the autoclave respectively — both operate on scheduled cycles. Shower and partition tempered run on the tempering line directly and are rarely the bottleneck. Sea freight to EU/US/AU adds 25–40 days.',
+      },
+      {
+        q: 'Can you work from an architect's drawing set directly, or do you need a glass schedule?',
+        a: 'Both. Our estimating team routinely reads full drawing sets (plans, sections, elevations) and extracts a glass schedule when the architect has not provided one — this is included in the quote process for projects over 500 m². For smaller projects we ask for the schedule or a filled-in RFQ template; working from scratch for small volumes delays the quote by 2-3 days.',
+      },
+    ],
+    translations: {},
+    changelog: [
+      { date: '2026-10-12', note: 'Initial pillar publish — Application cluster Pillar Page, completing the three-pillar architecture (Types / Manufacturing / Applications)' },
+    ],
+  },
+
 ];
 
 // ---- Utility functions ----
