@@ -594,13 +594,15 @@ export const blogArticles: BlogArticle[] = [
       "architectural glass sourcing China",
       "China glass FOB CIF",
       "import tempered glass from China",
+      "import laminated glass from China to US",
     ],
     searchKeywords: [
       "import glass from China", "how to import glass", "China glass supplier",
       "sourcing glass from China", "China glass factory", "glass procurement China",
+      "import laminated glass from China to US", "import tempered glass from China",
       "FOB glass China", "CIF glass China", "DDP glass",
       "Incoterms 2020 glass", "VGM SOLAS glass", "glass container loading",
-      "architectural glass import", "China glass MOQ", "China glass certification",
+      "architectural glass import", "China glass MOQ", "China glass CCC verification",
       "进口中国玻璃", "中国玻璃供应商", "玻璃出口", "玻璃外贸", "幕墙玻璃采购",
     ],
     publishDate: "2026-10-13",
@@ -611,7 +613,7 @@ export const blogArticles: BlogArticle[] = [
     heroImageAlt: "A Chinese glass factory loading dock with a 20-foot shipping container being loaded with crated architectural glass panels destined for export",
     heroImagePrompt: "Industrial documentary photography of a modern Chinese architectural glass factory loading dock. Foreground: a 20-foot steel shipping container with its doors open, revealing standing A-frame crates holding large laminated and tempered glass panels (approximately 1.5m x 2.5m) carefully loaded with wooden dunnage and corner protectors visible, the glass showing subtle blue-green Low-E tint. A forklift with soft forks is positioned mid-loading, lifting an A-frame crate toward the container. Background: clean modern factory loading bay, polished concrete floor, 'EXPORT' zone markings, overhead gantry crane rails, late-afternoon warm amber sunlight pouring in from an open bay door creating long shadows. Visible shipping documents on a clipboard on a nearby pallet. 25-degree camera angle from behind the loading forklift. Shallow depth of field focused on the container doorway and crated glass inside. No humans in frame, no visible brand logos, no text or watermarks. 4K photorealistic, documentary industrial photography style, warm late-afternoon lighting with warm amber accents on the dark steel container.",
     author: DEFAULT_AUTHOR,
-    readingTime: 17,
+    readingTime: 18,
     featured: false,
     reviewedBy: { name: "Albar", title: "Technical Lead" },
     articleType: "buyer-guide" as const,
@@ -626,6 +628,10 @@ export const blogArticles: BlogArticle[] = [
       "Worked example: 100 panels of 6-1.52-6 laminate (375 m²) land in Los Angeles at ~USD 34/m² all-in, versus ~USD 55–80/m² from a local distributor.",
     ],
     buyerFaq: [
+      {
+        q: "What does it typically cost to import laminated glass from China to the United States?",
+        a: "A worked example: one 20-foot container of 6-1.52-6 clear laminated glass from Shanghai (approximately 375 m², or 100 panels of 1500×2500 mm) lands in Los Angeles at roughly USD 12,500–13,500 total — about USD 33–36 per m² delivered. The build-up: glass FOB (~USD 22/m²), ocean freight (~USD 2,400 per 20'), 4.9% MFN duty under HTSUS 7007, 0.3% marine insurance, customs broker and port fees, plus ~50-mile inland drayage. The same specification sourced from a US distributor typically runs USD 55–80 per m² delivered — a 40–55% delta that only scales above roughly 200 m² where freight and clearance fixed costs are absorbed. Verify current duty rates at hts.usitc.gov and get a live ocean freight quote before committing to a budget.",
+      },
       {
         q: "What is the MOQ for architectural glass export orders from China?",
         a: "Most Chinese glass factories, Sincere Glass included, accept orders starting at one 20-foot container (approximately 200–400 m² depending on glass thickness and panel size). Below that volume, per-m² freight and clearance costs climb sharply and local supply usually wins. For specialty or small-batch orders, a trading company can consolidate but at a markup.",
@@ -652,7 +658,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     changelog: [
-      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster" },
+      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster. v1.1: SSR methodology shadow + table caption + US FAQ" },
     ],
   },
 ];

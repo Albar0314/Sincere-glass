@@ -1,6 +1,11 @@
-// deploy-article-13.mjs
+// deploy-article-13.mjs (v1.1)
 // Deploys Buyer-Guide cluster first article: "How to Import Glass from China"
 // Usage: from project root → `node edit\deploy-article-13.mjs`
+//
+// v1.1 (2026-10-13):
+//   - Added US destination-pair buyerFaq entry (long-tail capture + Featured Snippet candidate)
+//   - Page template rewritten with SSR methodology shadows (C21), table caption/aria + source links (C22), "How we calculated" paragraph (C22)
+//   - Script injects C21/C22-shipped marker into changelog
 
 import fs from "node:fs";
 import path from "node:path";
@@ -28,7 +33,7 @@ function writeFile(target, content) {
   console.log(`  ✓ ${path.relative(PROJECT_ROOT, target)}`);
 }
 
-console.log("\n==== Deploying Article #13: How to Import Glass from China ====\n");
+console.log("\n==== Deploying Article #13 v1.1: How to Import Glass from China ====\n");
 
 // ─── 1. Interactive components ──────────────────────────────────────
 console.log("1/4 Writing interactive components...");
@@ -48,14 +53,14 @@ writeFile(
 );
 
 // ─── 2. Article page ────────────────────────────────────────────────
-console.log("\n2/4 Writing article page...");
+console.log("\n2/4 Writing article page (v1.1)...");
 writeFile(
   abs(`src/app/blog/${SLUG}/page.tsx`),
   readTpl("page-article-13-how-to-import-glass-from-china.tsx.txt")
 );
 
 // ─── 3. Append registry entry ───────────────────────────────────────
-console.log("\n3/4 Appending registry entry...");
+console.log("\n3/4 Appending registry entry (with v1.1 FAQ)...");
 
 const registryPath = abs("src/lib/blog-registry.ts");
 if (!fs.existsSync(registryPath)) {
@@ -64,7 +69,15 @@ if (!fs.existsSync(registryPath)) {
 let registry = fs.readFileSync(registryPath, "utf8");
 
 if (registry.includes(`slug: "${SLUG}"`) || registry.includes(`slug: '${SLUG}'`)) {
-  console.log("  → entry already present; skipping registry injection");
+  console.log("  → entry already present; checking whether to upgrade in place");
+  // v1.1 marker — if changelog already has it, don't touch
+  if (registry.includes("v1.1: SSR methodology shadow + table caption + US FAQ")) {
+    console.log("  → v1.1 already applied; skipping registry injection");
+  } else {
+    console.log("  ⚠ v1.0 entry present. To upgrade: manually delete the v1.0 entry");
+    console.log("    for how-to-import-glass-from-china from src/lib/blog-registry.ts,");
+    console.log("    then re-run this script.");
+  }
 } else {
   const REGISTRY_ENTRY = `
   {
@@ -78,13 +91,15 @@ if (registry.includes(`slug: "${SLUG}"`) || registry.includes(`slug: '${SLUG}'`)
       "architectural glass sourcing China",
       "China glass FOB CIF",
       "import tempered glass from China",
+      "import laminated glass from China to US",
     ],
     searchKeywords: [
       "import glass from China", "how to import glass", "China glass supplier",
       "sourcing glass from China", "China glass factory", "glass procurement China",
+      "import laminated glass from China to US", "import tempered glass from China",
       "FOB glass China", "CIF glass China", "DDP glass",
       "Incoterms 2020 glass", "VGM SOLAS glass", "glass container loading",
-      "architectural glass import", "China glass MOQ", "China glass certification",
+      "architectural glass import", "China glass MOQ", "China glass CCC verification",
       "进口中国玻璃", "中国玻璃供应商", "玻璃出口", "玻璃外贸", "幕墙玻璃采购",
     ],
     publishDate: "2026-10-13",
@@ -95,7 +110,7 @@ if (registry.includes(`slug: "${SLUG}"`) || registry.includes(`slug: '${SLUG}'`)
     heroImageAlt: "A Chinese glass factory loading dock with a 20-foot shipping container being loaded with crated architectural glass panels destined for export",
     heroImagePrompt: "Industrial documentary photography of a modern Chinese architectural glass factory loading dock. Foreground: a 20-foot steel shipping container with its doors open, revealing standing A-frame crates holding large laminated and tempered glass panels (approximately 1.5m x 2.5m) carefully loaded with wooden dunnage and corner protectors visible, the glass showing subtle blue-green Low-E tint. A forklift with soft forks is positioned mid-loading, lifting an A-frame crate toward the container. Background: clean modern factory loading bay, polished concrete floor, 'EXPORT' zone markings, overhead gantry crane rails, late-afternoon warm amber sunlight pouring in from an open bay door creating long shadows. Visible shipping documents on a clipboard on a nearby pallet. 25-degree camera angle from behind the loading forklift. Shallow depth of field focused on the container doorway and crated glass inside. No humans in frame, no visible brand logos, no text or watermarks. 4K photorealistic, documentary industrial photography style, warm late-afternoon lighting with warm amber accents on the dark steel container.",
     author: DEFAULT_AUTHOR,
-    readingTime: 17,
+    readingTime: 18,
     featured: false,
     reviewedBy: { name: "Albar", title: "Technical Lead" },
     articleType: "buyer-guide" as const,
@@ -110,6 +125,10 @@ if (registry.includes(`slug: "${SLUG}"`) || registry.includes(`slug: '${SLUG}'`)
       "Worked example: 100 panels of 6-1.52-6 laminate (375 m²) land in Los Angeles at ~USD 34/m² all-in, versus ~USD 55–80/m² from a local distributor.",
     ],
     buyerFaq: [
+      {
+        q: "What does it typically cost to import laminated glass from China to the United States?",
+        a: "A worked example: one 20-foot container of 6-1.52-6 clear laminated glass from Shanghai (approximately 375 m², or 100 panels of 1500×2500 mm) lands in Los Angeles at roughly USD 12,500–13,500 total — about USD 33–36 per m² delivered. The build-up: glass FOB (~USD 22/m²), ocean freight (~USD 2,400 per 20'), 4.9% MFN duty under HTSUS 7007, 0.3% marine insurance, customs broker and port fees, plus ~50-mile inland drayage. The same specification sourced from a US distributor typically runs USD 55–80 per m² delivered — a 40–55% delta that only scales above roughly 200 m² where freight and clearance fixed costs are absorbed. Verify current duty rates at hts.usitc.gov and get a live ocean freight quote before committing to a budget.",
+      },
       {
         q: "What is the MOQ for architectural glass export orders from China?",
         a: "Most Chinese glass factories, Sincere Glass included, accept orders starting at one 20-foot container (approximately 200–400 m² depending on glass thickness and panel size). Below that volume, per-m² freight and clearance costs climb sharply and local supply usually wins. For specialty or small-batch orders, a trading company can consolidate but at a markup.",
@@ -136,12 +155,11 @@ if (registry.includes(`slug: "${SLUG}"`) || registry.includes(`slug: '${SLUG}'`)
       },
     ],
     changelog: [
-      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster" },
+      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster. v1.1: SSR methodology shadow + table caption + US FAQ" },
     ],
   },
 `;
 
-  // Inject before the final `];` that closes blogArticles
   const marker = /\n\];\s*\n\n\/\/ ---- Utility functions ----/;
   if (!marker.test(registry)) {
     throw new Error(
@@ -159,7 +177,6 @@ console.log("\n4/4 Updating SOP cluster-count table...");
 const sopPath = abs("claude/blog-sop-v2.md");
 if (fs.existsSync(sopPath)) {
   let sop = fs.readFileSync(sopPath, "utf8");
-  // Match the buyer-guide row and bump count 0 → 1
   const bgRow = /\| buyer-guide \| 0 \| ❌ Need 3 \|/;
   if (bgRow.test(sop)) {
     sop = sop.replace(bgRow, "| buyer-guide | 1 | ❌ Need 2 more |");
@@ -172,12 +189,15 @@ if (fs.existsSync(sopPath)) {
   console.log("  → SOP file not found; skipping");
 }
 
-console.log("\n==== Deployed ====");
+console.log("\n==== Deployed v1.1 ====");
 console.log(`\nNext steps:
-  1. git status  → verify ${componentsDir.replace(PROJECT_ROOT + path.sep, "")}, src/app/blog/${SLUG}/, blog-registry.ts
-  2. npm run build  → smoke-test TypeScript compilation
-  3. git add . && git commit -m "feat(blog): article #13 — how to import glass from China (buyer-guide cluster first)"
-  4. git push  → Vercel auto-deploys
-  5. GSC request-indexing: https://sincereglass.com/blog/${SLUG}
-  6. Generate hero image per prompt in registry → save to public/images/blog/${SLUG}-hero.webp
+  1. If upgrading from a v1.0 deploy already pushed:
+       Delete the "how-to-import-glass-from-china" entry from src/lib/blog-registry.ts
+       and re-run this script to insert the v1.1 entry with the US FAQ.
+  2. git status  → verify changes
+  3. npm run build  → smoke-test TypeScript compilation
+  4. git add . && git commit -m "feat(blog): article #13 v1.1 — SSR methodology + traceable costs + US FAQ"
+  5. git push  → Vercel auto-deploys
+  6. GSC request-indexing: https://sincereglass.com/blog/${SLUG}
+  7. Generate hero image per prompt in registry → save to public/images/blog/${SLUG}-hero.webp
 `);

@@ -107,6 +107,10 @@ export default function Page() {
           Alibaba.com, Made-in-China, and trade-show directories (Guangzhou Fair, Fenestration China, Vitrum) will each give you between 20 and 200 candidate factories for a given glass type. That list has to be cut to 3–5 before any serious conversation starts. The scorecard below is the one we recommend buyers run on us and our competitors alike.
         </p>
 
+        <p>
+          <strong>How the scorecard works:</strong> ten verification items are grouped into three dimensions — Credentials (40 points: ISO 9001, 3C/CCC, EN tests, business license, export rights), Capability (35 points: furnace or autoclave envelope match for your largest panel, monthly capacity at least 3× your order volume, three or more reference projects in the same product category), and Communication (25 points: 24-hour technical response in your working language, willingness to send a paid sample before PO). Tick what you have verified in writing. The resulting score sits in one of four tiers: 81–100 Preferred Supplier (proceed to RFQ), 61–80 Qualified (resolve open items before PO), 31–60 Caution (only proceed with factory audit and payment safeguards), 0–30 High Risk (walk away). Weightings are deliberately heaviest on equipment-envelope match and technical communication speed — the two attributes most predictive of execution risk.
+        </p>
+
         <SupplierVerificationScorecard />
 
         <p>
@@ -195,6 +199,10 @@ export default function Page() {
           Incoterms 2020 — the <a href="https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/" target="_blank" rel="noopener noreferrer">International Chamber of Commerce rules</a> that govern who pays, who carries risk, and who clears customs — are the single most-misunderstood part of a China glass buy. The explorer below walks through the four Incoterms you will actually see on a glass invoice.
         </p>
 
+        <p>
+          <strong>How the four terms differ:</strong> each successive Incoterm expands the seller&apos;s scope along the shipment chain. <strong>EXW</strong> (Ex Works) ends at the factory gate — the seller crates and the buyer handles everything else. <strong>FOB</strong> (Free On Board) adds inland trucking, export customs clearance and loading at a Chinese port. <strong>CIF</strong> (Cost, Insurance, Freight) further adds ocean freight and minimum marine insurance through arrival at the destination port, but the buyer still clears import customs and handles delivery. <strong>DDP</strong> (Delivered Duty Paid) extends all the way to the project site including import duty and local trucking. One critical nuance: under both FOB and CIF, <em>risk of loss transfers at the Chinese port of loading</em> — not at the destination port — a common buyer misunderstanding that becomes painful when a container is damaged mid-ocean under a CIF quote.
+        </p>
+
         <IncotermsExplorer />
 
         <p>
@@ -228,6 +236,10 @@ export default function Page() {
 
         <h3>Container loading math</h3>
 
+        <p>
+          <strong>The formula:</strong> each square metre of glass weighs approximately thickness (mm) × 2.5 kg (soda-lime float density = 2500 kg/m³, so 1 mm of glass over 1 m² weighs 2.5 kg). Add roughly 18% to total glass weight to account for A-frame crates, dunnage, moisture bags and corner protection. Divide the resulting shipped weight by the container&apos;s road-legal payload cap to get container count: approximately 24,000 kg for a standard 20&apos; Dry Container, 26,000 kg for a 40&apos; High Cube in most jurisdictions. For architectural glass, the 20&apos;DC fills to its weight cap long before its 33 m³ cube — so container count is driven by kilograms, not panel geometry, and 20&apos;DC is the default except when panel height exceeds roughly 2.6 m.
+        </p>
+
         <ContainerLoadCalculator />
 
         <p>
@@ -241,19 +253,25 @@ export default function Page() {
         </p>
 
         <div className="overflow-x-auto my-6">
-          <table className="w-full border-collapse text-sm">
+          <table
+            className="w-full border-collapse text-sm"
+            aria-label="Worked example — landed cost build-up for 100 panels of 6-1.52-6 laminated glass, Shanghai FOB to Los Angeles, Q4 2026 reference rates"
+          >
+            <caption className="text-left text-[#8B95A5] text-xs mb-3">
+              Indicative landed cost — 100 panels × 1.5m × 2.5m × 6-1.52-6 laminate, Shanghai → Los Angeles. Data verified 2026-10-13; all figures reference pricing in USD, subject to live quotation.
+            </caption>
             <thead>
               <tr>
-                <th className="text-left py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40">Cost line</th>
-                <th className="text-right py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40 bg-[#3A4250]/10">USD (indicative)</th>
-                <th className="text-left py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40">Note</th>
+                <th scope="col" className="text-left py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40">Cost line</th>
+                <th scope="col" className="text-right py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40 bg-[#3A4250]/10">USD (indicative)</th>
+                <th scope="col" className="text-left py-3 px-4 font-medium text-[#F2F0ED] border-b border-[#3A4250]/40">Note &amp; source</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Glass FOB Shanghai</td>
                 <td className="py-3 px-4 text-right text-[#F2F0ED]">8,250</td>
-                <td className="py-3 px-4 text-[#F2F0ED]/80">100 panels × 3.75 m² × USD 22/m²</td>
+                <td className="py-3 px-4 text-[#F2F0ED]/80">100 panels × 3.75 m² × USD 22/m² (Sincere Glass Q4 2026 export reference)</td>
               </tr>
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Export crating</td>
@@ -263,7 +281,7 @@ export default function Page() {
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Ocean freight (20&apos; to LAX)</td>
                 <td className="py-3 px-4 text-right text-[#F2F0ED]">2,400</td>
-                <td className="py-3 px-4 text-[#F2F0ED]/80">All-in; varies USD 1,700–3,400 by season</td>
+                <td className="py-3 px-4 text-[#F2F0ED]/80">All-in; varies USD 1,700–3,400 by season — verify live with your forwarder</td>
               </tr>
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Marine insurance (0.3% of CIF value)</td>
@@ -273,12 +291,15 @@ export default function Page() {
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">US import duty (HTSUS 7005 / 7007)</td>
                 <td className="py-3 px-4 text-right text-[#F2F0ED]">410</td>
-                <td className="py-3 px-4 text-[#F2F0ED]/80">4.9% MFN rate; verify current HTSUS classification</td>
+                <td className="py-3 px-4 text-[#F2F0ED]/80">
+                  4.9% MFN rate per 2026 USITC HTS; verify current classification at{" "}
+                  <a href="https://hts.usitc.gov/" target="_blank" rel="noopener noreferrer">hts.usitc.gov</a>
+                </td>
               </tr>
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Customs broker + port fees</td>
                 <td className="py-3 px-4 text-right text-[#F2F0ED]">650</td>
-                <td className="py-3 px-4 text-[#F2F0ED]/80">Entry, bond, THC, chassis, pre-pull</td>
+                <td className="py-3 px-4 text-[#F2F0ED]/80">Entry, bond, THC, chassis, pre-pull — US West Coast Q4 2026 market</td>
               </tr>
               <tr className="border-b border-[#3A4250]/20">
                 <td className="py-3 px-4 text-[#8B95A5] font-medium">Inland trucking to site (50 miles)</td>
@@ -293,6 +314,10 @@ export default function Page() {
             </tbody>
           </table>
         </div>
+
+        <p>
+          <strong>How we calculated this:</strong> line items are built bottom-up from the factory ex-works price. FOB adds inland trucking, export clearance and loading, typically absorbed into the per-m² FOB quote for routine lanes. Ocean freight is a per-container all-in rate from the Chinese FOB port to the named destination port, sourced from current forwarder quotes rather than published tariff — rates fluctuate roughly 30% between carriers in a single week and move seasonally with Chinese New Year and pre-US-holiday peaks. Marine insurance is calculated at 0.3% of CIF value (= FOB + freight). Import duty uses the current MFN rate for HTSUS heading 7005 (float glass) or 7007 (safety glass) — <a href="https://hts.usitc.gov/" target="_blank" rel="noopener noreferrer">verify current classification at hts.usitc.gov</a>. Broker, port fees and inland drayage are standard US West Coast market rates for a 20&apos; container in Q4 2026. For a specific project, replace each line with a live quote from the party quoting it; this table is a budget check, not a quotation.
+        </p>
 
         <p>
           By comparison, the same specification sourced from a North American distributor typically runs USD 55–80 per m² delivered, depending on volume. The 40–60% delta is real and reproducible on orders above roughly 200 m² — below that threshold, freight and clearance fixed costs eat the saving.
