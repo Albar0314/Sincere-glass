@@ -101,6 +101,14 @@ export default function ContainerLoadingLab() {
       riskTier = 'Moderate';
       riskNote = '20′ DC fills on weight first; residual volume often invites improper top-stacking.';
     }
+    if (container === '20dc' && strategy === 'wooden-box' && (thickness === 'laminated' || thickness === 'igu')) {
+      riskTier = 'High';
+      riskNote = 'Enclosed boxes in a weight-limited 20′DC create stacking compression on the lower box — switch to a 40′HQ or use L-type crates.';
+    }
+    if (container === '40ot' && (thickness === 'laminated' || thickness === 'igu')) {
+      riskTier = 'High';
+      riskNote = 'Open-top containers lose the roof restraint path; heavy laminated or IGU loads should not ship 40′OT without engineered top bracing.';
+    }
 
     return {
       maxM2: Math.round(maxM2),
