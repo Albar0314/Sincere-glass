@@ -661,6 +661,47 @@ export const blogArticles: BlogArticle[] = [
       { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster. v1.1: SSR methodology shadow + table caption + US FAQ" },
     ],
   },
+
+  {
+    slug: 'glass-shipping-container-loading-guide',
+    title: "Glass Container Shipping: The Factory Playbook for Crating, Loading, and Zero-Damage Delivery",
+    excerpt: "The operational guide behind every architectural glass container we seal: 4 crate types, weight-vs-volume math, the 7-step loading protocol, the 6 damage zones to design against, FCL vs LCL, ICC marine insurance, HS codes, and the 5 pre-seal photos every buyer should demand.",
+    targetKeyword: 'glass container shipping',
+    secondaryKeywords: [
+      'shipping glass in containers',
+      'glass container loading',
+      'glass container packaging',
+      'glass FCL vs LCL',
+      'how to ship glass from china',
+      'glass sea freight packaging',
+    ],
+    searchKeywords: [
+      'glass container shipping', 'shipping glass in containers', 'glass container loading',
+      'glass FCL', 'glass LCL', 'how to ship glass from china', 'glass sea freight',
+      'glass packaging export', 'glass crate types', 'A-frame glass crate',
+      'L-type glass crate', 'glass container weight', '20DC glass', '40HQ glass',
+      'ISPM-15', 'ICC A clause', 'marine insurance glass', 'HS code 7007', 'HS code 7008',
+      '玻璃海运', '玻璃集装箱', '玻璃出口装柜', '玻璃海运包装',
+    ],
+    publishDate: '2026-10-14',
+    updatedDate: '2026-10-14',
+    category: 'Buyer Guide',
+    tags: ['logistics', 'export packaging', 'container shipping', 'marine insurance', 'HS codes', 'buyer guide'],
+    heroImage: '/images/blog/glass-shipping-container-loading-hero.webp',
+    heroImageAlt: 'Open 40-foot high-cube shipping container at a dock showing vertically crated architectural glass panels secured with ratchet straps, moisture absorber bags visible near ceiling',
+    heroImagePrompt: "Industrial dock photography, late afternoon: a 40-foot high-cube shipping container with its rear doors fully open, revealing custom-built wooden A-frame crates stacked vertically against both side walls, each crate holding large architectural glass panels wrapped in foam padding and translucent plastic sheeting. Yellow ratchet straps clearly visible securing crates to interior tie-down rails. White moisture-absorber bags hanging from ceiling tie-down loops near the top of the container. Warm amber-golden sunlight streaming in through the open doors, casting long directional light across the glass stack and polished concrete dock floor. Weathered concrete port apron, forklift tines partially visible on the lower-left edge, container number stencilled on door panel. 25-degree camera angle slightly below the container doorway looking in, deep depth of field showing crates in the front and the rear door frame simultaneously. Clean industrial dock environment, no humans in frame. 4K photorealistic, documentary logistics-photography style, no text on crates or overlays.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 17,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'buyer-guide',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-14', note: 'Initial publish — Buyer-Guide cluster article 2 of 3 (Pillar activates at 3)' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

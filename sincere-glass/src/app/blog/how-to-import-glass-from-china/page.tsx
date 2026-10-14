@@ -242,6 +242,10 @@ export default function Page() {
 
         <ContainerLoadCalculator />
 
+        <p className="text-sm text-[#8B95A5] italic mt-2">
+          For the operational pack side of this — crate types, loading protocol, damage prevention, insurance, and the pre-seal photo checklist — see our deep dive on <a href="/blog/glass-shipping-container-loading-guide">glass container shipping</a>.
+        </p>
+
         <p>
           A 20&apos; container is almost always the right choice for architectural glass because the limit is weight, not cube — a loaded 20&apos; of 10mm tempered will hit the 24-tonne payload cap long before it fills the 33 m³ of interior volume. 40&apos; High Cube containers earn their place only when panel heights exceed roughly 2.6 m, where a 20&apos; A-frame crate won&apos;t fit the panels standing up.
         </p>
