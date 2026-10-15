@@ -111,7 +111,12 @@ export default function Page() {
           <strong>How the scorecard works:</strong> ten verification items are grouped into three dimensions — Credentials (40 points: ISO 9001, 3C/CCC, EN tests, business license, export rights), Capability (35 points: furnace or autoclave envelope match for your largest panel, monthly capacity at least 3× your order volume, three or more reference projects in the same product category), and Communication (25 points: 24-hour technical response in your working language, willingness to send a paid sample before PO). Tick what you have verified in writing. The resulting score sits in one of four tiers: 81–100 Preferred Supplier (proceed to RFQ), 61–80 Qualified (resolve open items before PO), 31–60 Caution (only proceed with factory audit and payment safeguards), 0–30 High Risk (walk away). Weightings are deliberately heaviest on equipment-envelope match and technical communication speed — the two attributes most predictive of execution risk.
         </p>
 
-        <SupplierVerificationScorecard />
+        
+      <p className="text-sm text-[#8B95A5] italic my-6">
+        For the deep-dive playbook on supplier vetting — the 5-risk threat model, cert verifier, and the 90-minute video audit script —
+        see <a href="/blog/architectural-glass-supplier-china-vetting" className="text-[#DAA745]">how to vet a china glass supplier</a>.
+      </p>
+<SupplierVerificationScorecard />
 
         <p>
           A supplier below 61 points is not a candidate — move on. A supplier at 61–80 is a candidate with specific open items; those items go on your Stage 2 verification list. Only suppliers scoring above 81 skip ahead to RFQ.
