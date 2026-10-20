@@ -808,6 +808,38 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-19', note: 'Initial publish — Pillar Page for Buyer-Guide cluster (hub for #13 import, #14 shipping, #15 vetting)' },
     ],
   },
+  {
+    slug: '12mm-tempered-glass-specifications',
+    title: "12mm Tempered Glass: Specifications, Panel Limits, and When It's the Right Choice",
+    excerpt: "Why 12mm is the specification sweet spot for frameless balustrades, long-span canopies, and large-area storefronts \u2014 plus panel-size limits, thickness tolerance, edge options, and the cost factors buyers rarely see on a quotation.",
+    targetKeyword: '12mm tempered glass',
+    secondaryKeywords: ['12mm toughened glass', '12mm tempered glass specifications', '12mm tempered glass max size', '12mm tempered glass price', '12mm safety glass'],
+    searchKeywords: [
+      '12mm tempered', '12mm tempered glass', '12mm toughened glass', '1/2 inch tempered glass',
+      '12mm safety glass', '12 mm tempered', 'half inch tempered',
+      'tempered glass thickness', 'tempered glass panel size', 'tempered balustrade glass',
+      'GB 15763.2', 'ASTM C1048', 'EN 12150', 'ANSI Z97.1',
+      '12\u6beb\u7c73\u94a2\u5316\u73bb\u7483', '12mm\u94a2\u5316\u73bb\u7483', '12\u539a\u94a2\u5316', '\u680f\u6746\u94a2\u5316\u73bb\u7483', '\u94a2\u5316\u539a\u5ea6'
+    ],
+    publishDate: '2026-10-20',
+    updatedDate: '2026-10-20',
+    category: 'Product Knowledge' as const,
+    tags: ['tempered glass', '12mm', 'specifications', 'balustrade', 'storefront', 'product deep dive'],
+    heroImage: '/images/blog/12mm-tempered-glass-hero.webp',
+    heroImageAlt: 'Stack of 12mm tempered glass panels on a factory handling frame with cut edges clearly visible showing the exact thickness',
+    heroImagePrompt: "Industrial photography of a vertical stack of 12mm tempered architectural glass panels mounted on a steel handling frame inside a modern glass factory. Panels are approximately 2m x 3m, visibly 12mm thick on the exposed edges, with clear factory-fresh float-glass tint. Soft overhead industrial lighting with warm amber accent light pooling on the top edges revealing the exact thickness. Shallow depth of field focused on the exposed stack edges where thickness is visible. Clean neutral grey concrete floor, a dark painted steel A-frame holding the panels upright. 25-degree camera angle from the handling bay. No humans in frame, no visible text or branding. 4K photorealistic, documentary industrial style.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 14,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'product',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-10-20', note: 'Initial publish \u2014 first article in Product Deep Dives cluster' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
