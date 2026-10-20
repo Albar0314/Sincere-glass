@@ -1,45 +1,34 @@
-"use client";
-
-import Image from "next/image";
-import Link from "@/_i18n/es/components/LocalizedLink";
-import { useInView } from "@/lib/useInView";
+import FactoryBrollLoop from "@/_i18n/es/components/FactoryBrollLoop";
 export default function CompanySnapshot() {
-  const {
-    ref,
-    isInView
-  } = useInView({
-    threshold: 0.15
-  });
-  return <section className="py-20 md:py-28 bg-brand-light overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg" style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? "translateX(0)" : "translateX(-40px)",
-          transition: "opacity 700ms ease-out, transform 700ms ease-out"
-        }}>
-            <Image src="/images/factory-exterior.jpg" alt="Fábrica de Sincere Glass en Hubei, China" fill className="object-cover" sizes="(max-width:1024px) 100vw,50vw" />
-          </div>
+  return <FactoryBrollLoop overlayOpacity={0.65} className="min-h-[500px] md:min-h-[600px] py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-2xl mb-12">
+          <p className="text-xs text-[#DAA745] font-semibold uppercase tracking-wider mb-3">
+            Dentro de Sincere Glass
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#F2F0ED] mb-4">
+            Unas instalaciones de 20.000 m² diseñadas para vidrio arquitectónico de gran formato
+          </h2>
+          <p className="text-[#8B95A5] leading-relaxed">
+            Quince años fabricando vidrio arquitectónico en Wuhan, ahora con envíos a todo el mundo.
+            Nuestras líneas de templado y laminado de 3 m × 15 m se encuentran entre las más grandes de la provincia de Hubei.
+          </p>
+        </div>
 
-          <div style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? "translateX(0)" : "translateX(40px)",
-          transition: "opacity 700ms ease-out 150ms, transform 700ms ease-out 150ms"
-        }}>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-dark tracking-tight">
-              Una Década de Excelencia en Fabricación de Vidrio
-            </h2>
-            <div className="mt-6 space-y-4 text-brand-muted leading-relaxed">
-              <p>Fundada en 2005 en Wuhan y ampliada en 2019 con una segunda fábrica en Honghu, Sincere Glass se ha consolidado como una empresa de procesamiento de vidrio arquitectónico de servicio completo, con actividad en el procesamiento profundo y el comercio exterior.</p>
-              <p>Nuestras dos instalaciones abarcan 20,000㎡ y cuentan con 4 líneas de corte inteligentes, 4 líneas de pulido de bordes, 2 hornos de templado (hasta 3m×15m), 2 líneas de vidrio aislante con sistema automatizado de llenado de gas, y 2 autoclaves de alta presión para la producción de vidrio laminado.</p>
-              <p>Bajo el liderazgo del Presidente Li Chuanren — reconocido como uno de los 10 Empresarios Destacados de Wuhan — hemos forjado alianzas con productores nacionales de vidrio y hemos participado en más de 2,600 proyectos emblemáticos.</p>
-            </div>
-            <Link href="/about" className="inline-flex items-center mt-8 text-brand-secondary hover:text-brand-accent font-medium transition-colors">
-              Sobre Nosotros
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-            </Link>
+        <div className="grid grid-cols-3 gap-4 md:gap-8">
+          <div>
+            <div className="text-3xl md:text-5xl font-bold text-[#DAA745] mb-1">20,000</div>
+            <div className="text-xs md:text-sm text-[#F2F0ED]/80">m² de instalaciones</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-5xl font-bold text-[#DAA745] mb-1">3×15</div>
+            <div className="text-xs md:text-sm text-[#F2F0ED]/80">m de capacidad para grandes formatos</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-5xl font-bold text-[#DAA745] mb-1">15+</div>
+            <div className="text-xs md:text-sm text-[#F2F0ED]/80">años en producción</div>
           </div>
         </div>
       </div>
-    </section>;
+    </FactoryBrollLoop>;
 }
