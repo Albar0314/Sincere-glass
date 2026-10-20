@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useInView } from "@/lib/useInView";
-
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 const factories = [
@@ -270,6 +270,22 @@ export default function ContactClient() {
                 <h3 className="font-semibold text-brand-dark text-sm mb-3">Online</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between"><span className="text-brand-muted">Website</span><a href="https://www.xcglass.net" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">www.xcglass.net</a></div>
+                </div>
+              </div>
+              {/* Factory visual proof — closes the sidebar */}
+              <div className="rounded-xl overflow-hidden bg-white border border-brand-light hover:border-brand-accent/30 transition-colors">
+                <YouTubeEmbed
+                  videoId="TDjYxiRUZOM"
+                  title="Inside Sincere Glass — Wuhan factory"
+                  aspectRatio="16/9"
+                />
+                <div className="p-4">
+                  <p className="text-xs text-brand-accent uppercase tracking-wider font-semibold mb-1.5">
+                    Verify who you&apos;re contacting
+                  </p>
+                  <p className="text-sm text-brand-dark leading-relaxed">
+                    A 12-second walk through our 20,000 m² Wuhan facility. Real factory, 15+ years making architectural glass.
+                  </p>
                 </div>
               </div>
             </div>

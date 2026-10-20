@@ -21,7 +21,7 @@ export default async function BlogPage({
   const clusterFilter = params.cluster as BlogCluster | undefined;
   const allArticles = getAllArticles();
   const filtered = clusterFilter ? allArticles.filter(a => a.cluster === clusterFilter) : allArticles;
-  const featured = !clusterFilter ? getFeaturedArticle() : filtered[0];
+  const featured = !clusterFilter ? getFeaturedArticle() : filtered.find(a => a.isPillar) || filtered[0];
   const rest = filtered.filter(a => a.slug !== featured?.slug);
   return <>
       <BlogHero clusterFilter={clusterFilter} />
