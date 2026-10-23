@@ -456,6 +456,10 @@ export default function Page() {
           is actually the correct choice.
         </p>
 
+        <p className="text-sm text-[#8B95A5] mt-6">
+          For the pillar view of how this product-level decision fits into a complete architectural glass specification, see our <a href="/blog/architectural-glass-specification-guide" className="text-[#DAA745] hover:underline">architectural glass specification guide</a>.
+        </p>
+
         <FAQ items={faqItems} />
 
         <LeadMagnetCTA

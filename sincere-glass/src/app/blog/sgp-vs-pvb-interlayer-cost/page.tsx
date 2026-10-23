@@ -475,6 +475,10 @@ export default function Page() {
           description="A side-by-side 11-page PDF covering US IBC, EU EN, China GB, and Australia AS requirements for laminated glass across all common applications. Free for architects, specifiers, and procurement teams."
         />
 
+        <p className="text-sm text-[#8B95A5] mt-6">
+          For the pillar view of how this product-level decision fits into a complete architectural glass specification, see our <a href="/blog/architectural-glass-specification-guide" className="text-[#DAA745] hover:underline">architectural glass specification guide</a>.
+        </p>
+
         <FAQ items={faqItems} />
 
         <RelatedProductsCards
