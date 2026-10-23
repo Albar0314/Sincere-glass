@@ -88,7 +88,7 @@ const flow: Record<string, Question> = {
         nextId: null,
         result: {
           glass: 'Laminated IGU (combined unit)',
-          rationale: 'The premium facade spec: laminated outer lite (safety + acoustic) + argon cavity + Low-E tempered inner lite (thermal). Our 3m×15m lines can produce both processes in sequence.',
+          rationale: 'The premium facade spec: laminated outer lite (safety + acoustic) + argon cavity + Low-E tempered inner lite (thermal). Our 3.3 m × 15 m lines can produce both processes in sequence.',
           productLink: { href: '/products/insulated-glass', label: 'Laminated IGU' },
           deepLink: { href: '/blog/insulated-glass-vs-laminated-glass', label: 'The "both" option explained →' },
         },

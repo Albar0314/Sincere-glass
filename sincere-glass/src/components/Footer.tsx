@@ -10,6 +10,7 @@ const productLinks = [
   { key: "laminated", href: "/products/laminated-glass" },
   { key: "enameled",  href: "/products/enameled-glass" },
   { key: "lowE",      href: "/products/low-e-glass" },
+  { key: "curvedTempered",  href: "/products/curved-tempered-glass" },
 ];
 
 const companyLinks = [

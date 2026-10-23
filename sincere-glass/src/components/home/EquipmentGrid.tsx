@@ -19,7 +19,7 @@ const equipment = [
   {
     name: "Tempering Furnaces",
     count: "2 furnaces",
-    desc: "Flat and bent tempering. Maximum panel size 3m × 15m — one of the largest capacities in Hubei province.",
+    desc: "Flat and bent tempering. Maximum panel size 3.3 m × 15 m — one of the largest capacities in Hubei province.",
     icon: "M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.963-6.078A8.94 8.94 0 0012 3c-1.04 0-2.042.188-2.963.535",
   },
   {
@@ -31,7 +31,7 @@ const equipment = [
   {
     name: "Laminating Autoclaves",
     count: "2 units",
-    desc: "High-pressure autoclaves for PVB and SGP laminated glass. One unit rated at 3m × 15m for oversized architectural panels.",
+    desc: "High-pressure autoclaves for PVB and SGP laminated glass. One unit rated at 3.3 m × 15 m for oversized architectural panels.",
     icon: "M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313",
   },
   {

@@ -919,7 +919,7 @@ export const blogArticles: BlogArticle[] = [
       'large format glass panels',
       'jumbo tempered glass size',
       'maximum glass panel size',
-      '3m x 15m glass',
+      '3.3m x 15m glass',
       'oversized architectural glass',
     ],
     searchKeywords: [
@@ -927,7 +927,7 @@ export const blogArticles: BlogArticle[] = [
       'oversized tempered glass', 'large format glass', 'maximum tempered glass size',
       'jumbo laminated glass', 'jumbo IGU', 'oversized IG unit',
       'jumbo furnace', 'large architectural glass panels',
-      '3m x 15m glass', '3000 x 15000 mm glass', 'ultra-jumbo glass',
+      '3.3m x 15m glass', '3000 x 15000 mm glass', 'ultra-jumbo glass',
       '\u8d85\u5927\u73bb\u7483', '\u8d85\u5927\u5c3a\u5bf8\u94a2\u5316\u73bb\u7483',
       '\u5de8\u578b\u73bb\u7483\u5e55\u5899', '\u5f02\u578b\u8d85\u5927\u5939\u80f6\u73bb\u7483'
     ],

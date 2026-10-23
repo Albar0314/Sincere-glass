@@ -48,7 +48,7 @@ const buyerFaqItems = [{
   a: 'The autoclave cycle itself is about 2.5 hours. Including cutting, cleaning, pre-press, and quality inspection, our standard production cycle is 10-15 working days from order confirmation. Combined laminated-IGU (laminated + insulated glass unit) runs 15-20 working days because it involves both the lamination autoclave and the IGU production line in sequence.'
 }, {
   q: "What's the maximum size laminated glass we can produce?",
-  a: 'Our 3m × 15m autoclave is among the largest in Hubei province, matching our tempering furnace capacity. This lets us produce jumbo laminated panels (and combined tempered-laminated panels) for structural glazing, large curtain walls, and ultra-wide canopies that smaller factories cannot handle.'
+  a: 'Our 3.3 m × 15 m autoclave is among the largest in Hubei province, matching our tempering furnace capacity. This lets us produce jumbo laminated panels (and combined tempered-laminated panels) for structural glazing, large curtain walls, and ultra-wide canopies that smaller factories cannot handle.'
 }, {
   q: 'Can laminated glass be cut after lamination?',
   a: 'Yes, if the glass lites inside are annealed. The interlayer is cut with a knife or heated wire after scoring and snapping the glass. However, laminated TEMPERED glass cannot be re-cut — tempering locks the glass permanently (see our tempered glass production guide for why). For modifications to tempered-laminated panels, new raw materials must be ordered.'
@@ -79,7 +79,7 @@ export default function Page() {
 
         <p>
           Este artículo describe lo que ocurre realmente en una línea de laminado en funcionamiento
-          — concretamente la nuestra en Wuhan, con nuestro autoclave de 3m × 15m (uno de los más
+          — concretamente la nuestra en Wuhan, con nuestro autoclave de 3.3 m × 15 m (uno de los más
           grandes de la provincia de Hubei). Es el complemento de nuestra{' '}
           <a href="/blog/how-is-tempered-glass-made">recorrido por la producción de vidrio templado</a>{' '}
           — muchos de nuestros clientes especifican vidrio laminado-templado, que combina ambos procesos.
@@ -183,7 +183,7 @@ export default function Page() {
         </ul>
 
         <p>
-          Nuestro autoclave es una unidad de 3m × 15m con control de ciclo programable calibrado para
+          Nuestro autoclave es una unidad de 3.3 m × 15 m con control de ciclo programable calibrado para
           cada tipo de lámina intermedia (PVB (polivinil butiral), SGP (SentryGlas Plus), PVB acústico) y configuración de vidrio. Para la producción combinada de
           vidrio laminado-UVA (Unidad de Vidrio Aislante), la hoja exterior de vidrio laminado sale de este autoclave y
           se incorpora directamente a nuestra{' '}

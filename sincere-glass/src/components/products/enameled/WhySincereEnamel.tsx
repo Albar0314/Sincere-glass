@@ -5,7 +5,7 @@ import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 const advantages = [
   { icon: "🎨", title: "Any Color You Need", desc: "Full RAL and Pantone matching. We formulate and test custom colors before production. Your brand, your building, your exact shade." },
   { icon: "⚙️", title: "Integrated Production", desc: "Cutting, screen printing, tempering, and quality testing all happen under one roof. No outsourcing delays, no quality handoff risks." },
-  { icon: "📏", title: "Oversized Panels", desc: "Our enameling and tempering lines handle panels up to 3m × 15m — reducing joints and creating cleaner facades on large projects." },
+  { icon: "📏", title: "Oversized Panels", desc: "Our enameling and tempering lines handle panels up to 3.3 m × 15 m — reducing joints and creating cleaner facades on large projects." },
   { icon: "📄", title: "Full Certification", desc: "3C certified with complete test reports. The enamel meets GB 15763.2-2005 for safety glass — your project passes inspection first time." },
 ];
 

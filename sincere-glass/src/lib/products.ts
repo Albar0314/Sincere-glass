@@ -25,7 +25,7 @@ export const products: Product[] = [
     specs: [
       { label: "Thickness", value: "3.8mm – 19mm"
   },
-      { label: "Max Panel Size", value: "3,000mm × 15,000mm" },
+      { label: "Max Panel Size", value: "3,300mm × 15,000mm" },
       { label: "Strength", value: "4-5× ordinary glass" },
       { label: "Thermal Resistance", value: "3× ordinary float glass" },
       { label: "Processing", value: "Flat & bent tempering available" },
@@ -35,7 +35,7 @@ export const products: Product[] = [
       { title: "Mechanical Strength", desc: "Impact resistance and bending strength 4-5 times that of ordinary glass." },
       { title: "Thermal Shock Resistance", desc: "Withstands large temperature differentials without cracking — 3× the resistance of standard float glass." },
       { title: "Safe Fragmentation", desc: "Breaks into small, blunt-edged particles that minimize risk of serious injury." },
-      { title: "Oversized Panels", desc: "Our tempering furnace handles panels up to 3m × 15m — among the largest in Hubei province." },
+      { title: "Oversized Panels", desc: "Our tempering furnace handles panels up to 3.3 m × 15 m — among the largest in Hubei province." },
     ],
     applications: [
       "Curtain walls and building facades",
@@ -98,7 +98,7 @@ export const products: Product[] = [
       { label: "Interlayer", value: "PVB (standard) or SGP (structural)" },
       { label: "UV Blocking", value: "> 99% ultraviolet radiation" },
       { label: "Sound Insulation", value: "Filters 1000Hz – 2000Hz noise" },
-      { label: "Max Panel Size", value: "3,000mm × 15,000mm (autoclave)" },
+      { label: "Max Panel Size", value: "3,300mm × 15,000mm (autoclave)" },
       { label: "Certification", value: "China 3C (CCC) Certified" },
     ],
     features: [
@@ -188,6 +188,40 @@ export const products: Product[] = [
     ],
     standard: "GB/T 18915-2013 — Coated Glass (National Standard)",
     searchKeywords: ["low-e", "low emissivity", "lowe", "low e", "coated glass", "soft coat", "hard coat", "pyrolytic", "sputtered", "magnetron", "solar control", "SHGC", "heat reflective", "energy saving", "LEED", "passive house", "green building", "Low-E玻璃", "低辐射玻璃", "镀膜玻璃", "节能玻璃"],
+  },
+  {
+    slug: "curved-tempered-glass",
+    name: "Curved Tempered Glass",
+    tagline: "Hot-bent and cold-bent architectural glass from a 500 mm minimum radius",
+    description: [
+      "Curved tempered glass is architectural glass formed to a curved profile and heat-treated for safety. In hot-bending, a flat panel is heated above its softening point and shaped over a steel mold; the curve is then locked in during the tempering quench. In cold-bending, a flat tempered panel is flexed into a curved frame during installation.",
+      "Our facility produces curved tempered to a 500 mm minimum radius on 6 mm panels, up to 3,300 mm by 15,000 mm at the panel ceiling. Cylindrical, spherical, and free-form geometries are all available, and curved panels can be laminated or built into IGUs.",
+    ],
+    image: "/images/products/curved-tempered.jpg",
+    specs: [
+      { label: "Thickness Range", value: "6mm, 8mm, 10mm, 12mm, 15mm, 19mm" },
+      { label: "Minimum Radius", value: "500mm (6mm panels)" },
+      { label: "Max Panel Size", value: "3,300mm \u00d7 15,000mm" },
+      { label: "Geometries", value: "Cylindrical, spherical, free-form" },
+      { label: "Forming Methods", value: "Hot-bending or cold-bending" },
+      { label: "Certification", value: "GB 15763.2 + EN 12150; China 3C (CCC) Certified" },
+    ],
+    features: [
+      { title: "Tight-Radius Specialty", desc: "500 mm minimum radius sits well below the 800 mm floor most Chinese plants publish. Achieved with 6 mm panels on a reusable steel mold." },
+      { title: "Jumbo Capability", desc: "Our 3.3 m \u00d7 15 m tempering furnace handles curved panels at full size \u2014 among the largest in Hubei province." },
+      { title: "Multi-Build Compatible", desc: "Curved panels can be laminated (PVB or SGP) or built into insulated units with Low-E coating, in one order." },
+      { title: "Dual-Standard Output", desc: "Produced to China GB 15763.2 and tested against EN 12150; EN or ANSI Z97.1 test reports available for export projects." },
+    ],
+    applications: [
+      "Panoramic lifts and elevator shafts",
+      "Curved curtain walls and building facades",
+      "Dome skylights and oculus roofs",
+      "Entrance canopies and porte-cocheres",
+      "Boutique shopfronts and showcases",
+      "Marine and yacht wheelhouse glazing",
+    ],
+    standard: "GB 15763.2-2005 + EN 12150 \u2014 Curved Tempered Safety Glass",
+    searchKeywords: ["curved tempered", "bent glass", "curved glass", "bent tempered glass", "hot bent glass", "cold bent glass", "cylindrical glass", "spherical glass", "free-form glass", "curved facade glass", "curved curtain wall", "curved lift glass", "\u5f2f\u94a2\u73bb\u7483", "\u70ed\u5f2f\u73bb\u7483", "\u5f2f\u5f62\u73bb\u7483"],
   },
 ];
 

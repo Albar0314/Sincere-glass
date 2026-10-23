@@ -73,7 +73,7 @@ export default function Page() {
     }} />)}
 
       <BlogArticleLayout article={article} toc={toc}>
-        <TLDRBox takeaways={['Architectural glass splits into 5 functional families: annealed (raw), tempered (safety strength), laminated (safety retention), insulated (energy), and coated (Low-E / decorative).', 'The selection logic is not about "which is best" — it is about which failure mode you cannot accept: impact injury, falling fragments, heat loss, or UV damage.', 'Most modern buildings use 2-3 types in combination (e.g., tempered doors + laminated overhead + insulated windows). Few projects spec a single type throughout.', 'Our 20,000 m² facility produces all 5 families in-house, including combined laminated-IGU on our 3m × 15m jumbo lines — among the largest in Hubei province.', 'This guide covers all 5 families, links to deep-dive comparison articles, and ends with an interactive selector tool and a procurement checklist.']} />
+        <TLDRBox takeaways={['Architectural glass splits into 5 functional families: annealed (raw), tempered (safety strength), laminated (safety retention), insulated (energy), and coated (Low-E / decorative).', 'The selection logic is not about "which is best" — it is about which failure mode you cannot accept: impact injury, falling fragments, heat loss, or UV damage.', 'Most modern buildings use 2-3 types in combination (e.g., tempered doors + laminated overhead + insulated windows). Few projects spec a single type throughout.', 'Our 20,000 m² facility produces all 5 families in-house, including combined laminated-IGU on our 3.3 m × 15 m jumbo lines — among the largest in Hubei province.', 'This guide covers all 5 families, links to deep-dive comparison articles, and ends with an interactive selector tool and a procurement checklist.']} />
 
         <p>
           "¿Qué tipo de vidrio debo usar?" es una pregunta sin respuesta universal: depende
@@ -145,7 +145,7 @@ export default function Page() {
         </p>
 
         <p>
-          Nuestro horno de templado de 3 m × 15 m se encuentra entre los más grandes de la provincia de Hubei, lo que nos permite suministrar vidrio templado para muros cortina de gran formato y fachadas de dimensiones excepcionales que fábricas más pequeñas no pueden producir. El vidrio templado es la especificación obligatoria para puertas, mamparas de ducha, ventanas bajas y barandillas de vidrio en prácticamente todos los códigos de edificación del mundo.
+          Nuestro horno de templado de 3.3 m × 15 m se encuentra entre los más grandes de la provincia de Hubei, lo que nos permite suministrar vidrio templado para muros cortina de gran formato y fachadas de dimensiones excepcionales que fábricas más pequeñas no pueden producir. El vidrio templado es la especificación obligatoria para puertas, mamparas de ducha, ventanas bajas y barandillas de vidrio en prácticamente todos los códigos de edificación del mundo.
         </p>
 
         <p className="text-sm">

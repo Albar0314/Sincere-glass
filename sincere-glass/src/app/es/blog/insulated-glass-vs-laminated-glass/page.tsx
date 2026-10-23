@@ -42,10 +42,10 @@ const toc: TOCItem[] = [{
 }];
 const buyerFaqItems = [{
   q: "What's the MOQ for insulated glass units from Sincere Glass?",
-  a: "Our standard MOQ for custom IGU orders is 50 square meters, with no restriction on panel size up to our furnace maximum of 3m × 15m. For small boutique projects, we accept trial orders at reduced MOQ with a nominal setup fee. Contact our team for a quote."
+  a: "Our standard MOQ for custom IGU orders is 50 square meters, with no restriction on panel size up to our furnace maximum of 3.3 m × 15 m. For small boutique projects, we accept trial orders at reduced MOQ with a nominal setup fee. Contact our team for a quote."
 }, {
   q: 'Can you produce a laminated IGU (combined unit)?',
-  a: 'Yes. Our 20,000 m² Wuhan facility runs both a 3m × 15m tempering furnace and a 3m × 15m high-pressure laminating autoclave, which means we can produce the laminated outer lite and bond it into an IGU in the same production flow. This is the configuration we recommend for premium facades.'
+  a: 'Yes. Our 20,000 m² Wuhan facility runs both a 3.3 m × 15 m tempering furnace and a 3.3 m × 15 m high-pressure laminating autoclave, which means we can produce the laminated outer lite and bond it into an IGU in the same production flow. This is the configuration we recommend for premium facades.'
 }, {
   q: 'What certifications ship with insulated and laminated glass?',
   a: "All insulated and laminated glass we produce is 3C (CCC) certified under China's mandatory product certification system — GB 15763.3-2009 for laminated glass, GB/T 11944-2012 for insulated glass. For export orders, we can also provide test reports suitable for CE, SGCC, or local-market compliance review on request."
@@ -112,7 +112,7 @@ export default function Page() {
         </p>
 
         <p>
-          En nuestra fábrica de 20,000 m² en Wuhan, producimos ambos en líneas paralelas — dos líneas de vidrio aislante (una de ellas es una línea automática de gran formato con relleno de argón) y dos autoclaves de laminado de alta presión (uno de 3m × 15m, entre los más grandes de la provincia de Hubei). Esto es relevante porque una <em>combined</em> unidad de vidrio laminado-aislante requiere que ambos procesos se ejecuten en secuencia sobre hojas compatibles, y pocos fabricantes de gama media pueden realizar esto en un solo centro de producción.
+          En nuestra fábrica de 20,000 m² en Wuhan, producimos ambos en líneas paralelas — dos líneas de vidrio aislante (una de ellas es una línea automática de gran formato con relleno de argón) y dos autoclaves de laminado de alta presión (uno de 3.3 m × 15 m, entre los más grandes de la provincia de Hubei). Esto es relevante porque una <em>combined</em> unidad de vidrio laminado-aislante requiere que ambos procesos se ejecuten en secuencia sobre hojas compatibles, y pocos fabricantes de gama media pueden realizar esto en un solo centro de producción.
         </p>
 
         <h2 id="performance">Comparativa de Rendimiento: 5 Métricas</h2>

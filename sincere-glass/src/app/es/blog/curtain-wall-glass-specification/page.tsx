@@ -49,7 +49,7 @@ const toc: TOCItem[] = [{
 }];
 const buyerFaqItems = [{
   q: "What's the maximum curtain wall panel size you can produce?",
-  a: 'Our 3m × 15m tempering furnace and 3m × 15m lamination autoclave accept panels up to 3m × 15m — among the largest in Hubei province. Our IGU assembly line accommodates the same jumbo size for insulated units. The practical ceiling for most curtain wall projects is dictated by shipping and installation handling rather than production capability. For panels over 2.5m × 6m, we recommend early coordination on crating and transport logistics.'
+  a: 'Our 3.3 m × 15 m tempering furnace and 3.3 m × 15 m lamination autoclave accept panels up to 3.3 m × 15 m — among the largest in Hubei province. Our IGU assembly line accommodates the same jumbo size for insulated units. The practical ceiling for most curtain wall projects is dictated by shipping and installation handling rather than production capability. For panels over 2.5m × 6m, we recommend early coordination on crating and transport logistics.'
 }, {
   q: 'Do you offer heat-soak testing (HST) for high-rise curtain wall orders?',
   a: 'Yes. For high-rise applications (typically 10+ storeys), we strongly recommend specifying heat-soak tested tempered glass per EN 14179. HST reheats the tempered glass to ~290°C and holds for 2-4 hours, forcing any NiS inclusion defects to fail in the test oven rather than years later in the installed facade. Adds approximately $8-12/m² but mitigates the single largest liability risk in tempered curtain wall.'
@@ -225,7 +225,7 @@ export default function Page() {
         </ul>
 
         <p>
-          Los límites de tamaño de panel derivan de cuatro restricciones: producción (capacidad de horno / autoclave / línea de UVA (Unidad de Vidrio Aislante)), manipulación (grúa e izado), transporte (dimensiones del contenedor) e instalación (acceso de grúa en obra). Nuestra capacidad de producción máxima es de 3m × 15m en los tres procesos; la mayoría de los proyectos están limitados por el transporte (interior útil de contenedor estándar de 40 pies: 2,35m × 12m) y la manipulación en instalación, más que por la producción.
+          Los límites de tamaño de panel derivan de cuatro restricciones: producción (capacidad de horno / autoclave / línea de UVA (Unidad de Vidrio Aislante)), manipulación (grúa e izado), transporte (dimensiones del contenedor) e instalación (acceso de grúa en obra). Nuestra capacidad de producción máxima es de 3.3 m × 15 m en los tres procesos; la mayoría de los proyectos están limitados por el transporte (interior útil de contenedor estándar de 40 pies: 2,35m × 12m) y la manipulación en instalación, más que por la producción.
         </p>
 
         <h2 id="procurement">Errores de compra que debe evitar</h2>

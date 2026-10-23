@@ -8,7 +8,7 @@ const milestones = [
   { year: "2010", title: "Leadership Award", desc: "Chairman Li Chuanren recognized as one of Wuhan's Top 10 Outstanding Entrepreneurs (8th edition)." },
   { year: "2012", title: "Quality Milestones", desc: "Achieved 'Zero Safety Accident' certification and 'China Quality Well-Known Brand' recognition." },
   { year: "2016", title: "Capacity Expansion", desc: "Invested in new energy-efficient production lines. Expanded from single tempered glass to full product range." },
-  { year: "2019", title: "Second Factory", desc: "Opened 20,000㎡ Honghu facility in Xintan Industrial Park with oversized tempering (3m×15m) and automated gas-filling IGU line." },
+  { year: "2019", title: "Second Factory", desc: "Opened 20,000㎡ Honghu facility in Xintan Industrial Park with oversized tempering (3.3 m × 15 m) and automated gas-filling IGU line." },
   { year: "2024", title: "Going Global", desc: "Launched international trade division. Building sincereglass.com to serve global B2B buyers directly." },
 ];
 

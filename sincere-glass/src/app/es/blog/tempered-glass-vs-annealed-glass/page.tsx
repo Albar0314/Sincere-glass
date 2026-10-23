@@ -52,7 +52,7 @@ const buyerFaqItems = [{
   a: "We produce both. Annealed float glass is our raw material for all tempered, laminated, and coated products. We also sell annealed glass directly for applications where tempering is unnecessary or counterproductive — framed artwork, interior partitions in non-safety locations, and buyers who want to cut, drill, or process the glass themselves. Minimum order 50 m² for custom cuts."
 }, {
   q: "What's the MOQ for tempered glass orders from China?",
-  a: "Our standard MOQ for tempered glass orders is 50 square meters. We can accept smaller trial orders at a nominal setup fee for new buyers. Our 3m × 15m tempering furnace is one of the largest in Hubei province, so we can handle both jumbo architectural panels and smaller volume runs on the same production line."
+  a: "Our standard MOQ for tempered glass orders is 50 square meters. We can accept smaller trial orders at a nominal setup fee for new buyers. Our 3.3 m × 15 m tempering furnace is one of the largest in Hubei province, so we can handle both jumbo architectural panels and smaller volume runs on the same production line."
 }, {
   q: "Can tempered glass be cut or drilled after it's tempered?",
   a: "No. Tempered glass must be cut, drilled, edge-finished, and have any holes made BEFORE it goes into the tempering furnace. Any attempt to cut or drill tempered glass causes it to shatter. This is one of the main reasons spec drawings must be finalized before order placement — field modifications are not possible."
@@ -128,7 +128,7 @@ export default function Page() {
         </p>
 
         <p>
-          Nuestro horno de templado de 3m × 15m puede procesar paneles de gran formato a estos niveles de estrés — el más grande
+          Nuestro horno de templado de 3.3 m × 15 m puede procesar paneles de gran formato a estos niveles de estrés — el más grande
           de la provincia de Hubei — razón por la cual podemos suministrar vidrio templado para muros cortina
           y fachadas de grandes dimensiones que fábricas más pequeñas no pueden abastecer.
         </p>

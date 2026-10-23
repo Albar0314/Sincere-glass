@@ -57,7 +57,7 @@ const buyerFaqItems = [{
   a: 'Industry standard "argon-filled" means approximately 90-95% argon concentration at time of manufacture, with the remaining 5-10% being residual air that could not be fully displaced during the fill process. Over 25 years, slow permeation through the seal typically reduces this by about 1% per year, so a 25-year-old argon IGU may have 65-70% argon remaining. We test fill percentage at QC and provide fill-rate certificates for high-performance specifications.'
 }, {
   q: "What's the MOQ for insulated glass orders from Sincere Glass?",
-  a: 'Standard MOQ is 50 square meters per order, with no restriction on panel sizes within our 3m × 15m line capacity. For high-performance IGUs (laminated outer lite + Low-E + argon + warm-edge spacer), we recommend ordering in whole facade sets rather than small batches to maintain consistent production parameters across the project.'
+  a: 'Standard MOQ is 50 square meters per order, with no restriction on panel sizes within our 3.3 m × 15 m line capacity. For high-performance IGUs (laminated outer lite + Low-E + argon + warm-edge spacer), we recommend ordering in whole facade sets rather than small batches to maintain consistent production parameters across the project.'
 }];
 export default function Page() {
   return <>

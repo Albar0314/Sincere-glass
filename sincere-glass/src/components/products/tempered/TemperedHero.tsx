@@ -29,11 +29,11 @@ export default function TemperedHero() {
 
         <p className="mt-4 md:mt-5 text-base md:text-xl text-white/70 max-w-2xl leading-relaxed"
           style={{ opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(16px)", transition: "all 700ms ease-out 350ms" }}>
-          4–5× stronger than standard glass. Safe fragmentation. Panels up to 3m × 15m. 3C certified.
+          4–5× stronger than standard glass. Safe fragmentation. Panels up to 3.3 m × 15 m. 3C certified.
         </p>
 
         <div className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3" style={{ opacity: loaded ? 1 : 0, transition: "opacity 600ms 500ms" }}>
-          {["3.8–19mm", "Flat & Bent", "3C Certified", "Max 3m×15m"].map(tag => (
+          {["3.8–19mm", "Flat & Bent", "3C Certified", "Max 3.3 m × 15 m"].map(tag => (
             <span key={tag} className="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs md:text-sm rounded-full">{tag}</span>
           ))}
         </div>

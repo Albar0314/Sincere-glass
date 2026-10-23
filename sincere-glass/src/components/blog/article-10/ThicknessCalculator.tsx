@@ -111,7 +111,7 @@ export default function ThicknessCalculator() {
       thickness: '12 mm tempered',
       rationale: 'Oversized walk-in enclosure (>2 m² single panel). 12 mm reduces oil-can effect and resonance.',
       warning: 'For panels >2.5 m tall, consider laminated construction (6+6 PVB) for post-breakage retention.',
-      codeNote: 'Jumbo single-panel enclosures benefit from our 3m×15m tempering line — no vertical seam needed.',
+      codeNote: 'Jumbo single-panel enclosures benefit from our 3.3 m × 15 m tempering line — no vertical seam needed.',
     };
   }, [support, useCase, heightMm, widthMm]);
 
