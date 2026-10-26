@@ -31,6 +31,11 @@ const PRODUCT_MAP: Record<string, {
     title: "Vidrio esmaltado",
     tagline: "Vidrio con frita cerámica para control de color, patrón y solar.",
     image: '/images/products/enameled-glass-card.jpg'
+  },
+  'curved-tempered-glass': {
+    title: "Vidrio Templado Curvado",
+    tagline: "Curvado en caliente desde un radio mínimo de 500 mm. Hasta 3,3 m × 15 m por panel.",
+    image: '/images/products/curved-tempered.jpg'
   }
 };
 interface Props {
