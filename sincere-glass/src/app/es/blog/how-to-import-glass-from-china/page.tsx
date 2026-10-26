@@ -138,7 +138,7 @@ export default function Page() {
         </p>
 
         <p>
-          La ponderación no es arbitraria. "El horno o autoclave puede procesar su panel de mayor tamaño" lleva 15 puntos porque el modo de falla más común en una compra de vidrio en China es que la fábrica acepte un plano que físicamente no puede producir y luego subcontrate las piezas de gran formato a una planta que usted nunca ha auditado. En nuestra planta de Wuhan, nuestro horno de templado de 3.3 m × 15 m y el autoclave de laminado de 3.3 m × 15 m nos permiten mantener los paneles jumbo en casa de principio a fin — una capacidad específica que el sistema de puntuación está diseñado para poner sobre la mesa antes de cotizar.
+          La ponderación no es arbitraria. "El horno o autoclave puede procesar su panel de mayor tamaño" lleva 15 puntos porque el modo de falla más común en una compra de vidrio en China es que la fábrica acepte un plano que físicamente no puede producir y luego subcontrate las piezas de gran formato a una planta que usted nunca ha auditado. En nuestra planta de Wuhan, nuestro horno de templado de 3m × 15m y el autoclave de laminado de 3m × 15m nos permiten mantener los paneles jumbo en casa de principio a fin — una capacidad específica que el sistema de puntuación está diseñado para poner sobre la mesa antes de cotizar.
         </p>
 
         <h2 id="stage-2">Etapa 2 — Verificación de capacidad</h2>

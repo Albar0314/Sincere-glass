@@ -237,7 +237,7 @@ export default function Page() {
       <h2 id="risk-3-capacity">Riesgo 3: Capacidad de producción fabricada</h2>
 
       <p>
-        Un sitio web muestra una línea de vidrio templado jumbo de 3.3 m × 15 m. El horno real tiene 2,4 m de ancho. Un sitio web muestra fachadas de vidrio templado curvado en un edificio emblemático. No hay horno de curvado en las instalaciones. Un sitio web declara una producción anual de 500.000 m². La planta es un solo edificio con dos líneas de pulido de bordes.
+        Un sitio web muestra una línea de vidrio templado jumbo de 3 m×15 m. El horno real tiene 2,4 m de ancho. Un sitio web muestra fachadas de vidrio templado curvado en un edificio emblemático. No hay horno de curvado en las instalaciones. Un sitio web declara una producción anual de 500.000 m². La planta es un solo edificio con dos líneas de pulido de bordes.
       </p>
 
       <p>

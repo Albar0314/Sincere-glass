@@ -25,9 +25,9 @@ const factories = [
     image: "/images/factory-exterior.jpg",
     features: [
       "4 intelligent cutting lines, 4 edge polishing lines",
-      "2 tempering furnaces (max 3.3 m × 15 m panels)",
+      "2 tempering furnaces (max 3.3.3 m × 15 m panels)",
       "Automated gas-filling insulated glass line",
-      "2 high-pressure autoclaves (one at 3.3 m × 15 m)",
+      "2 high-pressure autoclaves (one at 3.3.3 m × 15 m)",
     ],
   },
 ];

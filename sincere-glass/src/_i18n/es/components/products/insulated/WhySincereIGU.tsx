@@ -16,7 +16,7 @@ const advantages = [{
   stat: 15,
   suffix: "m",
   statLabel: "max panel length",
-  desc: "La mayoría de las fábricas limitan las UVA (Unidad de Vidrio Aislante) a 2,4m×3,6m. Nuestra línea de gran formato produce unidades de hasta 3m×15m, ideales para muros cortina de suelo a techo y acristalamientos singulares que exigen vistas sin interrupciones."
+  desc: "La mayoría de las fábricas limitan las UVA (Unidad de Vidrio Aislante) a 2,4 m × 3,6 m. Nuestra línea de gran formato produce unidades de hasta 3.3.3 m × 15 m — ideal para muros cortina de suelo a techo y acristalamientos singulares que exigen vistas sin interrupciones."
 }, {
   icon: "M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
   title: "Precios Directos de Fábrica",

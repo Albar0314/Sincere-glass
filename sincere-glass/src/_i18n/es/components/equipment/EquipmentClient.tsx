@@ -66,8 +66,8 @@ const equipmentData = [{
   }, {
     name: "Horno de Templado para Grandes Dimensiones",
     count: 1,
-    detail: "Tamaño máximo de panel: 3 m × 15 m — entre los mayores de Hubei. Capacidad para vidrio plano y curvado.",
-    capacity: "3m × 15m max"
+    detail: "Tamaño máximo de panel 3,3 m × 15 m — uno de los mayores de Hubei. Capacidad para vidrio plano y vidrio curvado.",
+    capacity: "3.3.3 m × 15 m max"
   }]
 }, {
   category: "Vidrio Aislante (UVA (Unidad de Vidrio Aislante))",
@@ -96,8 +96,8 @@ const equipmentData = [{
   }, {
     name: "Autoclave de Alta Presión (Sobredimensionado)",
     count: 1,
-    detail: "Capacidad de 3m × 15m. Uno de los mayores de China central.",
-    capacity: "3m × 15m max"
+    detail: "Capacidad de 3.3.3 m × 15 m. Una de las más grandes del centro de China.",
+    capacity: "3.3.3 m × 15 m max"
   }]
 }, {
   category: "Enameling",
@@ -352,7 +352,7 @@ export default function EquipmentClient() {
             pctTyp: 20
           }, {
             label: "Max panel size",
-            ours: "3m × 15m",
+            ours: "3.3.3 m × 15 m",
             typical: "2.4m × 4.5m",
             pctOurs: 100,
             pctTyp: 30

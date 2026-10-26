@@ -29,8 +29,8 @@ const phases: Phase[] = [{
   duration: '30-60 sec per sheet',
   temp: 'Ambient',
   summary: "Ruedas de carburo controladas por CNC marcan el vidrio hasta las dimensiones finales, que luego se separan por fractura controlada.",
-  details: ["Las líneas modernas utilizan corte CNC con tolerancia de ±0,5 mm en hojas jumbo de 3m × 15m", "Todos los taladros, muescas y formas de borde deben realizarse en esta etapa — nada puede cortarse después del templado", "Los planos de especificación se finalizan antes de esta etapa; las modificaciones en obra después del templado son imposibles"],
-  factoryNote: 'We run 4 intelligent cutting lines capable of handling jumbo panels up to 3m × 15m — the maximum our tempering furnace will accept.',
+  details: ["Las líneas modernas utilizan corte CNC con tolerancia de ±0,5 mm en láminas jumbo de 3,3 m × 15 m", "Todos los taladros, muescas y formas de borde deben realizarse en esta etapa — nada puede cortarse después del templado", "Los planos de especificación se finalizan antes de esta etapa; las modificaciones en obra después del templado son imposibles"],
+  factoryNote: 'We run 4 intelligent cutting lines capable of handling jumbo panels up to 3.3.3 m × 15 m — the maximum our tempering furnace will accept.',
   color: '#60A5FA'
 }, {
   id: 'edge',
@@ -59,7 +59,7 @@ const phases: Phase[] = [{
   temp: 'Ramping to 620°C',
   summary: "El vidrio avanza a través de un horno horizontal de rodillos, calentado hasta su punto de ablandamiento mediante elementos radiantes superiores e inferiores.",
   details: ["Temperatura objetivo: ~620 °C (justo por debajo del punto de ablandamiento de 650-700 °C)", "El calentamiento debe ser uniforme — los puntos calientes causan distorsión, los puntos fríos provocan un templado fallido", "Los rodillos giran de forma continua; la detención genera la distorsión conocida como \"onda de rodillo\"", "La longitud del horno determina la capacidad de producción: nuestro horno procesa paneles de hasta 15 m de longitud"],
-  factoryNote: 'We operate 2 tempering furnaces; the larger one accepts panels up to 3m × 15m — among the largest in Hubei province.',
+  factoryNote: 'We operate 2 tempering furnaces; the larger one accepts panels up to 3.3.3 m × 15 m — among the largest in Hubei province.',
   color: '#F59E0B'
 }, {
   id: 'quench',

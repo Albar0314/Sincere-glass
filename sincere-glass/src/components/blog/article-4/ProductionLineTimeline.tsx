@@ -38,11 +38,11 @@ const phases: Phase[] = [
     temp: 'Ambient',
     summary: 'CNC-controlled carbide wheels score the glass to final dimensions, which are then snapped apart.',
     details: [
-      'Modern lines use CNC cutting with ±0.5mm tolerance across 3.3 m × 15 m jumbo sheets',
+      'Modern lines use CNC cutting with ±0.5mm tolerance across 3.3.3 m × 15 m jumbo sheets',
       'All holes, notches, and edge shapes must be in this step — nothing can be cut after tempering',
       'Spec drawings are finalized before this step; field modifications after tempering are impossible',
     ],
-    factoryNote: 'We run 4 intelligent cutting lines capable of handling jumbo panels up to 3.3 m × 15 m — the maximum our tempering furnace will accept.',
+    factoryNote: 'We run 4 intelligent cutting lines capable of handling jumbo panels up to 3.3.3 m × 15 m — the maximum our tempering furnace will accept.',
     color: '#60A5FA',
   },
   {
@@ -87,7 +87,7 @@ const phases: Phase[] = [
       'Rollers rotate continuously; sitting still creates "roller wave" distortion',
       'Furnace length determines throughput: our furnace handles panels up to 15m long',
     ],
-    factoryNote: 'We operate 2 tempering furnaces; the larger one accepts panels up to 3.3 m × 15 m — among the largest in Hubei province.',
+    factoryNote: 'We operate 2 tempering furnaces; the larger one accepts panels up to 3.3.3 m × 15 m — among the largest in Hubei province.',
     color: '#F59E0B',
   },
   {

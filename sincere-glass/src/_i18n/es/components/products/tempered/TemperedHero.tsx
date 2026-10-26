@@ -44,14 +44,14 @@ export default function TemperedHero() {
         transform: loaded ? "translateY(0)" : "translateY(16px)",
         transition: "all 700ms ease-out 350ms"
       }}>
-          4–5× más resistente que el vidrio estándar. Fragmentación segura. Paneles de hasta 3m × 15m. Certificación 3C.
+          De 4 a 5 veces más resistente que el vidrio estándar. Fragmentación segura. Paneles de hasta 3.3.3 m × 15 m. Certificación 3C.
         </p>
 
         <div className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3" style={{
         opacity: loaded ? 1 : 0,
         transition: "opacity 600ms 500ms"
       }}>
-          {["3.8–19mm", "Flat & Bent", "3C Certified", "Max 3m×15m"].map(tag => <span key={tag} className="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs md:text-sm rounded-full">{tag}</span>)}
+          {["3.8–19mm", "Flat & Bent", "3C Certified", "Max 3.3.3 m × 15 m"].map(tag => <span key={tag} className="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs md:text-sm rounded-full">{tag}</span>)}
         </div>
 
         <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4" style={{

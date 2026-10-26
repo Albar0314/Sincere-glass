@@ -314,6 +314,10 @@ export default function Page() {
           explica cuándo cualquier espesor de vidrio templado es excesivo (aplicaciones decorativas de pequeño formato, particiones interiores por debajo de los umbrales de zona de riesgo normativa) y cuándo un panel más delgado de vidrio semitemplado o vidrio recocido es la elección correcta.
         </p>
 
+        <p className="text-sm text-[#8B95A5] mt-6">
+          Para una visión global de cómo esta decisión a nivel de producto encaja en una especificación completa de vidrio arquitectónico, consulte nuestra <a href="/blog/architectural-glass-specification-guide" className="text-[#DAA745] hover:underline">guía de especificación de vidrio arquitectónico</a>.
+        </p>
+
         <FAQ items={faqItems} />
 
         <LeadMagnetCTA variant="footer" articleSlug={SLUG} title="Gratis: Comparativa Global de Códigos de Construcción para Vidrio Arquitectónico" description="Un PDF de 11 páginas en formato comparativo que analiza los requisitos de US IBC (Código Internacional de Construcción), EU EN, China GB y Australia AS para vidrio templado en todas las aplicaciones comunes. Gratuito para arquitectos, especificadores y equipos de compras." />

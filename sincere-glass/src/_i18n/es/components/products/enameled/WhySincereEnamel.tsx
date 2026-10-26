@@ -13,7 +13,7 @@ const advantages = [{
 }, {
   icon: "📏",
   title: "Paneles de Gran Formato",
-  desc: "Nuestras líneas de esmaltado y templado procesan paneles de hasta 3m × 15m — reduciendo juntas y creando fachadas más limpias en proyectos de gran escala."
+  desc: "Nuestras líneas de esmaltado y templado procesan paneles de hasta 3.3.3 m × 15 m, lo que reduce las juntas y genera fachadas más limpias en proyectos de gran escala."
 }, {
   icon: "📄",
   title: "Certificación Completa",

@@ -27,7 +27,7 @@ const CRATES: Record<Crate['id'], Crate> = {
     weightGlassRatio: '~1 : 6 (crate : glass)',
     costAdder: '≈ USD 6–10 / m² of glass',
     pros: [
-      'Carries jumbo panels up to 3.3 m × 15 m without a wooden box exceeding ISPM-15 fumigation limits',
+      'Carries jumbo panels up to 3.3.3 m × 15 m without a wooden box exceeding ISPM-15 fumigation limits',
       'Panels load directly against the backing — zero point-load on glass corners',
       'Fastest to load and unload (forklift from either side)',
     ],
@@ -121,7 +121,7 @@ const PRODUCT_LABEL: Record<ProductKey, string> = {
 const SIZE_LABEL: Record<SizeKey, string> = {
   standard: 'Standard (≤ 2.4 m × 3.6 m)',
   oversize: 'Oversize (up to 2.4 m × 6 m)',
-  jumbo: 'Jumbo (up to 3.3 m × 15 m)',
+  jumbo: 'Jumbo (up to 3.3.3 m × 15 m)',
 };
 
 const QTY_LABEL: Record<QtyKey, string> = {

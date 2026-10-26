@@ -39,7 +39,7 @@ const equipmentData = [
     video: "/videos/tempering.mp4",
     items: [
       { name: "Flat Tempering Furnace", count: 1, detail: "Standard flat tempering for panels up to 2.4m × 4.2m. Automated temperature control.", capacity: "4,000 m²/day" },
-      { name: "Oversized Tempering Furnace", count: 1, detail: "Maximum panel size 3.3 m × 15 m — among the largest in Hubei. Flat and bent capability.", capacity: "3.3 m × 15 m max" },
+      { name: "Oversized Tempering Furnace", count: 1, detail: "Maximum panel size 3.3.3 m × 15 m — among the largest in Hubei. Flat and bent capability.", capacity: "3.3.3 m × 15 m max" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const equipmentData = [
     video: "/videos/laminating.mp4",
     items: [
       { name: "High-Pressure Autoclave (Standard)", count: 1, detail: "PVB and SGP interlayer processing.", capacity: "2,000 m²/day" },
-      { name: "High-Pressure Autoclave (Oversized)", count: 1, detail: "3.3 m × 15 m capacity. One of the largest in central China.", capacity: "3.3 m × 15 m max" },
+      { name: "High-Pressure Autoclave (Oversized)", count: 1, detail: "3.3.3 m × 15 m capacity. One of the largest in central China.", capacity: "3.3.3 m × 15 m max" },
     ],
   },
   {
@@ -264,7 +264,7 @@ export default function EquipmentClient() {
           <div className="space-y-6">
             {[
               { label: "Factory area", ours: "20,000 m²", typical: "3,000–5,000 m²", pctOurs: 100, pctTyp: 20 },
-              { label: "Max panel size", ours: "3.3 m × 15 m", typical: "2.4m × 4.5m", pctOurs: 100, pctTyp: 30 },
+              { label: "Max panel size", ours: "3.3.3 m × 15 m", typical: "2.4m × 4.5m", pctOurs: 100, pctTyp: 30 },
               { label: "Product types", ours: "5 (full range)", typical: "1–2 types", pctOurs: 100, pctTyp: 35 },
               { label: "Autoclaves", ours: "2 (incl. oversized)", typical: "0–1 (standard)", pctOurs: 100, pctTyp: 40 },
               { label: "IGU gas filling", ours: "Automated 90%+", typical: "Manual or none", pctOurs: 95, pctTyp: 30 },

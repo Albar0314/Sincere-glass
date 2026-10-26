@@ -23,7 +23,7 @@ const CRATES: Record<Crate['id'], Crate> = {
     bestFor: ['Oversize architectural panels', 'Jumbo tempered or laminated', 'Project-scale orders'],
     weightGlassRatio: '~1 : 6 (crate : glass)',
     costAdder: '≈ USD 6–10 / m² of glass',
-    pros: ['Carries jumbo panels up to 3 m × 15 m without a wooden box exceeding ISPM-15 fumigation limits', 'Panels load directly against the backing — zero point-load on glass corners', 'Fastest to load and unload (forklift from either side)'],
+    pros: ['Carries jumbo panels up to 3.3.3 m × 15 m without a wooden box exceeding ISPM-15 fumigation limits', 'Panels load directly against the backing — zero point-load on glass corners', 'Fastest to load and unload (forklift from either side)'],
     cons: ['Needs ratchet strapping to tie-down rails on all four sides', 'Open frame: panels exposed to in-container humidity unless individually bagged'],
     svg: 'a-frame'
   },
@@ -85,7 +85,7 @@ const PRODUCT_LABEL: Record<ProductKey, string> = {
 const SIZE_LABEL: Record<SizeKey, string> = {
   standard: "Estándar (≤ 2,4 m × 3,6 m)",
   oversize: 'Oversize (up to 2.4 m × 6 m)',
-  jumbo: 'Jumbo (up to 3 m × 15 m)'
+  jumbo: 'Jumbo (up to 3.3.3 m × 15 m)'
 };
 const QTY_LABEL: Record<QtyKey, string> = {
   sample: 'Samples (< 10 m²)',

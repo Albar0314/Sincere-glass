@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import EquipmentClient from "@/components/equipment/EquipmentClient";
+import EquipmentGallerySection from "@/components/EquipmentGallerySection";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Factory Equipment & Capabilities — Virtual Tour | Sincere Glass",
@@ -12,5 +12,5 @@ export const metadata: Metadata = {
   alternates: makeAlternates("/equipment")
 };
 export default function EquipmentPage() {
-  return <EquipmentClient />;
+  return <EquipmentGallerySection />;
 }

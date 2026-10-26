@@ -41,7 +41,7 @@ export default function LaminatedHero() {
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-2 md:gap-3" style={{ opacity: loaded ? 1 : 0, transition: "opacity 600ms 500ms" }}>
-          {["PVB & SGP", "99% UV Block", "3C Certified", "Max 3.3 m × 15 m"].map(tag => (
+          {["PVB & SGP", "99% UV Block", "3C Certified", "Max 3.3.3 m × 15 m"].map(tag => (
             <span key={tag} className="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs md:text-sm rounded-full">{tag}</span>
           ))}
         </div>

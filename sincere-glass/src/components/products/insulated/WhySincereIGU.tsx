@@ -9,7 +9,7 @@ const advantages = [
     desc: "Our Honghu factory has a fully automated gas-filling production line — no manual injection. This ensures consistent 90%+ argon fill rates across every unit, maximizing thermal performance." },
   { icon: "M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122",
     title: "Oversized IGU Capability", stat: 15, suffix: "m", statLabel: "max panel length",
-    desc: "Most factories cap IGUs at 2.4m×3.6m. Our oversized line produces units up to 3.3 m × 15 m — ideal for floor-to-ceiling curtain walls and feature glazing that demands uninterrupted views." },
+    desc: "Most factories cap IGUs at 2.4m×3.6m. Our oversized line produces units up to 3.3.3 m × 15 m — ideal for floor-to-ceiling curtain walls and feature glazing that demands uninterrupted views." },
   { icon: "M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     title: "Factory-Direct Pricing", stat: 25, suffix: "%", statLabel: "lower than trading companies",
     desc: "We produce everything in-house — cutting, coating, assembly, sealing — across two owned factories. No middlemen means you get manufacturer pricing on every unit." },

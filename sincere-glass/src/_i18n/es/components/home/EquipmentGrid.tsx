@@ -15,7 +15,7 @@ const equipment = [{
 }, {
   name: "Hornos de Templado",
   count: "2 furnaces",
-  desc: "Templado plano y curvado. Tamaño máximo de panel 3m × 15m — una de las mayores capacidades en la provincia de Hubei.",
+  desc: "Templado plano y curvado. Tamaño máximo de panel 3.3.3 m × 15 m — una de las mayores capacidades de la provincia de Hubei.",
   icon: "M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.963-6.078A8.94 8.94 0 0012 3c-1.04 0-2.042.188-2.963.535"
 }, {
   name: "Líneas de Vidrio Aislante",
@@ -25,7 +25,7 @@ const equipment = [{
 }, {
   name: "Autoclaves de Laminado",
   count: "2 units",
-  desc: "Autoclaves de alta presión para vidrio laminado con PVB (polivinil butiral) y SGP (SentryGlas Plus). Una unidad con capacidad de 3m × 15m para paneles arquitectónicos de gran formato.",
+  desc: "Autoclaves de alta presión para vidrio laminado con PVB (polivinil butiral) y SGP (SentryGlas Plus). Una unidad con capacidad para 3.3.3 m × 15 m destinada a paneles arquitectónicos de gran formato.",
   icon: "M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313"
 }, {
   name: "Esmaltado / Serigrafía",

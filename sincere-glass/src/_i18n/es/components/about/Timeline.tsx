@@ -24,7 +24,7 @@ const milestones = [{
 }, {
   year: "2019",
   title: "Segunda Fábrica",
-  desc: "Inauguración de la instalación de 20,000㎡ en Honghu, en el Parque Industrial Xintan, con capacidad de templado de gran formato (3m×15m) y línea automatizada de llenado de gas para UVA (Unidad de Vidrio Aislante)."
+  desc: "Apertura de las instalaciones de 20.000 ㎡ en Honghu, en el Parque Industrial de Xintan, con línea de templado de grandes dimensiones (3.3.3 m × 15 m) y línea automatizada de llenado de gas para UVA (Unidad de Vidrio Aislante)."
 }, {
   year: "2024",
   title: "Expansión Internacional",

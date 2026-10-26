@@ -69,7 +69,7 @@ const faqItems = [{
   a: 'Only when the panel is engineered as a structural element — frameless laminated with SGP interlayer, bonded into a structural base shoe or set in point-fixed spigots, and sized to carry the handrail line load as a cantilever. This configuration is permitted in most codes but is explicitly engineered, not a stock product. The build-up is almost always 15 mm + 1.52 SGP + 15 mm or heavier, and the installation requires a certified base channel from a manufacturer with wind/load test certificates.'
 }, {
   q: 'What panel sizes can you temper and laminate for balustrades?',
-  a: 'Our Wuhan plant tempers up to 3.3 m × 15 m and laminates up to 3.3 m × 15 m — the two jumbo lines are a key capability for frameless commercial projects where a continuous glass guard is architecturally specified without vertical joints. For most residential balustrades (panel width 1.0–1.5 m), size is not the constraint — glass make-up and heat-soak are.'
+  a: 'Our Wuhan plant tempers up to 3 m × 15 m and laminates up to 3 m × 15 m — the two jumbo lines are a key capability for frameless commercial projects where a continuous glass guard is architecturally specified without vertical joints. For most residential balustrades (panel width 1.0–1.5 m), size is not the constraint — glass make-up and heat-soak are.'
 }];
 export default function Page() {
   const schemas = articleJsonLd(article, faqItems);

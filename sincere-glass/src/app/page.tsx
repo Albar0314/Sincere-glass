@@ -5,7 +5,7 @@ import ProductsOverview from "@/components/home/ProductsOverview";
 import WhyUs from "@/components/home/WhyUs";
 import CompanySnapshot from "@/components/home/CompanySnapshot";
 import ProjectCases from "@/components/home/ProjectCases";
-import EquipmentGrid from "@/components/home/EquipmentGrid";
+import HomepagePhotoStrip from "@/components/HomepagePhotoStrip";
 import QuoteForm from "@/components/home/QuoteForm";
 import BlogTeaserLive from "@/components/BlogTeaserLive";
 import { makeAlternates } from "@/lib/i18n";
@@ -75,7 +75,7 @@ export default function HomePage() {
         <WhyUs />
         <CompanySnapshot />
         <ProjectCases />
-        <EquipmentGrid />
+        <HomepagePhotoStrip />
         <QuoteForm />
         <BlogTeaserLive />
       </main>

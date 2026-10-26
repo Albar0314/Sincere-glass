@@ -3,7 +3,7 @@ import { useInView } from "@/lib/useInView";
 import { useCountUp } from "@/lib/useCountUp";
 
 const advantages = [
-  { stat: 15, suffix: "m", label: "Max autoclave length", desc: "Our high-pressure autoclave processes panels up to 3.3 m × 15 m — ideal for oversized skylights and feature walls that smaller manufacturers can’t produce." },
+  { stat: 15, suffix: "m", label: "Max autoclave length", desc: "Our high-pressure autoclave processes panels up to 3.3.3 m × 15 m — ideal for oversized skylights and feature walls that smaller manufacturers can’t produce." },
   { stat: 2, suffix: "", label: "Autoclave units", desc: "Dual autoclaves mean we can run standard and oversized jobs simultaneously. No queue bottlenecks, consistent lead times even during peak season." },
   { stat: 25, suffix: "%", label: "Below trading company prices", desc: "We laminate in-house from raw materials. No outsourcing, no markup chain. You get manufacturer pricing on every panel." },
   { stat: 100, suffix: "%", label: "3C certified output", desc: "Full documentation for every batch: 3C certificates, test reports, compliance letters. Your project passes inspection first time." },

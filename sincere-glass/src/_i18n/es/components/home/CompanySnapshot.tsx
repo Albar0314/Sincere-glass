@@ -11,7 +11,7 @@ export default function CompanySnapshot() {
           </h2>
           <p className="text-[#8B95A5] leading-relaxed">
             Quince años fabricando vidrio arquitectónico en Wuhan, ahora con envíos a todo el mundo.
-            Nuestras líneas de templado y laminado de 3 m × 15 m se encuentran entre las más grandes de la provincia de Hubei.
+            Nuestras líneas de templado y laminado de 3.3.3 m × 15 m se encuentran entre las de mayor capacidad de la provincia de Hubei.
           </p>
         </div>
 

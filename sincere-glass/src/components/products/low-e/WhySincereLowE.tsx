@@ -6,7 +6,7 @@ import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 const advantages = [
   { stat: 50, suffix: "%", label: "Energy savings potential", desc: "Low-E + argon IGU can cut HVAC costs in half compared to single-pane uncoated glass. We help you specify the right combination for your climate zone." },
   { stat: 2, suffix: "", label: "Coating options available", desc: "Both soft-coat (vacuum sputtered) and hard-coat (pyrolytic) Low-E. We match the coating type to your project requirements — performance vs versatility." },
-  { stat: 15, suffix: "m", label: "Max IGU panel length", desc: "Low-E coating integrated into our oversized IGU production line. Panels up to 3.3 m × 15 m — fewer joints, cleaner facades." },
+  { stat: 15, suffix: "m", label: "Max IGU panel length", desc: "Low-E coating integrated into our oversized IGU production line. Panels up to 3.3.3 m × 15 m — fewer joints, cleaner facades." },
   { stat: 100, suffix: "%", label: "Integrated production", desc: "Coating, cutting, tempering, IGU assembly, and quality testing all happen in our factories. No outsourced steps — faster delivery and consistent quality." },
 ];
 

@@ -35,7 +35,7 @@ export const products: Product[] = [
       { title: "Mechanical Strength", desc: "Impact resistance and bending strength 4-5 times that of ordinary glass." },
       { title: "Thermal Shock Resistance", desc: "Withstands large temperature differentials without cracking — 3× the resistance of standard float glass." },
       { title: "Safe Fragmentation", desc: "Breaks into small, blunt-edged particles that minimize risk of serious injury." },
-      { title: "Oversized Panels", desc: "Our tempering furnace handles panels up to 3.3 m × 15 m — among the largest in Hubei province." },
+      { title: "Oversized Panels", desc: "Our tempering furnace handles panels up to 3.3.3 m × 15 m — among the largest in Hubei province." },
     ],
     applications: [
       "Curtain walls and building facades",

@@ -61,7 +61,7 @@ const buyerFaq = article.buyerFaq ?? [{
   a: 'For stock sizes with standard CNC cutouts (handle holes, hinge cutouts), 10–15 working days from order confirmation. Custom shapes, specific coatings (e.g., ClearShield easy-clean), or large frameless panels add 3–5 days. Our 20,000 m² Wuhan facility runs 4 cutting lines and 2 tempering furnaces simultaneously to compress lead time.'
 }, {
   q: 'Can you temper and ship oversized frameless walk-in panels (e.g., 2400 × 1200 mm single slab) without seams?',
-  a: 'Yes. Our 3.3 m × 15 m tempering furnace handles jumbo panels well beyond standard shower geometry — a 2400 × 1200 mm walk-in panel is routine, not special-order. Shipping uses A-frame racks with foam-lined seaboxes to prevent edge impact in transit.'
+  a: 'Yes. Our 3m × 15m tempering furnace handles jumbo panels well beyond standard shower geometry — a 2400 × 1200 mm walk-in panel is routine, not special-order. Shipping uses A-frame racks with foam-lined seaboxes to prevent edge impact in transit.'
 }, {
   q: 'What is the warranty on tempered shower glass?',
   a: 'Standard 2-year warranty against spontaneous breakage from NiS inclusions (we offer heat-soak-tested glass as an upgrade for an additional 10–15 working days), delamination of any applied coatings, and fabrication defects. Warranty excludes impact damage, incorrect installation, and water-stain etching from hard-water areas without regular cleaning.'

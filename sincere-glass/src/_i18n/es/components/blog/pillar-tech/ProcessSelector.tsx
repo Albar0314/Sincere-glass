@@ -73,7 +73,7 @@ const question: Question = {
     result: {
       process: 'Combined: Tempering + Lamination + IGU Assembly',
       processKey: 'combined',
-      explanation: 'A laminated-IGU runs through all three of our production lines in sequence: both lites are tempered → outer lite goes through lamination autoclave → the laminated lite + a Low-E tempered inner lite are assembled into an IGU. Our 3m × 15m furnace, 3m × 15m autoclave, and automatic argon-fill IGU line make this possible in one facility.',
+      explanation: 'A laminated-IGU runs through all three of our production lines in sequence: both lites are tempered → outer lite goes through lamination autoclave → the laminated lite + a Low-E tempered inner lite are assembled into an IGU. Our 3.3.3 m × 15 m furnace, 3.3.3 m × 15 m autoclave, and automatic argon-fill IGU line make this possible in one facility.',
       deepLink: {
         href: '/blog/insulated-glass-vs-laminated-glass',
         label: "Guía de selección de UVA laminada →"

@@ -16,7 +16,7 @@ export default function CompanySnapshot() {
           </h2>
           <p className="text-[#8B95A5] leading-relaxed">
             Fifteen years making architectural glass in Wuhan, now shipping worldwide.
-            Our 3.3 m × 15 m tempering and lamination lines are among the largest in Hubei province.
+            Our 3.3.3 m × 15 m tempering and lamination lines are among the largest in Hubei province.
           </p>
         </div>
 

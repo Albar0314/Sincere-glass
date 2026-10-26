@@ -17,7 +17,7 @@ const advantages = [{
   stat: 15,
   suffix: "m",
   label: "Longitud máxima del panel de UVA (Unidad de Vidrio Aislante)",
-  desc: "Recubrimiento de baja emisividad (Low-E) integrado en nuestra línea de producción de UVA (Unidad de Vidrio Aislante) de gran formato. Paneles de hasta 3m × 15m — menos juntas, fachadas más limpias."
+  desc: "Recubrimiento de baja emisividad (Low-E) integrado en nuestra línea de producción de UVA (Unidad de Vidrio Aislante) de gran formato. Paneles de hasta 3.3.3 m × 15 m — menos juntas, fachadas más limpias."
 }, {
   stat: 100,
   suffix: "%",

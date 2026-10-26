@@ -15,7 +15,7 @@ const factories = [{
   location: "Parque Industrial de Xintan Town, Honghu, Hubei",
   area: "20,000㎡",
   image: "/images/factory-exterior.jpg",
-  features: ["4 líneas de corte inteligentes, 4 líneas de pulido de bordes", "2 hornos de templado (paneles de hasta 3m × 15m)", "Línea automatizada de vidrio aislante con relleno de gas", "2 autoclaves de alta presión (una de hasta 3m × 15m)"]
+  features: ["4 líneas de corte inteligentes, 4 líneas de pulido de bordes", "2 hornos de templado (paneles de máx. 3.3.3 m × 15 m)", "Línea automatizada de vidrio aislante con relleno de gas", "2 autoclaves de alta presión (uno de 3.3.3 m × 15 m)"]
 }];
 export default function DualFactories() {
   const {

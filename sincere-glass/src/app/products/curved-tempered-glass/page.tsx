@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Curved Tempered Glass | Sincere Glass",
     description:
-      "Hot-bent architectural glass from a 500 mm minimum radius to 3.3 m × 15 m panels. Cylindrical, spherical, and free-form.",
+      "Hot-bent architectural glass from a 500 mm minimum radius to 3.3.3 m × 15 m panels. Cylindrical, spherical, and free-form.",
     url: "https://sincereglass.com/products/curved-tempered-glass",
     images: ["/images/products/curved-tempered-hero.webp"],
   },
@@ -41,7 +41,7 @@ const faqItems = [
   },
   {
     q: "Do you do hot-bending or cold-bending?",
-    a: "Both. Hot-bending (heating the glass above its softening point and forming over a mold) is used for radii below about 3,000 mm. Cold-bending (flexing a flat panel into a curved frame during installation) is used for shallow curves above 5,000 mm radius when the panel sees low shear load. Between 3,000 and 5,000 mm the choice depends on project economics.",
+    a: "Both. Hot-bending (heating the glass above its softening point and forming over a mold) is used for radii below about 3,300 mm. Cold-bending (flexing a flat panel into a curved frame during installation) is used for shallow curves above 5,000 mm radius when the panel sees low shear load. Between 3,000 and 5,000 mm the choice depends on project economics.",
   },
   {
     q: "Can curved glass be laminated or insulated?",
@@ -381,7 +381,7 @@ export default function CurvedTemperedGlassPage() {
                   ["Minimum radius", "500 mm (6 mm panels); scales with thickness. Use Feasibility Checker above."],
                   ["Maximum panel size", "3,300 mm x 15,000 mm per panel"],
                   ["Geometries", "Cylindrical (single-axis), spherical (double-axis), free-form (asymmetric)"],
-                  ["Forming methods", "Hot-bending (R below 3,000 mm), cold-bending (R above 5,000 mm), either in between"],
+                  ["Forming methods", "Hot-bending (R below 3,300 mm), cold-bending (R above 5,000 mm), either in between"],
                   ["Dimensional tolerance", "Cylindrical: +/-2 mm; spherical: +/-4 mm; free-form: +/-3 mm along profile"],
                   ["Compatible build-ups", "Monolithic, laminated (PVB / SGP), insulated (IGU), curved + Low-E coated"],
                   ["Standards", "GB 15763.2 (China), EN 12150 (Europe), ANSI Z97.1 on request"],

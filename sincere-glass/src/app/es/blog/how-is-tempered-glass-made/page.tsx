@@ -48,7 +48,7 @@ const buyerFaqItems = [{
   a: 'A single sheet of 6mm glass takes about 7-10 minutes from entering the furnace to exiting the quench — but total production time including cutting, edge finishing, washing, and QC is typically 1-2 days from order confirmation for a standard batch. At our Wuhan facility, standard tempered glass orders ship in 7-12 working days.'
 }, {
   q: 'What\'s the maximum size tempered glass we can produce?',
-  a: 'Our larger tempering furnace accepts panels up to 3.3 m × 15 m — one of the largest in Hubei province. The practical maximum for most architectural projects is dictated by handling and shipping, not production capability. For panels over 2.5m × 6m, we recommend discussing crating and transport logistics early in the quote process.'
+  a: 'Our larger tempering furnace accepts panels up to 3m × 15m — one of the largest in Hubei province. The practical maximum for most architectural projects is dictated by handling and shipping, not production capability. For panels over 2.5m × 6m, we recommend discussing crating and transport logistics early in the quote process.'
 }, {
   q: 'Can tempered glass be re-tempered or heat-strengthened after production?',
   a: 'No. Once a glass sheet has been tempered, it cannot be re-processed thermally without destroying it. If a project needs modification, the glass must be re-cut from new annealed stock and tempered again. This is why spec drawings must be finalized before placing a tempered glass order.'

@@ -16,7 +16,7 @@ import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Laminated Glass Manufacturer China — PVB & SGP Interlayer | Sincere Glass",
-  description: "Custom laminated safety glass from China. PVB and SGP interlayer options, 99% UV blocking, superior sound insulation. Autoclave up to 3.3 m × 15 m. 3C certified.",
+  description: "Custom laminated safety glass from China. PVB and SGP interlayer options, 99% UV blocking, superior sound insulation. Autoclave up to 3.3.3 m × 15 m. 3C certified.",
   openGraph: {
     title: "Laminated Glass Manufacturer — Sincere Glass",
     description: "Safety laminated glass with PVB/SGP interlayer. 99% UV block, sound insulation, anti-intrusion. 3C certified.",
@@ -41,7 +41,7 @@ const faqItems = [{
   a: "Yes. Laminated glass is one of the most effective glazing options for sound reduction, particularly in the 1000–2000Hz range (speech, traffic, urban noise). A multilayer laminated unit can achieve 35–45dB reduction depending on configuration."
 }, {
   q: "What sizes can you produce?",
-  a: "Our high-pressure autoclaves can process laminated glass panels up to 3.3 m × 15 m. We produce both standard and jumbo laminated units for architectural applications including skylights, facades, and glass floors."
+  a: "Our high-pressure autoclaves can process laminated glass panels up to 3.3.3 m × 15 m. We produce both standard and jumbo laminated units for architectural applications including skylights, facades, and glass floors."
 }, {
   q: "Is laminated glass bulletproof?",
   a: "Multi-layer laminated glass can be configured for ballistic resistance, but true bullet-resistant glass requires specific tested configurations (typically 3+ layers with SGP interlayer). We manufacture to order based on the required protection level."
