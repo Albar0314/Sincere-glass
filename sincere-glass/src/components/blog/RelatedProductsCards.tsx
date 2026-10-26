@@ -28,6 +28,11 @@ const PRODUCT_MAP: Record<string, { title: string; tagline: string; image: strin
     tagline: 'Ceramic frit for color, pattern, and solar control.',
     image: '/images/products/enameled-glass-card.jpg',
   },
+  'curved-tempered-glass': {
+    title: 'Curved Tempered Glass',
+    tagline: 'Hot-bent from a 500 mm minimum radius. Up to 3.3 m \u00d7 15 m per panel.',
+    image: '/images/products/curved-tempered.jpg',
+  },
 };
 
 interface Props {
