@@ -14,6 +14,7 @@ import EnamelApps from "@/components/products/enameled/EnamelApps";
 import EnamelFAQ from "@/components/products/enameled/EnamelFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
+import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Enameled Glass Manufacturer China — Custom Colors & Patterns | Sincere Glass",
@@ -99,6 +100,15 @@ export default function EnamelGlassPage() {
         <EnamelProcess />
         <SolarControl />
         <WhySincereEnamel />
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase
+            categoryKey="enameling"
+            heading="Silk-screen and digital frit printing in-house"
+            tagline="Ceramic colour fused into the glass surface during tempering — permanent, UV-stable, dishwasher-proof."
+          />
+        </div>
+      </section>
         <EnamelSpecs />
         <div className="bg-brand-lighter pb-8"><div className="max-w-5xl mx-auto px-6 md:px-12"><InlineQuoteCTA text="Ready to order? We respond with a detailed quote within 24 hours." product="enameled" /></div></div>
         <EnamelApps />

@@ -13,6 +13,7 @@ import LowEApps from "@/_i18n/es/components/products/low-e/LowEApps";
 import LowEFAQ from "@/_i18n/es/components/products/low-e/LowEFAQ";
 import SocialProof from "@/_i18n/es/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
+import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Fabricante de Vidrio de Baja Emisividad (Low-E) en China — Vidrio con Recubrimiento Energéticamente Eficiente | Sincere Glass",
@@ -94,6 +95,11 @@ export default function LowEGlassPage() {
         <CoatingComparison />
         <SeasonalPerformance />
         <WhySincereLowE />
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase categoryKey="tempering" heading="Low-E panels tempered in-house, no third-party handoff" tagline="Coated glass arrives at our Wuhan plant and is cut, edged, and tempered on-site before shipping." />
+        </div>
+      </section>
         <LowESpecs />
         <div className="bg-white pb-8"><div className="max-w-5xl mx-auto px-6 md:px-12"><InlineQuoteCTA text="Tell us your thermal targets and we will recommend the right Low-E configuration." product="low-e" /></div></div>
         <LowEApps />

@@ -14,6 +14,7 @@ import LaminatedFAQ from "@/components/products/laminated/LaminatedFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
+import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
   title: "Laminated Glass Manufacturer China — PVB & SGP Interlayer | Sincere Glass",
   description: "Custom laminated safety glass from China. PVB and SGP interlayer options, 99% UV blocking, superior sound insulation. Autoclave up to 3.3.3 m × 15 m. 3C certified.",
@@ -103,6 +104,15 @@ export default function LaminatedGlassPage() {
         <SoundReduction />
         <SecurityTiers />
         <WhySincereLam />
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase
+            categoryKey="laminating"
+            heading="140 °C, 12 bar, 2.5 hours in our autoclave"
+            tagline="Two high-pressure autoclaves — one at jumbo 3.3 m × 15 m capacity."
+          />
+        </div>
+        </section>
         <LaminatedSpecs />
 
         <div className="bg-white pb-8">

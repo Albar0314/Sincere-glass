@@ -14,7 +14,7 @@ import InsulatedApplications from "@/components/products/insulated/InsulatedAppl
 import InsulatedFAQ from "@/components/products/insulated/InsulatedFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
-
+import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 const faqItems = [
   { q: "What is insulated glass (IGU)?", a: "An insulated glass unit consists of two or more glass panes separated by a sealed air or gas-filled space. The sealed gap acts as thermal and acoustic insulation, significantly reducing heat transfer and noise compared to single-pane glass." },
   { q: "What gas fills do you offer?", a: "We offer both air-filled and argon gas-filled IGUs. Our Honghu factory has an automated argon gas-filling production line that ensures consistent fill rates. Argon reduces heat transfer by about 30% compared to air-filled units." },
@@ -74,6 +74,15 @@ export default function InsulatedGlassPage() {
         <EnergyPerformance />
         <GasFillComparison />
         <WhySincereIGU />
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase
+            categoryKey="insulating"
+            heading="Dual-seal IGU assembly, automated argon fill"
+            tagline="Two IG lines including one ultra-large automatic argon-fill unit."
+          />
+        </div>
+      </section>
         <InsulatedSpecs />
 
         <div className="bg-brand-lighter pb-8">

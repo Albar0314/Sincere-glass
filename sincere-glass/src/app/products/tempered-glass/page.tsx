@@ -18,6 +18,7 @@ import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
+import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
   title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3.3 m × 15 m | Sincere Glass",
   description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
@@ -117,7 +118,15 @@ export default function TemperedGlassPage() {
 
         {/* 8. Why Sincere — competitive differentiators */}
         <WhySincere />
-
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+         <ProductEquipmentShowcase
+         categoryKey="tempering"
+         heading="The furnace that tempers every panel"
+         tagline="Two tempering furnaces, up to 3.3 m × 15 m, 90-110 MPa surface compressive stress."
+        />
+        </div>
+        </section>
         {/* 9. Specs */}
         <TemperedSpecs />
         <div className="bg-brand-lighter pb-8">

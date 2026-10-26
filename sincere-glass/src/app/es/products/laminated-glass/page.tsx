@@ -14,6 +14,7 @@ import LaminatedFAQ from "@/_i18n/es/components/products/laminated/LaminatedFAQ"
 import SocialProof from "@/_i18n/es/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
+import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
   title: "Fabricante de Vidrio Laminado en China — Lámina Intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus) | Sincere Glass",
   description: "Vidrio laminado de seguridad personalizado de China. Opciones de lámina intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus), bloqueo UV del 99%, aislamiento acústico superior. Autoclave de hasta 3.3.3 m × 15 m. Certificado 3C.",
@@ -103,6 +104,11 @@ export default function LaminatedGlassPage() {
         <SoundReduction />
         <SecurityTiers />
         <WhySincereLam />
+        <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase categoryKey="laminating" heading="140 °C, 12 bar, 2.5 hours in our autoclave" tagline="Two high-pressure autoclaves — one at jumbo 3.3 m × 15 m capacity." />
+        </div>
+        </section>
         <LaminatedSpecs />
 
         <div className="bg-white pb-8">

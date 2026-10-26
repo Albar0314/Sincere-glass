@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import EquipmentClient from "@/_i18n/es/components/equipment/EquipmentClient";
+import EquipmentGallerySection from "@/_i18n/es/components/EquipmentGallerySection";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Equipamiento y Capacidades de Fábrica — Tour Virtual | Sincere Glass",
-  description: "Recorra nuestras dos fábricas: 4 líneas de corte CNC, 4 líneas de pulido de bordes, 2 hornos de templado (3.300 mm × 15.000 mm), 2 líneas de vidrio aislante, 2 autoclaves. Conozca nuestras capacidades de producción.",
+  description: "Recorra nuestras dos fábricas: 4 líneas de corte CNC, 4 líneas de pulido de bordes, 2 hornos de templado (3,3 m × 15 m), 2 líneas de vidrio aislante, 2 autoclaves. Conozca nuestras capacidades de producción.",
   openGraph: {
     title: "Equipamiento y Capacidades de Producción | Sincere Glass",
     description: "Equipamiento completo de procesamiento de vidrio en 20,000㎡. Corte CNC, pulido de bordes, templado, ensamblaje de UVA (Unidad de Vidrio Aislante), laminado y esmaltado.",
@@ -12,5 +12,5 @@ export const metadata: Metadata = {
   alternates: makeAlternates("/equipment", "es")
 };
 export default function EquipmentPage() {
-  return <EquipmentClient />;
+  return <EquipmentGallerySection />;
 }

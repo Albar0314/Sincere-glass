@@ -3,7 +3,7 @@ import CurvatureVisualizer from "@/components/products/curved-tempered/Curvature
 import CurveTypologySelector from "@/components/products/curved-tempered/CurveTypologySelector";
 import FeasibilityChecker from "@/components/products/curved-tempered/FeasibilityChecker";
 import { makeAlternates } from "@/lib/i18n";
-
+import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
   title: "Curved Tempered Glass | Hot-Bent to R500 mm — Sincere Glass",
   description:
@@ -190,7 +190,15 @@ export default function CurvedTemperedGlassPage() {
           </div>
         </div>
       </section>
-
+      <section className="py-8 bg-brand-lighter">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ProductEquipmentShowcase
+            categoryKey="tempering"
+            heading="Curved and flat on the same furnace, same quench"
+            tagline="Our tempering lines handle both flat jumbo panels and radius-formed curved tempered — up to 3.3 m × 15 m, down to 500 mm radius."
+          />
+        </div>
+      </section>
       {/* INTERACTIVE 1 - Curvature Visualizer */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
