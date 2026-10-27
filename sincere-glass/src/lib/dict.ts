@@ -32,6 +32,8 @@ const en: Dict = {
   'product.enameled.desc': 'Ceramic frit decorative finish',
   'product.lowE.name': 'Low-E Glass',
   'product.lowE.desc': 'Energy-efficient coating',
+  'product.curvedTempered.name': 'Curved Tempered Glass',
+  'product.curvedTempered.desc': 'Single-axis bent, Rₘᵢₙ 500mm at 6mm',
 
   // ─── Footer ─────────────────────────────────────────────────────────
   'footer.productsHeader': 'Products',
@@ -133,6 +135,8 @@ const es: Dict = {
   'product.enameled.desc': 'Acabado decorativo con esmalte cerámico',
   'product.lowE.name': 'Vidrio bajo emisivo (Low-E)',
   'product.lowE.desc': 'Recubrimiento de bajo consumo energético',
+  'product.curvedTempered.name': 'Vidrio templado curvo',
+  'product.curvedTempered.desc': 'Curvatura mono-axial, Rₘᵢₙ 500mm en 6mm',
 
   // ─── Footer ─────────────────────────────────────────────────────────
   'footer.productsHeader': 'Productos',

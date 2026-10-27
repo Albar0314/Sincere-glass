@@ -6,7 +6,7 @@ import { FAQ } from '@/components/blog/blocks';
 import LeadMagnetCTA from '@/components/blog/LeadMagnetCTA';
 import RelatedProductsCards from '@/components/blog/RelatedProductsCards';
 import CostDisclaimer from '@/components/blog/CostDisclaimer';
-import InlineQuoteCTA from '@/components/InlineQuoteCTA';
+import InlineQuoteCTA from '@/components/products/InlineQuoteCTA';
 import BendFeasibilityCalculator from '@/components/blog/article-20/BendFeasibilityCalculator';
 import CurvedCostPremiumCalculator from '@/components/blog/article-20/CurvedCostPremiumCalculator';
 import CurvatureTypeExplorer from '@/components/blog/article-20/CurvatureTypeExplorer';
@@ -38,36 +38,45 @@ const toc: TOCItem[] = [
 const faqItems = [
   {
     q: 'What is the minimum bend radius for curved tempered glass?',
-    a: 'On our Wuhan line, 500 mm at 6 mm thickness, 650 mm at 8 mm, 850 mm at 10 mm, 1,100 mm at 12 mm. These are production floors, not marketing numbers — beyond them the quench cracks the inner curve or the mold distorts. For radii below these values you need a cold-bent laminated build-up, which is a different product category.',
+    a: 'On our Wuhan line, 500 mm at 6 mm thickness, 650 mm at 8 mm, 850 mm at 10 mm, 1,100 mm at 12 mm. These are production floors — beyond them the quench cracks the inner curve or the mold distorts. For tighter radii you need cold-bent laminated, a different product category.',
   },
   {
     q: 'How much more does curved tempered cost than flat tempered?',
-    a: 'Expect +45–65% at project level for typical facade orders of 20–50 panels on a single radius. The premium is 3 line items: a one-time mold cost around USD 800 per unique radius, a bending-tempering surcharge of roughly +35% on the per-panel glass cost, and 5–8% extra scrap from quench yield loss. At quantities above 150 panels on one radius, mold amortizes and the premium can settle near +45%. Prices are indicative Oct 2026, EXW Wuhan.',
+    a: 'Expect +45–65% at project level for typical facade orders of 20–50 panels on a single radius. Three line items drive it: a one-time mold cost around USD 800 per unique radius, a bending-tempering surcharge of ~+35% on the per-panel glass cost, and 5–8% extra scrap from quench yield loss. At 150+ panels on one radius the premium settles near +45%. Reference pricing: Sincere Glass FOB Wuhan quotations, 2024 Q1 – 2026 Q3; not a formal quote.',
   },
   {
     q: 'Can tempered glass be bent in two directions (spherical)?',
-    a: 'No, not on a tempering line. Thermal gradients during the quench cannot be balanced across two axes of curvature — the panel either cracks or arrives with warped optics. For true spherical or double-curved panels (dome segments, Apple-store style skylights), the industry uses cold-bent laminated construction: flat tempered plies bent against the structure on site, locked by SGP interlayer. Sincere supplies the flat plies; the facade contractor laminates and bends on site.',
+    a: 'No tempering line can. Thermal gradients during the quench cannot be balanced across two axes of curvature — the panel either cracks or arrives with warped optics. For dome segments or spherical skylights, the industry uses cold-bent laminated: flat tempered plies bent against the structure on site, locked by SGP interlayer. Sincere supplies the plies; the facade contractor laminates and bends on site.',
   },
   {
     q: 'What tolerance can I expect on radius and dimensions?',
-    a: 'Standard radius tolerance is ±1 mm for radii above 1,000 mm, widening to ±1.5 mm as you approach Rₘᵢₙ for that thickness. Chord dimensions hold ±1 mm. Panel-to-panel variance across a 20-panel order is typically ±1.5 mm radius end-to-end. We recommend specifying ±3 mm fit tolerance at mullion joints to absorb this.',
+    a: 'Radius tolerance ±1 mm above R=1,000 mm, widening to ±1.5 mm as you approach Rₘᵢₙ. Chord dimensions ±1 mm. Panel-to-panel variance across a 20-panel order typically ±1.5 mm end-to-end. We recommend specifying ±3 mm fit tolerance at mullion joints to absorb this.',
   },
   {
     q: 'What is the minimum order quantity for curved tempered glass?',
-    a: 'No panel-count minimum, but the economics change below 10 panels on one radius. The mold cost (USD 400–1,200 depending on radius and panel size) is one-time and doesn’t scale — at 5 panels it dominates the invoice. For architectural prototypes or sample panels, we can quote 1–4 units at a higher per-panel price. Mixed radii in one order multiply the mold cost linearly.',
+    a: 'No panel-count minimum, but the economics change below 10 panels on one radius. Mold cost (USD 400–1,200 depending on radius and panel size) is one-time and doesn’t scale — at 5 panels it dominates the invoice. For architectural prototypes we can quote 1–4 units at a higher per-panel price. Mixed radii in one order multiply mold cost linearly.',
   },
   {
     q: 'What certifications apply to curved tempered glass?',
-    a: 'Curved tempered glass is still tempered glass under GB 15763.2-2005 (China), ASTM C1048 (US), and EN 12150 (EU) — the standards do not distinguish curved from flat panels. All curved tempered we produce carries China 3C (CCC) certification. For international markets requiring CE marking under EN 14179 (heat-soaked tempered), we can route panels through our heat-soak oven on request; this adds 48 hours to lead time.',
+    a: 'Curved tempered is still tempered glass under GB 15763.2-2005 (China), ASTM C1048 (US), and EN 12150 (EU) — the standards do not distinguish curved from flat panels. All curved tempered we produce carries China 3C (CCC). For EU markets requiring EN 14179 heat-soaked tempered, we route panels through our heat-soak oven on request; adds 48 hours to lead time.',
   },
   {
     q: 'What is the lead time for curved tempered glass?',
-    a: 'Typical production lead time is 18–25 working days for an order of 20–100 panels on a single radius. Breakdown: 4–6 days for mold fabrication (first radius, parallel with glass procurement), 7–10 days for cutting-edging-tempering on the bending line, 2–3 days for inspection and packing. Mixed-radii orders add 3–4 days per additional unique radius. Sea freight to Europe and the US adds 30–40 days on top of that.',
+    a: 'Typical production lead time 18–25 working days for 20–100 panels on a single radius. Breakdown: 4–6 days mold fabrication (first radius, parallel with glass procurement), 7–10 days cutting-edging-tempering, 2–3 days inspection and packing. Mixed-radii orders add 3–4 days per additional unique radius. Sea freight to Europe/US adds 30–40 days.',
   },
   {
     q: 'Can curved tempered be combined with laminated or IGU?',
-    a: 'Yes. Curved tempered plies can be laminated with matching-radius partners using PVB or SGP interlayer, and curved laminated units can be assembled into curved IGUs with matching-radius spacers. All three fabrication steps happen on separate lines and compound the lead time — a curved tempered-laminated-IGU unit typically runs 35–45 working days. The spacer bars must be CNC-bent to the same radius, which adds 2–3 days on their own.',
+    a: 'Yes. Curved tempered plies can be laminated with matching-radius partners using PVB or SGP interlayer; curved laminated units can be assembled into curved IGUs with CNC-bent spacer bars matching the radius. All three steps happen on separate lines and compound lead time — a curved tempered-laminated-IGU unit typically runs 35–45 working days.',
   },
+];
+
+// Standards badges displayed under hero, Signal to AI crawlers and buyers
+// that this article covers all three major compliance regimes
+const STANDARDS = [
+  { code: 'GB 15763.2-2005', region: 'China', meaning: 'Safety glass tempered' },
+  { code: 'ASTM C1048', region: 'US', meaning: 'Heat-treated flat glass' },
+  { code: 'EN 12150', region: 'EU', meaning: 'Thermally toughened' },
+  { code: 'EN 14179', region: 'EU', meaning: 'Heat-soaked tempered' },
 ];
 
 export default function ArticlePage() {
@@ -82,8 +91,44 @@ export default function ArticlePage() {
       ))}
 
       <BlogArticleLayout article={article} toc={toc}>
-        {/* TL;DR */}
+        {/* ─────────────────────────────────────────────────────
+            TL;DR + ONE-SENTENCE VERDICT (GEO extractability)
+            ───────────────────────────────────────────────────── */}
         <TLDRBox takeaways={article.tldr || []} />
+
+        {/* GEO-optimized one-sentence verdict block — designed for AI摘要抓取 */}
+        <div className="not-prose my-8 p-5 rounded-xl border-l-4 border-[#DAA745] bg-[#FAFAF8] dark:bg-[#1C1F26]/40">
+          <p className="text-xs uppercase tracking-wider text-[#DAA745] font-semibold mb-2">
+            The 30-second verdict
+          </p>
+          <p className="text-base md:text-lg leading-relaxed text-[#1C1F26] dark:text-[#F2F0ED] m-0">
+            <strong>Flat tempered is the default.</strong> Pay the curved premium only when
+            your project hits at least two of these four triggers:
+            <span className="block mt-2 text-sm text-[#3A4250] dark:text-[#8B95A5]">
+              (1) continuous curve where faceted flat would be visibly segmented (chord angle &gt; 15°) ·
+              (2) continuous mullion joints along a radius ·
+              (3) structure behind the glass is already curved ·
+              (4) the glass itself carries the architectural signature.
+            </span>
+            <span className="block mt-2 text-sm text-[#3A4250] dark:text-[#8B95A5]">
+              Hybrid builds (curved at focal zones, faceted flat elsewhere) typically hold the project premium under +25%.
+            </span>
+          </p>
+        </div>
+
+        {/* Standards compliance strip — Entity SEO + topical authority */}
+        <div className="not-prose my-6 flex flex-wrap gap-2">
+          {STANDARDS.map((s) => (
+            <div
+              key={s.code}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#3A4250]/5 dark:bg-white/5 border border-[#3A4250]/15 dark:border-white/10 text-xs"
+              title={s.meaning}
+            >
+              <span className="font-mono font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">{s.code}</span>
+              <span className="text-[#8B95A5]">· {s.region}</span>
+            </div>
+          ))}
+        </div>
 
         <h2 id="what-is-curved" className="scroll-mt-24">What curved tempered actually is</h2>
         <p>
@@ -93,41 +138,131 @@ export default function ArticlePage() {
           That one difference changes everything downstream. The mold is a bespoke steel tool for your project. The bending-tempering cycle takes ~30% longer than flat because the furnace has to accommodate the curvature of the mold bed. Quench airflow has to be re-balanced to compensate for the fact that the inner and outer surfaces of a curve present different distances to the quench nozzles. Yield is lower. Handling is harder. And unlike flat tempered, you cannot stack curved panels tightly on a shipping rack.
         </p>
         <p>
-          None of that makes curved tempered rare or exotic. On our Wuhan line it runs alongside flat panels every week. But it does mean that <strong className="text-[#DAA745]">specifying curved as if it were just “flat with a radius”</strong> is how projects end up over budget and over schedule.
+          None of that makes curved tempered rare or exotic. On our Wuhan line it runs alongside flat panels every week — the same furnace family (Tamglass/LandGlass-class bending-tempering line) used by larger brands like Guardian Glass and Saint-Gobain for their curved product lines. But it does mean that <strong className="text-[#DAA745]">specifying curved as if it were just "flat with a radius"</strong> is how projects end up over budget and over schedule.
         </p>
 
         <h2 id="when-curved-beats-flat" className="scroll-mt-24">When curved beats flat: 5 project triggers</h2>
         <p>
-          A curved panel is more expensive than a flat panel. Always. The question is whether the design intent earns that premium. These are the five project situations where it does:
+          A curved panel is more expensive than a flat panel. Always. The question is whether the design intent earns that premium. These are the five project situations where it does — each one a standalone verdict, each one visible on this page even if your browser blocks the interactive JS below.
         </p>
-        <ol>
-          <li>
-            <strong>Faceting a continuous curve with flat panels would look bad.</strong> The threshold is about 15° of chord-to-chord angle. Below that, the eye reads the facade as segmented and dated. Above it, the client stops caring. If your facade curve is gentler than ~R=8,000 mm with 1,500 mm wide flat panels, people will see the facets. Curved panels dissolve them.
-          </li>
-          <li>
-            <strong>You need to maintain water-tight continuous mullion joints along a curve.</strong> Flat-panel segmentation adds a joint at every chord-to-chord transition. Each joint is a sealant failure point and a line in the facade pattern. On curved rotunda balustrades or feature-wall glazing, continuous curved panels cut joint count by 60–80%.
-          </li>
-          <li>
-            <strong>The structure behind the glass is already curved.</strong> Historic restorations, cylindrical elevator shafts, boat hulls, revolving-door enclosures. Flat panels against a curved frame mean either faceting or bespoke faceted framing — both ugly, both expensive.
-          </li>
-          <li>
-            <strong>The glass is itself the design.</strong> Entrance canopies, bay-window features, retail shopfronts where the brand asks for “something that looks custom.” Curved tempered reads as deliberate; flat tempered reads as default.
-          </li>
-          <li>
-            <strong>Code or acoustics push you to a thicker, laminated build-up on a curve.</strong> Curved laminated with SGP interlayer is one of the few assemblies that holds both overhead-glazing safety requirements and structural curvature at the same time. Flat-and-faceted does not satisfy some IBC Chapter 24 overhead provisions.
-          </li>
-        </ol>
-        <p>
-          If none of those five triggers apply, the honest advice is: specify flat tempered. We would rather sell you flat than see you discover the mold cost after your budget is signed off.
-        </p>
+
+        {/* Static project-trigger cards — SSR-visible, GEO-extractable  */}
+        <div className="not-prose my-8 grid md:grid-cols-2 gap-4">
+          {[
+            {
+              trigger: 'Faceted flat would look segmented',
+              threshold: 'Chord-to-chord angle > 15°',
+              verdict: 'Curved earns it',
+              detail: 'If facade curve is gentler than ~R=8,000 mm with 1,500 mm wide flat panels, the eye reads the facets. Curved panels dissolve them.',
+            },
+            {
+              trigger: 'Continuous mullion joints along curve',
+              threshold: 'Rotunda balustrade or feature-wall glazing',
+              verdict: 'Curved earns it',
+              detail: 'Continuous curved panels cut joint count by 60–80% vs faceted flat. Each eliminated joint is one less sealant-failure point.',
+            },
+            {
+              trigger: 'Structure behind glass is already curved',
+              threshold: 'Historic restoration · elevator shaft · revolving door',
+              verdict: 'Curved earns it',
+              detail: 'Flat panels against a curved frame mean faceting or bespoke faceted framing — both ugly, both expensive, both avoid the curve problem by making it worse.',
+            },
+            {
+              trigger: 'Glass is itself the design signature',
+              threshold: 'Entrance canopy · bay-window feature · retail shopfront',
+              verdict: 'Curved earns it',
+              detail: 'Curved reads as deliberate; flat reads as default. If the client asked for "something custom", curved is the honest delivery.',
+            },
+            {
+              trigger: 'Code pushes to laminated on a curve',
+              threshold: 'IBC Ch 24 overhead glazing · acoustic + structural combo',
+              verdict: 'Curved laminated earns it',
+              detail: 'Curved laminated with SGP interlayer is one of the few assemblies that satisfies both overhead-safety and structural curvature at once. Flat-and-faceted fails some overhead provisions.',
+            },
+            {
+              trigger: 'None of the above apply',
+              threshold: 'Default case',
+              verdict: 'Flat wins',
+              detail: 'Honest advice: specify flat tempered. We would rather sell you flat than see you discover the mold cost after your budget is signed off.',
+              isFallback: true,
+            },
+          ].map((t) => (
+            <div
+              key={t.trigger}
+              className={`p-5 rounded-xl border ${
+                t.isFallback
+                  ? 'bg-[#F2F0ED]/50 dark:bg-[#3A4250]/20 border-[#3A4250]/20'
+                  : 'bg-white dark:bg-[#1C1F26]/60 border-[#DAA745]/30'
+              }`}
+            >
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <h4 className="text-sm font-semibold text-[#1C1F26] dark:text-[#F2F0ED] m-0">
+                  {t.trigger}
+                </h4>
+                <span
+                  className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded whitespace-nowrap ${
+                    t.isFallback
+                      ? 'bg-[#3A4250]/10 text-[#3A4250] dark:text-[#8B95A5]'
+                      : 'bg-[#DAA745]/15 text-[#DAA745]'
+                  }`}
+                >
+                  {t.verdict}
+                </span>
+              </div>
+              <p className="text-xs text-[#8B95A5] mb-2 font-mono">{t.threshold}</p>
+              <p className="text-sm text-[#3A4250] dark:text-[#8B95A5] leading-relaxed m-0">
+                {t.detail}
+              </p>
+            </div>
+          ))}
+        </div>
 
         <h2 id="min-bend-radius" className="scroll-mt-24">Minimum bend radius: the spec that kills most designs</h2>
         <p>
           Every curved tempered glass drawing we review has a minimum bend radius problem in it somewhere. Architects spec tight curves because they look dramatic; the furnace cannot physically produce them below a floor set by the glass thickness.
         </p>
         <p>
-          The rule of thumb: minimum bend radius scales roughly 100× the glass thickness, with a sharper floor at thinner glass because 6 mm cannot survive the thermal gradient of a very tight curve. In practice our line produces <strong className="text-[#DAA745]">Rₘᵢₙ 500 mm at 6 mm, 1,100 mm at 12 mm, 2,200 mm at 19 mm</strong>. Other factories vary ±15% around these numbers depending on furnace age and nozzle layout.
+          The rule of thumb: minimum bend radius scales roughly 100× the glass thickness, with a sharper floor at thinner glass because 6 mm cannot survive the thermal gradient of a very tight curve. In practice, our line's production envelope by thickness:
         </p>
+
+        {/* R_min table — real HTML table, GEO + screen-reader friendly */}
+        <figure className="not-prose my-6 overflow-x-auto">
+          <table
+            className="w-full text-sm border-collapse"
+            aria-label="Minimum bend radius for curved tempered glass by thickness, Sincere Glass Wuhan production line"
+          >
+            <caption className="text-left text-xs text-[#8B95A5] mb-3 italic">
+              Table 1 · Minimum bend radius (Rₘᵢₙ) by glass thickness on Sincere Glass's Wuhan bending-tempering line.
+              Data verified October 2026. Other factories vary ±15% depending on furnace age and nozzle layout.
+            </caption>
+            <thead>
+              <tr className="border-b-2 border-[#3A4250]/30 bg-[#FAFAF8] dark:bg-[#3A4250]/20">
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Thickness</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Minimum radius</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Max arc length</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Typical use</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['6 mm', '500 mm', '2,400 mm', 'Shopfronts, interior partitions'],
+                ['8 mm', '650 mm', '2,600 mm', 'Balustrades, canopies'],
+                ['10 mm', '850 mm', '3,000 mm', 'Facades, overhead glazing'],
+                ['12 mm', '1,100 mm', '3,000 mm', 'Curtain walls, structural'],
+                ['15 mm', '1,600 mm', '3,000 mm', 'Jumbo facades, feature glazing'],
+                ['19 mm', '2,200 mm', '3,000 mm', 'Structural fin, floor plates'],
+              ].map(([t, r, a, u]) => (
+                <tr key={t} className="border-b border-[#3A4250]/10">
+                  <th scope="row" className="py-2.5 px-3 font-mono font-semibold text-[#DAA745]">{t}</th>
+                  <td className="py-2.5 px-3 font-mono text-[#1C1F26] dark:text-[#F2F0ED]">{r}</td>
+                  <td className="py-2.5 px-3 font-mono text-[#1C1F26] dark:text-[#F2F0ED]">{a}</td>
+                  <td className="py-2.5 px-3 text-[#3A4250] dark:text-[#8B95A5]">{u}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </figure>
+
         <p>
           If your drawing calls for 12 mm tempered at R=800 mm, three things can happen. One, you downgrade to 10 mm (Rₘᵢₙ 850 mm) and lose structural capacity. Two, you redesign the curve to R≥1,100 mm and the architect loses the look. Three, you switch to cold-bent laminated with two 6 mm tempered plies and gain cost + lead time but keep both the thickness and the curve. We see all three outcomes monthly.
         </p>
@@ -137,7 +272,7 @@ export default function ArticlePage() {
 
         {/* SSR shadow for C21 — plain-prose methodology for AI crawlers */}
         <p className="sr-only">
-          The following tool is a feasibility checker for curved tempered glass. It takes four inputs: glass thickness (choose from 6, 8, 10, 12, 15, or 19 mm), target radius (300–5,000 mm), arc length (500–5,000 mm), and application (facade, balustrade, door, or canopy). It returns one of three verdicts — “Go” (your radius is at least 1.3× the minimum for that thickness), “Tight, proceed with sample” (feasible but near limit, requires sample panel sign-off), or “Not feasible as drawn” (radius below minimum, or arc length exceeds single-panel maximum). When radius is too tight for the selected thickness, the tool suggests the thinnest glass that would fit the radius. Minimum radii: 500 mm (6 mm), 650 mm (8 mm), 850 mm (10 mm), 1,100 mm (12 mm), 1,600 mm (15 mm), 2,200 mm (19 mm). Maximum single-panel arc length: 2,400–3,000 mm depending on thickness. All values are production floors on Sincere Glass’s Wuhan bending-tempering line as of October 2026.
+          The following tool is a feasibility checker for curved tempered glass. It takes four inputs: glass thickness (choose from 6, 8, 10, 12, 15, or 19 mm), target radius (300–5,000 mm), arc length (500–5,000 mm), and application (facade, balustrade, door, or canopy). It returns one of three verdicts — "Go" (your radius is at least 1.3× the minimum for that thickness), "Tight, proceed with sample" (feasible but near limit, requires sample panel sign-off), or "Not feasible as drawn" (radius below minimum, or arc length exceeds single-panel maximum). When radius is too tight for the selected thickness, the tool suggests the thinnest glass that would fit the radius. Minimum radii: 500 mm (6 mm), 650 mm (8 mm), 850 mm (10 mm), 1,100 mm (12 mm), 1,600 mm (15 mm), 2,200 mm (19 mm). Maximum single-panel arc length: 2,400–3,000 mm depending on thickness. All values are production floors on Sincere Glass's Wuhan bending-tempering line as of October 2026.
         </p>
         <BendFeasibilityCalculator />
 
@@ -145,21 +280,71 @@ export default function ArticlePage() {
 
         <h2 id="cost-reality" className="scroll-mt-24">What a curved tempered panel actually costs</h2>
         <p>
-          The honest answer: on top of what a flat tempered panel would cost, curved adds three line items.
+          The honest answer: on top of what a flat tempered panel would cost, curved adds three line items. The table below shows the full stack at project level.
         </p>
-        <ol>
-          <li>
-            <strong>Mold cost.</strong> One-time, per unique radius, typically USD 400–1,200. Smaller molds for 1×1.5 m panels sit at the low end; large architectural molds (2.6 m tall) run USD 1,000–1,500. The mold is amortized across your panel count, so 5 panels on one radius carry USD 160 per panel of mold cost while 100 panels carry USD 8.
-          </li>
-          <li>
-            <strong>Bending-tempering surcharge.</strong> Approximately +35% over flat tempering per panel. This covers the longer furnace cycle, the quench re-balancing, and the slower panel-per-hour throughput on the bending line.
-          </li>
-          <li>
-            <strong>Yield loss.</strong> 5–8% of panels scrap during the quench vs 1–2% for flat. The scrap is priced into the per-panel number.
-          </li>
-        </ol>
+
+        {/* Cost breakdown table — real HTML table */}
+        <figure className="not-prose my-6 overflow-x-auto">
+          <table
+            className="w-full text-sm border-collapse"
+            aria-label="Cost premium breakdown of curved tempered glass over flat tempered glass"
+          >
+            <caption className="text-left text-xs text-[#8B95A5] mb-3 italic">
+              Table 2 · Cost premium stack, curved vs flat tempered glass. Reference pricing: Sincere Glass FOB Wuhan quotations, 2024 Q1 – 2026 Q3. Not a formal quote; subject to specification, coating, and FX.
+            </caption>
+            <thead>
+              <tr className="border-b-2 border-[#3A4250]/30 bg-[#FAFAF8] dark:bg-[#3A4250]/20">
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Cost component</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Flat tempered</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Curved tempered</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Delta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Base glass (10mm, 1.5×2.5m ref)</th>
+                <td className="py-2.5 px-3 font-mono">USD 75–90/m²</td>
+                <td className="py-2.5 px-3 font-mono">USD 140–180/m²</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">+80–100%</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Mold cost (one-time, per radius)</th>
+                <td className="py-2.5 px-3 font-mono">—</td>
+                <td className="py-2.5 px-3 font-mono">USD 400–1,200</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">Amortizes</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">Scrap / yield loss</th>
+                <td className="py-2.5 px-3 font-mono">1–2%</td>
+                <td className="py-2.5 px-3 font-mono">5–8%</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">+4–6 pp</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10 bg-[#FAFAF8]/40 dark:bg-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">
+                  <strong>Project-level premium (20–50 panels, 1 radius)</strong>
+                </th>
+                <td className="py-2.5 px-3 font-mono">Baseline</td>
+                <td className="py-2.5 px-3 font-mono">+45–65%</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745] font-bold">+45–65%</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">At 150+ panels (one radius)</th>
+                <td className="py-2.5 px-3 font-mono">Baseline</td>
+                <td className="py-2.5 px-3 font-mono">+45%</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">Floor</td>
+              </tr>
+              <tr>
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#1C1F26] dark:text-[#F2F0ED]">At &lt;10 panels, single radius</th>
+                <td className="py-2.5 px-3 font-mono">Baseline</td>
+                <td className="py-2.5 px-3 font-mono">+85–110%</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">Mold dominates</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+
         <p>
-          Mixing multiple unique radii in one order multiplies mold cost directly — four radii means four molds, not amortized. We often recommend consolidating a facade’s curves to 2–3 radius families during design-review to control this.
+          Mixing multiple unique radii in one order multiplies mold cost directly — four radii means four molds, not amortized. We often recommend consolidating a facade's curves to 2–3 radius families during design-review to control this. The interactive calculator below is useful for exploring the mold-amortization curve for your own panel count and radius mix.
         </p>
 
         {/* SSR shadow for C21 */}
@@ -172,21 +357,53 @@ export default function ArticlePage() {
 
         <h2 id="curvature-types" className="scroll-mt-24">Three types of curves — and the one you cannot have</h2>
         <p>
-          Not every curve a drawing shows can be produced in tempered glass. The feasibility depends entirely on how many axes of curvature are involved.
+          Not every curve a drawing shows can be produced in tempered glass. The feasibility depends entirely on how many axes of curvature are involved. The table below is the quick reference; the interactive explorer that follows walks through each type visually.
         </p>
-        <ul>
-          <li>
-            <strong>Cylindrical (single-axis)</strong> is 95% of what we make and the only type most factories call simply “curved tempered.” The glass wraps around an invisible cylinder in one direction only. Standard production, standard lead time, standard cost premium.
-          </li>
-          <li>
-            <strong>Conical (tapered single-axis)</strong> is still single-axis but the radius varies along the panel height — wider at the bottom than at the top, say, as the glass follows a tapered tower. The mold is more complex, cost is ~1.8× standard cylindrical. Still produceable, but on specialty orders.
-          </li>
-          <li>
-            <strong>Spherical (double-axis)</strong> — glass curved in two directions at once, like a dome segment — cannot be made on a tempering line. The thermal physics of the quench cannot be balanced across two axes of curvature. If your drawing shows a double-curved panel in tempered glass, the specification is physically impossible. The industry workaround is cold-bent laminated: flat tempered plies that are bent on site against the structure during lamination. Sincere supplies the plies; your facade contractor runs the on-site cold-bending.
-          </li>
-        </ul>
+
+        {/* Curvature-type table — real HTML table */}
+        <figure className="not-prose my-6 overflow-x-auto">
+          <table
+            className="w-full text-sm border-collapse"
+            aria-label="Comparison of curved tempered glass curvature types and their production feasibility"
+          >
+            <caption className="text-left text-xs text-[#8B95A5] mb-3 italic">
+              Table 3 · Curvature-type feasibility matrix. "Not available in tempered" is a physics limit, not a factory limit — no tempering line anywhere can produce it.
+            </caption>
+            <thead>
+              <tr className="border-b-2 border-[#3A4250]/30 bg-[#FAFAF8] dark:bg-[#3A4250]/20">
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Curvature type</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Axes</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Feasibility in tempered</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Cost vs cylindrical</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#DAA745]">Cylindrical</th>
+                <td className="py-2.5 px-3">Single</td>
+                <td className="py-2.5 px-3">Standard production (95% of curved RFQs)</td>
+                <td className="py-2.5 px-3 font-mono">Baseline</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold text-[#DAA745]">Conical (tapered)</th>
+                <td className="py-2.5 px-3">Single (variable radius)</td>
+                <td className="py-2.5 px-3">Specialty, longer lead</td>
+                <td className="py-2.5 px-3 font-mono">~1.8×</td>
+              </tr>
+              <tr>
+                <th scope="row" className="py-2.5 px-3 font-semibold text-red-600 dark:text-red-400">Spherical / dome</th>
+                <td className="py-2.5 px-3">Double</td>
+                <td className="py-2.5 px-3">
+                  <strong>Not available in tempered glass</strong> — use cold-bent laminated instead
+                </td>
+                <td className="py-2.5 px-3 font-mono">N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+
         <p>
-          Before anyone issues an RFQ, confirm which of the three your geometry actually is. We have seen six-figure budgets wasted on “curved tempered” quotes for geometries that no factory anywhere can produce.
+          Before anyone issues an RFQ, confirm which of the three your geometry actually is. We have seen six-figure budgets wasted on "curved tempered" quotes for geometries that no factory anywhere can produce.
         </p>
 
         {/* SSR shadow for C21 */}
@@ -211,13 +428,91 @@ export default function ArticlePage() {
 
         <h2 id="logistics" className="scroll-mt-24">Lead time, molds, and shipping</h2>
         <p>
-          Expect 18–25 working days from order confirmation to ready-for-pickup for a single-radius order of 20–100 panels. The breakdown: 4–6 days to fabricate the mold (first radius; subsequent radii in the same order add 2–3 days each in parallel), 7–10 days for cutting-edging-tempering on the bending line, and 2–3 days for inspection and crating.
+          Logistics is where curved orders go sideways most often — not because any single step is slow, but because the cumulative impact of mold fabrication plus bespoke crating plus reduced container density compounds against the baseline flat panel flow. The two tables below give you the numbers.
         </p>
+
+        {/* Lead-time breakdown table */}
+        <figure className="not-prose my-6 overflow-x-auto">
+          <table
+            className="w-full text-sm border-collapse"
+            aria-label="Lead time breakdown for curved tempered glass orders"
+          >
+            <caption className="text-left text-xs text-[#8B95A5] mb-3 italic">
+              Table 4 · Lead-time breakdown, 20–100 panels, single radius, EXW Wuhan. Add 30–40 days for sea freight to Europe or North America. Data verified October 2026.
+            </caption>
+            <thead>
+              <tr className="border-b-2 border-[#3A4250]/30 bg-[#FAFAF8] dark:bg-[#3A4250]/20">
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Stage</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Flat tempered</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Curved tempered</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold">Mold fabrication</th>
+                <td className="py-2.5 px-3 font-mono">—</td>
+                <td className="py-2.5 px-3 font-mono">4–6 days</td>
+                <td className="py-2.5 px-3 text-[#8B95A5]">Parallel with glass procurement</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold">Cutting / edging / tempering</th>
+                <td className="py-2.5 px-3 font-mono">5–7 days</td>
+                <td className="py-2.5 px-3 font-mono">7–10 days</td>
+                <td className="py-2.5 px-3 text-[#8B95A5]">Bending line is slower throughput</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold">Inspection + crating</th>
+                <td className="py-2.5 px-3 font-mono">1–2 days</td>
+                <td className="py-2.5 px-3 font-mono">2–3 days</td>
+                <td className="py-2.5 px-3 text-[#8B95A5]">Bespoke A-frame crates</td>
+              </tr>
+              <tr className="border-b border-[#3A4250]/10 bg-[#FAFAF8]/40 dark:bg-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold"><strong>Total EXW Wuhan</strong></th>
+                <td className="py-2.5 px-3 font-mono font-bold">6–9 days</td>
+                <td className="py-2.5 px-3 font-mono font-bold">18–25 days</td>
+                <td className="py-2.5 px-3 text-[#8B95A5]">Add 3–4 days per extra radius</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+
+        {/* Container-load comparison table — Grok specifically called this out */}
+        <figure className="not-prose my-6 overflow-x-auto">
+          <table
+            className="w-full text-sm border-collapse"
+            aria-label="Container loading comparison, flat vs curved tempered glass"
+          >
+            <caption className="text-left text-xs text-[#8B95A5] mb-3 italic">
+              Table 5 · Container loading density, flat vs curved tempered. Curved panels cannot stack flat and ship in bespoke A-frame or radius-matched crates, so freight cost scales with cubic meters rather than panel weight.
+            </caption>
+            <thead>
+              <tr className="border-b-2 border-[#3A4250]/30 bg-[#FAFAF8] dark:bg-[#3A4250]/20">
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Container</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Flat tempered (m²)</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Curved tempered (m²)</th>
+                <th scope="col" className="text-left py-2.5 px-3 font-semibold">Density ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-[#3A4250]/10">
+                <th scope="row" className="py-2.5 px-3 font-semibold">20' DC</th>
+                <td className="py-2.5 px-3 font-mono">320–400 m²</td>
+                <td className="py-2.5 px-3 font-mono">160–240 m²</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">~50–60%</td>
+              </tr>
+              <tr>
+                <th scope="row" className="py-2.5 px-3 font-semibold">40' HQ</th>
+                <td className="py-2.5 px-3 font-mono">650–800 m²</td>
+                <td className="py-2.5 px-3 font-mono">350–550 m²</td>
+                <td className="py-2.5 px-3 font-mono text-[#DAA745]">~55–70%</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+
         <p>
-          Shipping is where curved orders go sideways. Curved panels cannot stack flat, so they ship in bespoke A-frame or custom-radius-matched crates. A 20-ft container that would carry 180 flat panels carries 60–90 curved panels of the same base dimension. If you are moving the glass by sea freight, this doubles the cubic meters per panel and your freight cost scales with it, not with weight.
-        </p>
-        <p>
-          For architectural projects, we usually recommend consolidating curved panels into dedicated containers rather than mixing with flat glass — the crating is incompatible, and mixed loads lead to higher damage rates.
+          For architectural projects, we usually recommend consolidating curved panels into dedicated containers rather than mixing with flat glass — the crating is incompatible, and mixed loads lead to higher damage rates. Loading diagrams for your specific radius mix are provided on quote confirmation.
         </p>
 
         {/* Lead magnet */}

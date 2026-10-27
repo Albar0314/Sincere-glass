@@ -1,4 +1,4 @@
-export interface BlogArticle {
+﻿export interface BlogArticle {
   slug: string;
   title: string;
   excerpt: string;
@@ -607,7 +607,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     publishDate: "2026-10-13",
     updatedDate: "2026-10-13",
-    category: "Buyer Guide" as const,
+    category: "Buyer Guide",
     tags: ["buyer guide", "sourcing", "import", "Incoterms", "freight", "supplier verification", "China manufacturing"],
     heroImage: "/images/blog/how-to-import-glass-from-china-hero.webp",
     heroImageAlt: "A Chinese glass factory loading dock with a 20-foot shipping container being loaded with crated architectural glass panels destined for export",
@@ -738,7 +738,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     publishDate: "2026-10-15",
     updatedDate: "2026-10-15",
-    category: "Buyer Guide" as const,
+    category: "Buyer Guide",
     tags: [
       "supplier vetting",
       "china sourcing",
@@ -1165,53 +1165,7 @@ export function getRelatedArticles(currentSlug: string, limit = 3): BlogArticle[
  */
 export function auditKeyword(newKeyword: string): {
   conflict: boolean;
-  conflictingArticles: BlogArticle[
-  {
-    slug: "curved-tempered-glass-vs-flat-tempered-glass",
-    title: "Curved Tempered Glass vs Flat Tempered Glass: When the Radius Earns Its Premium",
-    excerpt: "A manufacturer\u2019s side-by-side on curved vs flat tempered: the five project triggers that justify curved, the minimum-bend-radius table that kills most designs, the real cost premium, and the one curvature type no tempering line can produce.",
-    targetKeyword: "curved tempered glass vs flat tempered glass",
-    secondaryKeywords: [
-      "curved vs flat tempered",
-      "bent tempered glass vs flat",
-      "curved tempered glass cost",
-      "minimum bend radius tempered glass",
-      "curved tempered glass specification",
-    ],
-    searchKeywords: [
-      "curved tempered glass", "bent tempered glass", "curved vs flat tempered",
-      "bent vs flat tempered", "curved toughened glass", "minimum bend radius",
-      "glass bending", "cylindrical glass", "cold bent glass",
-      "R_min tempered glass", "mold cost curved glass",
-      "\u5f2f\u6a21\u73bb\u7483 \u5e73\u677f\u73bb\u7483", "\u5f2f\u94a2\u73bb\u7483", "\u5f2f\u66f2\u73bb\u7483"
-    ],
-    publishDate: "2026-10-27",
-    updatedDate: "2026-10-27",
-    category: "Buyer Guide" as const,
-    tags: ["curved tempered glass", "bent glass", "tempered glass", "glass comparison", "architectural glass", "curved glass"],
-    heroImage: "/images/blog/curved-vs-flat-tempered-hero.webp",
-    heroImageAlt: "Side-by-side comparison of a curved tempered glass panel and a flat tempered glass panel on a factory inspection bench, showing the geometric difference and uniform surface finish of both",
-    heroImagePrompt: "Studio product photography, two architectural tempered glass panels side by side on polished dark concrete surface in a modern factory inspection bay. Left: a single-axis cylindrically curved tempered glass panel (approximately 1500mm chord, 2000mm height, radius ~1200mm) standing upright, subtle blue-green tint from the glass, perfect optical surface showing a soft reflection of the factory environment. Right: a flat tempered glass panel of identical height and chord width, upright, matching tint. Between them a steel inspection bench with a radius gauge, laser distance meter, and QC paperwork. Soft daylight from above-left, warm amber accent light from side, shallow depth of field focused on the panels. Clean industrial environment with visible overhead crane rails and safety barriers in deep background. No humans in frame, no text, no watermarks. 4K photorealistic, documentary architectural photography style, museum-exhibit cleanliness.",
-    author: DEFAULT_AUTHOR,
-    readingTime: 13,
-    featured: false,
-    reviewedBy: { name: "Albar", title: "Technical Lead" },
-    articleType: "comparison" as const,
-    cluster: "comparison",
-    tldr: [
-      "Curved tempered is single-axis-curved tempered glass; same strength and breakage pattern as flat per GB 15763.2, just with a mold step added.",
-      "Minimum bend radius scales with thickness: 500 mm at 6 mm, 1,100 mm at 12 mm, 2,200 mm at 19 mm on our Wuhan line. Below these floors the quench cracks the panel.",
-      "Cost premium is +45\u201365% for typical facade orders of 20\u201350 panels on one radius: mold (fixed USD 800), bending surcharge (+35%), and scrap (+6%).",
-      "Spherical (double-axis) curved tempered is not producible on any tempering line. The industry workaround is cold-bent laminated with flat tempered plies bent on site.",
-      "Specify curved only when faceted flat panels would read as segmented, or when the structure behind the glass is already curved. Otherwise flat wins.",
-    ],
-    relatedProductSlugs: ["tempered-glass", "curved-tempered-glass", "laminated-glass"],
-    translations: {},
-    changelog: [
-      { date: "2026-10-27", note: "Initial publish \u2014 fourth article in Comparison cluster, supports new Curved Tempered Glass product page" },
-    ],
-  },
-];
+  conflictingArticles: BlogArticle[];
 } {
   const normalized = newKeyword.toLowerCase().trim();
   const conflicting = blogArticles.filter((a) => {
