@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from '@/components/LocalizedLink';
 import { FAQ } from '@/components/blog/blocks';
-import InlineQuoteCTA from '@/components/InlineQuoteCTA';
+import InlineQuoteCTA from '@/components/products/InlineQuoteCTA';
 import RadiusEnvelopeExplorer from '@/components/products/curved-tempered/RadiusEnvelopeExplorer';
 import BendingProductionTimeline from '@/components/products/curved-tempered/BendingProductionTimeline';
 import CurvedApplicationShowcase from '@/components/products/curved-tempered/CurvedApplicationShowcase';
