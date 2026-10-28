@@ -16,6 +16,7 @@ import JumboCapabilityExplorer from '@/components/blog/article-18/JumboCapabilit
 import TransportCrateVisualizer from '@/components/blog/article-18/TransportCrateVisualizer';
 import JumboRFQBuilder from '@/components/blog/article-18/JumboRFQBuilder';
 
+import Link from "@/components/LocalizedLink";
 const SLUG = 'jumbo-architectural-glass-panels';
 const article = blogArticles.find((a) => a.slug === SLUG) as BlogArticle;
 
@@ -445,6 +446,10 @@ export default function Page() {
         <p className="text-sm text-[#8B95A5] mt-6">
           For the pillar view of how this product-level decision fits into a complete architectural glass specification, see our <a href="/blog/architectural-glass-specification-guide" className="text-[#DAA745] hover:underline">architectural glass specification guide</a>.
         </p>
+
+        
+        {/* GROK-INSERT-V1:hst */}
+        <p className="text-sm text-[#8B95A5] my-6">→ At jumbo scale, nickel-sulfide spontaneous-breakage risk compounds across panel count — see our <Link href="/blog/heat-soaked-tempered-glass-guide" className="text-[#DAA745] underline">heat soak testing guide</Link> for when to specify HST.</p>
 
         <FAQ items={faqItems} />
 

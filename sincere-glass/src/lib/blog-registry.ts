@@ -1122,6 +1122,56 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-10-26', note: 'Initial publish — fourth article in Comparison cluster, first curved-glass article in blog' },
     ],
   },
+{
+    slug: "heat-soaked-tempered-glass-guide",
+    title: "Heat Soaked Tempered Glass: What It Is, When You Need It, How to Specify",
+    excerpt: "A factory walk-through of EN 14179-1 heat soak testing: the nickel sulfide mechanism behind spontaneous breakage, the 290°C/2h cycle inside the oven, when HST is required vs recommended vs optional, and how to write it into a PO without triggering clarifying emails.",
+    targetKeyword: "heat soaked tempered glass",
+    secondaryKeywords: [
+      "heat soak test tempered glass",
+      "heat soak testing EN 14179",
+      "nickel sulfide tempered glass",
+      "spontaneous breakage tempered glass",
+      "HST tempered glass certificate",
+    ],
+    searchKeywords: [
+      "heat soaked tempered glass", "heat soak testing", "heat soak test tempered",
+      "HST tempered glass", "EN 14179-1 heat soak", "nickel sulfide inclusion",
+      "NiS inclusion", "spontaneous breakage tempered glass", "tempered glass self-destruct",
+      "tempered glass exploding", "safety glass heat soak", "jumbo tempered HST",
+      "overhead glazing HST", "facade HST", "heat soak oven cycle", "alpha beta phase NiS",
+      "热浸处理", "钢化玻璃自爆", "硫化镂 钢化玻璃"
+    ],
+    publishDate: "2026-10-28",
+    updatedDate: "2026-10-28",
+    category: "Technical Guide" as const,
+    tags: ["tempered glass", "heat soak testing", "HST", "EN 14179", "quality control", "facade glass", "spontaneous breakage"],
+    heroImage: "/images/blog/heat-soaked-tempered-glass-hero.webp",
+    heroImageAlt: "Interior of a modern industrial heat soak oven with large tempered glass panels racked vertically on steel frames at 290 degrees Celsius, visible temperature gauges and warm amber heating element glow",
+    heroImagePrompt: "Interior view of a modern industrial heat soak oven. Large tempered glass panels (approximately 3m x 2m) racked vertically on steel frames inside the chamber, visible through the open loading door. Visible temperature gauges in the foreground reading 290 degrees Celsius. Warm orange-amber ambient lighting from heating elements along the chamber walls, slight thermal haze visible around the panels. Single large glass panel in sharp focus mid-frame catching the amber light with subtle refraction, surrounding panels in shallow depth of field. Cinematic photo, 16:9 aspect ratio. No people, no logos, no text overlay. Industrial realism with muted color grading aligned to the Sincere Glass brand palette (dark navy backdrop with amber accent lighting). Documentary architectural photography style, 4K photorealistic, museum-exhibit cleanliness.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 15,
+    featured: false,
+    reviewedBy: { name: "Albar", title: "Technical Lead" },
+    articleType: "technical" as const,
+    cluster: "technical",
+    tldr: [
+      "Heat soak testing (HST) is a 290± 10°C / 2-hour post-tempering oven cycle per EN 14179-1 that forces critical-size nickel sulfide inclusions to fracture their host panels inside the factory instead of inside your building 1–7 years later.",
+      "HST is required for overhead glazing almost everywhere, and for high-rise facades with public access below under most European codes. It is strongly recommended for mid-rise facades and elevated balustrades, and optional for interior partitions and small low-rise panels.",
+      "Cost premium is +15–25% over standard tempered on the per-m² EXW price; lead time adds 3–5 working days. One oven cycle runs 7–8 hours end to end.",
+      "HST reduces spontaneous fracture rate from ~1 per 400 tonnes shipped to ~1 per 2,000–4,000 tonnes — roughly an order of magnitude. Residual risk is non-zero but insurable at standard rates.",
+      "Specify EN 14179-1:2016 as the test method even on US and AU projects, since no equivalent standard exists in ASTM C1048 or AS 1288. Always ask for per-batch compliance certificates at RFQ.",
+    ],
+    buyerFaq: [
+      { q: "Does Sincere Glass issue EN 14179-1 compliance certificates per batch?", a: "Yes, on request at RFQ. Default delivery includes a batch-level test report with time-temperature log; the formal EN 14179-1:2016 compliance certificate is issued on request and adds about one working day for paperwork." },
+      { q: "Can HST be scheduled on the same lead time as standard tempered?", a: "Add 3–5 working days to standard tempered lead time. For orders under 20 m² we batch with other projects on the same cycle; expect a 2–4 day scheduling window on top." },
+    ],
+    relatedProductSlugs: ["tempered-glass", "laminated-glass", "insulated-glass"],
+    translations: {},
+    changelog: [
+      { date: "2026-10-28", note: "Initial publish — fourth article in Technical Guides cluster" },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
