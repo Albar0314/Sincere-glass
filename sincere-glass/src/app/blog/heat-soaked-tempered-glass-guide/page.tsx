@@ -261,7 +261,21 @@ export default function ArticlePage() {
           If you are planning a facade, overhead glazing, or balustrade project and want to understand whether HST belongs in your specification, send the drawings and we will run them through the checker above and advise. For context on the broader tempered glass product category, see our <Link href="/products/tempered-glass" className="text-[#DAA745] underline">tempered glass product page</Link>. For the specifications of our largest-format tempered capability, see <Link href="/blog/jumbo-architectural-glass-panels" className="text-[#DAA745] underline">jumbo architectural glass panels</Link>, where HST becomes effectively mandatory at project scale. For the pillar context on how tempering fits with lamination and IGU assembly in manufacturing, start at our <Link href="/blog/architectural-glass-manufacturing-guide" className="text-[#DAA745] underline">architectural glass manufacturing guide</Link>.
         </p>
 
-        <FAQ items={faqItems} />
+              {/* GROK-INSERT-V1:spandrel-xref */}
+      <div className="my-8 rounded-xl border-l-4 border-brand-accent bg-brand-accent/10 p-5">
+        <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-brand-accent">
+          Related reading
+        </p>
+        <p className="text-sm text-brand-primary dark:text-brand-light">
+          Specifying opaque facade zones?{" "}
+          <Link href="/blog/spandrel-glass-guide" className="font-semibold text-brand-accent underline underline-offset-2">
+            Read our Spandrel Glass Guide
+          </Link>{" "}
+          — covers construction methods, thermal stress, and color matching to vision glass.
+        </p>
+      </div>
+
+      <FAQ items={faqItems} />
 
         <RelatedProductsCards slugs={article.relatedProductSlugs || []} />
       </BlogArticleLayout>

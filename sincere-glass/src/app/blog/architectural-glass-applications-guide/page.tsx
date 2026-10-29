@@ -318,7 +318,21 @@ export default function Page() {
           description="A 20-page side-by-side reference comparing architectural glass code requirements across IBC, EN, GB and AS standards — organized by application zone."
         />
 
-        <FAQ items={faqItems} />
+              {/* GROK-INSERT-V1:spandrel-xref */}
+      <div className="my-8 rounded-xl border-l-4 border-brand-accent bg-brand-accent/10 p-5">
+        <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-brand-accent">
+          Related reading
+        </p>
+        <p className="text-sm text-brand-primary dark:text-brand-light">
+          Specifying opaque facade zones?{" "}
+          <Link href="/blog/spandrel-glass-guide" className="font-semibold text-brand-accent underline underline-offset-2">
+            Read our Spandrel Glass Guide
+          </Link>{" "}
+          — covers construction methods, thermal stress, and color matching to vision glass.
+        </p>
+      </div>
+
+      <FAQ items={faqItems} />
 
         {article.buyerFaq && article.buyerFaq.length > 0 && (
           <FAQ items={article.buyerFaq} title="Procurement & Delivery" />
