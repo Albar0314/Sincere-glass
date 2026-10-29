@@ -1171,14 +1171,19 @@ export const blogArticles: BlogArticle[] = [
     changelog: [
       { date: "2026-10-28", note: "Initial publish — fourth article in Technical Guides cluster" },
     ],
-  },
-  {
+  },  {
     slug: "spandrel-glass-guide",
     title: "Spandrel Glass: Construction Methods, Thermal Stress & Specification Guide",
-    description:
-      "How to specify spandrel glass across 4 construction methods, prevent thermal breakage, match color to vision glass, and avoid the 5 most common facade spec mistakes.",
-    cluster: "application",
+    excerpt:
+      "How to specify spandrel glass across 4 construction methods, prevent thermal breakage, match color to vision glass, and avoid the 5 most common facade spec mistakes. Factory-floor view from Wuhan.",
     targetKeyword: "spandrel glass",
+    secondaryKeywords: [
+      "spandrel glass thickness",
+      "spandrel vs vision glass",
+      "shadow box vs spandrel",
+      "ceramic frit spandrel",
+      "spandrel panel construction",
+    ],
     searchKeywords: [
       "spandrel glass",
       "spandrel glass thickness",
@@ -1189,24 +1194,38 @@ export const blogArticles: BlogArticle[] = [
       "spandrel glass heat soak",
       "spandrel panel construction",
       "spandrel color matching",
+      "spandrel facade",
       "幕墙非视觉区玻璃",
       "彩釉背衬玻璃",
       "层间玻璃",
     ],
-    author: "Li Cheng",
-    reviewedBy: "Albar, Technical Lead",
-    articleType: "Technical Guide",
     publishDate: "2026-10-29",
     updatedDate: "2026-10-29",
-    readingTime: 15,
-    featured: false,
-    isPillar: false,
+    category: "Technical Guide" as const,
+    tags: [
+      "spandrel glass",
+      "ceramic frit",
+      "curtain wall",
+      "thermal stress",
+      "facade",
+      "heat-strengthened",
+    ],
     heroImage: "/images/blog/spandrel-glass-hero.webp",
+    heroImageAlt:
+      "Modern high-rise commercial curtain wall facade showing dark bronze ceramic frit spandrel panels alternating with clear vision glass at golden hour",
     heroImagePrompt:
       "Architectural photography, exterior facade of a modern 12-story commercial curtain wall building shot from street level at golden hour. Clear vision glass on floors with warm interior lighting visible; opaque dark-bronze ceramic frit spandrel panels concealing floor slabs — spandrel and vision glass visually distinct but tonally harmonized. Shallow depth of field on upper floors, crisp detail on mid-building spandrel/vision transition. No people, no logos, no text. Cinematic muted color grade, slight teal-orange split-tone. 16:9, photorealistic, shot on Phase One, f/5.6, ISO 100.",
+    author: DEFAULT_AUTHOR,
+    reviewedBy: { name: "Albar", title: "Technical Lead" },
+    articleType: "technical" as const,
+    cluster: "application",
+    relatedProductSlugs: ["enameled-glass", "tempered-glass", "insulated-glass"],
+    translations: {},
     changelog: [
-      { date: "2026-10-29", note: "Initial publication; SOP v2.3 compliant" },
+      { date: "2026-10-29", note: "Initial publish — Application cluster, 4th article" },
     ],
+    readingTime: 15,
+    featured: false,
   },
 ];
 
