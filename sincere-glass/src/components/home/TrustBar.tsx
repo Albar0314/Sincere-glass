@@ -5,7 +5,7 @@ import { useCountUp } from "@/lib/useCountUp";
 
 const stats = [
   { value: 15, suffix: "+", label: "Years Experience" },
-  { value: 20000, suffix: "㎡", label: "Factory Area" },
+  { value: 20000, suffix: " m2", label: "Factory Area" },
   { value: 2600, suffix: "+", label: "Projects Completed" },
   { value: 1500, suffix: "+", label: "Clients Served" },
 ];

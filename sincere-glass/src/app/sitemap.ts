@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }> = [
     { path: "/",          freq: "weekly",  priority: 1.0 },
     { path: "/about",     freq: "monthly", priority: 0.8 },
+    { path: "/certifications",freq: "monthly", priority: 0.8 },
     { path: "/products",  freq: "weekly",  priority: 0.9 },
     { path: "/projects",  freq: "monthly", priority: 0.7 },
     { path: "/equipment", freq: "monthly", priority: 0.6 },

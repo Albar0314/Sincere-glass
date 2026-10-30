@@ -1,0 +1,584 @@
+{
+  "qualifications": [
+    {
+      "spec": "3C-Qualification",
+      "label": "3C Steel Standard Qualification Certificate (CMA Accredited)",
+      "url": "/downloads/test-reports/01-3C-Qualification-Certificate/3C-Qualification.pdf",
+      "filename": "3C-Qualification.pdf"
+    }
+  ],
+  "cccReports": [
+    {
+      "spec": "3C-CCC-Insulated-Glass",
+      "label": "3C CCC Insulated Glass",
+      "url": "/downloads/test-reports/02-3C-CCC-Reports/3C-CCC-Insulated-Glass.pdf",
+      "filename": "3C-CCC-Insulated-Glass.pdf"
+    },
+    {
+      "spec": "3C-CCC-Laminated-PVB-0.38mm",
+      "label": "3C CCC Laminated PVB 0.38mm",
+      "url": "/downloads/test-reports/02-3C-CCC-Reports/3C-CCC-Laminated-PVB-0.38mm.pdf",
+      "filename": "3C-CCC-Laminated-PVB-0.38mm.pdf"
+    },
+    {
+      "spec": "3C-CCC-Laminated-PVB-0.76mm",
+      "label": "3C CCC Laminated PVB 0.76mm",
+      "url": "/downloads/test-reports/02-3C-CCC-Reports/3C-CCC-Laminated-PVB-0.76mm.pdf",
+      "filename": "3C-CCC-Laminated-PVB-0.76mm.pdf"
+    },
+    {
+      "spec": "3C-CCC-Laminated-PVB-1.14mm",
+      "label": "3C CCC Laminated PVB 1.14mm",
+      "url": "/downloads/test-reports/02-3C-CCC-Reports/3C-CCC-Laminated-PVB-1.14mm.pdf",
+      "filename": "3C-CCC-Laminated-PVB-1.14mm.pdf"
+    }
+  ],
+  "tempered": [
+    {
+      "spec": "5mm-Tempered",
+      "label": "5mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/5mm-Tempered-TestReport.pdf",
+      "filename": "5mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "6mm-Tempered",
+      "label": "6mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/6mm-Tempered-TestReport.pdf",
+      "filename": "6mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "8mm-Tempered",
+      "label": "8mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/8mm-Tempered-TestReport.pdf",
+      "filename": "8mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "10mm-Tempered",
+      "label": "10mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/10mm-Tempered-TestReport.pdf",
+      "filename": "10mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "12mm-Tempered",
+      "label": "12mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/12mm-Tempered-TestReport.pdf",
+      "filename": "12mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "15mm-Tempered",
+      "label": "15mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/15mm-Tempered-TestReport.pdf",
+      "filename": "15mm-Tempered-TestReport.pdf"
+    },
+    {
+      "spec": "19mm-Tempered",
+      "label": "19mm-Tempered Glass — WITC Test Report (GB 15763.2-2005)",
+      "url": "/downloads/test-reports/03-Tempered-Glass-Test-Reports/19mm-Tempered-TestReport.pdf",
+      "filename": "19mm-Tempered-TestReport.pdf"
+    }
+  ],
+  "laminated": [
+    {
+      "spec": "5-0.38-5",
+      "label": "5mm + 0.38mm PVB + 5mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/5-0.38-5-TestReport.pdf",
+      "filename": "5-0.38-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-0.76-5",
+      "label": "5mm + 0.76mm PVB + 5mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/5-0.76-5-TestReport.pdf",
+      "filename": "5-0.76-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-1.14-5",
+      "label": "5mm + 1.14mm PVB + 5mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/5-1.14-5-TestReport.pdf",
+      "filename": "5-1.14-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-1.52-5",
+      "label": "5mm + 1.52mm PVB + 5mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/5-1.52-5-TestReport.pdf",
+      "filename": "5-1.52-5-TestReport.pdf"
+    },
+    {
+      "spec": "6-0.38-6",
+      "label": "6mm + 0.38mm PVB + 6mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/6-0.38-6-TestReport.pdf",
+      "filename": "6-0.38-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-0.76-6",
+      "label": "6mm + 0.76mm PVB + 6mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/6-0.76-6-TestReport.pdf",
+      "filename": "6-0.76-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-1.14-6",
+      "label": "6mm + 1.14mm PVB + 6mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/6-1.14-6-TestReport.pdf",
+      "filename": "6-1.14-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-1.52-6",
+      "label": "6mm + 1.52mm PVB + 6mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/6-1.52-6-TestReport.pdf",
+      "filename": "6-1.52-6-TestReport.pdf"
+    },
+    {
+      "spec": "8-0.38-8",
+      "label": "8mm + 0.38mm PVB + 8mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/8-0.38-8-TestReport.pdf",
+      "filename": "8-0.38-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-0.76-8",
+      "label": "8mm + 0.76mm PVB + 8mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/8-0.76-8-TestReport.pdf",
+      "filename": "8-0.76-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-1.14-8",
+      "label": "8mm + 1.14mm PVB + 8mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/8-1.14-8-TestReport.pdf",
+      "filename": "8-1.14-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-1.52-8",
+      "label": "8mm + 1.52mm PVB + 8mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/8-1.52-8-TestReport.pdf",
+      "filename": "8-1.52-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-1.90-8",
+      "label": "8mm + 1.90mm PVB + 8mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/8-1.90-8-TestReport.pdf",
+      "filename": "8-1.90-8-TestReport.pdf"
+    },
+    {
+      "spec": "10-1.14-10",
+      "label": "10mm + 1.14mm PVB + 10mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/10-1.14-10-TestReport.pdf",
+      "filename": "10-1.14-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-1.52-10",
+      "label": "10mm + 1.52mm PVB + 10mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/10-1.52-10-TestReport.pdf",
+      "filename": "10-1.52-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-1.90-10",
+      "label": "10mm + 1.90mm PVB + 10mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/10-1.90-10-TestReport.pdf",
+      "filename": "10-1.90-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-2.28-10",
+      "label": "10mm + 2.28mm PVB + 10mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/10-2.28-10-TestReport.pdf",
+      "filename": "10-2.28-10-TestReport.pdf"
+    },
+    {
+      "spec": "12-1.14-12",
+      "label": "12mm + 1.14mm PVB + 12mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/12-1.14-12-TestReport.pdf",
+      "filename": "12-1.14-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-1.52-12",
+      "label": "12mm + 1.52mm PVB + 12mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/12-1.52-12-TestReport.pdf",
+      "filename": "12-1.52-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-1.90-12",
+      "label": "12mm + 1.90mm PVB + 12mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/12-1.90-12-TestReport.pdf",
+      "filename": "12-1.90-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-2.28-12",
+      "label": "12mm + 2.28mm PVB + 12mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/12-2.28-12-TestReport.pdf",
+      "filename": "12-2.28-12-TestReport.pdf"
+    },
+    {
+      "spec": "15-1.52-15",
+      "label": "15mm + 1.52mm PVB + 15mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/15-1.52-15-TestReport.pdf",
+      "filename": "15-1.52-15-TestReport.pdf"
+    },
+    {
+      "spec": "15-1.90-15",
+      "label": "15mm + 1.90mm PVB + 15mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/15-1.90-15-TestReport.pdf",
+      "filename": "15-1.90-15-TestReport.pdf"
+    },
+    {
+      "spec": "15-2.28-15",
+      "label": "15mm + 2.28mm PVB + 15mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/15-2.28-15-TestReport.pdf",
+      "filename": "15-2.28-15-TestReport.pdf"
+    },
+    {
+      "spec": "19-1.52-19",
+      "label": "19mm + 1.52mm PVB + 19mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/19-1.52-19-TestReport.pdf",
+      "filename": "19-1.52-19-TestReport.pdf"
+    },
+    {
+      "spec": "19-1.90-19",
+      "label": "19mm + 1.90mm PVB + 19mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/19-1.90-19-TestReport.pdf",
+      "filename": "19-1.90-19-TestReport.pdf"
+    },
+    {
+      "spec": "19-2.28-19",
+      "label": "19mm + 2.28mm PVB + 19mm — WITC Test Report",
+      "url": "/downloads/test-reports/04-Laminated-Glass-Test-Reports/19-2.28-19-TestReport.pdf",
+      "filename": "19-2.28-19-TestReport.pdf"
+    }
+  ],
+  "insulated": [
+    {
+      "spec": "5-6A-5",
+      "label": "5mm + 6A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-6A-5-TestReport.pdf",
+      "filename": "5-6A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-9A-5",
+      "label": "5mm + 9A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-9A-5-TestReport.pdf",
+      "filename": "5-9A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-12A-5",
+      "label": "5mm + 12A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-12A-5-TestReport.pdf",
+      "filename": "5-12A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-16A-5",
+      "label": "5mm + 16A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-16A-5-TestReport.pdf",
+      "filename": "5-16A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-18A-5",
+      "label": "5mm + 18A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-18A-5-TestReport.pdf",
+      "filename": "5-18A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5-20A-5",
+      "label": "5mm + 20A + 5mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/5-20A-5-TestReport.pdf",
+      "filename": "5-20A-5-TestReport.pdf"
+    },
+    {
+      "spec": "6-6A-6",
+      "label": "6mm + 6A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-6A-6-TestReport.pdf",
+      "filename": "6-6A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-9A-6",
+      "label": "6mm + 9A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-9A-6-TestReport.pdf",
+      "filename": "6-9A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-12A-6",
+      "label": "6mm + 12A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-12A-6-TestReport.pdf",
+      "filename": "6-12A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-16A-6",
+      "label": "6mm + 16A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-16A-6-TestReport.pdf",
+      "filename": "6-16A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-18A-6",
+      "label": "6mm + 18A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-18A-6-TestReport.pdf",
+      "filename": "6-18A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6-20A-6",
+      "label": "6mm + 20A + 6mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/6-20A-6-TestReport.pdf",
+      "filename": "6-20A-6-TestReport.pdf"
+    },
+    {
+      "spec": "8-9A-8",
+      "label": "8mm + 9A + 8mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/8-9A-8-TestReport.pdf",
+      "filename": "8-9A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-12A-8",
+      "label": "8mm + 12A + 8mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/8-12A-8-TestReport.pdf",
+      "filename": "8-12A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-16A-8",
+      "label": "8mm + 16A + 8mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/8-16A-8-TestReport.pdf",
+      "filename": "8-16A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-18A-8",
+      "label": "8mm + 18A + 8mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/8-18A-8-TestReport.pdf",
+      "filename": "8-18A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8-20A-8",
+      "label": "8mm + 20A + 8mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/8-20A-8-TestReport.pdf",
+      "filename": "8-20A-8-TestReport.pdf"
+    },
+    {
+      "spec": "10-9A-10",
+      "label": "10mm + 9A + 10mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/10-9A-10-TestReport.pdf",
+      "filename": "10-9A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-12A-10",
+      "label": "10mm + 12A + 10mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/10-12A-10-TestReport.pdf",
+      "filename": "10-12A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-16A-10",
+      "label": "10mm + 16A + 10mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/10-16A-10-TestReport.pdf",
+      "filename": "10-16A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-18A-10",
+      "label": "10mm + 18A + 10mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/10-18A-10-TestReport.pdf",
+      "filename": "10-18A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10-20A-10",
+      "label": "10mm + 20A + 10mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/10-20A-10-TestReport.pdf",
+      "filename": "10-20A-10-TestReport.pdf"
+    },
+    {
+      "spec": "12-12A-12",
+      "label": "12mm + 12A + 12mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/12-12A-12-TestReport.pdf",
+      "filename": "12-12A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-16A-12",
+      "label": "12mm + 16A + 12mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/12-16A-12-TestReport.pdf",
+      "filename": "12-16A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-18A-12",
+      "label": "12mm + 18A + 12mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/12-18A-12-TestReport.pdf",
+      "filename": "12-18A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12-20A-12",
+      "label": "12mm + 20A + 12mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/12-20A-12-TestReport.pdf",
+      "filename": "12-20A-12-TestReport.pdf"
+    },
+    {
+      "spec": "15-12A-15",
+      "label": "15mm + 12A + 15mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/15-12A-15-TestReport.pdf",
+      "filename": "15-12A-15-TestReport.pdf"
+    },
+    {
+      "spec": "15-16A-15",
+      "label": "15mm + 16A + 15mm Clear IGU — WITC Test Report",
+      "url": "/downloads/test-reports/05-Clear-Insulated-Glass-Test-Reports/15-16A-15-TestReport.pdf",
+      "filename": "15-16A-15-TestReport.pdf"
+    }
+  ],
+  "lowE": [
+    {
+      "spec": "5LOW-E-6A-5",
+      "label": "5mm Low-E + 6A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-6A-5-TestReport.pdf",
+      "filename": "5LOW-E-6A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5LOW-E-9A-5",
+      "label": "5mm Low-E + 9A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-9A-5-TestReport.pdf",
+      "filename": "5LOW-E-9A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5LOW-E-12A-5",
+      "label": "5mm Low-E + 12A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-12A-5-TestReport.pdf",
+      "filename": "5LOW-E-12A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5LOW-E-16A-5",
+      "label": "5mm Low-E + 16A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-16A-5-TestReport.pdf",
+      "filename": "5LOW-E-16A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5LOW-E-18A-5",
+      "label": "5mm Low-E + 18A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-18A-5-TestReport.pdf",
+      "filename": "5LOW-E-18A-5-TestReport.pdf"
+    },
+    {
+      "spec": "5LOW-E-20A-5",
+      "label": "5mm Low-E + 20A + 5mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/5LOW-E-20A-5-TestReport.pdf",
+      "filename": "5LOW-E-20A-5-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-6A-6",
+      "label": "6mm Low-E + 6A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-6A-6-TestReport.pdf",
+      "filename": "6LOW-E-6A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-9A-6",
+      "label": "6mm Low-E + 9A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-9A-6-TestReport.pdf",
+      "filename": "6LOW-E-9A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-12A-6",
+      "label": "6mm Low-E + 12A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-12A-6-TestReport.pdf",
+      "filename": "6LOW-E-12A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-16A-6",
+      "label": "6mm Low-E + 16A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-16A-6-TestReport.pdf",
+      "filename": "6LOW-E-16A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-18A-6",
+      "label": "6mm Low-E + 18A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-18A-6-TestReport.pdf",
+      "filename": "6LOW-E-18A-6-TestReport.pdf"
+    },
+    {
+      "spec": "6LOW-E-20A-6",
+      "label": "6mm Low-E + 20A + 6mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/6LOW-E-20A-6-TestReport.pdf",
+      "filename": "6LOW-E-20A-6-TestReport.pdf"
+    },
+    {
+      "spec": "8LOW-E-9A-8",
+      "label": "8mm Low-E + 9A + 8mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/8LOW-E-9A-8-TestReport.pdf",
+      "filename": "8LOW-E-9A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8LOW-E-12A-8",
+      "label": "8mm Low-E + 12A + 8mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/8LOW-E-12A-8-TestReport.pdf",
+      "filename": "8LOW-E-12A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8LOW-E-16A-8",
+      "label": "8mm Low-E + 16A + 8mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/8LOW-E-16A-8-TestReport.pdf",
+      "filename": "8LOW-E-16A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8LOW-E-18A-8",
+      "label": "8mm Low-E + 18A + 8mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/8LOW-E-18A-8-TestReport.pdf",
+      "filename": "8LOW-E-18A-8-TestReport.pdf"
+    },
+    {
+      "spec": "8LOW-E-20A-8",
+      "label": "8mm Low-E + 20A + 8mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/8LOW-E-20A-8-TestReport.pdf",
+      "filename": "8LOW-E-20A-8-TestReport.pdf"
+    },
+    {
+      "spec": "10LOW-E-9A-10",
+      "label": "10mm Low-E + 9A + 10mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/10LOW-E-9A-10-TestReport.pdf",
+      "filename": "10LOW-E-9A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10LOW-E-12A-10",
+      "label": "10mm Low-E + 12A + 10mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/10LOW-E-12A-10-TestReport.pdf",
+      "filename": "10LOW-E-12A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10LOW-E-16A-10",
+      "label": "10mm Low-E + 16A + 10mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/10LOW-E-16A-10-TestReport.pdf",
+      "filename": "10LOW-E-16A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10LOW-E-18A-10",
+      "label": "10mm Low-E + 18A + 10mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/10LOW-E-18A-10-TestReport.pdf",
+      "filename": "10LOW-E-18A-10-TestReport.pdf"
+    },
+    {
+      "spec": "10LOW-E-20A-10",
+      "label": "10mm Low-E + 20A + 10mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/10LOW-E-20A-10-TestReport.pdf",
+      "filename": "10LOW-E-20A-10-TestReport.pdf"
+    },
+    {
+      "spec": "12LOW-E-12A-12",
+      "label": "12mm Low-E + 12A + 12mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/12LOW-E-12A-12-TestReport.pdf",
+      "filename": "12LOW-E-12A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12LOW-E-16A-12",
+      "label": "12mm Low-E + 16A + 12mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/12LOW-E-16A-12-TestReport.pdf",
+      "filename": "12LOW-E-16A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12LOW-E-18A-12",
+      "label": "12mm Low-E + 18A + 12mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/12LOW-E-18A-12-TestReport.pdf",
+      "filename": "12LOW-E-18A-12-TestReport.pdf"
+    },
+    {
+      "spec": "12LOW-E-20A-12",
+      "label": "12mm Low-E + 20A + 12mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/12LOW-E-20A-12-TestReport.pdf",
+      "filename": "12LOW-E-20A-12-TestReport.pdf"
+    },
+    {
+      "spec": "15LOW-E-12A-15",
+      "label": "15mm Low-E + 12A + 15mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/15LOW-E-12A-15-TestReport.pdf",
+      "filename": "15LOW-E-12A-15-TestReport.pdf"
+    },
+    {
+      "spec": "15LOW-E-16A-15",
+      "label": "15mm Low-E + 16A + 15mm IGU — WITC Test Report",
+      "url": "/downloads/test-reports/06-Low-E-Insulated-Glass-Test-Reports/15LOW-E-16A-15-TestReport.pdf",
+      "filename": "15LOW-E-16A-15-TestReport.pdf"
+    }
+  ]
+}

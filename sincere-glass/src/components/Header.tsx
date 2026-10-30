@@ -22,6 +22,7 @@ const navLinks = [
   { key: "projects",  href: "/projects" },
   { key: "equipment", href: "/equipment" },
   { key: "blog",      href: "/blog" },
+  { key: "certifications", href: "/certifications" }, // CERT-STRIP-V1
   { key: "contact",   href: "/contact" },
 ];
 

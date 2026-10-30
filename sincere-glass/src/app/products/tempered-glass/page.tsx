@@ -19,6 +19,7 @@ import Image from "next/image";
 import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+import TestReportDownload from "@/components/TestReportDownload";
 export const metadata: Metadata = {
   title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3.3 m × 15 m | Sincere Glass",
   description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
@@ -145,6 +146,9 @@ export default function TemperedGlassPage() {
         <TemperedFAQ faqItems={faqItems} />
 
         {/* 13. Social proof bar (NEW) */}
+      {/* TEST-REPORT-DOWNLOAD-V1 */}
+      <TestReportDownload bucket="tempered" />
+
         <SocialProof />
 
         {/* 14. Final CTA */}

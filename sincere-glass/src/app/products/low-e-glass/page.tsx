@@ -15,6 +15,7 @@ import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
+import TestReportDownload from "@/components/TestReportDownload";
 export const metadata: Metadata = {
   title: "Low-E Glass Manufacturer China — Energy-Efficient Coated Glass | Sincere Glass",
   description: "Custom Low-E glass from China. Soft-coat and hard-coat options, 30-50% energy savings, high visible light transmission. Combined with IGUs for maximum thermal performance.",
@@ -108,6 +109,9 @@ export default function LowEGlassPage() {
         <div className="bg-white pb-8"><div className="max-w-5xl mx-auto px-6 md:px-12"><InlineQuoteCTA text="Tell us your thermal targets and we will recommend the right Low-E configuration." product="low-e" /></div></div>
         <LowEApps />
         <LowEFAQ faqItems={faqItems} />
+      {/* TEST-REPORT-DOWNLOAD-V1 */}
+      <TestReportDownload bucket="lowE" />
+
         <SocialProof />
         <section className="py-20 md:py-28 bg-brand-dark">
           <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
