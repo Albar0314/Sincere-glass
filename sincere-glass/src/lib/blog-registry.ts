@@ -1227,6 +1227,79 @@ export const blogArticles: BlogArticle[] = [
     readingTime: 15,
     featured: false,
   },
+
+  // GROK-INSERT-V1:article-24-low-iron-pillar
+  {
+    slug: "low-iron-glass-complete-guide",
+    title: "Low Iron Glass: The Complete Specifier's Guide (2026)",
+    excerpt: "What makes glass low iron, when it is worth the 30 to 100 percent premium, and how to spec and source it from China. Interactive comparator, decision matrix, and budget calculator.",
+    targetKeyword: "low iron glass",
+    secondaryKeywords: [
+      "ultra clear glass",
+      "extra clear glass",
+      "low iron glass vs clear glass",
+      "low iron tempered glass",
+      "starphire vs low iron glass",
+      "is low iron glass worth it",
+    ],
+    searchKeywords: [
+      "low iron glass",
+      "ultra clear glass",
+      "extra clear glass",
+      "starphire",
+      "optiwhite",
+      "pilkington optiwhite",
+      "guardian ultraclear",
+      "saint gobain diamant",
+      "low iron tempered glass",
+      "low iron laminated glass",
+      "high transparency glass",
+      "iron free glass",
+      "超白玻璃",
+      "低铁玻璃",
+    ],
+    publishDate: "2026-11-03",
+    updatedDate: "2026-11-03",
+    category: "Product Knowledge" as const,
+    tags: ["pillar", "low iron glass", "ultra clear glass", "product deep dive", "buyer guide", "specifier"],
+    heroImage: "/images/blog/low-iron-glass-complete-guide-hero.webp",
+    heroImageAlt: "Two architectural glass panels standing side by side on polished concrete: left panel is standard clear float with visible green edge, right panel is low iron ultra clear glass with near colorless edge, showing a vivid red rose behind each panel to demonstrate color fidelity difference",
+    heroImagePrompt: "Studio product photography, two architectural glass panels standing vertically side by side on a polished dark grey concrete surface. Left panel: standard clear float glass, 15mm thick, showing a distinctly visible green tint along its exposed edge and a greenish cast through its body, small tag at base reads Standard Float. Right panel: low iron ultra clear glass, same 15mm thickness, with a near colorless water clear edge and crystal transparency showing a vivid red rose on a white background placed behind it, small tag at base reads Low Iron. Behind both panels: a subtle colored test chart with red yellow and blue bars demonstrating color fidelity difference. 30 degree elevated camera angle, soft daylight from above left, shallow depth of field focused on the edges. Clean neutral grey background, no humans, no text other than the two small tags. 4K photorealistic, museum exhibit comparison quality, dramatic clarity contrast.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 18,
+    featured: true,
+    isPillar: true,
+    reviewedBy: { name: "Albar", title: "Technical Lead" },
+    tldr: [
+      "Low iron glass reduces iron oxide content from 0.10 to 0.15 percent down to below 0.01 percent, which removes the green tint and raises visible light transmission from about 83 to 91 percent.",
+      "The decision rule is simple: thickness over 10 mm, exposed frameless edges, or a need for color fidelity behind the glass all justify low iron. Thin facade vision glass viewed from distance usually does not.",
+      "Expect a 30 to 100 percent price premium over standard clear, widening at thinner sizes and narrowing at jumbo sizes. A 500 m2 tempered facade order sees roughly 40 to 60 percent total cost uplift.",
+      "Low iron is sold under brand names including Starphire, Optiwhite, UltraClear, and Diamant, but the generic product from reputable manufacturers has essentially identical optical performance at lower cost.",
+      "Our 20,000 m2 Wuhan facility processes low iron substrate on the same tempering, laminating, and IGU lines as standard clear, including jumbo panels up to 3.3 by 15 meters.",
+    ],
+    buyerFaq: [
+      {
+        q: "What is the typical MOQ for low iron glass from a Chinese manufacturer?",
+        a: "Export MOQ for low iron glass is usually higher than standard clear because of smaller production batches. Expect 100 m2 minimum for stock thicknesses and 200 to 500 m2 for non-stock thicknesses or jumbo sizes. Our Wuhan facility can run low iron on standard tempering lines, so MOQ is 100 m2 for processed low iron tempered or laminated.",
+      },
+      {
+        q: "What is the lead time for low iron glass orders from China?",
+        a: "Add 5 to 10 working days to standard glass lead times because low iron substrate often needs to be ordered from a float glass supplier rather than taken from stock. Typical cycle: low iron tempered 15 to 20 working days, low iron laminated 20 to 25 working days, low iron IGU 20 to 25 working days. Ocean freight transit is additional.",
+      },
+      {
+        q: "Can you supply low iron glass with ASTM C1036 certification?",
+        a: "Yes. Our low iron substrate meets ASTM C1036 clear glass requirements and can be supplied with mill test reports. We also provide EN 572 compliance documentation for EU buyers and GB 11614 ultra clear float documentation for mixed-market projects. Specify your required standard in the inquiry.",
+      },
+    ],
+    relatedProductSlugs: ["tempered-glass", "laminated-glass", "enameled-glass"],
+    articleType: "buyer-guide" as const,
+    cluster: "product",
+    translations: {},
+    changelog: [
+      { date: "2026-11-03", note: "Initial pillar publish" },
+    ],
+  },
+
 ];
 
 // ---- Utility functions ----
