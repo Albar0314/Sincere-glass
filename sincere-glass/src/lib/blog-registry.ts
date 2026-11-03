@@ -1,4 +1,4 @@
-﻿export interface BlogArticle {
+export interface BlogArticle {
   slug: string;
   title: string;
   excerpt: string;
@@ -1299,7 +1299,64 @@ export const blogArticles: BlogArticle[] = [
       { date: "2026-11-03", note: "Initial pillar publish" },
     ],
   },
-
+  {
+    slug: "low-iron-glass-vs-clear-glass",
+    title: "Low Iron Glass vs Clear Glass: The Edge Test, the Numbers, and When It Is Worth the Premium",
+    excerpt: "Clear float glass is not actually clear. See the green edge test, the 91% vs 83% VLT gap, the 15 to 40% price premium, and the four scenarios where low iron earns it from a Wuhan glass factory.",
+    targetKeyword: "low iron glass vs clear glass",
+    secondaryKeywords: [
+      "low iron vs clear glass",
+      "ultra clear glass vs clear glass",
+      "starphire vs clear glass",
+      "low iron glass premium",
+      "when to use low iron glass",
+    ],
+    searchKeywords: [
+      "low iron glass vs clear glass",
+      "low iron vs clear",
+      "ultra clear vs clear",
+      "starphire vs standard clear",
+      "optiwhite vs clear",
+      "when to use low iron",
+      "low iron glass premium cost",
+      "iron oxide glass green edge",
+      "VLT low iron vs clear",
+      "CRI low iron",
+      "architectural glass selection",
+      "low iron glass",
+      "ultra clear glass",
+      "clear float glass",
+      "Fe2O3 glass",
+      "超白玻璃 对比",
+      "超白 普白",
+      "低铁玻璃 普通玻璃",
+      "玻璃选型 超白",
+    ],
+    publishDate: "2026-11-03",
+    updatedDate: "2026-11-03",
+    category: "Buyer Guide",
+    tags: ["low iron glass", "clear glass", "ultra clear", "glass comparison", "architectural glass", "glass selection"],
+    heroImage: "/images/blog/low-iron-vs-clear-hero.webp",
+    heroImageAlt: "Two architectural glass samples standing on edge side by side on a white surface: standard clear float with a visible green edge at 10 mm thickness, and low iron glass with a near-colorless edge at the same thickness",
+    heroImagePrompt: "Studio product photography, two 10 mm architectural glass samples standing vertically on edge side by side on a clean white matte surface, viewed from a 20-degree elevated angle. Left sample: standard clear float glass showing a distinct bottle-green edge color visible through the full 10 mm thickness. Right sample: low iron glass showing a near-colorless edge with only a very faint cool white tint, visibly more transparent than the left sample. Both samples the same height (300 mm) and width (200 mm) with crisp polished edges. Soft diffused daylight from above-left, shallow depth of field focused on the edges. Small typed white labels at the base reading Clear and Low Iron. Clean neutral grey background. No humans, no props. 4K photorealistic, museum catalog aesthetic.",
+    author: {
+      name: "Li Cheng",
+      url: "https://sincereglass.com/about",
+      title: "CEO at Sincere Glass",
+      bio: "CEO at Sincere Glass with 10+ years in architectural glass. Oversees production and quality at our 20,000 m2 Wuhan facility.",
+      image: "/images/author-images.jpg",
+    },
+    readingTime: 13,
+    featured: false,
+    reviewedBy: { name: "Albar", title: "Technical Lead" },
+    articleType: "comparison",
+    cluster: "comparison",
+    relatedProductSlugs: ["laminated-glass", "tempered-glass", "insulated-glass"],
+    translations: {},
+    changelog: [
+      { date: "2026-11-03", note: "Initial publish - Low Iron cluster article #1 under Pillar /blog/low-iron-glass-complete-guide" },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
