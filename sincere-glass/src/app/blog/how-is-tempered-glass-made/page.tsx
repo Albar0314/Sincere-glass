@@ -1,3 +1,4 @@
+// SG-BLOG-VIDEO-V1:how-is-tempered-glass-made
 import { blogArticles, type BlogArticle } from '@/lib/blog-registry';
 import BlogArticleLayout, {
   generateArticleMetadata,
@@ -11,6 +12,9 @@ import { FAQ, TechNote } from '@/components/blog/blocks';
 import ProductionLineTimeline from '@/components/blog/article-4/ProductionLineTimeline';
 import TemperatureCurveChart from '@/components/blog/article-4/TemperatureCurveChart';
 import StressVisualization from '@/components/blog/article-4/StressVisualization';
+
+import YouTubeEmbed from '@/components/YouTubeEmbed';
+import VideoSchema from '@/components/VideoSchema';
 
 const SLUG = 'how-is-tempered-glass-made';
 const article: BlogArticle = blogArticles.find((a) => a.slug === SLUG)!;
@@ -61,6 +65,13 @@ export default function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
+
+      <VideoSchema
+        videoId="expE_icthfo"
+        name="Tempering Furnace in Operation"
+        description="Oversized tempering furnace at Sincere Glass processing architectural panels up to 3.3 m x 15 m. Automated loading, heating above softening point, controlled high-velocity air quenching."
+        uploadDate="2026-11-03"
+      />
 
       <BlogArticleLayout article={article} toc={toc}>
         <TLDRBox takeaways={[
@@ -171,6 +182,23 @@ export default function Page() {
             panels sit on the output conveyor until they're truly below 100°C.
           </li>
         </ul>
+
+        <div className="my-10 not-prose rounded-xl border border-brand-light bg-brand-lighter/50 p-5 md:p-6">
+          <div className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">
+            See it in motion
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-2">
+            The tempering furnace at work
+          </h3>
+          <p className="text-sm text-brand-muted leading-relaxed mb-5">
+            Thirty seconds of our Wuhan tempering line - automatic loading, roller-hearth transit at approximately 620°C, high-velocity air quench. The temperature curve above shows what the glass is going through at each second of this clip.
+          </p>
+          <YouTubeEmbed
+            videoId="expE_icthfo"
+            title="Tempering Furnace at Sincere Glass"
+            aspectRatio="16/9"
+          />
+        </div>
 
         <h2 id="why-stress-matters">Why the Stress Pattern Matters</h2>
 

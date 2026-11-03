@@ -1,4 +1,10 @@
+'use client';
+
 interface Props {
+  /** YouTube videoId (preferred). Looped silently via nocookie embed with UI chrome scaled off-screen. */
+  videoId?: string;
+  /** Self-hosted mp4 URL (escape hatch; do NOT commit mp4 files to the repo). */
+  src?: string;
   overlayOpacity?: number;
   className?: string;
   children?: React.ReactNode;
@@ -8,10 +14,23 @@ interface Props {
 
 /**
  * Silent, autoplaying, looping factory b-roll background.
- * Uses a single mp4 at /videos/factory-broll.mp4.
- * The dark overlay keeps foreground text readable; adjust opacity per section.
+ *
+ * Prefer `videoId` (YouTube) - keeps repo lean, Vercel bandwidth free, and
+ * loads through YouTube's CDN. The embed uses youtube-nocookie.com + URL
+ * params that strip controls, info panel, related videos and annotations;
+ * the iframe is scaled up and pointer-events disabled so the leftover UI
+ * sits outside the visible crop and cannot be clicked.
+ *
+ * `src` is a legacy escape hatch for self-hosted mp4. Avoid - mp4 files
+ * commit heavily and burn Vercel egress; upload to the brand YouTube channel
+ * and pass the videoId instead.
+ *
+ * Pass neither and the component renders a blank dark panel so the layout
+ * does not collapse while a video asset is still being produced.
  */
 export default function FactoryBrollLoop({
+  videoId,
+  src,
   overlayOpacity = 0.55,
   overlayColor = '#1C1F26',
   className = '',
@@ -19,18 +38,42 @@ export default function FactoryBrollLoop({
 }: Props) {
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ background: '#1C1F26' }}
-      >
-        <source src="/videos/factory-broll.mp4" type="video/mp4" />
-      </video>
+      {videoId ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&playlist=${videoId}`}
+          title=""
+          aria-hidden="true"
+          loading="lazy"
+          allow="autoplay; encrypted-media"
+          className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+          style={{
+            // Scale up so YouTube's residual UI chrome (title bar, play button
+            // outlines on hover, bottom gradient) sits outside the visible crop
+            transform: 'scale(1.5)',
+            transformOrigin: 'center center',
+            background: '#1C1F26',
+          }}
+        />
+      ) : src ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ background: '#1C1F26' }}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <div
+          className="absolute inset-0"
+          style={{ background: '#1C1F26' }}
+          aria-hidden="true"
+        />
+      )}
 
       <div
         className="absolute inset-0 pointer-events-none"

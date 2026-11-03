@@ -1,3 +1,4 @@
+// SG-BLOG-VIDEO-V1:how-is-insulated-glass-made
 import { blogArticles, type BlogArticle } from '@/lib/blog-registry';
 import BlogArticleLayout, {
   generateArticleMetadata,
@@ -11,6 +12,9 @@ import { FAQ, TechNote } from '@/components/blog/blocks';
 import IGUAnatomyExplorer from '@/components/blog/article-6/IGUAnatomyExplorer';
 import GasConductivityChart from '@/components/blog/article-6/GasConductivityChart';
 import SealLifespanTimeline from '@/components/blog/article-6/SealLifespanTimeline';
+
+import YouTubeEmbed from '@/components/YouTubeEmbed';
+import VideoSchema from '@/components/VideoSchema';
 
 const SLUG = 'how-is-insulated-glass-made';
 const article: BlogArticle = blogArticles.find((a) => a.slug === SLUG)!;
@@ -61,6 +65,13 @@ export default function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
+
+      <VideoSchema
+        videoId="qcSV4WG8nL0"
+        name="Insulated Glass (IGU) Production Line"
+        description="Dual-seal IGU assembly line at Sincere Glass with automated spacer bending, desiccant filling, and argon gas injection at 90 percent plus fill rate consistency."
+        uploadDate="2026-11-03"
+      />
 
       <BlogArticleLayout article={article} toc={toc}>
         <TLDRBox takeaways={[
@@ -204,6 +215,23 @@ export default function Page() {
             dew point, gas fill percentage, and dimensional accuracy before packaging.
           </li>
         </ol>
+
+        <div className="my-10 not-prose rounded-xl border border-brand-light bg-brand-lighter/50 p-5 md:p-6">
+          <div className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">
+            See it in motion
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-2">
+            The IGU assembly line at work
+          </h3>
+          <p className="text-sm text-brand-muted leading-relaxed mb-5">
+            Our automatic IGU line - spacer bending, desiccant fill, pre-press, argon injection and secondary seal cure, all running in sequence. The 8 stations listed above correspond to what you see on the line in this clip.
+          </p>
+          <YouTubeEmbed
+            videoId="qcSV4WG8nL0"
+            title="IGU Production Line at Sincere Glass"
+            aspectRatio="16/9"
+          />
+        </div>
 
         <h2 id="spacer-decision">The Spacer Decision: Aluminum vs Warm-Edge</h2>
 

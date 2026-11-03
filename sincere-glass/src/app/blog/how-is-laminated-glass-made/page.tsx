@@ -1,3 +1,4 @@
+// SG-BLOG-VIDEO-V1:how-is-laminated-glass-made
 import { blogArticles, type BlogArticle } from '@/lib/blog-registry';
 import BlogArticleLayout, {
   generateArticleMetadata,
@@ -11,6 +12,9 @@ import { FAQ, TechNote } from '@/components/blog/blocks';
 import PVBvsSGPComparison from '@/components/blog/article-5/PVBvsSGPComparison';
 import AutoclaveCurveChart from '@/components/blog/article-5/AutoclaveCurveChart';
 import DelaminationFailureViewer from '@/components/blog/article-5/DelaminationFailureViewer';
+
+import YouTubeEmbed from '@/components/YouTubeEmbed';
+import VideoSchema from '@/components/VideoSchema';
 
 const SLUG = 'how-is-laminated-glass-made';
 const article: BlogArticle = blogArticles.find((a) => a.slug === SLUG)!;
@@ -61,6 +65,13 @@ export default function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
+
+      <VideoSchema
+        videoId="inNYYEAnWOo"
+        name="Laminated Glass High-Pressure Autoclave"
+        description="High-pressure autoclave at Sincere Glass processing PVB and SGP interlayer laminated glass at 140 C and 12 bar. Jumbo autoclave capacity 3.3 m x 15 m."
+        uploadDate="2026-11-03"
+      />
 
       <BlogArticleLayout article={article} toc={toc}>
         <TLDRBox takeaways={[
@@ -238,6 +249,23 @@ export default function Page() {
           <a href="/products/insulated-glass">insulated glass line</a> for assembly into
           the final IGU.
         </p>
+
+        <div className="my-10 not-prose rounded-xl border border-brand-light bg-brand-lighter/50 p-5 md:p-6">
+          <div className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">
+            See it in motion
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-2">
+            The autoclave at work
+          </h3>
+          <p className="text-sm text-brand-muted leading-relaxed mb-5">
+            Our Wuhan autoclave - the 3.3 m x 15 m unit referenced throughout this section. The pressure-temperature cycle above describes what is happening behind the vessel door during the 2.5 hour run.
+          </p>
+          <YouTubeEmbed
+            videoId="inNYYEAnWOo"
+            title="Laminated Glass Autoclave at Sincere Glass"
+            aspectRatio="16/9"
+          />
+        </div>
 
         <h2 id="can-be-cut">Why Laminated Glass CAN Be Cut (Unlike Tempered)</h2>
 
