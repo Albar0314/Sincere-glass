@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
@@ -8,11 +9,21 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-brand-dark">
-      {/* Background with Ken Burns */}
+      {/* Background image: next/image with priority auto-preloads + serves AVIF/WebP + responsive srcset.
+          Ken Burns scale lives on the wrapper so Image fill fits its parent. */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform duration-[12s] ease-out ${loaded ? "scale-105" : "scale-100"}`}
-        style={{ backgroundImage: "url('/images/hero-factory.jpg')" }}
-      />
+        className={`absolute inset-0 transition-transform duration-[12s] ease-out ${loaded ? "scale-105" : "scale-100"}`}
+      >
+        <Image
+          src="/images/hero-factory.jpg"
+          alt="Sincere Glass architectural glass factory floor in Wuhan, China"
+          fill
+          priority
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/70 to-brand-dark/50" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
