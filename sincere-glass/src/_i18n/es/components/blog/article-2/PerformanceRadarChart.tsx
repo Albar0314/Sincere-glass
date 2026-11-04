@@ -95,7 +95,7 @@ export default function PerformanceRadarChart() {
       <div className="grid md:grid-cols-[1fr_auto] gap-6 items-center">
         {/* Radar SVG */}
         <div className="flex justify-center">
-          <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
             {/* Grid rings */}
             {[0.25, 0.5, 0.75, 1].map(r => <polygon key={r} points={metrics.map((_, i) => {
             const [x, y] = point(r * 100, i);

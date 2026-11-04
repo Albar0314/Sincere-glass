@@ -165,7 +165,7 @@ export default function SupplierVerificationScorecard() {
 
         <div className="md:sticky md:top-24 self-start">
           <div className="relative w-full aspect-square max-w-[220px] mx-auto">
-            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90">
+            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90" aria-hidden="true">
               <circle cx="80" cy="80" r="70" fill="none" stroke="#3A4250" strokeOpacity="0.35" strokeWidth="10" />
               <circle cx="80" cy="80" r="70" fill="none" stroke={t.ring} strokeWidth="10" strokeLinecap="round" strokeDasharray={2 * Math.PI * 70} strokeDashoffset={dashOffset} style={{
               transition: "stroke-dashoffset 400ms ease, stroke 300ms ease"

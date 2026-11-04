@@ -109,8 +109,7 @@ export default function CurvatureTypeExplorer() {
                 style={{
                   color: isActive ? '#DAA745' : '#5D6677',
                   transition: 'color 150ms',
-                }}
-              >
+                }} aria-hidden="true">
                 {key === 'cylindrical' && (
                   <g fill="none" stroke="currentColor" strokeWidth="2">
                     <ellipse cx="60" cy="40" rx="40" ry="12" />

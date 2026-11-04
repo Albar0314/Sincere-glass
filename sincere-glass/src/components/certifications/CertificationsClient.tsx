@@ -68,7 +68,7 @@ export default function CertificationsClient() {
                 <div className="text-xs font-semibold uppercase tracking-wider text-[#DAA745]">
                   WITC Verified
                 </div>
-                <svg className="w-5 h-5 text-[#8B95A5] group-hover:text-[#DAA745] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#8B95A5] group-hover:text-[#DAA745] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
               </div>

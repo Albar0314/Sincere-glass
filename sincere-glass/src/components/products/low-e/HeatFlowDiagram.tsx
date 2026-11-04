@@ -16,7 +16,7 @@ export default function HeatFlowDiagram() {
           {/* Without Low-E */}
           <div className="bg-brand-lighter rounded-2xl p-6 text-center" style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateX(0)" : "translateX(-20px)", transition: "all 700ms" }}>
             <p className="text-xs text-brand-muted uppercase tracking-wider mb-4">Without Low-E coating</p>
-            <svg viewBox="0 0 240 180" className="w-full max-w-[240px] mx-auto mb-4">
+            <svg viewBox="0 0 240 180" className="w-full max-w-[240px] mx-auto mb-4" aria-hidden="true">
               <text x="20" y="15" className="text-[10px] fill-red-500">Outdoor heat</text>
               <text x="170" y="15" className="text-[10px] fill-blue-500">Indoor</text>
               {/* Glass */}
@@ -39,7 +39,7 @@ export default function HeatFlowDiagram() {
           {/* With Low-E */}
           <div className="bg-brand-dark rounded-2xl p-6 text-center" style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateX(0)" : "translateX(20px)", transition: "all 700ms 150ms" }}>
             <p className="text-xs text-brand-accent uppercase tracking-wider mb-4">With Low-E coating</p>
-            <svg viewBox="0 0 240 180" className="w-full max-w-[240px] mx-auto mb-4">
+            <svg viewBox="0 0 240 180" className="w-full max-w-[240px] mx-auto mb-4" aria-hidden="true">
               <text x="20" y="15" className="text-[10px] fill-red-400">Outdoor heat</text>
               <text x="170" y="15" className="text-[10px] fill-blue-300">Indoor</text>
               {/* Glass with Low-E */}

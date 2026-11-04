@@ -28,7 +28,7 @@ export default function PatternGallery() {
             <div key={p.name} className="bg-white rounded-xl p-4 border border-brand-light hover:border-brand-accent/30 hover:shadow-md transition-all duration-300 group"
               style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateY(0)" : "translateY(16px)", transition: "all 500ms", transitionDelay: (150 + i * 60) + "ms" }}>
               <div className="aspect-square rounded-lg bg-brand-lighter border border-brand-light flex items-center justify-center mb-3 overflow-hidden">
-                <svg viewBox="0 0 20 20" className="w-full h-full p-2 text-brand-primary/30 group-hover:text-brand-accent/50 transition-colors">
+                <svg viewBox="0 0 20 20" className="w-full h-full p-2 text-brand-primary/30 group-hover:text-brand-accent/50 transition-colors" aria-hidden="true">
                   {p.type === "line"
                     ? <g stroke="currentColor" strokeWidth="0.8" fill="none"><path d={p.svg} /></g>
                     : <path d={p.svg} fill="currentColor" />

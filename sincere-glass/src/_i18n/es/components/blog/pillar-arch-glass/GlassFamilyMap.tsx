@@ -78,7 +78,7 @@ export default function GlassFamilyMap() {
       </p>
 
       <div className="relative">
-        <svg viewBox="0 0 800 400" className="w-full" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 400" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <g stroke="#3A4250" strokeWidth="1" strokeDasharray="4,2" opacity="0.5">
             <line x1="400" y1="80" x2="200" y2="150" />
             <line x1="400" y1="80" x2="600" y2="150" />

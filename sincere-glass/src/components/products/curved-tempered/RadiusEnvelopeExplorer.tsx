@@ -56,7 +56,7 @@ export default function RadiusEnvelopeExplorer() {
       {/* Visualization + specs */}
       <div className="grid md:grid-cols-[1fr_1.2fr] gap-0">
         <div className="p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#3A4250]/40 bg-[#3A4250]/5">
-          <svg viewBox="-180 -40 360 220" className="w-full max-w-xs">
+          <svg viewBox="-180 -40 360 220" className="w-full max-w-xs" aria-hidden="true">
             <defs>
               <linearGradient id="curvedGlass" x1="0%" x2="0%" y1="0%" y2="100%">
                 <stop offset="0%" stopColor="#DAA745" stopOpacity="0.0" />

@@ -135,7 +135,7 @@ export default function BuildupCrossSection() {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox={'0 0 ' + svgWidth + ' ' + svgHeight} className="w-full min-w-[400px]" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox={'0 0 ' + svgWidth + ' ' + svgHeight} className="w-full min-w-[400px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Exterior/interior labels */}
           <text x="30" y="30" className="fill-[#8B95A5] text-[9px] font-medium uppercase tracking-wider">
             EXTERIOR

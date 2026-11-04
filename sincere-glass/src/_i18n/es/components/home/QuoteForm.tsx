@@ -58,7 +58,7 @@ export default function QuoteForm() {
         }}>
             {submitted ? <div className="bg-white/5 border border-white/10 rounded-lg p-10 text-center">
                 <div className="w-14 h-14 mx-auto rounded-full bg-green-500/20 flex items-center justify-center">
-                  <svg className="w-7 h-7 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <svg className="w-7 h-7 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-white">¡Gracias!</h3>
                 <p className="mt-2 text-white/60">Nuestro equipo responderá en un plazo de 24 horas.</p>

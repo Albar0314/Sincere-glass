@@ -9,7 +9,7 @@ const APPS = [
     radius: 'R 2000–8000 mm',
     thickness: '8–12 mm (laminated typical)',
     svg: (
-      <svg viewBox="0 0 160 100" className="w-full h-full">
+      <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         <defs>
           <linearGradient id="facade-g" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="#DAA745" stopOpacity="0.1" />
@@ -37,7 +37,7 @@ const APPS = [
     radius: 'R 800–2500 mm',
     thickness: '10–12 mm laminated (safety glazing)',
     svg: (
-      <svg viewBox="0 0 160 100" className="w-full h-full">
+      <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         {/* Rotunda floor plan from above */}
         <ellipse cx="80" cy="70" rx="55" ry="18" fill="none" stroke="#8B95A5" strokeWidth="1" strokeDasharray="2,2" />
         {/* Curved panels around the rotunda */}
@@ -59,7 +59,7 @@ const APPS = [
     radius: 'R 1500–4000 mm',
     thickness: '10.76 mm laminated minimum (overhead glazing)',
     svg: (
-      <svg viewBox="0 0 160 100" className="w-full h-full">
+      <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         {/* Ground */}
         <line x1="10" y1="90" x2="150" y2="90" stroke="#3A4250" strokeWidth="1" />
         {/* Building wall */}
@@ -81,7 +81,7 @@ const APPS = [
     radius: 'R 500–1800 mm',
     thickness: '10–12 mm (often laminated for security)',
     svg: (
-      <svg viewBox="0 0 160 100" className="w-full h-full">
+      <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         {/* Ground */}
         <line x1="10" y1="88" x2="150" y2="88" stroke="#3A4250" strokeWidth="1" />
         {/* Bay walls */}
@@ -103,7 +103,7 @@ const APPS = [
     radius: 'R 1200–2200 mm',
     thickness: '10–12 mm laminated',
     svg: (
-      <svg viewBox="0 0 160 100" className="w-full h-full">
+      <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         {/* Elevator shaft circle (plan view) */}
         <circle cx="80" cy="50" r="35" fill="none" stroke="#8B95A5" strokeWidth="1" strokeDasharray="3,3" />
         {/* Three curved panels making up the enclosure */}

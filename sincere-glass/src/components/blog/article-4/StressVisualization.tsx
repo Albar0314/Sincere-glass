@@ -39,7 +39,7 @@ export default function StressVisualization() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Glass cross-section */}
           <rect
             x="80"

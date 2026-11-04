@@ -79,7 +79,7 @@ export default function IGUAnatomyExplorer() {
       <div className="grid md:grid-cols-[1fr_1fr] gap-6 items-start">
         {/* SVG */}
         <div className="flex justify-center">
-          <svg viewBox="0 0 400 220" className="w-full max-w-[400px]" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 400 220" className="w-full max-w-[400px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Background labels */}
             <text x="60" y="18" textAnchor="middle" className="fill-[#8B95A5] text-[9px]">EXTERIOR</text>
             <text x="340" y="18" textAnchor="middle" className="fill-[#8B95A5] text-[9px]">INTERIOR</text>

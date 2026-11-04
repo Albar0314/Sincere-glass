@@ -134,7 +134,7 @@ export default function VideoAuditChecklist() {
                   <span className="text-base font-semibold text-[#F2F0ED]">{s.title}</span>
                   <span className="text-xs text-[#8B95A5] whitespace-nowrap">{s.duration}</span>
                 </div>
-                <svg className={`w-4 h-4 text-[#8B95A5] flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className={`w-4 h-4 text-[#8B95A5] flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>

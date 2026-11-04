@@ -13,7 +13,7 @@ export default function CostDisclaimer({ variant = 'default' }: Props) {
 
   return (
     <div className="my-6 flex gap-3 items-start text-xs text-[#8B95A5] bg-[#3A4250]/15 rounded-lg p-4 border border-[#3A4250]/30">
-      <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       <p className="m-0 leading-relaxed">

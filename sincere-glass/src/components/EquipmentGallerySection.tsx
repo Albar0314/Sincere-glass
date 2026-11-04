@@ -4,8 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import EquipmentGallery from "@/components/EquipmentGallery";
 import { EQUIPMENT_CATEGORIES } from "@/lib/equipment-gallery";
-import { EQUIPMENT_VIDEOS } from "@/lib/equipment-videos";
-import VideoSchema from "@/components/VideoSchema";
 
 /**
  * Full equipment gallery section with a 6-category tab selector on top and
@@ -29,18 +27,7 @@ export default function EquipmentGallerySection() {
   if (!active) return null;
 
   return (
-    <>
-      {/* SG-EQUIP-VIDEO-V1: emit VideoObject JSON-LD for every registered equipment video so Google sees them all, not just the active tab */}
-      {EQUIPMENT_VIDEOS.map((v) => (
-        <VideoSchema
-          key={v.videoId}
-          videoId={v.videoId}
-          name={v.title}
-          description={v.description}
-          uploadDate={v.uploadDate}
-        />
-      ))}
-      <section className="py-16 md:py-24 bg-brand-lighter">
+    <section className="py-16 md:py-24 bg-brand-lighter">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-10">
           <p className="text-brand-accent text-sm font-semibold uppercase tracking-wider mb-2">
@@ -113,6 +100,5 @@ export default function EquipmentGallerySection() {
         </div>
       </div>
     </section>
-    </>
   );
 }

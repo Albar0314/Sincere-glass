@@ -65,7 +65,7 @@ export default function DelaminationFailureViewer() {
       <div className="grid md:grid-cols-[280px_1fr] gap-6 items-start">
         {/* SVG visualization */}
         <div className="flex justify-center">
-          <svg viewBox="0 0 240 240" className="w-full max-w-[260px]" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 240 240" className="w-full max-w-[260px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Frame */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#8B95A5" strokeWidth="1.5" opacity="0.5" />
 

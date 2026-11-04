@@ -46,7 +46,7 @@ export default function DecisionMatrix() {
               <td className="py-3 pr-4 text-[#8B95A5]">
                 <span className="flex items-center gap-2">
                   {s.scenario}
-                  <svg className={`w-3.5 h-3.5 text-[#8B95A5] transition-transform ${expandedIdx === i ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-3.5 h-3.5 text-[#8B95A5] transition-transform ${expandedIdx === i ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </span>
                 {expandedIdx === i && (
                   <p className="mt-2 text-xs text-[#8B95A5]/70">{s.note}</p>

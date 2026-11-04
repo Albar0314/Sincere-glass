@@ -115,7 +115,7 @@ export default function CurvedTemperedGlassPage() {
             </div>
 
             <div className="relative hidden lg:block">
-              <svg viewBox="0 0 500 400" className="w-full h-auto">
+              <svg viewBox="0 0 500 400" className="w-full h-auto" aria-hidden="true">
                 <defs>
                   <linearGradient id="hero-glass" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#DAA745" stopOpacity="0.1" />
@@ -196,27 +196,27 @@ export default function CurvedTemperedGlassPage() {
             step: "1",
             title: "Mold prep",
             desc: "A steel mold matching the target radius is cleaned, aligned, and preheated in the furnace entry zone.",
-            icon: <svg viewBox="0 0 48 48" className="w-10 h-10"><rect x="8" y="20" width="32" height="4" fill="#DAA745" /><path d="M 10 24 Q 24 36 38 24" stroke="#DAA745" strokeWidth="2" fill="none" /></svg>
+            icon: <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true"><rect x="8" y="20" width="32" height="4" fill="#DAA745" /><path d="M 10 24 Q 24 36 38 24" stroke="#DAA745" strokeWidth="2" fill="none" /></svg>
           }, {
             step: "2",
             title: "Panel loading",
             desc: "The flat tempered-grade float panel is placed horizontally on the mold rails.",
-            icon: <svg viewBox="0 0 48 48" className="w-10 h-10"><rect x="6" y="18" width="36" height="3" fill="#8B95A5" /><path d="M 8 28 L 40 28" stroke="#DAA745" strokeWidth="2" /><path d="M 10 32 L 38 32" stroke="#DAA745" strokeWidth="2" opacity="0.5" /></svg>
+            icon: <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true"><rect x="6" y="18" width="36" height="3" fill="#8B95A5" /><path d="M 8 28 L 40 28" stroke="#DAA745" strokeWidth="2" /><path d="M 10 32 L 38 32" stroke="#DAA745" strokeWidth="2" opacity="0.5" /></svg>
           }, {
             step: "3",
             title: "Heating to 650C",
             desc: "Panel enters the main furnace; soaking brings it above softening point. Glass begins to self-sag onto the mold.",
-            icon: <svg viewBox="0 0 48 48" className="w-10 h-10"><path d="M 10 22 Q 24 32 38 22" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 12 10 L 14 16 M 20 8 L 20 16 M 28 8 L 28 16 M 36 10 L 34 16" stroke="#dc2626" strokeWidth="1.5" /></svg>
+            icon: <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true"><path d="M 10 22 Q 24 32 38 22" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 12 10 L 14 16 M 20 8 L 20 16 M 28 8 L 28 16 M 36 10 L 34 16" stroke="#dc2626" strokeWidth="1.5" /></svg>
           }, {
             step: "4",
             title: "Shape-locked quench",
             desc: "High-velocity air quench on both faces instantly locks the curve in and builds the compressive stress layer.",
-            icon: <svg viewBox="0 0 48 48" className="w-10 h-10"><path d="M 10 24 Q 24 14 38 24" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 14 32 L 14 40 M 20 32 L 20 40 M 26 32 L 26 40 M 32 32 L 32 40" stroke="#0369a1" strokeWidth="1.5" /></svg>
+            icon: <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true"><path d="M 10 24 Q 24 14 38 24" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 14 32 L 14 40 M 20 32 L 20 40 M 26 32 L 26 40 M 32 32 L 32 40" stroke="#0369a1" strokeWidth="1.5" /></svg>
           }, {
             step: "5",
             title: "Inspection and packing",
             desc: "Each panel is checked for curvature deviation, surface quality, and 3C-standard breakage pattern on sample pieces.",
-            icon: <svg viewBox="0 0 48 48" className="w-10 h-10"><circle cx="24" cy="22" r="10" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 20 22 L 23 25 L 29 19" stroke="#059669" strokeWidth="2" fill="none" /></svg>
+            icon: <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true"><circle cx="24" cy="22" r="10" stroke="#DAA745" strokeWidth="2" fill="none" /><path d="M 20 22 L 23 25 L 29 19" stroke="#059669" strokeWidth="2" fill="none" /></svg>
           }].map(s => <div key={s.step} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 relative">
                 <div className="absolute top-3 right-4 text-5xl font-display font-bold text-brand-accent/15 leading-none">
                   {s.step}

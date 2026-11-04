@@ -101,7 +101,7 @@ export default function IncotermsExplorer() {
       </div>
 
       <div className="rounded-xl bg-[#3A4250]/15 border border-[#3A4250]/30 p-5 mb-5 overflow-x-auto">
-        <svg viewBox="0 0 700 180" className="w-full h-auto min-w-[560px]">
+        <svg viewBox="0 0 700 180" className="w-full h-auto min-w-[560px]" aria-hidden="true">
           {/* Base route line */}
           <line x1="60" y1="90" x2="640" y2="90" stroke="#3A4250" strokeWidth="4" strokeLinecap="round" />
           {/* Seller segment overlay */}

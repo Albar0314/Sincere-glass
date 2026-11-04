@@ -78,7 +78,7 @@ export default function ProductEquipmentShowcase({
           </p>
           <span className="inline-flex items-center gap-1 mt-4 text-brand-accent text-sm font-semibold group-hover:gap-2 transition-all w-fit">
             {ctaText}
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </span>

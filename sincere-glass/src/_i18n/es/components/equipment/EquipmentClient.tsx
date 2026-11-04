@@ -159,7 +159,7 @@ function CapStat({
     transition: "all 500ms",
     transitionDelay: 200 + i * 80 + "ms"
   }}>
-      <svg className="w-6 h-6 text-brand-accent mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="w-6 h-6 text-brand-accent mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
       </svg>
       <div className="mt-2 font-display text-xl md:text-2xl font-bold text-white tabular-nums">
@@ -180,7 +180,7 @@ function VideoPlaceholder({
   const [hasVideo, setHasVideo] = useState(false);
   return <div className="relative aspect-video rounded-xl overflow-hidden bg-brand-dark/5 border border-brand-light">
       {hasVideo ? <video src={src} className="w-full h-full object-cover" controls muted playsInline onError={() => setHasVideo(false)} onLoadedData={() => setHasVideo(true)} /> : <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-lighter">
-          <svg className="w-12 h-12 text-brand-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+          <svg className="w-12 h-12 text-brand-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
           </svg>
           <p className="mt-2 text-xs text-brand-muted/50">{label} vídeo próximamente</p>
@@ -252,7 +252,7 @@ export default function EquipmentClient() {
             transitionDelay: i * 100 + "ms"
           }}>
                 <div className={"w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 border-2 " + (i <= activeFlow ? "bg-brand-accent border-brand-accent shadow-md" : "bg-white border-brand-light")}>
-                  <svg className={"w-4 h-4 md:w-5 md:h-5 " + (i <= activeFlow ? "text-brand-dark" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg className={"w-4 h-4 md:w-5 md:h-5 " + (i <= activeFlow ? "text-brand-dark" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
                   </svg>
                 </div>
@@ -278,7 +278,7 @@ export default function EquipmentClient() {
                   <button onClick={() => setExpandedCat(isOpen ? null : cat.category)} className="w-full flex items-center justify-between p-5 md:p-6 text-left">
                     <div className="flex items-center gap-4">
                       <div className={"w-10 h-10 rounded-xl flex items-center justify-center " + (isOpen ? "bg-brand-accent/10" : "bg-brand-lighter")}>
-                        <svg className={"w-5 h-5 " + (isOpen ? "text-brand-accent" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <svg className={"w-5 h-5 " + (isOpen ? "text-brand-accent" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" d={stepIcon?.icon || "M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 0115 0"} />
                         </svg>
                       </div>
@@ -287,7 +287,7 @@ export default function EquipmentClient() {
                         <p className="text-xs text-brand-muted">{cat.items.reduce((a, b) => a + b.count, 0)} unidades en total</p>
                       </div>
                     </div>
-                    <svg className={"w-5 h-5 transition-transform duration-200 " + (isOpen ? "rotate-180 text-brand-accent" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className={"w-5 h-5 transition-transform duration-200 " + (isOpen ? "rotate-180 text-brand-accent" : "text-brand-muted")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>

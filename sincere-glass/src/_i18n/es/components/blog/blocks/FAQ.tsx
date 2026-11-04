@@ -22,7 +22,7 @@ export default function FAQ({
         return <div key={i} className="border border-[#3A4250]/30 rounded-lg overflow-hidden">
               <button onClick={() => setOpenIndex(isOpen ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-[#3A4250]/10 transition-colors">
                 <span className="font-medium text-[#F2F0ED] pr-4">{item.q}</span>
-                <svg className={`w-5 h-5 text-[#8B95A5] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className={`w-5 h-5 text-[#8B95A5] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>

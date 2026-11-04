@@ -33,7 +33,7 @@ export default function IGUvsLamiCrossSection() {
 
       <div className="flex justify-center">
         {side === 'igu' ? (
-          <svg viewBox="0 0 500 240" className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 500 240" className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Outer glass pane */}
             <rect x="80" y="40" width="30" height="160" fill="#A5F3FC" fillOpacity="0.5" stroke="#60A5FA" strokeWidth="2" />
             {/* Spacer */}
@@ -64,7 +64,7 @@ export default function IGUvsLamiCrossSection() {
             <text x="310" y="178" className="fill-[#8B95A5] text-[10px]">Prevents edge condensation</text>
           </svg>
         ) : (
-          <svg viewBox="0 0 500 240" className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 500 240" className="w-full max-w-xl" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Outer glass */}
             <rect x="100" y="40" width="30" height="160" fill="#FEF3C7" fillOpacity="0.5" stroke="#FBBF24" strokeWidth="2" />
             {/* PVB interlayer */}

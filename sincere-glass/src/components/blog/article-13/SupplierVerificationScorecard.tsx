@@ -189,7 +189,7 @@ export default function SupplierVerificationScorecard() {
 
         <div className="md:sticky md:top-24 self-start">
           <div className="relative w-full aspect-square max-w-[220px] mx-auto">
-            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90">
+            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90" aria-hidden="true">
               <circle
                 cx="80"
                 cy="80"

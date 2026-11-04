@@ -32,7 +32,7 @@ export default function BreakagePatternViewer() {
 
       <div className="flex justify-center">
         {view === 'annealed' ? (
-          <svg viewBox="0 0 400 300" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 400 300" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Frame */}
             <rect x="20" y="20" width="360" height="260" fill="none" stroke="#8B95A5" strokeWidth="2" opacity="0.5" />
 
@@ -59,7 +59,7 @@ export default function BreakagePatternViewer() {
             </text>
           </svg>
         ) : (
-          <svg viewBox="0 0 400 300" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 400 300" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             {/* Frame */}
             <rect x="20" y="20" width="360" height="260" fill="none" stroke="#8B95A5" strokeWidth="2" opacity="0.5" />
 

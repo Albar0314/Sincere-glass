@@ -124,7 +124,7 @@ export default function ProductDetailClient({
             transition: "all 400ms ease-out",
             transitionDelay: 100 + i * 60 + "ms"
           }}>
-                <svg className="w-5 h-5 text-brand-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-5 h-5 text-brand-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-sm text-brand-dark">{app}</span>

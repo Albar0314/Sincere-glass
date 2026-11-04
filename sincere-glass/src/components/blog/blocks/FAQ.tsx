@@ -33,8 +33,7 @@ export default function FAQ({ items, title = 'Frequently Asked Questions' }: Pro
                 <span className="font-medium text-[#F2F0ED] pr-4">{item.q}</span>
                 <svg
                   className={`w-5 h-5 text-[#8B95A5] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-                >
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>

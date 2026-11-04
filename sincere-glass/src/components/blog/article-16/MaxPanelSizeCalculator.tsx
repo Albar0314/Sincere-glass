@@ -144,7 +144,7 @@ export default function MaxPanelSizeCalculator() {
               : 'bg-red-500/15 text-red-300'
           }`}
         >
-          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             {withinJumbo ? (
               <path
                 fillRule="evenodd"

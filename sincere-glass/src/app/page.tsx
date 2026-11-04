@@ -9,7 +9,6 @@ import HomepagePhotoStrip from "@/components/HomepagePhotoStrip";
 import QuoteForm from "@/components/home/QuoteForm";
 import BlogTeaserLive from "@/components/BlogTeaserLive";
 import { makeAlternates } from "@/lib/i18n";
-import CertificationStrip from "@/components/home/CertificationStrip";
 export const metadata: Metadata = {
   title: "Sincere Glass | Architectural Glass Manufacturer in China",
   description: "Sincere Glass manufactures tempered, insulated, laminated & enameled glass for global construction projects. Two factories, 20,000㎡, 3C certified. Get a free quote.",
@@ -72,7 +71,6 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <TrustBar />
-        <CertificationStrip />
         <ProductsOverview />
         <WhyUs />
         <CompanySnapshot />

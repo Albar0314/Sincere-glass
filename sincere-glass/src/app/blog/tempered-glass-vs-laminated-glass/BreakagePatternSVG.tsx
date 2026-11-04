@@ -32,7 +32,7 @@ export default function BreakagePatternSVG() {
       <div className="relative bg-[#FAFAF8] rounded-2xl p-8 border border-[#F2F0ED] overflow-hidden">
         {active === 'tempered' ? (
           <div className="flex flex-col items-center gap-6" key="tempered" style={{ animation: 'fadeIn 0.4s ease-out' }}>
-            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="50" y="20" width="300" height="200" rx="4" fill="none" stroke="#8B95A5" strokeWidth="2" strokeDasharray="6 3" opacity="0.4" />
               {[
                 [80,50],[130,40],[180,55],[230,35],[280,60],[310,45],
@@ -60,7 +60,7 @@ export default function BreakagePatternSVG() {
           </div>
         ) : (
           <div className="flex flex-col items-center gap-6" key="laminated" style={{ animation: 'fadeIn 0.4s ease-out' }}>
-            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="50" y="20" width="300" height="200" rx="4" fill="rgba(58,66,80,0.06)" stroke="#8B95A5" strokeWidth="2" />
               <rect x="50" y="115" width="300" height="10" fill="rgba(218,167,69,0.15)" />
               <circle cx="200" cy="110" r="12" fill="none" stroke="#DAA745" strokeWidth="2.5" opacity="0.8" />

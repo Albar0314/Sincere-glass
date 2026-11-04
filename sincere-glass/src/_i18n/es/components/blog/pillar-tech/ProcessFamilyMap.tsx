@@ -170,7 +170,7 @@ export default function ProcessFamilyMap() {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox="0 0 800 380" className="w-full min-w-[600px]" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 380" className="w-full min-w-[600px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Connections */}
           {connections.map((c, i) => {
           const from = nodes.find(n => n.id === c.from)!;

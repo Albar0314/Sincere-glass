@@ -95,7 +95,7 @@ export default function EdgeColorViewer() {
             </span>
             <span className="text-xs text-slate-500">Fe2O3 approx 0.10%</span>
           </div>
-          <svg viewBox="0 0 300 160" className="w-full">
+          <svg viewBox="0 0 300 160" className="w-full" aria-hidden="true">
             <defs>
               <linearGradient id={"clear-face-" + thickness} x1="0" x2="1" y1="0" y2="0">
                 <stop offset="0" stopColor="#F8FAFC" />
@@ -115,7 +115,7 @@ export default function EdgeColorViewer() {
             <span className="text-sm font-semibold text-slate-700">Low Iron Glass</span>
             <span className="text-xs text-slate-500">Fe2O3 under 0.015%</span>
           </div>
-          <svg viewBox="0 0 300 160" className="w-full">
+          <svg viewBox="0 0 300 160" className="w-full" aria-hidden="true">
             <defs>
               <linearGradient id={"lowiron-face-" + thickness} x1="0" x2="1" y1="0" y2="0">
                 <stop offset="0" stopColor="#FAFCFB" />

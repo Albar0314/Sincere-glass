@@ -63,7 +63,7 @@ export default function PatternGallery() {
           transitionDelay: 150 + i * 60 + "ms"
         }}>
               <div className="aspect-square rounded-lg bg-brand-lighter border border-brand-light flex items-center justify-center mb-3 overflow-hidden">
-                <svg viewBox="0 0 20 20" className="w-full h-full p-2 text-brand-primary/30 group-hover:text-brand-accent/50 transition-colors">
+                <svg viewBox="0 0 20 20" className="w-full h-full p-2 text-brand-primary/30 group-hover:text-brand-accent/50 transition-colors" aria-hidden="true">
                   {p.type === "line" ? <g stroke="currentColor" strokeWidth="0.8" fill="none"><path d={p.svg} /></g> : <path d={p.svg} fill="currentColor" />}
                 </svg>
               </div>

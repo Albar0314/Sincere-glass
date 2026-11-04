@@ -52,7 +52,7 @@ export default function TemperedApplications() {
               style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateY(0)" : "translateY(16px)", transition: "all 500ms", transitionDelay: (150 + i * 80) + "ms" }}
             >
               <div className="w-10 h-10 rounded-lg bg-brand-accent/10 flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-5 h-5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d={cat.icon} />
                 </svg>
               </div>

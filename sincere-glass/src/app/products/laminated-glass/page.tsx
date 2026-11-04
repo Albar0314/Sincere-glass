@@ -15,7 +15,6 @@ import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
-import TestReportDownload from "@/components/TestReportDownload";
 export const metadata: Metadata = {
   title: "Laminated Glass Manufacturer China — PVB & SGP Interlayer | Sincere Glass",
   description: "Custom laminated safety glass from China. PVB and SGP interlayer options, 99% UV blocking, superior sound insulation. Autoclave up to 3.3.3 m × 15 m. 3C certified.",
@@ -124,9 +123,6 @@ export default function LaminatedGlassPage() {
 
         <LaminatedApps />
         <LaminatedFAQ faqItems={faqItems} />
-      {/* TEST-REPORT-DOWNLOAD-V1 */}
-      <TestReportDownload bucket="laminated" />
-
         <SocialProof />
 
         <section className="py-20 md:py-28 bg-brand-dark">

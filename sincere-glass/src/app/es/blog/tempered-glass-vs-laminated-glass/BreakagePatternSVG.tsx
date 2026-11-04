@@ -17,7 +17,7 @@ export default function BreakagePatternSVG() {
         {active === 'tempered' ? <div className="flex flex-col items-center gap-6" key="tempered" style={{
         animation: 'fadeIn 0.4s ease-out'
       }}>
-            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="50" y="20" width="300" height="200" rx="4" fill="none" stroke="#8B95A5" strokeWidth="2" strokeDasharray="6 3" opacity="0.4" />
               {[[80, 50], [130, 40], [180, 55], [230, 35], [280, 60], [310, 45], [95, 90], [145, 85], [195, 100], [245, 80], [290, 95], [70, 130], [120, 140], [170, 125], [220, 145], [270, 130], [320, 140], [100, 170], [150, 180], [200, 165], [250, 185], [300, 170]].map(([x, y], i) => <rect key={i} x={x} y={y} width={10} height={10} rx="1.5" fill={`rgba(58,66,80,${0.15 + i % 5 * 0.06})`} stroke="#8B95A5" strokeWidth="0.5" transform={`rotate(${i * 17 % 45} ${x + 5} ${y + 5})`} />)}
               <circle cx="200" cy="110" r="12" fill="none" stroke="#DAA745" strokeWidth="2.5" opacity="0.8" />
@@ -29,7 +29,7 @@ export default function BreakagePatternSVG() {
           </div> : <div className="flex flex-col items-center gap-6" key="laminated" style={{
         animation: 'fadeIn 0.4s ease-out'
       }}>
-            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="50" y="20" width="300" height="200" rx="4" fill="rgba(58,66,80,0.06)" stroke="#8B95A5" strokeWidth="2" />
               <rect x="50" y="115" width="300" height="10" fill="rgba(218,167,69,0.15)" />
               <circle cx="200" cy="110" r="12" fill="none" stroke="#DAA745" strokeWidth="2.5" opacity="0.8" />

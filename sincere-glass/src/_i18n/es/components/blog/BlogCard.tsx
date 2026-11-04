@@ -23,7 +23,7 @@ export default function BlogCard({
     return <Link href={`/blog/${article.slug}`} className="group block lg:grid lg:grid-cols-2 gap-0 bg-[#3A4250]/15 rounded-xl overflow-hidden hover:bg-[#3A4250]/25 transition-colors border border-[#3A4250]/20">
         <div className="aspect-[16/9] lg:aspect-auto bg-[#3A4250]/30 relative overflow-hidden">
           {article.heroImage ? <img src={article.heroImage} alt={article.heroImageAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" /> : <div className="w-full h-full flex items-center justify-center text-[#8B95A5]">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <path d="M21 15l-5-5L5 21" />
@@ -54,7 +54,7 @@ export default function BlogCard({
   return <Link href={`/blog/${article.slug}`} className="group block bg-[#3A4250]/10 rounded-lg overflow-hidden hover:bg-[#3A4250]/20 transition-colors border border-[#3A4250]/15">
       <div className="aspect-[16/9] bg-[#3A4250]/25 relative overflow-hidden">
         {article.heroImage ? <img src={article.heroImage} alt={article.heroImageAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /> : <div className="w-full h-full flex items-center justify-center text-[#8B95A5]/50">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <circle cx="8.5" cy="8.5" r="1.5" />
               <path d="M21 15l-5-5L5 21" />

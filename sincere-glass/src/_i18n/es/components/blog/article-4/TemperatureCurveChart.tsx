@@ -93,7 +93,7 @@ export default function TemperatureCurveChart() {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Gradient for area fill */}
           <defs>
             <linearGradient id="tempGradient" x1="0" y1="0" x2="0" y2="1">

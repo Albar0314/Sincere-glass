@@ -32,7 +32,7 @@ export default function BlogTeaserLive() {
               className="hidden sm:inline-flex items-center gap-1.5 text-sm text-[#DAA745] hover:underline"
             >
               View all articles
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
@@ -62,7 +62,7 @@ export default function BlogTeaserLive() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-[#8B95A5]/40">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                         <rect x="3" y="3" width="18" height="18" rx="2" />
                         <circle cx="8.5" cy="8.5" r="1.5" />
                         <path d="M21 15l-5-5L5 21" />
@@ -96,7 +96,7 @@ export default function BlogTeaserLive() {
               className="inline-flex items-center gap-1.5 text-sm text-[#DAA745] hover:underline"
             >
               View all articles
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>

@@ -143,11 +143,11 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
   return (
     <div className="fixed inset-0 z-[999]" role="dialog" aria-modal="true">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
 
       <div className="relative max-w-xl mx-auto mt-[15vh] bg-[#1C1F26] border border-[#3A4250]/50 rounded-xl shadow-2xl overflow-hidden mx-4">
         <div className="flex items-center gap-3 px-5 py-4 border-b border-[#3A4250]/30">
-          <svg className="w-5 h-5 text-[#8B95A5] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-5 h-5 text-[#8B95A5] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <circle cx="11" cy="11" r="8" />
             <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
           </svg>
@@ -207,7 +207,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
                     <div className="w-8 h-8 rounded bg-[#3A4250]/30 flex items-center justify-center shrink-0">
-                      <svg className="w-4 h-4 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-4 h-4 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                         <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                       </svg>
                     </div>
@@ -238,7 +238,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                     onMouseEnter={() => setActiveIndex(idx)}
                   >
                     <div className="w-8 h-8 rounded bg-[#3A4250]/30 flex items-center justify-center shrink-0">
-                      <svg className="w-4 h-4 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-4 h-4 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                         <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" />
                       </svg>
                     </div>

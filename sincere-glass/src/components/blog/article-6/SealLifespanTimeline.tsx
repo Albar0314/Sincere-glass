@@ -99,7 +99,7 @@ export default function SealLifespanTimeline() {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox={'0 0 ' + width + ' ' + height} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox={'0 0 ' + width + ' ' + height} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Horizontal grid lines */}
           {[0, 25, 50, 75, 100].map((p) => (
             <g key={p}>

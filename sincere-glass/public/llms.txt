@@ -1,0 +1,82 @@
+# Sincere Glass (Xincheng Glass)
+
+> Architectural glass manufacturer based in Wuhan, China, with 15+ years of domestic production experience and two factories totaling 20,000 m2 of floor space. We make tempered, insulated, laminated, Low-E, ceramic-frit (enameled), and curved tempered glass for facades, curtain walls, interiors, and specialty building applications worldwide. Our jumbo capability is 3.3m x 15m (both tempering furnace and laminating autoclave). Brand owners: Wuhan Xincheng Glass Co., Ltd. and Hubei Xinzhicheng Glass Co., Ltd.
+
+Primary site: https://sincereglass.com
+Spanish site: https://sincereglass.com/es/
+Author / technical reviewer: Li Cheng, CEO at Sincere Glass (https://sincereglass.com/about)
+
+## Company
+
+- [About](https://sincereglass.com/about): Company history (2005-present), timeline, leadership, dual-factory structure, certifications overview.
+- [Equipment](https://sincereglass.com/equipment): Production lines, cutting + edging + tempering + laminating + insulating equipment, capacity dashboard, process flow.
+- [Projects](https://sincereglass.com/projects): Reference projects across transportation, commercial, residential, public, and cultural sectors (12 project cases).
+- [Contact](https://sincereglass.com/contact): Factory addresses (Wuhan and Honghu), email, WhatsApp, business hours.
+
+## Products
+
+- [All Products](https://sincereglass.com/products): Full product line overview.
+- [Tempered Glass](https://sincereglass.com/products/tempered-glass): Heat-strengthened architectural glass, 4-5x stronger than annealed, safe granular fragmentation. Jumbo size up to 3.3m x 15m.
+- [Insulated Glass (IGU)](https://sincereglass.com/products/insulated-glass): Double / triple glazed units with argon fill and dual seal construction for thermal and acoustic insulation.
+- [Laminated Glass](https://sincereglass.com/products/laminated-glass): PVB and SGP interlayer glass for safety, security, acoustic, and overhead glazing applications.
+- [Enameled Glass](https://sincereglass.com/products/enameled-glass): Ceramic frit decorative glass with custom color palette and pattern gallery for facades and interior partitions.
+- [Low-E Glass](https://sincereglass.com/products/low-e-glass): Low-emissivity coated glass (soft coat and hard coat) for energy-efficient building envelopes.
+- [Curved Tempered Glass](https://sincereglass.com/products/curved-tempered-glass): Bent tempered glass, minimum bend radius 500mm, for curved facades and unique architectural forms.
+
+## Blog — Technical Guides and Buyer Resources
+
+Flat URL structure: /blog/[slug]. Five topic clusters, each anchored by a pillar page.
+
+### Comparison cluster (pillar + articles)
+
+- [Pillar: Architectural Glass Types Guide](https://sincereglass.com/blog/architectural-glass-types-guide): Decision framework for choosing between tempered, laminated, insulated, Low-E, and enameled glass by use case.
+- [Tempered Glass vs Laminated Glass](https://sincereglass.com/blog/tempered-glass-vs-laminated-glass)
+- [Insulated Glass vs Laminated Glass](https://sincereglass.com/blog/insulated-glass-vs-laminated-glass)
+- [Tempered Glass vs Annealed Glass](https://sincereglass.com/blog/tempered-glass-vs-annealed-glass)
+- [Curved Glass vs Flat Glass](https://sincereglass.com/blog/curved-glass-vs-flat-glass)
+
+### Technical / Manufacturing cluster
+
+- [Pillar: Architectural Glass Manufacturing Guide](https://sincereglass.com/blog/architectural-glass-manufacturing-guide): End-to-end overview of cutting, edging, tempering, laminating, and insulating processes.
+- [How Is Tempered Glass Made](https://sincereglass.com/blog/how-is-tempered-glass-made)
+- [How Is Laminated Glass Made](https://sincereglass.com/blog/how-is-laminated-glass-made)
+- [How Is Insulated Glass Made](https://sincereglass.com/blog/how-is-insulated-glass-made)
+
+### Application cluster
+
+- [Pillar: Architectural Glass Applications Guide](https://sincereglass.com/blog/architectural-glass-applications-guide): Glass selection by building zone (facade, interior, balustrade, shower, skylight, floor) with code references.
+- [Curtain Wall Glass Specification](https://sincereglass.com/blog/curtain-wall-glass-specification)
+- [Shower Glass Thickness Guide](https://sincereglass.com/blog/shower-glass-thickness-guide)
+- [Balustrade Glass Specification](https://sincereglass.com/blog/balustrade-glass-specification)
+
+### Buyer Guide cluster
+
+- [How to Import Glass From China](https://sincereglass.com/blog/how-to-import-glass-from-china): Supplier verification, Incoterms, container loading, landed cost, and risk mitigation.
+
+### Product Deep Dive cluster
+
+- [Pillar: Architectural Glass Specification Guide](https://sincereglass.com/blog/architectural-glass-specification-guide): 6-attribute specification framework (type, thickness, coating, interlayer, treatment, dimensions) with capability matrix.
+- [12mm Tempered Glass Specifications](https://sincereglass.com/blog/12mm-tempered-glass-specifications)
+- [SGP vs PVB Interlayer Cost](https://sincereglass.com/blog/sgp-vs-pvb-interlayer-cost)
+
+## Factory capability snapshot
+
+- Total floor space: 20,000 m2 across two factories (Wuhan and Honghu, both in Hubei Province, China)
+- 4 intelligent cutting lines
+- 4 edge-grinding lines
+- 2 tempering furnaces, maximum panel size 3.3m x 15m
+- 2 high-pressure laminating autoclaves, one sized at 3.3m x 15m
+- 2 insulated glass lines (one is ultra-large automatic gas-fill)
+- 15+ years of domestic Chinese glass manufacturing experience
+- First-time entry into international export markets (positioning emphasis on verified factory capability rather than export track record)
+
+## Lead magnet
+
+- [Global Architectural Glass Building Codes Comparison (PDF)](https://sincereglass.com/downloads/glass-building-codes-comparison.pdf): 11-page reference comparing US IBC/ASTM, EU EN, China GB, and Australia AS standards for tempered, laminated, insulated, and Low-E glass across application categories.
+
+## Technical infrastructure
+
+- Sitemap: https://sincereglass.com/sitemap.xml
+- Robots: https://sincereglass.com/robots.txt
+- Languages: English (default) at root, Spanish at /es/ (hreflang on every page)
+- Structured data: Organization, WebSite, BreadcrumbList, Service (product pages), Article and FAQPage (blog)

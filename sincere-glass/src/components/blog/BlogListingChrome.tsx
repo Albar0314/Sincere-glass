@@ -26,7 +26,7 @@ export function BlogEmptyState({ clusterFilter }: { clusterFilter?: BlogCluster 
   return (
     <div className="text-center py-24">
       <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#3A4250]/20 flex items-center justify-center">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B95A5" strokeWidth="1.5">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B95A5" strokeWidth="1.5" aria-hidden="true">
           <path d="M12 20h9" />
           <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
         </svg>

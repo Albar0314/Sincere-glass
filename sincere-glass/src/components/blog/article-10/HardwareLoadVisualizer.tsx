@@ -35,7 +35,7 @@ export default function HardwareLoadVisualizer() {
   return (
     <div className="my-10 rounded-xl bg-[#3A4250]/20 border border-[#3A4250]/40 p-6 md:p-8">
       <div className="flex items-center gap-2 mb-4">
-        <svg className="w-4 h-4 text-[#DAA745]" fill="currentColor" viewBox="0 0 20 20">
+        <svg className="w-4 h-4 text-[#DAA745]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M10 2a1 1 0 011 1v1h1a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h1V3a1 1 0 011-1h1z" />
         </svg>
         <span className="text-xs font-semibold text-[#DAA745] tracking-wider uppercase">

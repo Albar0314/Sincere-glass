@@ -9,7 +9,6 @@ import HomepagePhotoStrip from "@/_i18n/es/components/HomepagePhotoStrip";
 import QuoteForm from "@/_i18n/es/components/home/QuoteForm";
 import BlogTeaserLive from "@/_i18n/es/components/BlogTeaserLive";
 import { makeAlternates } from "@/lib/i18n";
-import CertificationStrip from "@/_i18n/es/components/home/CertificationStrip";
 export const metadata: Metadata = {
   title: "Sincere Glass | Fabricante de Vidrio Arquitectónico en China",
   description: "Sincere Glass fabrica vidrio templado, aislante, laminado y esmaltado para proyectos de construcción a nivel global. Dos fábricas, 20,000㎡, certificación 3C. Obtenga una cotización gratuita.",
@@ -72,7 +71,6 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <TrustBar />
-        <CertificationStrip />
         <ProductsOverview />
         <WhyUs />
         <CompanySnapshot />

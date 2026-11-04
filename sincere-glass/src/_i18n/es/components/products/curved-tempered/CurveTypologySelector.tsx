@@ -27,7 +27,7 @@ const typologies: Typology[] = [{
   key: "cylindrical",
   name: "Cilíndrico (un solo eje)",
   oneLine: "Glass curves in one direction only — like a sheet rolled into a tube.",
-  svg: <svg viewBox="0 0 160 100" className="w-full h-full">
+  svg: <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         <defs>
           <linearGradient id="cyl-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#DAA745" stopOpacity="0.3" />
@@ -49,7 +49,7 @@ const typologies: Typology[] = [{
   key: "spherical",
   name: "Esférico (doble eje)",
   oneLine: "Glass curves in both directions — like a shallow dish or dome segment.",
-  svg: <svg viewBox="0 0 160 100" className="w-full h-full">
+  svg: <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         <defs>
           <radialGradient id="sph-grad" cx="0.5" cy="0.5" r="0.5">
             <stop offset="0%" stopColor="#DAA745" stopOpacity="0.35" />
@@ -71,7 +71,7 @@ const typologies: Typology[] = [{
   key: "freeform",
   name: "Forma libre (asimétrico)",
   oneLine: "Panels follow a non-standard curve generated from the architect's 3D model.",
-  svg: <svg viewBox="0 0 160 100" className="w-full h-full">
+  svg: <svg viewBox="0 0 160 100" className="w-full h-full" aria-hidden="true">
         <defs>
           <linearGradient id="ff-grad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#DAA745" stopOpacity="0.35" />

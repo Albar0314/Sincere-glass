@@ -64,7 +64,7 @@ export default function TestReportDownload(props: { bucket: string }) {
               className="group flex items-center gap-3 p-4 bg-white border border-[#E5E5E0] rounded-md hover:border-[#DAA745] hover:shadow-sm transition-all"
             >
               <div className="w-10 h-10 flex-shrink-0 rounded bg-[#DAA745]/10 flex items-center justify-center">
-                <svg className="w-5 h-5 text-[#DAA745]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#DAA745]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
               </div>
@@ -72,7 +72,7 @@ export default function TestReportDownload(props: { bucket: string }) {
                 <div className="text-sm font-medium text-[#1C1F26] truncate">{r.label}</div>
                 <div className="text-xs text-[#8B95A5]">WITC Test Report · PDF</div>
               </div>
-              <svg className="w-4 h-4 text-[#8B95A5] group-hover:text-[#DAA745] flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-[#8B95A5] group-hover:text-[#DAA745] flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
             </a>

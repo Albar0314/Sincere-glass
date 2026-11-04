@@ -99,7 +99,7 @@ export default function AutoclaveCurveChart() {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox={'0 0 ' + width + ' ' + height} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox={'0 0 ' + width + ' ' + height} className="w-full min-w-[500px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Grid */}
           {[0, 40, 80, 120, 160].map(t => <g key={t}>
               <line x1={padL} y1={toYT(t)} x2={width - padR} y2={toYT(t)} stroke="#3A4250" strokeWidth="0.5" opacity="0.4" strokeDasharray="3,3" />

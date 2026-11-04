@@ -36,7 +36,7 @@ export default function YouTubeEmbed({
       }} />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DAA745] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-              <svg className="w-7 h-7 md:w-8 md:h-8 text-[#1C1F26] ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7 md:w-8 md:h-8 text-[#1C1F26] ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
