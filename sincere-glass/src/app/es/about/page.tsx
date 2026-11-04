@@ -8,7 +8,6 @@ import Certifications from "@/_i18n/es/components/about/Certifications";
 import AboutCTA from "@/_i18n/es/components/about/AboutCTA";
 import { makeAlternates } from "@/lib/i18n";
 import FactoryBrollLoop from "@/_i18n/es/components/FactoryBrollLoop";
-import VideoSchema from "@/_i18n/es/components/VideoSchema";
 export const metadata: Metadata = {
   title: "Sobre Nosotros — Sincere Glass",
   description: "Fundada en 2005, Sincere Glass opera dos fábricas modernas en Hubei, China. 20.000 m² de superficie total, más de 120 empleados, certificación 3C. Conozca nuestra historia, liderazgo y capacidades.",
@@ -37,7 +36,6 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{
       __html: JSON.stringify(jsonLd)
     }} />
-      <VideoSchema contentUrl="https://sincereglass.com/videos/factory-broll.mp4" name="Sincere Glass Factory Walk-through" description="Un breve recorrido por las instalaciones de fabricación de vidrio arquitectónico de 20.000 m² de Sincere Glass en Wuhan, China. Muestra corte, templado, laminado y ensamblaje de vidrio aislante." uploadDate="2026-10-20" duration="PT12S" thumbnailUrl="https://sincereglass.com/images/factory-broll-poster.jpg" />
       <main>
         <AboutHero />
 

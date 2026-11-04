@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useInView } from "@/lib/useInView";
 import { useCountUp } from "@/lib/useCountUp";
 import { useQuote } from "@/lib/QuoteContext";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 // ── Production flow ──────────────────────────────────────
 const flowSteps = [
@@ -19,7 +20,7 @@ const equipmentData = [
   {
     category: "Cutting",
     flowId: "cut",
-    video: "/videos/cutting.mp4",
+    videoId: "YLkfJbK1XpA",
     items: [
       { name: "CNC Intelligent Cutting Lines", count: 4, detail: "Fully automated loading, optimized nesting software minimizes waste. Handles all standard float glass sizes.", capacity: "5,000 m²/day" },
     ],
@@ -27,7 +28,7 @@ const equipmentData = [
   {
     category: "Edge Polishing",
     flowId: "edge",
-    video: "/videos/edge-polishing.mp4",
+    videoId: "1XwGWynxkJE",
     items: [
       { name: "Double-Edge Grinding Lines", count: 2, detail: "Simultaneous grinding of both edges. Straight, pencil, beveled, OG profiles.", capacity: "3,000 m²/day" },
       { name: "Shape Edge Polishing Machine", count: 2, detail: "Irregular shapes and curved edges. CNC-controlled for precision.", capacity: "Custom shapes" },
@@ -36,7 +37,7 @@ const equipmentData = [
   {
     category: "Tempering",
     flowId: "process",
-    video: "/videos/tempering.mp4",
+    videoId: "expE_icthfo",
     items: [
       { name: "Flat Tempering Furnace", count: 1, detail: "Standard flat tempering for panels up to 2.4m × 4.2m. Automated temperature control.", capacity: "4,000 m²/day" },
       { name: "Oversized Tempering Furnace", count: 1, detail: "Maximum panel size 3.3.3 m × 15 m — among the largest in Hubei. Flat and bent capability.", capacity: "3.3.3 m × 15 m max" },
@@ -45,7 +46,7 @@ const equipmentData = [
   {
     category: "Insulated Glass (IGU)",
     flowId: "assembly",
-    video: "/videos/igu-assembly.mp4",
+    videoId: "qcSV4WG8nL0",
     items: [
       { name: "Standard IGU Assembly Line", count: 1, detail: "Automated spacer application, butyl sealing, and structural silicone.", capacity: "2,500 m²/day" },
       { name: "Oversized Auto Gas-Fill Line", count: 1, detail: "Automated argon filling with 90%+ fill rate consistency.", capacity: "Jumbo IGUs" },
@@ -54,7 +55,7 @@ const equipmentData = [
   {
     category: "Laminating",
     flowId: "assembly",
-    video: "/videos/laminating.mp4",
+    videoId: "inNYYEAnWOo",
     items: [
       { name: "High-Pressure Autoclave (Standard)", count: 1, detail: "PVB and SGP interlayer processing.", capacity: "2,000 m²/day" },
       { name: "High-Pressure Autoclave (Oversized)", count: 1, detail: "3.3.3 m × 15 m capacity. One of the largest in central China.", capacity: "3.3.3 m × 15 m max" },
@@ -63,7 +64,7 @@ const equipmentData = [
   {
     category: "Enameling",
     flowId: "process",
-    video: "/videos/enameling.mp4",
+    videoId: null,
     items: [
       { name: "Screen Printing Line", count: 1, detail: "Ceramic frit screen printing with precise registration. Custom RAL color matching.", capacity: "1,500 m²/day" },
     ],
@@ -97,22 +98,22 @@ function CapStat({ stat, active, i }: { stat: typeof capacityStats[0]; active: b
 }
 
 // ── Video placeholder ────────────────────────────────────
-function VideoPlaceholder({ src, label }: { src: string; label: string }) {
-  const [hasVideo, setHasVideo] = useState(false);
-
+function VideoPlaceholder({ videoId, label }: { videoId: string | null; label: string }) {
+  if (videoId) {
+    return (
+      <div className="rounded-xl overflow-hidden">
+        <YouTubeEmbed videoId={videoId} title={label + " production line"} aspectRatio="16/9" />
+      </div>
+    );
+  }
   return (
     <div className="relative aspect-video rounded-xl overflow-hidden bg-brand-dark/5 border border-brand-light">
-      {hasVideo ? (
-        <video src={src} className="w-full h-full object-cover" controls muted playsInline
-          onError={() => setHasVideo(false)} onLoadedData={() => setHasVideo(true)} />
-      ) : (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-lighter">
-          <svg className="w-12 h-12 text-brand-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-          </svg>
-          <p className="mt-2 text-xs text-brand-muted/50">{label} video coming soon</p>
-        </div>
-      )}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-lighter">
+        <svg className="w-12 h-12 text-brand-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+        </svg>
+        <p className="mt-2 text-xs text-brand-muted/50">{label} video coming soon</p>
+      </div>
     </div>
   );
 }
@@ -214,7 +215,7 @@ export default function EquipmentClient() {
                     <div className="px-5 md:px-6 pb-5 md:pb-6">
                       {/* Video placeholder */}
                       <div className="mb-5">
-                        <VideoPlaceholder src={cat.video} label={cat.category} />
+                        <VideoPlaceholder videoId={cat.videoId} label={cat.category} />
                       </div>
 
                       {/* Equipment items */}

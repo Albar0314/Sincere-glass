@@ -8,8 +8,6 @@ import Certifications from "@/components/about/Certifications";
 import AboutCTA from "@/components/about/AboutCTA";
 import { makeAlternates } from "@/lib/i18n";
 import FactoryBrollLoop from "@/components/FactoryBrollLoop";
-import VideoSchema from "@/components/VideoSchema";
-
 export const metadata: Metadata = {
   title: "About Us — Sincere Glass",
   description: "Founded in 2005, Sincere Glass operates two modern factories in Hubei, China. 20,000㎡ total area, 120+ employees, 3C certified. Learn about our story, leadership, and capabilities.",
@@ -37,14 +35,6 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <VideoSchema
-        contentUrl="https://sincereglass.com/videos/factory-broll.mp4"
-        name="Sincere Glass Factory Walk-through"
-        description="A short walk through Sincere Glass's 20,000 m² architectural glass manufacturing facility in Wuhan, China. Shows cutting, tempering, lamination, and insulated glass assembly."
-        uploadDate="2026-10-20"
-        duration="PT12S"
-        thumbnailUrl="https://sincereglass.com/images/factory-broll-poster.jpg"
       />
       <main>
         <AboutHero />
