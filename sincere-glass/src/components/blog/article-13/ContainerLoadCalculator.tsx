@@ -84,7 +84,7 @@ export default function ContainerLoadCalculator() {
             value={width}
             onChange={(e) => setWidth(Number(e.target.value) || 0)}
             className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Panel width (mm)" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
@@ -98,7 +98,7 @@ export default function ContainerLoadCalculator() {
             value={height}
             onChange={(e) => setHeight(Number(e.target.value) || 0)}
             className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Panel height (mm)" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
@@ -112,7 +112,7 @@ export default function ContainerLoadCalculator() {
             value={thickness}
             onChange={(e) => setThickness(Number(e.target.value) || 0)}
             className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Total glass thickness (mm)" />
           <p className="text-[11px] text-[#8B95A5]/80 mt-1">
             Sum of all lites (e.g. 6+6 laminate = 12)
           </p>
@@ -128,7 +128,7 @@ export default function ContainerLoadCalculator() {
             value={count}
             onChange={(e) => setCount(Number(e.target.value) || 0)}
             className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Panel count" />
         </div>
       </div>
 

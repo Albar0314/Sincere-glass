@@ -149,7 +149,7 @@ export default function ThermalStressSimulator() {
               value={thickness}
               onChange={(e) => setThickness(Number(e.target.value))}
               className="w-full accent-brand-accent"
-            />
+            aria-label="Glass thickness" />
           </div>
 
           <div>
@@ -160,7 +160,7 @@ export default function ThermalStressSimulator() {
               value={edge}
               onChange={(e) => setEdge(e.target.value as EdgeType)}
               className="w-full rounded-lg border border-brand-secondary/30 bg-white dark:bg-brand-dark/40 px-3 py-2 text-sm text-brand-primary dark:text-brand-light"
-            >
+            aria-label="Edge finish">
               {(Object.keys(EDGE_LABEL) as EdgeType[]).map((k) => (
                 <option key={k} value={k}>
                   {EDGE_LABEL[k]}
@@ -177,7 +177,7 @@ export default function ThermalStressSimulator() {
               value={backing}
               onChange={(e) => setBacking(e.target.value as Backing)}
               className="w-full rounded-lg border border-brand-secondary/30 bg-white dark:bg-brand-dark/40 px-3 py-2 text-sm text-brand-primary dark:text-brand-light"
-            >
+            aria-label="Back-cavity construction">
               {(Object.keys(BACKING_LABEL) as Backing[]).map((k) => (
                 <option key={k} value={k}>
                   {BACKING_LABEL[k]}
@@ -194,7 +194,7 @@ export default function ThermalStressSimulator() {
               value={treatment}
               onChange={(e) => setTreatment(e.target.value as Treatment)}
               className="w-full rounded-lg border border-brand-secondary/30 bg-white dark:bg-brand-dark/40 px-3 py-2 text-sm text-brand-primary dark:text-brand-light"
-            >
+            aria-label="Heat treatment">
               {(Object.keys(TREATMENT_LABEL) as Treatment[]).map((k) => (
                 <option key={k} value={k}>
                   {TREATMENT_LABEL[k]}

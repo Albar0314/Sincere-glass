@@ -160,7 +160,7 @@ export default function InterlayerCostCalculator() {
               setArea(Math.max(10, Math.min(5000, Number(e.target.value) || 0)))
             }
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Order area (m2)" />
           <p className="text-[11px] text-[#8B95A5] mt-2 m-0">
             Typical container: 300-400 m² of 10+10 laminated.
           </p>

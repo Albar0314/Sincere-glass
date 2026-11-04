@@ -114,7 +114,7 @@ export default function InterlayerCostCalculator() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Área del pedido (m²)
           </label>
-          <input type="number" min={10} max={5000} step={10} value={area} onChange={e => setArea(Math.max(10, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={10} max={5000} step={10} value={area} onChange={e => setArea(Math.max(10, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Area del pedido (m2)" />
           <p className="text-[11px] text-[#8B95A5] mt-2 m-0">
             Contenedor típico: 300-400 m² de vidrio laminado 10+10.
           </p>

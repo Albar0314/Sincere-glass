@@ -159,7 +159,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             onKeyDown={onInputKeyDown}
             placeholder="Search products, articles... (try 'soundproof', 'IGU', '隔音玻璃')"
             className="flex-1 bg-transparent text-[#F2F0ED] placeholder-[#8B95A5]/60 text-base outline-none"
-          />
+          aria-label="Search articles and products" />
           <kbd className="hidden sm:inline-block text-[10px] text-[#8B95A5]/50 border border-[#3A4250]/40 rounded px-1.5 py-0.5">
             ESC
           </kbd>

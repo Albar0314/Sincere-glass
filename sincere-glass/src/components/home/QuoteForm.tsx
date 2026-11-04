@@ -57,21 +57,21 @@ export default function QuoteForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm text-white/70 mb-1.5">Full Name <span className="text-brand-accent">*</span></label>
-                    <input type="text" required className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your name" />
+                    <input type="text" required className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your name" aria-label="Full Name" />
                   </div>
                   <div>
                     <label className="block text-sm text-white/70 mb-1.5">Email <span className="text-brand-accent">*</span></label>
-                    <input type="email" required className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" />
+                    <input type="email" required className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" aria-label="Email" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm text-white/70 mb-1.5">Phone / WhatsApp</label>
-                    <input type="tel" className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Include country code" />
+                    <input type="tel" className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Include country code" aria-label="Phone / WhatsApp" />
                   </div>
                   <div>
                     <label className="block text-sm text-white/70 mb-1.5">Glass Type Needed</label>
-                    <select className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white/70 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors">
+                    <select className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white/70 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors" aria-label="Glass Type Needed">
                       <option value="">Select type</option>
                       <option value="tempered">Tempered Glass</option>
                       <option value="insulated">Insulated Glass</option>
@@ -84,7 +84,7 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-sm text-white/70 mb-1.5">Project Description</label>
-                  <textarea rows={4} className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors resize-none" placeholder="Tell us about your project — dimensions, quantity, application..." />
+                  <textarea rows={4} className="w-full px-4 py-2.5 bg-white/5 border border-white/15 rounded-md text-white placeholder:text-white/30 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/30 transition-colors resize-none" placeholder="Tell us about your project — dimensions, quantity, application..." aria-label="Project Description" />
                 </div>
                 <button type="submit" disabled={loading} className="w-full py-3 bg-brand-accent hover:bg-brand-accent-hover disabled:opacity-60 text-brand-dark font-semibold rounded-md transition-colors duration-300">
                   {loading ? "Sending..." : "Get Your Free Quote"}

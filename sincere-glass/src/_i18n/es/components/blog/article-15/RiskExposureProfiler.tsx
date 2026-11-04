@@ -291,28 +291,28 @@ export default function RiskExposureProfiler() {
       {/* Inputs */}
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
         <InputBlock label="Valor del pedido (USD)">
-          <select value={deal} onChange={e => setDeal(e.target.value as DealSize)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={deal} onChange={e => setDeal(e.target.value as DealSize)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Tamano del acuerdo">
             {DEAL_SIZES.map(o => <option key={o.value} value={o.value}>
                 {o.label} ({o.usd})
               </option>)}
           </select>
         </InputBlock>
         <InputBlock label="Relación con el proveedor">
-          <select value={rel} onChange={e => setRel(e.target.value as Relationship)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={rel} onChange={e => setRel(e.target.value as Relationship)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Antiguedad de la relacion">
             {RELATIONSHIPS.map(o => <option key={o.value} value={o.value}>
                 {o.label}
               </option>)}
           </select>
         </InputBlock>
         <InputBlock label="Destino de uso final">
-          <select value={dest} onChange={e => setDest(e.target.value as Destination)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={dest} onChange={e => setDest(e.target.value as Destination)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Pais de destino">
             {DESTINATIONS.map(o => <option key={o.value} value={o.value}>
                 {o.label}
               </option>)}
           </select>
         </InputBlock>
         <InputBlock label="Complejidad del producto">
-          <select value={cmp} onChange={e => setCmp(e.target.value as Complexity)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={cmp} onChange={e => setCmp(e.target.value as Complexity)} className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Alcance de cumplimiento">
             {COMPLEXITIES.map(o => <option key={o.value} value={o.value}>
                 {o.label}
               </option>)}

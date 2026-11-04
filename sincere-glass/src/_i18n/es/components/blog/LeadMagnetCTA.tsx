@@ -88,7 +88,7 @@ export default function LeadMagnetCTA({
 
         <form onSubmit={handleSubmit} className={isFooter ? 'md:min-w-[320px]' : ''}>
           <div className="flex flex-col sm:flex-row gap-2">
-            <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 px-4 py-2.5 rounded-full bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] placeholder:text-[#8B95A5]/60 text-sm focus:outline-none focus:border-[#DAA745] transition-colors" disabled={status === 'submitting'} />
+            <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 px-4 py-2.5 rounded-full bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] placeholder:text-[#8B95A5]/60 text-sm focus:outline-none focus:border-[#DAA745] transition-colors" disabled={status === 'submitting'} aria-label="Correo electronico" />
             <button type="submit" disabled={status === 'submitting'} className="px-5 py-2.5 bg-[#DAA745] text-[#1C1F26] rounded-full text-sm font-semibold hover:bg-[#c4952e] disabled:opacity-60 disabled:cursor-not-allowed transition-colors whitespace-nowrap">
               {status === 'submitting' ? 'Sending\u2026' : 'Get PDF'}
             </button>

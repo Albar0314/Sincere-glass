@@ -149,20 +149,20 @@ export default function JumboRFQBuilder() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Nombre del proyecto
           </label>
-          <input type="text" value={i.project} onChange={e => set("project", e.target.value)} placeholder="ej. Terminal Portuaria Fase 2" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="text" value={i.project} onChange={e => set("project", e.target.value)} placeholder="ej. Terminal Portuaria Fase 2" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Nombre del proyecto" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Ubicación de la obra
           </label>
-          <input type="text" value={i.location} onChange={e => set("location", e.target.value)} placeholder="ej. Dubái, EAU" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="text" value={i.location} onChange={e => set("location", e.target.value)} placeholder="ej. Dubái, EAU" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Ubicación de la obra" />
         </div>
 
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Application
           </label>
-          <select value={i.use} onChange={e => set("use", e.target.value as UseType)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={i.use} onChange={e => set("use", e.target.value as UseType)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Application">
             {Object.entries(USE_LABEL).map(([k, v]) => <option key={k} value={k}>
                 {v}
               </option>)}
@@ -172,7 +172,7 @@ export default function JumboRFQBuilder() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Make-up
           </label>
-          <select value={i.make} onChange={e => set("make", e.target.value as MakeUp)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={i.make} onChange={e => set("make", e.target.value as MakeUp)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Make-up">
             <option value="mono">Vidrio templado monolítico</option>
             <option value="laminated">Laminated</option>
             <option value="igu">Unidad de vidrio aislante (UVA)</option>
@@ -183,26 +183,26 @@ export default function JumboRFQBuilder() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Detalle de composición
           </label>
-          <input type="text" value={i.buildUp} onChange={e => set("buildUp", e.target.value)} placeholder="ej. 10-1.52SGP-10 templado" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="text" value={i.buildUp} onChange={e => set("buildUp", e.target.value)} placeholder="ej. 10-1.52SGP-10 templado" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Detalle de composición" />
         </div>
         <div className="grid grid-cols-3 gap-2">
           <div>
             <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
               Ancho mm
             </label>
-            <input type="number" value={i.w} min={300} max={5000} step={10} onChange={e => set("w", Math.max(300, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+            <input type="number" value={i.w} min={300} max={5000} step={10} onChange={e => set("w", Math.max(300, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Ancho mm" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
               Alto mm
             </label>
-            <input type="number" value={i.h} min={300} max={20000} step={10} onChange={e => set("h", Math.max(300, Math.min(20000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+            <input type="number" value={i.h} min={300} max={20000} step={10} onChange={e => set("h", Math.max(300, Math.min(20000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Alto mm" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
               Qty
             </label>
-            <input type="number" value={i.qty} min={1} max={2000} step={1} onChange={e => set("qty", Math.max(1, Math.min(2000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+            <input type="number" value={i.qty} min={1} max={2000} step={1} onChange={e => set("qty", Math.max(1, Math.min(2000, Number(e.target.value) || 0)))} className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Qty" />
           </div>
         </div>
 
@@ -210,7 +210,7 @@ export default function JumboRFQBuilder() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Coating
           </label>
-          <select value={i.coating} onChange={e => set("coating", e.target.value as Coating)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={i.coating} onChange={e => set("coating", e.target.value as Coating)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Coating">
             {Object.entries(COATING_LABEL).map(([k, v]) => <option key={k} value={k}>
                 {v}
               </option>)}
@@ -220,7 +220,7 @@ export default function JumboRFQBuilder() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
             Plazo de entrega objetivo
           </label>
-          <input type="text" value={i.leadTime} onChange={e => set("leadTime", e.target.value)} placeholder="ej. 10 a 12 semanas desde la OC" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="text" value={i.leadTime} onChange={e => set("leadTime", e.target.value)} placeholder="ej. 10 a 12 semanas desde la OC" className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Plazo de entrega objetivo" />
         </div>
 
         <div className="md:col-span-2">

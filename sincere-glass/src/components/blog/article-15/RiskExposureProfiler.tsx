@@ -222,7 +222,7 @@ export default function RiskExposureProfiler() {
             value={deal}
             onChange={(e) => setDeal(e.target.value as DealSize)}
             className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Deal size">
             {DEAL_SIZES.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label} ({o.usd})
@@ -235,7 +235,7 @@ export default function RiskExposureProfiler() {
             value={rel}
             onChange={(e) => setRel(e.target.value as Relationship)}
             className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Relationship age">
             {RELATIONSHIPS.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
@@ -248,7 +248,7 @@ export default function RiskExposureProfiler() {
             value={dest}
             onChange={(e) => setDest(e.target.value as Destination)}
             className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Destination country">
             {DESTINATIONS.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
@@ -261,7 +261,7 @@ export default function RiskExposureProfiler() {
             value={cmp}
             onChange={(e) => setCmp(e.target.value as Complexity)}
             className="w-full px-3 py-2 rounded-lg bg-[#1C1F26] border border-[#3A4250]/60 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Compliance scope">
             {COMPLEXITIES.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}

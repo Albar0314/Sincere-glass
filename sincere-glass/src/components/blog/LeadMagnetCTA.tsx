@@ -114,7 +114,7 @@ export default function LeadMagnetCTA({
               placeholder="your@email.com"
               className="flex-1 px-4 py-2.5 rounded-full bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] placeholder:text-[#8B95A5]/60 text-sm focus:outline-none focus:border-[#DAA745] transition-colors"
               disabled={status === 'submitting'}
-            />
+            aria-label="Email address" />
             <button
               type="submit"
               disabled={status === 'submitting'}

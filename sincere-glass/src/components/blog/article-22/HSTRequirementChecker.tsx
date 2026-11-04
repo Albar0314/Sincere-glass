@@ -190,7 +190,7 @@ export default function HSTRequirementChecker() {
               value={install}
               onChange={(e) => setInstall(e.target.value as Install)}
               className="w-full px-3 py-2 bg-[#3A4250]/40 border border-[#3A4250]/60 rounded text-sm text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-            >
+            aria-label="Installation type">
               {(Object.keys(INSTALL_LABEL) as Install[]).map((i) => (
                 <option key={i} value={i} className="bg-[#1C1F26]">
                   {INSTALL_LABEL[i]}

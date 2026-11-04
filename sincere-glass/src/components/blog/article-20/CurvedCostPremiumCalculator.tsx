@@ -115,7 +115,7 @@ export default function CurvedCostPremiumCalculator() {
               value={uniqueRadii}
               onChange={(e) => setUniqueRadii(Number(e.target.value))}
               className="w-full accent-[#DAA745]"
-            />
+            aria-label="Number of unique radii" />
             <div className="text-[11px] text-[#8B95A5]/80 mt-1">
               Each unique radius needs its own mold (≈ USD {MOLD_COST_USD})
             </div>

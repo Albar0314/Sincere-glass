@@ -108,7 +108,7 @@ export default function CostPremiumCalculatorV2() {
               value={process}
               onChange={(e) => setProcess(e.target.value as Process)}
               className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-            >
+            aria-label="Processing">
               {(Object.keys(PROCESS_ADDER_USD_PER_M2) as Process[]).map((p) => (
                 <option key={p} value={p}>
                   {PROCESS_ADDER_USD_PER_M2[p].label}
@@ -127,7 +127,7 @@ export default function CostPremiumCalculatorV2() {
                 value={width}
                 onChange={(e) => setWidth(Number(e.target.value))}
                 className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
-              />
+              aria-label="Panel width (mm)" />
             </div>
             <div>
               <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -138,7 +138,7 @@ export default function CostPremiumCalculatorV2() {
                 value={height}
                 onChange={(e) => setHeight(Number(e.target.value))}
                 className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
-              />
+              aria-label="Panel height (mm)" />
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export default function CostPremiumCalculatorV2() {
               value={quantity}
               onChange={(e) => setQuantity(Number(e.target.value))}
               className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
-            />
+            aria-label="Quantity (panels)" />
           </div>
         </div>
 

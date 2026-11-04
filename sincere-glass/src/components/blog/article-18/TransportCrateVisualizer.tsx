@@ -175,7 +175,7 @@ export default function TransportCrateVisualizer() {
               setW(Math.max(300, Math.min(5000, Number(e.target.value) || 0)))
             }
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Panel width (mm)" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
@@ -191,7 +191,7 @@ export default function TransportCrateVisualizer() {
               setH(Math.max(300, Math.min(20000, Number(e.target.value) || 0)))
             }
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Panel height (mm)" />
         </div>
       </div>
 

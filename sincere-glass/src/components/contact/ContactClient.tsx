@@ -181,26 +181,26 @@ export default function ContactClient() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">First Name *</label>
-                      <input type="text" name="firstName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your first name" />
+                      <input type="text" name="firstName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your first name" aria-label="First Name" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">Last Name *</label>
-                      <input type="text" name="lastName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your last name" />
+                      <input type="text" name="lastName" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="Your last name" aria-label="Last Name" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">Email *</label>
-                      <input type="email" name="email" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" />
+                      <input type="email" name="email" required className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="you@company.com" aria-label="Email" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-brand-dark mb-1.5">Phone / WhatsApp</label>
-                      <input type="tel" name="phone" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="+country code" />
+                      <input type="tel" name="phone" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors" placeholder="+country code" aria-label="Phone / WhatsApp" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-brand-dark mb-1.5">Subject</label>
-                    <select name="subject" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark focus:outline-none focus:border-brand-accent transition-colors">
+                    <select name="subject" className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark focus:outline-none focus:border-brand-accent transition-colors" aria-label="Subject">
                       <option value="General Inquiry">Select a topic</option>
                       <option value="Product Quote Request">Request a quote</option>
                       <option value="Sample Request">Request a sample</option>
@@ -213,7 +213,7 @@ export default function ContactClient() {
                   <div>
                     <label className="block text-sm font-medium text-brand-dark mb-1.5">Message *</label>
                     <textarea name="message" required rows={5} className="w-full px-4 py-2.5 bg-brand-lighter border border-brand-light rounded-lg text-sm text-brand-dark placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent/30 transition-colors resize-none"
-                      placeholder="Tell us about your project: glass type, dimensions, quantity, timeline..." />
+                      placeholder="Tell us about your project: glass type, dimensions, quantity, timeline..." aria-label="Message" />
                   </div>
                   <button type="submit" disabled={status === "submitting"}
                     className="w-full sm:w-auto px-8 py-3 bg-brand-accent hover:bg-brand-accent-hover disabled:opacity-60 text-brand-dark font-semibold rounded-lg transition-colors text-sm flex items-center justify-center gap-2">

@@ -90,19 +90,19 @@ export default function ContainerLoadCalculator() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Ancho del panel (mm)
           </label>
-          <input type="number" min={300} max={6000} step={50} value={width} onChange={e => setWidth(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={300} max={6000} step={50} value={width} onChange={e => setWidth(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" aria-label="Ancho del panel (mm)" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Alto del panel (mm)
           </label>
-          <input type="number" min={300} max={15000} step={50} value={height} onChange={e => setHeight(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={300} max={15000} step={50} value={height} onChange={e => setHeight(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" aria-label="Alto del panel (mm)" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Espesor total del vidrio (mm)
           </label>
-          <input type="number" min={3} max={60} step={1} value={thickness} onChange={e => setThickness(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={3} max={60} step={1} value={thickness} onChange={e => setThickness(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" aria-label="Espesor total del vidrio (mm)" />
           <p className="text-[11px] text-[#8B95A5]/80 mt-1">
             Suma de todas las hojas (p. ej., laminado 6+6 = 12)
           </p>
@@ -111,7 +111,7 @@ export default function ContainerLoadCalculator() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Cantidad de paneles
           </label>
-          <input type="number" min={1} step={1} value={count} onChange={e => setCount(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={1} step={1} value={count} onChange={e => setCount(Number(e.target.value) || 0)} className="w-full bg-[#3A4250]/20 border border-[#3A4250]/40 rounded-lg px-3 py-2 text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]" aria-label="Cantidad de paneles" />
         </div>
       </div>
 

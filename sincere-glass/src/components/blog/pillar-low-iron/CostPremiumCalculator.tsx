@@ -169,7 +169,7 @@ export default function CostPremiumCalculator({
             value={region}
             onChange={(e) => setRegion(e.target.value as Region)}
             className="w-full px-4 py-2.5 rounded-lg bg-[#1C1F26] border border-[#3A4250]/40 text-sm text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Delivery Region">
             {(Object.keys(REGION_LABEL) as Region[]).map((r) => (
               <option key={r} value={r}>
                 {REGION_LABEL[r]}

@@ -134,7 +134,7 @@ export default function ThicknessCalculator() {
           <span className="block text-xs text-[#8B95A5] mb-1.5 uppercase tracking-wider">
             Caso de uso
           </span>
-          <select value={useCase} onChange={e => setUseCase(e.target.value as UseCase)} className="w-full px-4 py-2.5 rounded-lg bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={useCase} onChange={e => setUseCase(e.target.value as UseCase)} className="w-full px-4 py-2.5 rounded-lg bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Caso de uso">
             <option value="door">Panel de puerta con bisagra</option>
             <option value="fixed-panel">Panel lateral fijo</option>
             <option value="return-panel">Panel de retorno a 90°</option>
@@ -146,7 +146,7 @@ export default function ThicknessCalculator() {
           <span className="block text-xs text-[#8B95A5] mb-1.5 uppercase tracking-wider">
             Altura del panel (mm): <strong className="text-[#F2F0ED]">{heightMm}</strong>
           </span>
-          <input type="range" min={1500} max={2400} step={50} value={heightMm} onChange={e => setHeightMm(Number(e.target.value))} className="w-full accent-[#DAA745]" />
+          <input type="range" min={1500} max={2400} step={50} value={heightMm} onChange={e => setHeightMm(Number(e.target.value))} className="w-full accent-[#DAA745]" aria-label="Altura del panel (mm)" />
           <div className="flex justify-between text-[10px] text-[#8B95A5] mt-1">
             <span>1500</span>
             <span>2400 mm</span>
@@ -157,7 +157,7 @@ export default function ThicknessCalculator() {
           <span className="block text-xs text-[#8B95A5] mb-1.5 uppercase tracking-wider">
             Ancho del panel (mm): <strong className="text-[#F2F0ED]">{widthMm}</strong>
           </span>
-          <input type="range" min={500} max={1200} step={50} value={widthMm} onChange={e => setWidthMm(Number(e.target.value))} className="w-full accent-[#DAA745]" />
+          <input type="range" min={500} max={1200} step={50} value={widthMm} onChange={e => setWidthMm(Number(e.target.value))} className="w-full accent-[#DAA745]" aria-label="Ancho del panel (mm)" />
           <div className="flex justify-between text-[10px] text-[#8B95A5] mt-1">
             <span>500</span>
             <span>1200 mm</span>

@@ -159,7 +159,7 @@ export default function BendFeasibilityCalculator() {
               value={radius}
               onChange={(e) => setRadius(Number(e.target.value))}
               className="w-full accent-[#DAA745]"
-            />
+            aria-label="Curve radius (mm)" />
             <div className="flex justify-between text-[10px] text-[#8B95A5]/70 mt-1">
               <span>300mm (tight)</span>
               <span>5000mm (gentle)</span>
@@ -181,7 +181,7 @@ export default function BendFeasibilityCalculator() {
               value={arcLength}
               onChange={(e) => setArcLength(Number(e.target.value))}
               className="w-full accent-[#DAA745]"
-            />
+            aria-label="Arc length (mm)" />
           </label>
 
           <label className="block">
@@ -192,7 +192,7 @@ export default function BendFeasibilityCalculator() {
               value={app}
               onChange={(e) => setApp(e.target.value as App)}
               className="w-full px-3 py-2 bg-[#3A4250]/40 border border-[#3A4250]/60 rounded text-sm text-[#F2F0ED] focus:outline-none focus:border-[#DAA745]"
-            >
+            aria-label="Application">
               {Object.entries(APP_LABELS).map(([k, v]) => (
                 <option key={k} value={k} className="bg-[#1C1F26]">
                   {v}

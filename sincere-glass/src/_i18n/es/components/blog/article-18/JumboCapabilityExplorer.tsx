@@ -332,7 +332,7 @@ export default function JumboCapabilityExplorer() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Build-up
           </label>
-          <select value={thickness} onChange={e => setThickness(e.target.value)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]">
+          <select value={thickness} onChange={e => setThickness(e.target.value)} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Build-up">
             {availableThickness.map(o => <option key={o.value} value={o.value}>
                 {o.label}
               </option>)}
@@ -343,14 +343,14 @@ export default function JumboCapabilityExplorer() {
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Ancho (mm)
           </label>
-          <input type="number" min={300} max={5000} step={10} value={w} onChange={e => setW(Math.max(300, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={300} max={5000} step={10} value={w} onChange={e => setW(Math.max(300, Math.min(5000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Ancho (mm)" />
         </div>
 
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-2">
             Alto (mm)
           </label>
-          <input type="number" min={300} max={20000} step={10} value={h} onChange={e => setH(Math.max(300, Math.min(20000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" />
+          <input type="number" min={300} max={20000} step={10} value={h} onChange={e => setH(Math.max(300, Math.min(20000, Number(e.target.value) || 0)))} className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]" aria-label="Alto (mm)" />
         </div>
       </div>
 

@@ -332,7 +332,7 @@ export default function JumboCapabilityExplorer() {
             value={thickness}
             onChange={(e) => setThickness(e.target.value)}
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Build-up">
             {availableThickness.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
@@ -355,7 +355,7 @@ export default function JumboCapabilityExplorer() {
               setW(Math.max(300, Math.min(5000, Number(e.target.value) || 0)))
             }
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Width (mm)" />
         </div>
 
         <div>
@@ -372,7 +372,7 @@ export default function JumboCapabilityExplorer() {
               setH(Math.max(300, Math.min(20000, Number(e.target.value) || 0)))
             }
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Height (mm)" />
         </div>
       </div>
 

@@ -83,7 +83,7 @@ export default function LeadMagnetCTA({
           <form onSubmit={handleSubmit} className="space-y-3">
             {/* Honeypot */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
-              <input type="text" name="_hp_url" tabIndex={-1} autoComplete="off" />
+              <input type="text" name="_hp_url" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             </div>
 
             {status === "error" && <div className="p-2 bg-red-500/20 text-red-300 text-sm rounded-lg">
@@ -91,7 +91,7 @@ export default function LeadMagnetCTA({
               </div>}
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <input name="lead-email" type="email" required placeholder="Su correo electrónico corporativo" className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all" />
+              <input name="lead-email" type="email" required placeholder="Su correo electrónico corporativo" className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all" aria-label="Su correo electrónico corporativo" />
               <button type="submit" disabled={status === "submitting"} className="px-6 py-2.5 bg-[#DAA745] text-[#1C1F26] font-bold rounded-lg hover:bg-[#c4963e] transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                 {status === "submitting" ? <>
                     <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">

@@ -154,7 +154,7 @@ export default function ThicknessCalculator() {
             value={useCase}
             onChange={(e) => setUseCase(e.target.value as UseCase)}
             className="w-full px-4 py-2.5 rounded-lg bg-[#1C1F26] border border-[#3A4250] text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Use case">
             <option value="door">Hinged door panel</option>
             <option value="fixed-panel">Fixed side panel</option>
             <option value="return-panel">90° return panel</option>
@@ -174,7 +174,7 @@ export default function ThicknessCalculator() {
             value={heightMm}
             onChange={(e) => setHeightMm(Number(e.target.value))}
             className="w-full accent-[#DAA745]"
-          />
+          aria-label="Panel height (mm)" />
           <div className="flex justify-between text-[10px] text-[#8B95A5] mt-1">
             <span>1500</span>
             <span>2400 mm</span>
@@ -193,7 +193,7 @@ export default function ThicknessCalculator() {
             value={widthMm}
             onChange={(e) => setWidthMm(Number(e.target.value))}
             className="w-full accent-[#DAA745]"
-          />
+          aria-label="Panel width (mm)" />
           <div className="flex justify-between text-[10px] text-[#8B95A5] mt-1">
             <span>500</span>
             <span>1200 mm</span>

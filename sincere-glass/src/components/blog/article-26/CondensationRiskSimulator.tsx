@@ -75,7 +75,7 @@ export default function CondensationRiskSimulator() {
             value={Ti}
             onChange={(e) => setTi(parseInt(e.target.value))}
             className="mt-2 w-full accent-slate-900"
-          />
+          aria-label="Indoor temperature (deg C)" />
           <div className="mt-1 text-sm text-slate-900">{Ti} deg C</div>
         </div>
 
@@ -89,7 +89,7 @@ export default function CondensationRiskSimulator() {
             value={To}
             onChange={(e) => setTo(parseInt(e.target.value))}
             className="mt-2 w-full accent-slate-900"
-          />
+          aria-label="Outdoor temperature (deg C)" />
           <div className="mt-1 text-sm text-slate-900">{To} deg C</div>
         </div>
 
@@ -103,7 +103,7 @@ export default function CondensationRiskSimulator() {
             value={rh}
             onChange={(e) => setRh(parseInt(e.target.value))}
             className="mt-2 w-full accent-slate-900"
-          />
+          aria-label="Indoor relative humidity (%)" />
           <div className="mt-1 text-sm text-slate-900">{rh}%</div>
         </div>
 

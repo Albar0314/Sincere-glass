@@ -95,7 +95,7 @@ export default function LeadMagnetCTA({
           <form onSubmit={handleSubmit} className="space-y-3">
             {/* Honeypot */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
-              <input type="text" name="_hp_url" tabIndex={-1} autoComplete="off" />
+              <input type="text" name="_hp_url" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             </div>
 
             {status === "error" && (
@@ -111,7 +111,7 @@ export default function LeadMagnetCTA({
                 required
                 placeholder="Your business email"
                 className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all"
-              />
+              aria-label="Your business email" />
               <button
                 type="submit"
                 disabled={status === "submitting"}

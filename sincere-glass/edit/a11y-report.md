@@ -1,6 +1,6 @@
 # Sincere Glass — Accessibility Tree Audit
 
-Generated: 2026-11-04T06:50:34.214Z
+Generated: 2026-11-04T08:59:31.275Z
 Project root: `D:\桌面\sincere-glass\sincere-glass`
 
 ---
@@ -112,9 +112,9 @@ Total: **5**
 - `src/components/EquipmentGallery.tsx`
   `<div className="relative max-w-6xl w-full max-h-[85vh] aspect-[4/3]" onClick={(e) => e.stopPropa`
 - `src/components/QuoteModal.tsx`
-  `<div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} /> {/*`
+  `<div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} aria-hidden="true" `
 - `src/components/SearchModal.tsx`
-  `<div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} /> <div className="relative max-`
+  `<div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-hidden="true" /> <div class`
 - `src/components/YouTubeEmbed.tsx`
   `<div className={`relative w-full rounded-xl overflow-hidden bg-[#1C1F26] group ${className} ${loaded ? '' : 'curso`
 
@@ -211,43 +211,18 @@ Total: **26**
 
 ## 8. Inline <svg> without role / aria-label / aria-hidden (outside labeled parent)
 
-Total: **133**
+Total: **6**
 
-- `src/app/blog/tempered-glass-vs-laminated-glass/BreakagePatternSVG.tsx`
-  `<svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">`
-- `src/app/blog/tempered-glass-vs-laminated-glass/DecisionMatrix.tsx`
-  `<svg className={`w-3.5 h-3.5 text-[#8B95A5] transition-transform ${expandedIdx === i ? 'rotate-180' : ''}`} fill="none" `
-- `src/app/certifications/page.tsx`
-  `<svg className="w-7 h-7 text-[#DAA745]" fill="none" stroke="currentColor" viewBox="0 0 24 24">`
-- `src/app/es/blog/tempered-glass-vs-laminated-glass/BreakagePatternSVG.tsx`
-  `<svg viewBox="0 0 400 280" className="w-full max-w-md" xmlns="http://www.w3.org/2000/svg">`
-- `src/app/es/blog/tempered-glass-vs-laminated-glass/DecisionMatrix.tsx`
-  `<svg className={`w-3.5 h-3.5 text-[#8B95A5] transition-transform ${expandedIdx === i ? 'rotate-180' : ''}`} fill="none" `
-- `src/app/es/products/curved-tempered-glass/page.tsx`
-  `<svg viewBox="0 0 500 400" className="w-full h-auto">`
-- `src/app/es/products/curved-tempered-glass/page.tsx`
-  `<svg viewBox="0 0 48 48" className="w-10 h-10">`
-- `src/app/es/products/page.tsx`
-  `<svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24`
-- `src/app/products/curved-tempered-glass/page.tsx`
-  `<svg viewBox="0 0 1200 400" className="w-full h-full" preserveAspectRatio="xMidYMid slice">`
-- `src/app/products/page.tsx`
-  `<svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24`
-- `src/components/about/Certifications.tsx`
-  `<svg className="w-5 h-5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>`
-- `src/components/about/DualFactories.tsx`
-  `<svg className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" st`
-- `src/components/blog/article-10/GlobalCodeMatrix.tsx`
-  `<svg className="w-4 h-4 text-[#DAA745]" fill="currentColor" viewBox="0 0 20 20">`
-- `src/components/blog/article-10/HardwareLoadVisualizer.tsx`
-  `<svg className="w-4 h-4 text-[#DAA745]" fill="currentColor" viewBox="0 0 20 20">`
-- `src/components/blog/article-10/ThicknessCalculator.tsx`
-  `<svg className="w-4 h-4 text-[#DAA745]" fill="currentColor" viewBox="0 0 20 20">`
-- ... +91 more unique occurrences
+- `src/components/blog/article-11/BuildupLab.tsx`
+  `<svg viewBox="0 0 320 180" className="w-full h-auto" aria-hidden>`
+- `src/components/blog/article-11/PendulumImpactSimulator.tsx`
+  `<svg viewBox="0 0 500 280" className="w-full h-auto" aria-hidden>`
+- `src/components/blog/article-14/CrateTypeSelector.tsx`
+  `<svg viewBox="0 0 200 140" className="w-full h-full" aria-hidden>`
 
 ## 9. <input>/<textarea>/<select> without associated label or aria-label
 
-Total: **75**
+Total: **63**
 
 - `src/components/blog/article-10/ThicknessCalculator.tsx`
   `<select
@@ -366,7 +341,7 @@ Total: **75**
             type="text"
             value={i.project}
             onChange={(e) =>`
-- ... +55 more unique occurrences
+- ... +43 more unique occurrences
 
 ## 10. Heading hierarchy issues
 
@@ -412,8 +387,8 @@ Total: **0**
 | <Image> no alt | 0 |
 | <button> no accessible name | 10 |
 | <a>/<Link> no accessible name | 26 |
-| <svg> no role/aria | 133 |
-| <input> no label | 75 |
+| <svg> no role/aria | 6 |
+| <input> no label | 63 |
 | Pages with wrong h1 count | 69 |
 | Duplicate IDs | 0 |
 

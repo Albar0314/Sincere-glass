@@ -179,7 +179,7 @@ export default function JumboRFQBuilder() {
             onChange={(e) => set("project", e.target.value)}
             placeholder="e.g. Harbour Terminal Phase 2"
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Project name" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
@@ -191,7 +191,7 @@ export default function JumboRFQBuilder() {
             onChange={(e) => set("location", e.target.value)}
             placeholder="e.g. Dubai, UAE"
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Site location" />
         </div>
 
         <div>
@@ -202,7 +202,7 @@ export default function JumboRFQBuilder() {
             value={i.use}
             onChange={(e) => set("use", e.target.value as UseType)}
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Application">
             {Object.entries(USE_LABEL).map(([k, v]) => (
               <option key={k} value={k}>
                 {v}
@@ -218,7 +218,7 @@ export default function JumboRFQBuilder() {
             value={i.make}
             onChange={(e) => set("make", e.target.value as MakeUp)}
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Make-up">
             <option value="mono">Monolithic tempered</option>
             <option value="laminated">Laminated</option>
             <option value="igu">Insulated glass unit (IGU)</option>
@@ -235,7 +235,7 @@ export default function JumboRFQBuilder() {
             onChange={(e) => set("buildUp", e.target.value)}
             placeholder="e.g. 10-1.52SGP-10 tempered"
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Build-up detail" />
         </div>
         <div className="grid grid-cols-3 gap-2">
           <div>
@@ -250,7 +250,7 @@ export default function JumboRFQBuilder() {
               step={10}
               onChange={(e) => set("w", Math.max(300, Math.min(5000, Number(e.target.value) || 0)))}
               className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-            />
+            aria-label="Width mm" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
@@ -264,7 +264,7 @@ export default function JumboRFQBuilder() {
               step={10}
               onChange={(e) => set("h", Math.max(300, Math.min(20000, Number(e.target.value) || 0)))}
               className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-            />
+            aria-label="Height mm" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-[#DAA745] uppercase tracking-wider mb-1.5">
@@ -278,7 +278,7 @@ export default function JumboRFQBuilder() {
               step={1}
               onChange={(e) => set("qty", Math.max(1, Math.min(2000, Number(e.target.value) || 0)))}
               className="w-full px-2 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-            />
+            aria-label="Qty" />
           </div>
         </div>
 
@@ -290,7 +290,7 @@ export default function JumboRFQBuilder() {
             value={i.coating}
             onChange={(e) => set("coating", e.target.value as Coating)}
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          >
+          aria-label="Coating">
             {Object.entries(COATING_LABEL).map(([k, v]) => (
               <option key={k} value={k}>
                 {v}
@@ -308,7 +308,7 @@ export default function JumboRFQBuilder() {
             onChange={(e) => set("leadTime", e.target.value)}
             placeholder="e.g. 10 to 12 weeks from PO"
             className="w-full px-3 py-2 rounded-lg bg-[#3A4250]/20 border border-[#3A4250]/40 text-[#F2F0ED] text-sm focus:outline-none focus:border-[#DAA745]"
-          />
+          aria-label="Lead time target" />
         </div>
 
         <div className="md:col-span-2">

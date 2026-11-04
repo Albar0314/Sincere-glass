@@ -199,7 +199,7 @@ export default function FeasibilityChecker() {
               value={radius}
               onChange={(e) => setRadius(parseInt(e.target.value, 10))}
               className="w-full accent-brand-accent cursor-pointer"
-            />
+            aria-label="Curve radius" />
             <div className="flex justify-between text-[10px] text-white/40 mt-1">
               <span>300</span>
               <span>5000</span>
@@ -219,7 +219,7 @@ export default function FeasibilityChecker() {
                 max={5000}
                 onChange={(e) => setWidth(Math.max(100, parseInt(e.target.value, 10) || 0))}
                 className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent"
-              />
+              aria-label="Width (mm)" />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-wider text-white/50 font-semibold mb-2">
@@ -232,7 +232,7 @@ export default function FeasibilityChecker() {
                 max={20000}
                 onChange={(e) => setHeight(Math.max(100, parseInt(e.target.value, 10) || 0))}
                 className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent"
-              />
+              aria-label="Height (mm)" />
             </div>
           </div>
           <p className="text-[11px] text-white/40">

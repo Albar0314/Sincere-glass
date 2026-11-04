@@ -166,7 +166,7 @@ export default function FeasibilityChecker() {
             <label className="block text-xs uppercase tracking-wider text-white/50 font-semibold mb-2">
               Radio de curvatura: <span className="text-brand-accent">{radius} mm</span>
             </label>
-            <input type="range" min={300} max={10000} step={50} value={radius} onChange={e => setRadius(parseInt(e.target.value, 10))} className="w-full accent-brand-accent cursor-pointer" />
+            <input type="range" min={300} max={10000} step={50} value={radius} onChange={e => setRadius(parseInt(e.target.value, 10))} className="w-full accent-brand-accent cursor-pointer" aria-label="Radio de curvatura" />
             <div className="flex justify-between text-[10px] text-white/40 mt-1">
               <span>300</span>
               <span>5000</span>
@@ -179,13 +179,13 @@ export default function FeasibilityChecker() {
               <label className="block text-xs uppercase tracking-wider text-white/50 font-semibold mb-2">
                 Ancho (mm)
               </label>
-              <input type="number" value={width} min={100} max={5000} onChange={e => setWidth(Math.max(100, parseInt(e.target.value, 10) || 0))} className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent" />
+              <input type="number" value={width} min={100} max={5000} onChange={e => setWidth(Math.max(100, parseInt(e.target.value, 10) || 0))} className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent" aria-label="Ancho (mm)" />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-wider text-white/50 font-semibold mb-2">
                 Alto (mm)
               </label>
-              <input type="number" value={height} min={100} max={20000} onChange={e => setHeight(Math.max(100, parseInt(e.target.value, 10) || 0))} className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent" />
+              <input type="number" value={height} min={100} max={20000} onChange={e => setHeight(Math.max(100, parseInt(e.target.value, 10) || 0))} className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:border-brand-accent" aria-label="Alto (mm)" />
             </div>
           </div>
           <p className="text-[11px] text-white/40">
