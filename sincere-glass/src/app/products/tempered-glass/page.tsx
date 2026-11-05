@@ -19,6 +19,7 @@ import Image from "next/image";
 import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 export const metadata: Metadata = {
   title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3.3 m × 15 m | Sincere Glass",
   description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
@@ -109,6 +110,19 @@ export default function TemperedGlassPage() {
 
         {/* 5. Manufacturing — interactive process (auto-rotate) */}
         <ManufacturingProcess />
+        <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">Factory footage</p>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Inside the tempering furnace</h2>
+              <p className="mt-2 text-sm text-white/60">Our oversized tempering furnace in operation - jumbo panels up to 3.3 m x 15 m.</p>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <YouTubeEmbed videoId="expE_icthfo" title="Inside the tempering furnace" aspectRatio="16/9" />
+            </div>
+          </div>
+        </section>
+
 
         {/* 6. Breakage — visual wow (auto-switch) */}
         <BreakageComparison />

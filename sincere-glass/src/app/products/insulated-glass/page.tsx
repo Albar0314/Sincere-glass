@@ -15,6 +15,7 @@ import InsulatedFAQ from "@/components/products/insulated/InsulatedFAQ";
 import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 const faqItems = [
   { q: "What is insulated glass (IGU)?", a: "An insulated glass unit consists of two or more glass panes separated by a sealed air or gas-filled space. The sealed gap acts as thermal and acoustic insulation, significantly reducing heat transfer and noise compared to single-pane glass." },
   { q: "What gas fills do you offer?", a: "We offer both air-filled and argon gas-filled IGUs. Our Honghu factory has an automated argon gas-filling production line that ensures consistent fill rates. Argon reduces heat transfer by about 30% compared to air-filled units." },
@@ -73,6 +74,19 @@ export default function InsulatedGlassPage() {
 
         <EnergyPerformance />
         <GasFillComparison />
+        <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">Factory footage</p>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Dual-seal IGU production line</h2>
+              <p className="mt-2 text-sm text-white/60">Automated spacer bending, desiccant filling, and argon injection - 90 percent plus fill rate consistency.</p>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <YouTubeEmbed videoId="qcSV4WG8nL0" title="Dual-seal IGU production line" aspectRatio="16/9" />
+            </div>
+          </div>
+        </section>
+
         <WhySincereIGU />
         <section className="py-8 bg-brand-lighter">
         <div className="max-w-5xl mx-auto px-6 md:px-12">

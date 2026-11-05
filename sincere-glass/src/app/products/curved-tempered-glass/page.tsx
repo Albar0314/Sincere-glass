@@ -6,6 +6,7 @@ import RadiusEnvelopeExplorer from '@/components/products/curved-tempered/Radius
 import BendingProductionTimeline from '@/components/products/curved-tempered/BendingProductionTimeline';
 import CurvedApplicationShowcase from '@/components/products/curved-tempered/CurvedApplicationShowcase';
 import { makeAlternates } from '@/lib/i18n';
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 const CANONICAL = '/products/curved-tempered-glass';
 
@@ -255,6 +256,13 @@ export default function CurvedTemperedGlassPage() {
             </p>
           </div>
           <BendingProductionTimeline />
+          <div className="mt-10">
+            <div className="rounded-xl overflow-hidden">
+              <YouTubeEmbed videoId="FUGOpDGbca0" title="The bending-tempering line in operation" aspectRatio="16/9" />
+            </div>
+            <p className="mt-3 text-xs text-[#8B95A5]">Float glass loaded, heated past softening, bent to the target radius, and air-quenched on our curved tempering furnace.</p>
+          </div>
+
         </div>
       </section>
 
@@ -396,6 +404,19 @@ export default function CurvedTemperedGlassPage() {
       </section>
 
       {/* ─── FAQ ───────────────────────────────────────────────── */}
+      <section className="bg-[#1C1F26] py-16 border-t border-[#3A4250]/40">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="mb-6 max-w-3xl">
+            <div className="text-xs uppercase tracking-wider text-[#DAA745] font-semibold mb-3">In our warehouse</div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-[#F2F0ED]">Curved panels in finished-goods inventory</h2>
+            <p className="mt-2 text-sm text-[#8B95A5]">Finished curved tempered panels staged for packing and shipment at our Wuhan warehouse. Social proof that what we quote, we actually produce.</p>
+          </div>
+          <div className="rounded-xl overflow-hidden">
+            <YouTubeEmbed videoId="Ct-LqD0WTVg" title="Curved panels in finished-goods inventory" aspectRatio="16/9" />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#1C1F26] py-16 border-t border-[#3A4250]/40">
         <div className="max-w-4xl mx-auto px-6">
           <FAQ items={faqItems} title="Curved tempered glass FAQ" />

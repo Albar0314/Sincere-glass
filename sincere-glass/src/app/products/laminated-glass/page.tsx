@@ -15,6 +15,7 @@ import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 export const metadata: Metadata = {
   title: "Laminated Glass Manufacturer China — PVB & SGP Interlayer | Sincere Glass",
   description: "Custom laminated safety glass from China. PVB and SGP interlayer options, 99% UV blocking, superior sound insulation. Autoclave up to 3.3.3 m × 15 m. 3C certified.",
@@ -94,6 +95,19 @@ export default function LaminatedGlassPage() {
         <LaminatedHero />
         <WhatIsLaminated />
         <LayerBuilder />
+        <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-2">Factory footage</p>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Inside the laminating autoclave</h2>
+              <p className="mt-2 text-sm text-white/60">PVB and SGP laminated glass cycling through the high-pressure autoclave at 140 C and 12 bar.</p>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <YouTubeEmbed videoId="inNYYEAnWOo" title="Inside the laminating autoclave" aspectRatio="16/9" />
+            </div>
+          </div>
+        </section>
+
 
         <div className="py-10 bg-brand-dark">
           <div className="max-w-5xl mx-auto px-6 md:px-12">
