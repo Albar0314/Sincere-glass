@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import type { EquipmentCategory } from "@/lib/equipment-gallery";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
+import { getEquipmentVideo } from "@/lib/equipment-videos";
 
 /**
  * Equipment gallery with a hero image, thumbnail strip, and a native-dialog
@@ -24,6 +26,9 @@ export default function EquipmentGallery({
   const [activeIndex, setActiveIndex] = useState<number>(initialIndex);
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
+  const video = getEquipmentVideo(category.key);
+  const [viewMode, setViewMode] = useState<"video" | "photos">(video ? "video" : "photos");
+  useEffect(() => { setViewMode(video ? "video" : "photos"); }, [category.key, video]);
   const photos = category.photos;
   const total = photos.length;
   const active = photos[activeIndex];
@@ -58,6 +63,21 @@ export default function EquipmentGallery({
       </div>;
   }
   return <>
+      {video && (
+        <div className="flex gap-2 mb-6 border-b border-gray-200">
+          <button type="button" onClick={() => setViewMode("video")} className={"px-4 py-2 text-sm font-medium transition-colors " + (viewMode === "video" ? "border-b-2 border-brand-accent text-brand-dark" : "text-brand-muted hover:text-brand-dark")}>
+            Video
+          </button>
+          <button type="button" onClick={() => setViewMode("photos")} className={"px-4 py-2 text-sm font-medium transition-colors " + (viewMode === "photos" ? "border-b-2 border-brand-accent text-brand-dark" : "text-brand-muted hover:text-brand-dark")}>
+            Fotos
+          </button>
+        </div>
+      )}
+      {viewMode === "video" && video ? (
+        <div className="rounded-xl overflow-hidden mb-8">
+          <YouTubeEmbed videoId={video.videoId} title={video.title} aspectRatio="16/9" />
+        </div>
+      ) : (
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Hero image */}
         <button type="button" onClick={() => openLightbox(activeIndex)} className="lg:col-span-3 relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 group cursor-zoom-in" aria-label={"View " + active.alt + " full size"}>
@@ -86,6 +106,8 @@ export default function EquipmentGallery({
             </div>}
         </div>
       </div>
+
+      )}
 
       {/* Lightbox */}
       {lightboxOpen && <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={closeLightbox} role="dialog" aria-modal="true" aria-label="Visor de fotos">
