@@ -20,7 +20,7 @@ export function getOrganizationSchema() {
     image: `${SITE}/images/logo.png`,
     description:
       "Architectural glass manufacturer in China specializing in tempered, insulated, laminated, enameled and Low-E glass. Two factories, 20,000 m\u00b2, 3C certified, exporting worldwide.",
-    foundingDate: "2010",
+    foundingDate: "2005",
     industry: "Architectural Glass Manufacturing",
     address: [
       {

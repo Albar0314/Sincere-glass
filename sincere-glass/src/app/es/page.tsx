@@ -21,53 +21,9 @@ export const metadata: Metadata = {
   },
   alternates: makeAlternates("/", "es")
 };
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [{
-    "@type": "Organization",
-    "@id": "https://sincereglass.com/#organization",
-    name: "Sincere Glass",
-    alternateName: ["武汉欣城玻璃有限公司", "湖北欣之城玻璃有限公司"],
-    url: "https://sincereglass.com",
-    logo: "https://sincereglass.com/images/logo.svg",
-    description: "Fabricante de vidrio arquitectónico en China especializado en vidrio templado, aislante, laminado y esmaltado.",
-    foundingDate: "2005",
-    numberOfEmployees: {
-      "@type": "QuantitativeValue",
-      value: 120
-    },
-    contactPoint: [{
-      "@type": "ContactPoint",
-      telephone: "+86-27-86338180",
-      contactType: "sales",
-      email: "xcglass@sina.cn"
-    }]
-  }, {
-    "@type": "WebSite",
-    "@id": "https://sincereglass.com/#website",
-    url: "https://sincereglass.com",
-    name: "Sincere Glass",
-    publisher: {
-      "@id": "https://sincereglass.com/#organization"
-    }
-  }, {
-    "@type": "WebPage",
-    "@id": "https://sincereglass.com/#webpage",
-    url: "https://sincereglass.com",
-    name: "Sincere Glass | Fabricante de Vidrio Arquitectónico en China",
-    isPartOf: {
-      "@id": "https://sincereglass.com/#website"
-    },
-    about: {
-      "@id": "https://sincereglass.com/#organization"
-    }
-  }]
-};
+
 export default function HomePage() {
   return <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-      __html: JSON.stringify(jsonLd)
-    }} />
       <main>
         <HeroSection />
         <TrustBar />

@@ -1237,9 +1237,7 @@ export const blogArticles: BlogArticle[] = [
     secondaryKeywords: [
       "ultra clear glass",
       "extra clear glass",
-      "low iron glass vs clear glass",
       "low iron tempered glass",
-      "starphire vs low iron glass",
       "is low iron glass worth it",
     ],
     searchKeywords: [
@@ -1367,8 +1365,6 @@ export const blogArticles: BlogArticle[] = [
       'igu specification',
       'double glazing complete guide',
       'insulated glass performance',
-      'igu build up',
-      'igu anatomy',
     ],
     searchKeywords: [
       'insulated glass', 'insulated glass unit', 'IGU', 'double glazed unit', 'DGU',
