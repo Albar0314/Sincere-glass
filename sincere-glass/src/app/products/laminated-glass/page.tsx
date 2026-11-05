@@ -103,7 +103,7 @@ export default function LaminatedGlassPage() {
               <p className="mt-2 text-sm text-white/60">PVB and SGP laminated glass cycling through the high-pressure autoclave at 140 C and 12 bar.</p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <YouTubeEmbed videoId="inNYYEAnWOo" title="Inside the laminating autoclave" aspectRatio="16/9" />
+              <YouTubeEmbed videoId="inNYYEAnWOo" title="Inside the laminating autoclave" aspectRatio="16/9" autoLoad />
             </div>
           </div>
         </section>

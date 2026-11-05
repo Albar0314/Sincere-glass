@@ -118,7 +118,7 @@ export default function TemperedGlassPage() {
               <p className="mt-2 text-sm text-white/60">Our oversized tempering furnace in operation - jumbo panels up to 3.3 m x 15 m.</p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <YouTubeEmbed videoId="expE_icthfo" title="Inside the tempering furnace" aspectRatio="16/9" />
+              <YouTubeEmbed videoId="expE_icthfo" title="Inside the tempering furnace" aspectRatio="16/9" autoLoad />
             </div>
           </div>
         </section>

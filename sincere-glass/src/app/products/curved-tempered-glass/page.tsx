@@ -258,7 +258,7 @@ export default function CurvedTemperedGlassPage() {
           <BendingProductionTimeline />
           <div className="mt-10">
             <div className="rounded-xl overflow-hidden">
-              <YouTubeEmbed videoId="FUGOpDGbca0" title="The bending-tempering line in operation" aspectRatio="16/9" />
+              <YouTubeEmbed videoId="FUGOpDGbca0" title="The bending-tempering line in operation" aspectRatio="16/9" autoLoad />
             </div>
             <p className="mt-3 text-xs text-[#8B95A5]">Float glass loaded, heated past softening, bent to the target radius, and air-quenched on our curved tempering furnace.</p>
           </div>
@@ -412,7 +412,7 @@ export default function CurvedTemperedGlassPage() {
             <p className="mt-2 text-sm text-[#8B95A5]">Finished curved tempered panels staged for packing and shipment at our Wuhan warehouse. Social proof that what we quote, we actually produce.</p>
           </div>
           <div className="rounded-xl overflow-hidden">
-            <YouTubeEmbed videoId="Ct-LqD0WTVg" title="Curved panels in finished-goods inventory" aspectRatio="16/9" />
+            <YouTubeEmbed videoId="Ct-LqD0WTVg" title="Curved panels in finished-goods inventory" aspectRatio="16/9" autoLoad />
           </div>
         </div>
       </section>

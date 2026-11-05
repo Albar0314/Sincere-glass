@@ -82,7 +82,7 @@ export default function InsulatedGlassPage() {
               <p className="mt-2 text-sm text-white/60">Automated spacer bending, desiccant filling, and argon injection - 90 percent plus fill rate consistency.</p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <YouTubeEmbed videoId="qcSV4WG8nL0" title="Dual-seal IGU production line" aspectRatio="16/9" />
+              <YouTubeEmbed videoId="qcSV4WG8nL0" title="Dual-seal IGU production line" aspectRatio="16/9" autoLoad />
             </div>
           </div>
         </section>
