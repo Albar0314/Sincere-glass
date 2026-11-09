@@ -293,6 +293,14 @@ export default function Page() {
         />
 
         <h2 id="faq">Frequently Asked Questions</h2>
+        {/* GROK-INSERT-V1:triple-pane */}
+        <p className="my-6 rounded-lg border-l-4 border-amber-500 bg-amber-50 p-4 text-sm text-slate-700">
+          <strong>Related:</strong> Choosing between double and triple pane for your IGU spec? Full decision matrix, ROI calculator, and climate-zone guide:{" "}
+          <a href="/blog/double-pane-vs-triple-pane-glass" className="font-semibold text-amber-700 underline underline-offset-2">
+            Double Pane vs Triple Pane Glass: Is the Upgrade Worth It?
+          </a>
+        </p>
+
         <FAQ items={faqItems} title="Frequently Asked Questions" />
 
         <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} heading="Products commonly specified as or with IGU construction" />

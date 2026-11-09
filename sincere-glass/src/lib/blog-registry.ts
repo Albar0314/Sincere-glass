@@ -1393,6 +1393,52 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-11-04', note: 'Initial publish — complete guide for Insulated Glass in Product Deep Dives cluster' },
     ],
   },
+
+  {
+    slug: 'double-pane-vs-triple-pane-glass',
+    title: "Double Pane vs Triple Pane Glass: Is the Upgrade Actually Worth It?",
+    excerpt: "50% lower U-factor, 65% higher cost, 50% more weight. When triple pane pays back, when it does not, and the 7 trade-offs nobody puts in brochures. Climate-zone decision matrix from a Wuhan IGU line.",
+    targetKeyword: 'triple pane windows',
+    secondaryKeywords: [
+      'double pane vs triple pane',
+      'triple pane glass',
+      'triple glazing vs double glazing',
+      'triple glazed windows',
+      'is triple pane worth it',
+    ],
+    searchKeywords: [
+      'double pane vs triple pane', 'triple pane windows', 'triple glazing',
+      'triple pane glass', 'triple glazed windows', 'triple pane IGU',
+      'is triple pane worth it', 'triple pane cost',
+      'IGU', 'U-factor', 'argon fill', 'Low-E coating', 'warm-edge spacer',
+      'Passive House windows', 'IECC climate zone',
+      '\u4e09\u5c42\u4e2d\u7a7a\u73bb\u7483', '\u4e09\u5c42\u73bb\u7483 \u53cc\u5c42\u73bb\u7483', '\u4e09\u5c42\u4e2d\u7a7a \u53cc\u5c42\u4e2d\u7a7a',
+    ],
+    publishDate: '2026-11-09',
+    category: 'Buyer Guide' as const,
+    tags: ['insulated glass', 'IGU', 'triple pane', 'double pane', 'U-factor', 'glass comparison', 'Passive House'],
+    heroImage: '/images/blog/double-pane-vs-triple-pane-hero.webp',
+    heroImageAlt: "Cross-section comparison of a double-pane IGU and a triple-pane IGU on polished dark concrete, showing spacers, Low-E coatings, and argon-filled cavities",
+    heroImagePrompt: "Studio product photography: two architectural glass IGU cross-sections side by side on polished dark concrete. Left: double pane IGU (two 4mm clear glass lites separated by one 12mm aluminum spacer bar with visible desiccant, argon-filled cavity, subtle gold Low-E coating on surface 3). Right: triple pane IGU (three 4mm clear glass lites separated by two 12mm aluminum spacer bars, two argon cavities, subtle Low-E coatings on surfaces 2 and 5 giving double gold-tinted sheen). Both samples lit from above-left with warm amber accent lighting raking across the glass edges highlighting the spacer bars. 25-degree slightly-elevated camera angle. Shallow depth of field focused on both cross-sections simultaneously. Clean dark grey background, no humans, no text, no brand logos. 16:9 cinematic composition. 4K photorealistic, museum-exhibit quality, documentary industrial photography style.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 13,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'comparison' as const,
+    cluster: 'comparison',
+    relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
+    tldr: [
+      "Triple pane cuts center-of-glass U-factor roughly in half (1.6 to 0.8 W/m2K) vs comparable double pane.",
+      "Factory-gate premium 55-70%; installed premium 35-50%. Payback 8-12 years in cold climates, 20+ years in warm ones.",
+      "IECC zone 5 and colder: specify triple. Zone 3 and below: stick with premium double pane.",
+      "Triple pane is the wrong solution for noise - use laminated glass with dissimilar panes instead.",
+      "Retrofit into existing double-pane sashes almost never works - plan for new frames.",
+    ],
+    translations: {},
+    changelog: [
+      { date: '2026-11-09', note: 'Initial publish - Insulated cluster spoke under Pillar #26' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
