@@ -8,7 +8,8 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function QuoteModal() {
   const t = useT();
-  const { isOpen, closeQuote, preselectedProduct } = useQuote();
+  // TOOLS-HUB-V1:QuoteModal.messageDefault
+  const { isOpen, closeQuote, preselectedProduct, prefillMessage } = useQuote();
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -209,7 +210,8 @@ export default function QuoteModal() {
                 <textarea
                   id="q-message"
                   name="message"
-                  rows={3}
+                  rows={5}
+                  defaultValue={prefillMessage}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DAA745]/50 focus:border-[#DAA745] outline-none transition-all resize-none text-[#1C1F26]"
                   placeholder={t("quote.form.messagePlaceholder")}
                 />

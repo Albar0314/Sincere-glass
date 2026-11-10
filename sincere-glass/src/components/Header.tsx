@@ -22,6 +22,8 @@ const navLinks = [
   { key: "projects",  href: "/projects" },
   { key: "equipment", href: "/equipment" },
   { key: "blog",      href: "/blog" },
+  // TOOLS-PHASE2-V1:header.tools
+  { key: "tools",     href: "/tools" },
   { key: "contact",   href: "/contact" },
 ];
 
@@ -133,7 +135,7 @@ export default function Header() {
                 href={link.href}
                 className="px-3 py-2 text-sm text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-colors"
               >
-                {t(`nav.${link.key}`)}
+                {link.key === "tools" ? "Tools" : t(`nav.${link.key}`)}
               </Link>
             ))}
 
@@ -202,7 +204,7 @@ export default function Header() {
             <div className="border-t border-white/5 pt-2">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="block text-white/70 hover:text-white py-2 px-2 text-sm rounded hover:bg-white/5" onClick={() => setMobileOpen(false)}>
-                  {t(`nav.${link.key}`)}
+                  {link.key === "tools" ? "Tools" : t(`nav.${link.key}`)}
                 </Link>
               ))}
             </div>

@@ -4,10 +4,12 @@ import { useState, useEffect, useRef, useCallback, useMemo, createContext, useCo
 import { useRouter } from 'next/navigation';
 import Fuse from 'fuse.js';
 import { products } from '@/lib/products';
+// TOOLS-PHASE2-V1:search.tools
 import { getAllArticles, CLUSTER_LABELS } from '@/lib/blog-registry';
+import { getAllTools, CATEGORY_LABELS as TOOL_CATEGORY_LABELS } from '@/lib/tools-registry';
 
 interface SearchItem {
-  type: 'product' | 'article';
+  type: 'product' | 'article' | 'tool';
   title: string;
   description: string;
   href: string;
@@ -41,6 +43,22 @@ function buildIndex(): SearchItem[] {
         ...(a.secondaryKeywords || []),
         ...(a.searchKeywords || []),
         ...a.tags,
+      ],
+    });
+  });
+
+  const allTools = getAllTools();
+  allTools.forEach((t) => {
+    items.push({
+      type: 'tool',
+      title: t.shortTitle,
+      description: t.description,
+      href: `/tools/${t.slug}`,
+      tag: TOOL_CATEGORY_LABELS[t.category],
+      searchKeywords: [
+        t.targetKeyword,
+        ...(t.secondaryKeywords || []),
+        ...(t.searchKeywords || []),
       ],
     });
   });
@@ -139,6 +157,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
   const productResults = results.filter((r) => r.type === 'product');
   const articleResults = results.filter((r) => r.type === 'article');
+  const toolResults = results.filter((r) => r.type === 'tool');
   let flatIndex = -1;
 
   return (
@@ -157,7 +176,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={onInputKeyDown}
-            placeholder="Search products, articles... (try 'soundproof', 'IGU', '隔音玻璃')"
+            placeholder="Search products, articles, tools... (try 'ROI calculator', 'IGU', '隔音玻璃')"
             className="flex-1 bg-transparent text-[#F2F0ED] placeholder-[#8B95A5]/60 text-base outline-none"
           aria-label="Search articles and products" />
           <kbd className="hidden sm:inline-block text-[10px] text-[#8B95A5]/50 border border-[#3A4250]/40 rounded px-1.5 py-0.5">
@@ -177,7 +196,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             <div className="px-5 py-8 text-center text-[#8B95A5]">
               <p className="text-sm">Type to search across products and articles</p>
               <div className="flex flex-wrap justify-center gap-2 mt-3 text-xs">
-                {['tempered', 'IGU', 'soundproof', 'Low-E', '夹胶玻璃', 'curtain wall'].map((s) => (
+                {['tempered', 'IGU', 'ROI calculator', 'max panel size', 'Low-E', '夹胶玻璃'].map((s) => (
                   <button
                     key={s}
                     onClick={() => setQuery(s)}
@@ -257,6 +276,44 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             </div>
           )}
         </div>
+
+          {toolResults.length > 0 && (
+            <div className="px-3 pt-3 pb-3">
+              <p className="px-2 text-[10px] font-medium text-[#8B95A5]/50 uppercase tracking-wider mb-1">Tools</p>
+              {toolResults.map((r) => {
+                flatIndex++;
+                const idx = flatIndex;
+                return (
+                  <a
+                    key={r.href}
+                    href={r.href}
+                    onClick={(e) => { e.preventDefault(); router.push(r.href); onClose(); }}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                      activeIndex === idx ? 'bg-[#DAA745]/10 text-[#DAA745]' : 'text-[#F2F0ED] hover:bg-[#3A4250]/20'
+                    }`}
+                    onMouseEnter={() => setActiveIndex(idx)}
+                  >
+                    <div className="w-8 h-8 rounded bg-[#3A4250]/30 flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4 text-[#8B95A5]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                        <rect x="5" y="3" width="14" height="18" rx="2" />
+                        <path strokeLinecap="round" d="M8 7h8M8 11h2M12 11h4M8 15h2M12 15h4M8 19h2M12 19h4" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium truncate">{r.title}</p>
+                      <p className="text-xs text-[#8B95A5] truncate">{r.description}</p>
+                    </div>
+                    {r.tag && (
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#DAA745]/15 text-[#DAA745] shrink-0 hidden sm:inline">
+                        {r.tag}
+                      </span>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          )}
+
 
         {results.length > 0 && (
           <div className="px-5 py-2.5 border-t border-[#3A4250]/30 flex items-center justify-between text-[10px] text-[#8B95A5]/40">

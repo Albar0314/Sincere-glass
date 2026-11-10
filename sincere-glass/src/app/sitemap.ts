@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
+// TOOLS-PHASE2-V1:sitemap.tools
 import { blogArticles } from "@/lib/blog-registry";
+import { tools } from "@/lib/tools-registry";
 import { LOCALES, DEFAULT_LOCALE, localizedPath, SITE_URL, type Locale } from "@/lib/i18n";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || SITE_URL;
@@ -47,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/projects",  freq: "monthly", priority: 0.7 },
     { path: "/equipment", freq: "monthly", priority: 0.6 },
     { path: "/blog",      freq: "daily",   priority: 0.8 },
+    { path: "/tools",     freq: "weekly",  priority: 0.8 },
     { path: "/contact",   freq: "yearly",  priority: 0.5 },
   ];
 
@@ -78,6 +81,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push(makeEntry(`/blog/${article.slug}`, locale, lastMod, "monthly", 0.7));
     }
   }
+
+  for (const tool of tools) {
+
+    const lastMod = tool.updatedDate || tool.publishDate;
+
+    for (const locale of LOCALES) {
+
+      entries.push(makeEntry(`/tools/${tool.slug}`, locale, lastMod, "monthly", 0.7));
+
+    }
+
+  }
+
 
   return entries;
 }
