@@ -447,6 +447,18 @@ export default function Page() {
 
           <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} />
         </section>
+        {/* GROK-INSERT-V1:a28-gas-link */}
+        <aside className="my-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-amber-800">Related deep-dive</div>
+          <p className="mt-2 text-sm text-slate-700">
+            Choosing between argon and krypton for your IGU fill? Our full breakdown covers
+            thermal conductivity, cavity width physics, EN 1279-3 leak rates, and when the
+            krypton premium actually pays back.
+          </p>
+          <a href="/blog/argon-vs-krypton-gas-fill-igu" className="mt-3 inline-block text-sm font-semibold text-amber-900 underline">
+            Read: Argon vs Krypton Gas Fill for IGU &rarr;
+          </a>
+        </aside>
 
         <section id="faq">
           <h2>FAQ</h2>

@@ -1,0 +1,438 @@
+import type { Metadata } from "next";
+import BlogArticleLayout, {
+  generateArticleMetadata,
+  articleJsonLd,
+  type TOCItem,
+} from "@/components/blog/BlogArticleLayout";
+import TLDRBox from "@/components/blog/TLDRBox";
+import FAQ from "@/components/blog/blocks/FAQ";
+import TechNote from "@/components/blog/blocks/TechNote";
+import RelatedProductsCards from "@/components/blog/RelatedProductsCards";
+import LeadMagnetCTA from "@/components/blog/LeadMagnetCTA";
+import CostDisclaimer from "@/components/blog/CostDisclaimer";
+import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
+import { blogArticles } from "@/lib/blog-registry";
+import { makeAlternates } from "@/lib/i18n";
+import GasConductivityComparator from "@/components/blog/article-28/GasConductivityComparator";
+import CavityWidthOptimizer from "@/components/blog/article-28/CavityWidthOptimizer";
+import GasCostROICalculator from "@/components/blog/article-28/GasCostROICalculator";
+
+const SLUG = "argon-vs-krypton-gas-fill-igu";
+const article = blogArticles.find((a) => a.slug === SLUG)!;
+
+export const metadata: Metadata = {
+  ...generateArticleMetadata(article),
+  alternates: makeAlternates(`/blog/${SLUG}`),
+};
+
+const toc: TOCItem[] = [
+  { id: "verdict",       text: "The 30-second verdict",                level: 2 },
+  { id: "what-it-does",  text: "What gas fill actually does",          level: 2 },
+  { id: "conductivity",  text: "Thermal conductivity: raw numbers",    level: 2 },
+  { id: "cavity-width",  text: "Why cavity width changes the answer",  level: 2 },
+  { id: "argon",         text: "Argon: the 90% industry standard",     level: 2 },
+  { id: "krypton",       text: "Krypton: when the premium pays back",  level: 2 },
+  { id: "xenon",         text: "Xenon: the exotic almost nobody uses", level: 2 },
+  { id: "leak-rate",     text: "The leak rate problem (EN 1279-3)",    level: 2 },
+  { id: "mixed-fills",   text: "Mixed Ar/Kr fills: real or marketing?", level: 2 },
+  { id: "spec-sheet",    text: "Writing the spec sheet",               level: 2 },
+  { id: "factory-pov",   text: "What we fill at our Wuhan line",       level: 2 },
+  { id: "faq",           text: "FAQ",                                  level: 2 },
+];
+
+const faqItems = [
+  {
+    q: "Is argon or krypton better for IGU gas fill?",
+    a: "Argon is better for almost every project. It delivers 85-90% of krypton thermal benefit at 5-10% of the cost premium. Krypton only wins when overall IGU thickness constraints force the cavity below 10mm - a narrow Passive House retrofit, for example. At 12mm or wider, argon matches or beats krypton on cost per U-value reduction.",
+  },
+  {
+    q: "How much does krypton gas fill cost compared to argon?",
+    a: "At the factory gate, krypton fill adds roughly USD 35-60 per m2 of IGU over argon in 2026 pricing. Argon itself adds only USD 2-4 per m2 over air. The absolute krypton gas cost is about 100-150x argon per unit volume.",
+  },
+  {
+    q: "What is the best cavity width for argon fill?",
+    a: "14-16mm is the thermal optimum for 90% argon with one Low-E coating. Below 10mm, conduction through the gas dominates and argon loses to krypton. Above 18mm, convection currents inside the cavity start adding heat transfer back, so wider is not better.",
+  },
+  {
+    q: "What is the best cavity width for krypton fill?",
+    a: "8-10mm is krypton thermal optimum. Krypton lower conductivity lets a narrow cavity deliver the same U-value an argon 14mm cavity does. This is exactly why krypton exists commercially - to let total IGU thickness stay under 24mm for retrofit frames and Passive House budgets.",
+  },
+  {
+    q: "What is the leak rate limit for argon in an IGU?",
+    a: "EN 1279-3 caps argon loss at 1% per year averaged over the testing period, measured on a sealed-edge sample. Dual-seal IGUs with PIB primary and silicone or polysulfide secondary routinely hit 0.3-0.7% per year when assembled correctly. Single-seal units typically fail the 1% ceiling within 5 years.",
+  },
+  {
+    q: "Can I mix argon and krypton in one cavity?",
+    a: "Yes, technically. Mixed Ar/Kr fills (typically 50/50 or 70/30) are offered commercially but deliver marginal thermal gains over 90% argon at 2-3x the premium. In production we rarely see them specified; most krypton projects use 90% krypton or stay on argon.",
+  },
+  {
+    q: "What percentage fill rate is standard for argon IGUs?",
+    a: "90% is the industry spec and what any reputable factory should deliver. 95% is possible with automated gas-fill machines and vacuum-assisted fill. Our Wuhan line runs 92-95% typical with QC sampling per lot. Fill rates below 85% are a sign of manual fill or a leaking seal.",
+  },
+  {
+    q: "Does argon leak out faster in hot climates?",
+    a: "Yes, modestly. Higher ambient temperatures accelerate the diffusion of gas through sealants and edge seal defects. An IGU rated for 1% annual loss at 20 C may drift to 1.5-2% per year averaged over a Phoenix summer. Spec dual-seal with silicone secondary for hot climates; polysulfide secondary degrades faster above 40 C.",
+  },
+];
+
+export default function Page() {
+  const schemas = articleJsonLd(article, faqItems);
+  return (
+    <>
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
+      <BlogArticleLayout article={article} toc={toc}>
+        <TLDRBox
+          takeaways={[
+            "Argon is the right fill for 95% of IGU orders. Spec 90% minimum at 12-16mm cavity width.",
+            "Krypton is only worth the 10x premium when the cavity must stay below 10mm - a Passive House retrofit or slim-profile curtain wall.",
+            "Krypton optimizes at 8-10mm; argon optimizes at 14-16mm. At 20mm both give the same U-value.",
+            "Every IGU leaks. Dual-seal with PIB primary and silicone secondary hits 0.3-0.7% argon loss per year under EN 1279-3.",
+            "Xenon is thermally superior and commercially irrelevant - price it against a better Low-E coating or an extra pane instead.",
+          ]}
+        />
+
+        <section id="verdict">
+          <h2>The 30-second verdict</h2>
+          <p>
+            <strong>
+              For 95% of insulated glass orders, argon is the right answer.
+            </strong>{" "}
+            Spec it as 90% minimum fill, in a 12-16mm cavity with one Low-E coating, and you
+            capture almost all of the thermal benefit at a premium that disappears into rounding.
+            Krypton wins in exactly one scenario: when overall IGU thickness has to stay under
+            24-28mm and you still need Passive House-grade U-values. Everywhere else, the
+            krypton premium goes further on a better Low-E coating, a warm-edge spacer, or - for
+            cold-climate buildings - a{" "}
+            <a href="/blog/double-pane-vs-triple-pane-glass">triple-pane IGU</a>.
+          </p>
+        </section>
+
+        <section id="what-it-does">
+          <h2>What gas fill actually does</h2>
+          <p>
+            A sealed cavity between two glass lites transfers heat three ways: conduction through
+            the gas, convection currents inside the cavity, and radiation between the two glass
+            surfaces. Low-E coatings handle radiation. The gas fill handles conduction and
+            convection together.
+          </p>
+          <p>
+            Air works, but air is a relatively conductive gas. Swap it for a denser, slower-moving
+            noble gas and both conduction and convection drop. That is the whole mechanism.
+            Everything else - which gas, at what width, with which coating, at what fill rate - is
+            engineering trade-off around that core idea.
+          </p>
+          <p>
+            The question &quot;argon or krypton?&quot; is really the question &quot;how much does
+            each extra unit of thermal performance cost me?&quot; That answer depends on cavity
+            width, climate, energy price, and whether the project has a hard thickness budget.
+          </p>
+        </section>
+
+        <section id="conductivity">
+          <h2>Thermal conductivity: the raw numbers</h2>
+          <p>
+            Lower conductivity means less heat transfer through the gas layer, so a lower U-value
+            for the IGU. Krypton is roughly half as conductive as argon, and argon is roughly
+            two-thirds as conductive as air. Xenon is better still, but prices it out of
+            commercial architectural glazing.
+          </p>
+
+          <GasConductivityComparator />
+
+          <p>
+            The gap between air and argon is where most of the practical benefit lives. The gap
+            between argon and krypton is smaller in absolute terms and - crucially - only
+            materializes when the cavity is narrow enough that the gas itself is the bottleneck.
+            The next section explains why.
+          </p>
+        </section>
+
+        <section id="cavity-width">
+          <h2>Why cavity width changes the answer</h2>
+          <p>
+            Each gas has a thermal sweet spot that depends on cavity width. Too narrow and
+            conduction through the gas dominates: a denser gas (krypton, xenon) wins. Too wide and
+            convection currents start forming inside the cavity, which transfers heat by moving
+            warm gas to the cold side - widening the gap no longer helps, and may hurt.
+          </p>
+
+          <CavityWidthOptimizer />
+
+          <p>Reading the chart in practical terms:</p>
+          <ul>
+            <li>
+              <strong>Air</strong> is nearly flat past 14mm. Anything wider is wasted space.
+            </li>
+            <li>
+              <strong>Argon</strong> optimizes around 14-16mm. This is why standard IGU build-ups
+              specify 12mm or 16mm cavities with argon - both are close enough to the sweet spot
+              to be defensible.
+            </li>
+            <li>
+              <strong>Krypton</strong> optimizes around 8-10mm. Beyond that, convection kicks in
+              sooner because krypton is denser and settles faster. This is the physical reason
+              krypton is specified for thin IGUs, not fat ones.
+            </li>
+          </ul>
+          <p>
+            A 20mm argon cavity and a 10mm krypton cavity deliver nearly the same U-value. If
+            total IGU thickness is not constrained, argon wins on cost. If it is constrained
+            (slim frame, retrofit pocket, triple-pane with two cavities), krypton earns its
+            premium.
+          </p>
+        </section>
+
+        <section id="argon">
+          <h2>Argon: the 90% industry standard</h2>
+          <p>
+            Argon is cheap, abundant (it is 0.93% of the atmosphere, extracted as a byproduct of
+            liquid oxygen production), and well-characterized. Every major architectural glass
+            standard - EN 673, EN 1279, ASTM E2190, GB/T 11944 - assumes argon as the default
+            commercial fill.
+          </p>
+          <p>
+            <strong>What &quot;90% fill&quot; means on a PO.</strong> The gas-fill machine purges
+            the cavity with argon before sealing. A 90% fill rate means 90% of the cavity volume
+            is argon, 10% is residual air. Well-tuned automated lines achieve 92-95%; manual or
+            older lines may drift to 80-85%. Fill rates below 85% should be rejected at QC - the
+            U-value math assumes 90%, so an 80% fill delivers measurably worse thermal performance
+            than the data sheet promises.
+          </p>
+          <p>
+            <strong>Real-world fill decay.</strong> A properly sealed dual-seal IGU loses argon at
+            0.3-0.7% per year under EN 1279-3 accelerated testing. Over 25 years the fill rate
+            drifts from 90% to roughly 75-82%, which costs you about 0.1-0.15 W/m2K on the
+            U-value. Most occupants will not notice; most building audits will. Specify the leak
+            rate explicitly on the PO (see the spec sheet section below).
+          </p>
+
+          <InlineQuoteCTA variant="default" />
+        </section>
+
+        <section id="krypton">
+          <h2>Krypton: when the premium actually pays back</h2>
+          <p>
+            Krypton exists in commercial architectural glazing for one reason: it lets a thin
+            cavity deliver the same U-value a fat argon cavity does. Everything else about krypton
+            (cost, availability, fill handling) is worse than argon. The question for any specific
+            project is whether the narrow-cavity capability is actually worth USD 35-60 per m2.
+          </p>
+
+          <GasCostROICalculator />
+
+          <p>Three project archetypes where krypton earns its cost:</p>
+          <ol>
+            <li>
+              <strong>Passive House retrofits with constrained sash depth.</strong> Existing
+              window frames cannot accommodate a 44mm triple-pane IGU with three argon cavities.
+              A triple pane with two 8mm krypton cavities hits 28mm total and fits the frame.
+              This is the classic krypton use case.
+            </li>
+            <li>
+              <strong>Slim-profile curtain walls where whole-system U is specified.</strong> When
+              the architect has specified a 32mm nominal IGU for aesthetic reasons and the
+              engineer needs U below 1.0 W/m2K, krypton in dual Low-E lets you hit the number
+              without widening the sightline.
+            </li>
+            <li>
+              <strong>High-value niche: cold-climate residential with tight budget on everything
+              except energy.</strong> If energy prices are USD 0.25+/kWh and HDD is above 5,000,
+              the 25-year payback math can favor krypton even on a wider-cavity design, because
+              the marginal U-value reduction compounds annually. Verify with the calculator above.
+            </li>
+          </ol>
+          <p>
+            Outside those archetypes, krypton is a line item an uninformed spec writer added from
+            a Guardian Glass or Saint-Gobain product sheet without checking what the cavity width
+            is. Argue it out at design review.
+          </p>
+
+          <LeadMagnetCTA
+            variant="inline"
+            articleSlug={SLUG}
+            title="Need a spec check on your IGU build-up?"
+            description="Send your cavity width, Low-E coating and U-value target. We will tell you whether argon is enough or krypton is justified - factory spec, no sales pitch."
+          />
+        </section>
+
+        <section id="xenon">
+          <h2>Xenon: the exotic almost nobody uses</h2>
+          <p>
+            Xenon is the thermal champion among IGU gases - 21% the conductivity of air, 58% of
+            krypton. On paper it would let a 6mm cavity hit Passive House U-values. In practice
+            xenon costs USD 1,500-3,000 per cubic meter at bulk pricing, roughly 100x krypton. A
+            typical 1m by 1m IGU holds 6-16 liters of fill gas; xenon adds USD 200-400 per m2 of
+            IGU over argon. For almost every project, that money delivers more benefit as a better
+            Low-E coating or an extra pane.
+          </p>
+          <p>
+            Where xenon does appear: vacuum-insulated glazing (VIG) prototypes, aerospace cabin
+            glazing, and a handful of certified Passive House ultra-low-U projects where
+            thickness budget is below 20mm and cost is unconstrained. None of that is commodity
+            architectural glass. Treat xenon as a spec you will probably never encounter and move
+            on.
+          </p>
+        </section>
+
+        <section id="leak-rate">
+          <h2>The leak rate problem (EN 1279-3)</h2>
+          <p>
+            Every IGU leaks. The seal system (PIB primary, silicone or polysulfide secondary)
+            slows diffusion to a crawl, but molecular-size noble gases will eventually migrate
+            through any organic sealant. The question is how fast.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Seal system</th>
+                <th>Argon loss (%/yr)</th>
+                <th>Krypton loss (%/yr)</th>
+                <th>Expected service life</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Single seal (silicone only)</td>
+                <td>2.5 - 4.0</td>
+                <td>1.8 - 2.8</td>
+                <td>5 - 10 years</td>
+              </tr>
+              <tr>
+                <td>Dual seal, PIB + polysulfide</td>
+                <td>0.6 - 1.0</td>
+                <td>0.4 - 0.8</td>
+                <td>15 - 20 years</td>
+              </tr>
+              <tr>
+                <td>Dual seal, PIB + silicone</td>
+                <td>0.3 - 0.7</td>
+                <td>0.2 - 0.5</td>
+                <td>25 - 30 years</td>
+              </tr>
+              <tr>
+                <td>Dual seal + warm-edge spacer, EN 1279 certified</td>
+                <td>0.2 - 0.5</td>
+                <td>0.2 - 0.4</td>
+                <td>30+ years</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-sm italic text-slate-600">
+            Data source: EN 1279-3 accelerated test, Sincere Glass production data 2024 Q1 - 2026 Q3.
+          </p>
+          <TechNote type="note" title="Spec takeaway">
+            For a PH-certified or 30-year-rated project, dual-seal with PIB and silicone
+            secondary is the baseline. Accept nothing less. Krypton leaks slightly slower than
+            argon in absolute terms, but relative to its initial fill, the percentage loss is
+            similar.
+          </TechNote>
+
+          <CostDisclaimer variant="default" />
+        </section>
+
+        <section id="mixed-fills">
+          <h2>Mixed Ar/Kr fills: real or marketing?</h2>
+          <p>
+            Some product sheets advertise &quot;argon-krypton mix 50/50&quot; or &quot;optimized
+            gas blend&quot; as a middle option between argon and krypton. The physics is
+            straightforward: a 50/50 Ar/Kr blend has conductivity about halfway between pure
+            fills, so U-value lands halfway too.
+          </p>
+          <p>
+            The commercial case is weaker. A 50/50 blend costs roughly 60-70% of pure krypton
+            because the krypton fraction dominates cost. A 70/30 argon-krypton blend costs about
+            40-50% of pure krypton. Both deliver smaller thermal gains than pure krypton without
+            proportional cost savings. On our Wuhan line we offer blends on request but almost
+            never specify them to customers - either argon is enough, or the project needs full
+            krypton. The middle is rarely the right answer.
+          </p>
+        </section>
+
+        <section id="spec-sheet">
+          <h2>Writing the spec sheet</h2>
+          <p>A clear PO prevents 90% of gas-fill disputes. For any IGU specification:</p>
+          <ol>
+            <li>
+              <strong>Gas type:</strong> &quot;Argon fill&quot; or &quot;Krypton fill&quot;
+              explicitly. Not &quot;inert gas fill&quot; - that phrase lets the factory choose
+              air and claim compliance.
+            </li>
+            <li>
+              <strong>Fill rate:</strong> &quot;90% minimum at time of production, verified by
+              sampling per lot.&quot; EN 1279-3 class 1 or ASTM E2190 class CBA.
+            </li>
+            <li>
+              <strong>Cavity width:</strong> Nominal in mm. Specify the overall IGU build-up:
+              &quot;4mm clear + 12mm argon + 4mm Low-E (surface 3), e = 0.04.&quot;
+            </li>
+            <li>
+              <strong>Seal system:</strong> &quot;Dual seal: PIB primary, silicone
+              secondary.&quot; Reject single-seal offers for any gas-filled IGU intended to last
+              past 10 years.
+            </li>
+            <li>
+              <strong>Spacer:</strong> Warm-edge (stainless steel or thermoplastic) for cold
+              climates and Passive House. Standard aluminum acceptable in Zone 4-5 if cost is the
+              constraint.
+            </li>
+            <li>
+              <strong>Leak rate target:</strong> &quot;EN 1279-3 class 1 (less than 1%/year argon
+              loss)&quot; for commercial projects. &quot;Less than 0.5%/year&quot; for
+              PH-certified or 25-year-rated.
+            </li>
+            <li>
+              <strong>QC documentation:</strong> Gas-fill sampling records per lot, dew point
+              test for desiccant, visual inspection for bubbles or seal voids. Require the
+              records as part of the shipment paperwork.
+            </li>
+            <li>
+              <strong>Capillary tubes:</strong> Required for air freight or shipment across
+              altitude differences above 500m. Tubes are sealed off before final glazing on
+              arrival. Omit for sea freight within the same altitude band.
+            </li>
+          </ol>
+        </section>
+
+        <section id="factory-pov">
+          <h2>What we fill at our Wuhan line</h2>
+          <p>
+            On our automated IGU assembly line we run two gas-fill configurations. The default is
+            90% argon with 12mm or 16mm cavity width (customer choice), dual seal with PIB
+            primary and silicone secondary, warm-edge or aluminum spacer. We ship perhaps 95% of
+            our IGU volume this way; it hits EN 1279-3 class 1 with margin and holds through the
+            full 25-year specification for European and North American curtain-wall projects.
+          </p>
+          <p>
+            The exception is krypton on request - typically 2-5% of project volume, specified by
+            customers on Passive House retrofits or slim-sightline curtain walls. We run krypton
+            as a dedicated batch once per week to minimize gas waste (krypton costs make
+            partial-fill cycles painful). Minimum order for krypton fill: 50 m2 per spec to
+            justify a dedicated batch. Below that we quote but recommend argon.
+          </p>
+          <p>
+            For both fills, QC sampling pulls one unit per 50 m2 of production and measures
+            residual fill rate via gas chromatography. Units failing the fill-rate threshold go
+            back for rework, not shipment. Records travel with the container.{" "}
+            <a href="/blog/how-is-insulated-glass-made">
+              Full walk-through of our IGU assembly line
+            </a>{" "}
+            covers the gas-fill station in context.
+          </p>
+
+          <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} />
+        </section>
+
+        <section id="faq">
+          <h2>FAQ</h2>
+          <FAQ items={faqItems} />
+        </section>
+      </BlogArticleLayout>
+    </>
+  );
+}
