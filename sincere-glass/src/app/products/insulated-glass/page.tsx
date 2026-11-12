@@ -16,6 +16,7 @@ import SocialProof from "@/components/products/tempered/SocialProof";
 import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import VideoSchema from "@/components/VideoSchema";
 const faqItems = [
   { q: "What is insulated glass (IGU)?", a: "An insulated glass unit consists of two or more glass panes separated by a sealed air or gas-filled space. The sealed gap acts as thermal and acoustic insulation, significantly reducing heat transfer and noise compared to single-pane glass." },
   { q: "What gas fills do you offer?", a: "We offer both air-filled and argon gas-filled IGUs. Our Honghu factory has an automated argon gas-filling production line that ensures consistent fill rates. Argon reduces heat transfer by about 30% compared to air-filled units." },
@@ -83,6 +84,7 @@ export default function InsulatedGlassPage() {
             </div>
             <div className="rounded-xl overflow-hidden">
               <YouTubeEmbed videoId="qcSV4WG8nL0" title="Dual-seal IGU production line" aspectRatio="16/9" autoLoad />
+              <VideoSchema videoId="qcSV4WG8nL0" name="Dual-seal insulated glass production line" description="Insulated glass unit assembly on the dual-seal production line at Sincere Glass Wuhan." uploadDate="2026-11-03" duration="PT20S" /> {/* SG-PRODUCT-VIDEO-SCHEMA-V1 */}
             </div>
           </div>
         </section>

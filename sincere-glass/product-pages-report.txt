@@ -1,0 +1,339 @@
+# product pages structure report
+# generated at: 2026-11-12T01:24:25.867Z
+# root: D:\桌面\sincere-glass\sincere-glass
+
+========================================================================
+SLUG: tempered-glass
+PATH: src/app/products/tempered-glass/page.tsx
+========================================================================
+STATUS: OK
+SIZE: 8920 bytes
+LINES: 186
+EOL: CRLF
+BOM: no
+
+--- IMPORTS ---
+  L1: import { Metadata } from "next";
+  L2: import TemperedHero from "@/components/products/tempered/TemperedHero";
+  L3: import WhatIs from "@/components/products/tempered/WhatIs";
+  L4: import StressDiagram from "@/components/products/tempered/StressDiagram";
+  L5: import RequestSample from "@/components/products/tempered/RequestSample";
+  L6: import ManufacturingProcess from "@/components/products/tempered/ManufacturingProcess";
+  L7: import BreakageComparison from "@/components/products/tempered/BreakageComparison";
+  L8: import TemperedAdvantages from "@/components/products/tempered/TemperedAdvantages";
+  L9: import WhySincere from "@/components/products/tempered/WhySincere";
+  L10: import TemperedSpecs from "@/components/products/tempered/TemperedSpecs";
+  L11: import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
+  L12: import GlassComparison from "@/components/products/tempered/GlassComparison";
+  L13: import TemperedApplications from "@/components/products/tempered/TemperedApplications";
+  L14: import TemperedFAQ from "@/components/products/tempered/TemperedFAQ";
+  L15: import SocialProof from "@/components/products/tempered/SocialProof";
+  L16: import TemperedCTA from "@/components/products/tempered/TemperedCTA";
+  L17: import Link from "@/components/LocalizedLink";
+  L18: import Image from "next/image";
+  L19: import { products } from "@/lib/products";
+  L20: import { makeAlternates } from "@/lib/i18n";
+  L21: import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+  L22: import YouTubeEmbed from "@/components/YouTubeEmbed";
+
+ALREADY_HAS_YouTubeEmbed_IMPORT: true
+ALREADY_HAS_VideoSchema_IMPORT: false
+ALREADY_RENDERS_YouTubeEmbed: true
+ALREADY_RENDERS_VideoSchema: false
+ALREADY_RENDERS_FactoryBrollLoop: false
+
+--- INTERESTING COMPONENT USAGES ---
+  YouTubeEmbed: lines 121
+  InlineQuoteCTA: lines 148
+
+--- TOP-LEVEL JSX SECTIONS (heuristic) ---
+  L113: <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+  L135: <section className="py-8 bg-brand-lighter">
+  L136: <div className="max-w-5xl mx-auto px-6 md:px-12">
+  L146: <div className="bg-brand-lighter pb-8">
+  L168: <section className="py-16 md:py-24 bg-brand-lighter">
+
+--- RETURN / JSX ROOT ---
+
+--- LAST 12 NON-EMPTY LINES ---
+  L175:                   </div>
+  L176:                   <div className="p-4">
+  L177:                     <h3 className="font-display font-semibold text-brand-dark group-hover:text-brand-accent transition-colors">{p.name}</h3>
+  L178:                     <p className="mt-1 text-xs text-brand-muted line-clamp-1">{p.tagline}</p>
+  L179:                   </div>
+  L180:                 </Link>)}
+  L181:             </div>
+  L182:           </div>
+  L183:         </section>
+  L184:       </main>
+  L185:     </>;
+  L186: }
+
+========================================================================
+SLUG: curved-tempered-glass
+PATH: src/app/products/curved-tempered-glass/page.tsx
+========================================================================
+STATUS: OK
+SIZE: 24788 bytes
+LINES: 445
+EOL: LF
+BOM: no
+
+--- IMPORTS ---
+  L1: import type { Metadata } from 'next';
+  L2: import Link from '@/components/LocalizedLink';
+  L3: import { FAQ } from '@/components/blog/blocks';
+  L4: import InlineQuoteCTA from '@/components/products/InlineQuoteCTA';
+  L5: import RadiusEnvelopeExplorer from '@/components/products/curved-tempered/RadiusEnvelopeExplorer';
+  L6: import BendingProductionTimeline from '@/components/products/curved-tempered/BendingProductionTimeline';
+  L7: import CurvedApplicationShowcase from '@/components/products/curved-tempered/CurvedApplicationShowcase';
+  L8: import { makeAlternates } from '@/lib/i18n';
+  L9: import YouTubeEmbed from "@/components/YouTubeEmbed";
+
+ALREADY_HAS_YouTubeEmbed_IMPORT: true
+ALREADY_HAS_VideoSchema_IMPORT: false
+ALREADY_RENDERS_YouTubeEmbed: true
+ALREADY_RENDERS_VideoSchema: false
+ALREADY_RENDERS_FactoryBrollLoop: false
+
+--- INTERESTING COMPONENT USAGES ---
+  YouTubeEmbed: lines 261, 415
+  CurvedApplicationShowcase: lines 307
+  FAQ: lines 422
+  InlineQuoteCTA: lines 289, 435
+  RadiusEnvelopeExplorer: lines 283
+  BendingProductionTimeline: lines 258
+
+--- TOP-LEVEL JSX SECTIONS (heuristic) ---
+  L122: <section className="relative bg-[#1C1F26] pt-32 pb-20 overflow-hidden">
+  L123: <div className="absolute inset-0 opacity-20 pointer-events-none">
+  L148: <div className="relative max-w-6xl mx-auto px-6">
+  L201: <section className="bg-[#FAFAF8] py-20">
+  L202: <div className="max-w-6xl mx-auto px-6">
+  L245: <section className="bg-[#1C1F26] py-20">
+  L246: <div className="max-w-5xl mx-auto px-6">
+  L270: <section className="bg-[#1C1F26] py-16 border-t border-[#3A4250]/40">
+  L271: <div className="max-w-5xl mx-auto px-6">
+  L287: <section className="bg-[#1C1F26] py-6 border-t border-[#3A4250]/40">
+  L288: <div className="max-w-5xl mx-auto px-6">
+  L294: <section className="bg-[#1C1F26] py-20 border-t border-[#3A4250]/40">
+  L295: <div className="max-w-5xl mx-auto px-6">
+  L312: <section id="specs" className="bg-[#FAFAF8] py-20">
+  L313: <div className="max-w-5xl mx-auto px-6">
+  L362: <section className="bg-[#1C1F26] py-20">
+  L363: <div className="max-w-6xl mx-auto px-6">
+  L407: <section className="bg-[#1C1F26] py-16 border-t border-[#3A4250]/40">
+  L408: <div className="max-w-5xl mx-auto px-6">
+  L420: <section className="bg-[#1C1F26] py-16 border-t border-[#3A4250]/40">
+  L421: <div className="max-w-4xl mx-auto px-6">
+  L427: <section id="quote" className="bg-[#1C1F26] py-20 border-t border-[#3A4250]/40">
+  L428: <div className="max-w-4xl mx-auto px-6 text-center">
+
+--- RETURN / JSX ROOT ---
+  L110: return (
+  L111: <>
+  L112: <script
+  L113: type="application/ld+json"
+
+--- LAST 12 NON-EMPTY LINES ---
+  L432:           <p className="text-[#8B95A5] max-w-2xl mx-auto mb-8">
+  L433:             Send us the CAD or a dimensioned sketch and we will return a feasibility verdict against our bending-tempering envelope, plus an
+  L434:           </p>
+  L435:           <InlineQuoteCTA variant="default" />
+  L437:           <div className="mt-10 pt-8 border-t border-[#3A4250]/40 text-sm text-[#8B95A5]">
+  L438:             Related reading: <Link href="/blog/curved-tempered-glass-vs-flat-tempered-glass" className="text-[#DAA745] underline">When curve
+  L439:           </div>
+  L440:         </div>
+  L441:       </section>
+  L442:     </>
+  L443:   );
+  L444: }
+
+========================================================================
+SLUG: laminated-glass
+PATH: src/app/products/laminated-glass/page.tsx
+========================================================================
+STATUS: OK
+SIZE: 9212 bytes
+LINES: 166
+EOL: CRLF
+BOM: no
+
+--- IMPORTS ---
+  L1: import { Metadata } from "next";
+  L2: import Link from "@/components/LocalizedLink";
+  L3: import Image from "next/image";
+  L4: import { products } from "@/lib/products";
+  L5: import LaminatedHero from "@/components/products/laminated/LaminatedHero";
+  L6: import WhatIsLaminated from "@/components/products/laminated/WhatIsLaminated";
+  L7: import LayerBuilder from "@/components/products/laminated/LayerBuilder";
+  L8: import SoundReduction from "@/components/products/laminated/SoundReduction";
+  L9: import SecurityTiers from "@/components/products/laminated/SecurityTiers";
+  L10: import WhySincereLam from "@/components/products/laminated/WhySincereLam";
+  L11: import LaminatedSpecs from "@/components/products/laminated/LaminatedSpecs";
+  L12: import LaminatedApps from "@/components/products/laminated/LaminatedApps";
+  L13: import LaminatedFAQ from "@/components/products/laminated/LaminatedFAQ";
+  L14: import SocialProof from "@/components/products/tempered/SocialProof";
+  L15: import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
+  L16: import { makeAlternates } from "@/lib/i18n";
+  L17: import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+  L18: import YouTubeEmbed from "@/components/YouTubeEmbed";
+
+ALREADY_HAS_YouTubeEmbed_IMPORT: true
+ALREADY_HAS_VideoSchema_IMPORT: false
+ALREADY_RENDERS_YouTubeEmbed: true
+ALREADY_RENDERS_VideoSchema: false
+ALREADY_RENDERS_FactoryBrollLoop: false
+
+--- INTERESTING COMPONENT USAGES ---
+  YouTubeEmbed: lines 106
+  InlineQuoteCTA: lines 114, 134
+
+--- TOP-LEVEL JSX SECTIONS (heuristic) ---
+  L98: <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+  L112: <div className="py-10 bg-brand-dark">
+  L121: <section className="py-8 bg-brand-lighter">
+  L122: <div className="max-w-5xl mx-auto px-6 md:px-12">
+  L132: <div className="bg-white pb-8">
+  L142: <section className="py-20 md:py-28 bg-brand-dark">
+  L153: <section className="py-16 md:py-24 bg-brand-lighter">
+
+--- RETURN / JSX ROOT ---
+
+--- LAST 12 NON-EMPTY LINES ---
+  L155:             <h2 className="font-display text-2xl font-bold text-brand-dark tracking-tight mb-8">Other Products</h2>
+  L156:             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  L157:               {otherProducts.map(p => <Link key={p.slug} href={"/products/" + p.slug} className="group bg-white rounded-xl overflow-hidden s
+  L158:                   <div className="relative aspect-[16/9] overflow-hidden"><Image src={p.image} alt={p.name} fill className="object-cover tra
+  L159:                   <div className="p-4"><h3 className="font-display font-semibold text-brand-dark group-hover:text-brand-accent transition-co
+  L160:                 </Link>)}
+  L161:             </div>
+  L162:           </div>
+  L163:         </section>
+  L164:       </main>
+  L165:     </>;
+  L166: }
+
+========================================================================
+SLUG: insulated-glass
+PATH: src/app/products/insulated-glass/page.tsx
+========================================================================
+STATUS: OK
+SIZE: 8618 bytes
+LINES: 149
+EOL: CRLF
+BOM: no
+
+--- IMPORTS ---
+  L2: import { Metadata } from "next";
+  L3: import Link from "@/components/LocalizedLink";
+  L4: import Image from "next/image";
+  L5: import { products } from "@/lib/products";
+  L6: import InsulatedHero from "@/components/products/insulated/InsulatedHero";
+  L7: import WhatIsIGU from "@/components/products/insulated/WhatIsIGU";
+  L8: import IGUDiagram from "@/components/products/insulated/IGUDiagram";
+  L9: import EnergyPerformance from "@/components/products/insulated/EnergyPerformance";
+  L10: import GasFillComparison from "@/components/products/insulated/GasFillComparison";
+  L11: import InsulatedSpecs from "@/components/products/insulated/InsulatedSpecs";
+  L12: import WhySincereIGU from "@/components/products/insulated/WhySincereIGU";
+  L13: import InsulatedApplications from "@/components/products/insulated/InsulatedApplications";
+  L14: import InsulatedFAQ from "@/components/products/insulated/InsulatedFAQ";
+  L15: import SocialProof from "@/components/products/tempered/SocialProof";
+  L16: import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
+  L17: import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
+  L18: import YouTubeEmbed from "@/components/YouTubeEmbed";
+
+ALREADY_HAS_YouTubeEmbed_IMPORT: true
+ALREADY_HAS_VideoSchema_IMPORT: false
+ALREADY_RENDERS_YouTubeEmbed: true
+ALREADY_RENDERS_VideoSchema: false
+ALREADY_RENDERS_FactoryBrollLoop: false
+
+--- INTERESTING COMPONENT USAGES ---
+  YouTubeEmbed: lines 85
+  InlineQuoteCTA: lines 71, 104
+
+--- TOP-LEVEL JSX SECTIONS (heuristic) ---
+  L69: <div className="py-10 bg-brand-dark">
+  L77: <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+  L91: <section className="py-8 bg-brand-lighter">
+  L92: <div className="max-w-5xl mx-auto px-6 md:px-12">
+  L102: <div className="bg-brand-lighter pb-8">
+  L113: <section className="py-20 md:py-28 bg-brand-dark">
+  L127: <section className="py-16 md:py-24 bg-brand-lighter">
+
+--- RETURN / JSX ROOT ---
+  L60: return (
+  L61: <>
+  L62: <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+  L63: <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+
+--- LAST 12 NON-EMPTY LINES ---
+  L137:                     <h3 className="font-display font-semibold text-brand-dark group-hover:text-brand-accent transition-colors">{p.name}</h3>
+  L138:                     <p className="mt-1 text-xs text-brand-muted line-clamp-1">{p.tagline}</p>
+  L139:                   </div>
+  L140:                 </Link>
+  L141:               ))}
+  L142:             </div>
+  L143:           </div>
+  L144:         </section>
+  L145:       </main>
+  L146:     </>
+  L147:   );
+  L148: }
+
+========================================================================
+SLUG: products-hub
+PATH: src/app/products/page.tsx
+========================================================================
+STATUS: OK
+SIZE: 4127 bytes
+LINES: 72
+EOL: LF
+BOM: no
+
+--- IMPORTS ---
+  L1: import { Metadata } from "next";
+  L2: import Link from "@/components/LocalizedLink";
+  L3: import Image from "next/image";
+  L4: import { products } from "@/lib/products";
+  L5: import { makeAlternates } from "@/lib/i18n";
+
+ALREADY_HAS_YouTubeEmbed_IMPORT: false
+ALREADY_HAS_VideoSchema_IMPORT: false
+ALREADY_RENDERS_YouTubeEmbed: false
+ALREADY_RENDERS_VideoSchema: false
+ALREADY_RENDERS_FactoryBrollLoop: false
+
+--- INTERESTING COMPONENT USAGES ---
+
+--- TOP-LEVEL JSX SECTIONS (heuristic) ---
+  L19: <section className="bg-brand-dark pt-28 pb-16 md:pt-32 md:pb-20">
+  L20: <div className="max-w-7xl mx-auto px-6 md:px-12">
+  L32: <section className="py-16 md:py-24 bg-brand-lighter">
+  L33: <div className="max-w-7xl mx-auto px-6 md:px-12">
+  L62: <section className="py-16 md:py-20 bg-brand-dark text-center">
+  L63: <div className="max-w-2xl mx-auto px-6">
+
+--- RETURN / JSX ROOT ---
+
+--- LAST 12 NON-EMPTY LINES ---
+  L61:       {/* CTA */}
+  L62:       <section className="py-16 md:py-20 bg-brand-dark text-center">
+  L63:         <div className="max-w-2xl mx-auto px-6">
+  L64:           <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Need a Custom Glass Solution?</h2>
+  L65:           <p className="mt-3 text-white/60">We manufacture to your specifications — size, coating, color, and configuration.</p>
+  L66:           <a href="/#quote" className="inline-flex items-center justify-center mt-6 px-7 py-3.5 bg-brand-accent hover:bg-brand-accent-hover 
+  L67:             Request a Quote
+  L68:           </a>
+  L69:         </div>
+  L70:       </section>
+  L71:     </main>;
+  L72: }
+
+========================================================================
+VIDEO COMPONENTS ON DISK
+========================================================================
+  src/components/YouTubeEmbed.tsx: EXISTS
+  src/components/VideoSchema.tsx: EXISTS
+  src/components/FactoryBrollLoop.tsx: EXISTS

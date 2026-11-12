@@ -20,6 +20,7 @@ import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import VideoSchema from "@/components/VideoSchema";
 export const metadata: Metadata = {
   title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3.3 m × 15 m | Sincere Glass",
   description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
@@ -119,6 +120,7 @@ export default function TemperedGlassPage() {
             </div>
             <div className="rounded-xl overflow-hidden">
               <YouTubeEmbed videoId="expE_icthfo" title="Inside the tempering furnace" aspectRatio="16/9" autoLoad />
+              <VideoSchema videoId="expE_icthfo" name="Tempering furnace in operation" description="Sincere Glass tempering furnace heating and air-quenching architectural glass panels at the Wuhan facility." uploadDate="2026-11-03" duration="PT20S" /> {/* SG-PRODUCT-VIDEO-SCHEMA-V1 */}
             </div>
           </div>
         </section>

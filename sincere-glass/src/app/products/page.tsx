@@ -3,6 +3,8 @@ import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
+import VideoSchema from "@/components/VideoSchema";
 export const metadata: Metadata = {
   title: "Glass Products — Tempered, Insulated, Laminated & Enameled",
   description: "Explore Sincere Glass's full product range: tempered glass, insulated glass units, laminated safety glass, and enameled decorative glass. All 3C certified.",
@@ -29,6 +31,37 @@ export default function ProductsPage() {
       </section>
 
       {/* Product grid */}
+      {/* SG-PRODUCT-VIDEO-SCHEMA-V1 production-video section */}
+      <section className="py-16 md:py-20 bg-brand-dark border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-10">
+            <p className="text-xs text-brand-accent font-semibold uppercase tracking-wider mb-3">Inside our facility</p>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-white">Our production lines</h2>
+            <p className="mt-3 text-white/60 max-w-2xl mx-auto">Cutting, edge grinding, and finished-goods staging in our 20,000 sqm Wuhan plant.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <YouTubeEmbed videoId="YLkfJbK1XpA" title="Glass cutting line" aspectRatio="16/9" />
+              <p className="mt-3 text-sm text-white/80 font-semibold">Cutting line</p>
+              <p className="text-xs text-white/50">CNC and manual cutting to project dimensions</p>
+            </div>
+            <div>
+              <YouTubeEmbed videoId="1XwGWynxkJE" title="Edge grinding line" aspectRatio="16/9" />
+              <p className="mt-3 text-sm text-white/80 font-semibold">Edge grinding line</p>
+              <p className="text-xs text-white/50">Precision polished edges before tempering</p>
+            </div>
+            <div>
+              <YouTubeEmbed videoId="SiFnUYgcjqQ" title="Finished-goods warehouse" aspectRatio="16/9" />
+              <p className="mt-3 text-sm text-white/80 font-semibold">Finished-goods warehouse</p>
+              <p className="text-xs text-white/50">Panels staged and crated for worldwide shipping</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <VideoSchema videoId="YLkfJbK1XpA" name="Glass cutting line" description="Architectural glass cutting line at Sincere Glass Wuhan 20,000 sqm facility." uploadDate="2026-11-03" duration="PT20S" />
+      <VideoSchema videoId="1XwGWynxkJE" name="Edge grinding line" description="Precision edge grinding and polishing line at Sincere Glass Wuhan factory." uploadDate="2026-11-03" duration="PT20S" />
+      <VideoSchema videoId="SiFnUYgcjqQ" name="Finished-goods warehouse" description="Finished architectural glass panels staged for shipment at Sincere Glass Wuhan factory." uploadDate="2026-11-03" duration="PT20S" />
+
       <section className="py-16 md:py-24 bg-brand-lighter">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

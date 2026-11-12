@@ -7,7 +7,7 @@ import BendingProductionTimeline from '@/components/products/curved-tempered/Ben
 import CurvedApplicationShowcase from '@/components/products/curved-tempered/CurvedApplicationShowcase';
 import { makeAlternates } from '@/lib/i18n';
 import YouTubeEmbed from "@/components/YouTubeEmbed";
-
+import VideoSchema from "@/components/VideoSchema";
 const CANONICAL = '/products/curved-tempered-glass';
 
 export const metadata: Metadata = {
@@ -259,6 +259,7 @@ export default function CurvedTemperedGlassPage() {
           <div className="mt-10">
             <div className="rounded-xl overflow-hidden">
               <YouTubeEmbed videoId="FUGOpDGbca0" title="The bending-tempering line in operation" aspectRatio="16/9" autoLoad />
+              <VideoSchema videoId="FUGOpDGbca0" name="Bending-tempering line in operation" description="Single-axis curved tempered glass being formed on the mold at Sincere Glass Wuhan factory." uploadDate="2026-11-03" duration="PT20S" /> {/* SG-PRODUCT-VIDEO-SCHEMA-V1 */}
             </div>
             <p className="mt-3 text-xs text-[#8B95A5]">Float glass loaded, heated past softening, bent to the target radius, and air-quenched on our curved tempering furnace.</p>
           </div>
@@ -413,6 +414,7 @@ export default function CurvedTemperedGlassPage() {
           </div>
           <div className="rounded-xl overflow-hidden">
             <YouTubeEmbed videoId="Ct-LqD0WTVg" title="Curved panels in finished-goods inventory" aspectRatio="16/9" autoLoad />
+            <VideoSchema videoId="Ct-LqD0WTVg" name="Curved tempered panels in finished-goods inventory" description="Finished curved tempered glass panels staged for shipment at Sincere Glass Wuhan facility." uploadDate="2026-11-03" duration="PT20S" /> {/* SG-PRODUCT-VIDEO-SCHEMA-V1 */}
           </div>
         </div>
       </section>
