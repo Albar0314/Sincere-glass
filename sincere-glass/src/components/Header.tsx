@@ -12,6 +12,7 @@ const products = [
   { key: "tempered",  href: "/products/tempered-glass",  image: "/images/products/tempered.jpg" },
   { key: "insulated", href: "/products/insulated-glass", image: "/images/products/insulated.jpg" },
   { key: "laminated", href: "/products/laminated-glass", image: "/images/products/laminated.jpg" },
+  { key: "curvedTempered", href: "/products/curved-tempered-glass", image: "/images/products/curved-tempered.jpg" },
   { key: "enameled",  href: "/products/enameled-glass",  image: "/images/products/enameled.jpg" },
   { key: "lowE",      href: "/products/low-e-glass",     image: "/images/products/low-e.jpg" },
 ];
@@ -110,8 +111,8 @@ export default function Header() {
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
                         onClick={() => setMegaOpen(false)}
                       >
-                        <div className="w-14 h-14 rounded-lg bg-white/5 overflow-hidden flex-shrink-0 border border-white/5">
-                          <div className="w-full h-full bg-brand-primary/30" />
+                        <div className="w-14 h-14 rounded-lg bg-white/5 overflow-hidden flex-shrink-0 border border-white/5 relative">
+                          <Image src={p.image} alt={t(`product.${p.key}.name`)} fill sizes="56px" className="object-cover" />
                         </div>
                         <div>
                           <span className="text-sm font-medium text-white group-hover:text-brand-accent transition-colors">{t(`product.${p.key}.name`)}</span>
@@ -220,3 +221,5 @@ export default function Header() {
     </header>
   );
 }
+
+// SG-HEADER-FIX-V1
