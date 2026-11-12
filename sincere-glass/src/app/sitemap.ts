@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/products",  freq: "weekly",  priority: 0.9 },
     { path: "/projects",  freq: "monthly", priority: 0.7 },
     { path: "/equipment", freq: "monthly", priority: 0.6 },
+    { path: "/certifications", freq: "monthly", priority: 0.7 },
     { path: "/blog",      freq: "daily",   priority: 0.8 },
     { path: "/tools",     freq: "weekly",  priority: 0.8 },
     { path: "/contact",   freq: "yearly",  priority: 0.5 },

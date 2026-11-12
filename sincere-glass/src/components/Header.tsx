@@ -22,6 +22,7 @@ const navLinks = [
   { key: "about",     href: "/about" },
   { key: "projects",  href: "/projects" },
   { key: "equipment", href: "/equipment" },
+  { key: "certifications", href: "/certifications" },
   { key: "blog",      href: "/blog" },
   // TOOLS-PHASE2-V1:header.tools
   { key: "tools",     href: "/tools" },
