@@ -4,39 +4,47 @@ import { useSearch } from "@/components/SearchModal";
 import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useT } from "@/lib/useT";
+import { stripLocale } from "@/lib/i18n";
 
-// Product routes + static image paths (names/descs come from dict)
+// --- Nav structure (B-option: grouped dropdowns) ---
 const products = [
-  { key: "tempered",  href: "/products/tempered-glass",  image: "/images/products/tempered.jpg" },
-  { key: "insulated", href: "/products/insulated-glass", image: "/images/products/insulated.jpg" },
-  { key: "laminated", href: "/products/laminated-glass", image: "/images/products/laminated.jpg" },
-  { key: "curvedTempered", href: "/products/curved-tempered-glass", image: "/images/products/curved-tempered.jpg" },
-  { key: "enameled",  href: "/products/enameled-glass",  image: "/images/products/enameled.jpg" },
-  { key: "lowE",      href: "/products/low-e-glass",     image: "/images/products/low-e.jpg" },
+  { key: "tempered",       href: "/products/tempered-glass",         image: "/images/products/tempered.jpg" },
+  { key: "insulated",      href: "/products/insulated-glass",        image: "/images/products/insulated.jpg" },
+  { key: "laminated",      href: "/products/laminated-glass",        image: "/images/products/laminated.jpg" },
+  { key: "curvedTempered", href: "/products/curved-tempered-glass",  image: "/images/products/curved-tempered.jpg" },
+  { key: "enameled",       href: "/products/enameled-glass",         image: "/images/products/enameled.jpg" },
+  { key: "lowE",           href: "/products/low-e-glass",            image: "/images/products/low-e.jpg" },
 ];
 
-const navLinks = [
-  { key: "home",      href: "/" },
-  { key: "about",     href: "/about" },
-  { key: "projects",  href: "/projects" },
-  { key: "equipment", href: "/equipment" },
+const companyLinks = [
+  { key: "about",          href: "/about" },
+  { key: "projects",       href: "/projects" },
+  { key: "equipment",      href: "/equipment" },
   { key: "certifications", href: "/certifications" },
-  { key: "blog",      href: "/blog" },
-  // TOOLS-PHASE2-V1:header.tools
-  { key: "tools",     href: "/tools" },
-  { key: "contact",   href: "/contact" },
 ];
+
+const resourceLinks = [
+  { key: "blog",  href: "/blog" },
+  { key: "tools", href: "/tools" },
+];
+
+const CONTACT_HREF = "/contact";
+
+type DropdownKey = "products" | "company" | "resources" | null;
 
 export default function Header() {
   const t = useT();
   const { openSearch } = useSearch();
+  const pathname = usePathname() ?? "/";
+  const currentPath = stripLocale(pathname);
+
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
+  const [open, setOpen] = useState<DropdownKey>(null);
   const [scrolled, setScrolled] = useState(false);
-  const megaRef = useRef<HTMLDivElement>(null);
-  const megaTimer = useRef<NodeJS.Timeout | null>(null);
+  const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 20); }
@@ -44,13 +52,40 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  function megaEnter() {
-    if (megaTimer.current) clearTimeout(megaTimer.current);
-    setMegaOpen(true);
+  // Close dropdowns + mobile menu on route change
+  useEffect(() => {
+    setOpen(null);
+    setMobileOpen(false);
+  }, [pathname]);
+
+  function enter(key: Exclude<DropdownKey, null>) {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(key);
   }
-  function megaLeave() {
-    megaTimer.current = setTimeout(() => setMegaOpen(false), 200);
+  function leave() {
+    closeTimer.current = setTimeout(() => setOpen(null), 200);
   }
+
+  const isActive = (href: string) => {
+    if (href === "/") return currentPath === "/";
+    return currentPath === href || currentPath.startsWith(href + "/");
+  };
+  const isGroupActive = (hrefs: string[]) => hrefs.some(isActive);
+
+  function topLinkClass(active: boolean) {
+    return [
+      "relative flex items-center gap-1 px-3 py-2 text-sm rounded-md transition-colors",
+      "after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2 after:h-[1.5px] after:bg-brand-accent",
+      "after:transition-all after:duration-200",
+      active
+        ? "text-white after:w-[calc(100%-1.5rem)]"
+        : "text-white/70 hover:text-white after:w-0 hover:after:w-[calc(100%-1.5rem)]",
+    ].join(" ");
+  }
+
+  const productsActive  = isActive("/products") || products.some(p => isActive(p.href));
+  const companyActive   = isGroupActive(companyLinks.map(l => l.href));
+  const resourcesActive = isGroupActive(resourceLinks.map(l => l.href));
 
   return (
     <header
@@ -60,8 +95,8 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-[68px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
+          {/* Logo (acts as Home) */}
+          <Link href="/" className="flex items-center gap-2.5" aria-label="Sincere Glass home">
             <Image
               src="/images/logo.png"
               alt="Sincere Glass"
@@ -77,30 +112,20 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {/* Products mega trigger */}
-            <div
-              className="relative"
-              onMouseEnter={megaEnter}
-              onMouseLeave={megaLeave}
-              ref={megaRef}
-            >
-              <Link
-                href="/products"
-                className="flex items-center gap-1 px-3 py-2 text-sm text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-colors"
-              >
+            {/* Products mega */}
+            <div className="relative" onMouseEnter={() => enter("products")} onMouseLeave={leave}>
+              <Link href="/products" className={topLinkClass(productsActive)}>
                 {t("nav.products")}
-                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${open === "products" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-
-              {/* Mega dropdown */}
               <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] bg-brand-dark/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl transition-all duration-200 origin-top ${
-                  megaOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+                  open === "products" ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
                 }`}
-                onMouseEnter={megaEnter}
-                onMouseLeave={megaLeave}
+                onMouseEnter={() => enter("products")}
+                onMouseLeave={leave}
               >
                 <div className="p-5">
                   <p className="text-xs text-white/40 font-medium uppercase tracking-wider mb-4">{t("nav.ourGlassProducts")}</p>
@@ -110,7 +135,6 @@ export default function Header() {
                         key={p.href}
                         href={p.href}
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
-                        onClick={() => setMegaOpen(false)}
                       >
                         <div className="w-14 h-14 rounded-lg bg-white/5 overflow-hidden flex-shrink-0 border border-white/5 relative">
                           <Image src={p.image} alt={t(`product.${p.key}.name`)} fill sizes="56px" className="object-cover" />
@@ -123,7 +147,7 @@ export default function Header() {
                     ))}
                   </div>
                   <div className="mt-4 pt-3 border-t border-white/5">
-                    <Link href="/products" className="text-xs text-brand-accent hover:text-brand-accent-hover transition-colors" onClick={() => setMegaOpen(false)}>
+                    <Link href="/products" className="text-xs text-brand-accent hover:text-brand-accent-hover transition-colors">
                       {t("nav.viewAllProducts")}
                     </Link>
                   </div>
@@ -131,15 +155,76 @@ export default function Header() {
               </div>
             </div>
 
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-colors"
+            {/* Company dropdown */}
+            <div className="relative" onMouseEnter={() => enter("company")} onMouseLeave={leave}>
+              <button type="button" className={topLinkClass(companyActive)}>
+                {t("nav.company")}
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${open === "company" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`absolute top-full left-0 mt-2 w-60 bg-brand-dark/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl transition-all duration-200 origin-top ${
+                  open === "company" ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+                }`}
+                onMouseEnter={() => enter("company")}
+                onMouseLeave={leave}
               >
-                {link.key === "tools" ? "Tools" : t(`nav.${link.key}`)}
-              </Link>
-            ))}
+                <div className="py-2">
+                  {companyLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`block px-4 py-2.5 text-sm transition-colors ${
+                        isActive(link.href)
+                          ? "text-brand-accent bg-white/5"
+                          : "text-white/80 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Resources dropdown */}
+            <div className="relative" onMouseEnter={() => enter("resources")} onMouseLeave={leave}>
+              <button type="button" className={topLinkClass(resourcesActive)}>
+                {t("nav.resources")}
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${open === "resources" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`absolute top-full left-0 mt-2 w-60 bg-brand-dark/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl transition-all duration-200 origin-top ${
+                  open === "resources" ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+                }`}
+                onMouseEnter={() => enter("resources")}
+                onMouseLeave={leave}
+              >
+                <div className="py-2">
+                  {resourceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`block px-4 py-2.5 text-sm transition-colors ${
+                        isActive(link.href)
+                          ? "text-brand-accent bg-white/5"
+                          : "text-white/80 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Contact (top-level) */}
+            <Link href={CONTACT_HREF} className={topLinkClass(isActive(CONTACT_HREF))}>
+              {t("nav.contact")}
+            </Link>
 
             {/* Search icon (desktop) */}
             <button
@@ -195,25 +280,51 @@ export default function Header() {
         {/* Mobile menu */}
         {mobileOpen && (
           <nav className="lg:hidden pb-5 border-t border-white/10 pt-3">
+            {/* Products */}
             <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-2 px-2">{t("nav.products")}</p>
-            <div className="grid grid-cols-2 gap-1 mb-3">
+            <div className="grid grid-cols-2 gap-1 mb-4">
               {products.map((p) => (
-                <Link key={p.href} href={p.href} className="block text-white/70 hover:text-white text-sm py-2 px-2 rounded hover:bg-white/5" onClick={() => setMobileOpen(false)}>
+                <Link key={p.href} href={p.href} className={`block text-sm py-2 px-2 rounded hover:bg-white/5 ${isActive(p.href) ? "text-brand-accent" : "text-white/70 hover:text-white"}`}>
                   {t(`product.${p.key}.name`)}
                 </Link>
               ))}
             </div>
-            <div className="border-t border-white/5 pt-2">
-              {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="block text-white/70 hover:text-white py-2 px-2 text-sm rounded hover:bg-white/5" onClick={() => setMobileOpen(false)}>
-                  {link.key === "tools" ? "Tools" : t(`nav.${link.key}`)}
-                </Link>
-              ))}
+
+            {/* Company */}
+            <div className="border-t border-white/5 pt-3">
+              <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-2 px-2">{t("nav.company")}</p>
+              <div className="mb-3">
+                {companyLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className={`block py-2 px-2 text-sm rounded hover:bg-white/5 ${isActive(link.href) ? "text-brand-accent" : "text-white/70 hover:text-white"}`}>
+                    {t(`nav.${link.key}`)}
+                  </Link>
+                ))}
+              </div>
             </div>
+
+            {/* Resources */}
+            <div className="border-t border-white/5 pt-3">
+              <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-2 px-2">{t("nav.resources")}</p>
+              <div className="mb-3">
+                {resourceLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className={`block py-2 px-2 text-sm rounded hover:bg-white/5 ${isActive(link.href) ? "text-brand-accent" : "text-white/70 hover:text-white"}`}>
+                    {t(`nav.${link.key}`)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div className="border-t border-white/5 pt-3">
+              <Link href={CONTACT_HREF} className={`block py-2 px-2 text-sm rounded hover:bg-white/5 ${isActive(CONTACT_HREF) ? "text-brand-accent" : "text-white/70 hover:text-white"}`}>
+                {t("nav.contact")}
+              </Link>
+            </div>
+
             <div className="border-t border-white/5 pt-3 mt-2 flex justify-center">
               <LanguageSwitcher />
             </div>
-            <a href="#quote" className="block bg-brand-accent text-brand-dark text-center py-2.5 rounded-md font-semibold text-sm mt-3" onClick={() => setMobileOpen(false)}>
+            <a href="#quote" className="block bg-brand-accent text-brand-dark text-center py-2.5 rounded-md font-semibold text-sm mt-3">
               {t("nav.requestQuote")}
             </a>
           </nav>
@@ -223,4 +334,4 @@ export default function Header() {
   );
 }
 
-// SG-HEADER-FIX-V1
+// SG-HEADER-B-V1
