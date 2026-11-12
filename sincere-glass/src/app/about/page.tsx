@@ -8,6 +8,7 @@ import Certifications from "@/components/about/Certifications";
 import AboutCTA from "@/components/about/AboutCTA";
 import { makeAlternates } from "@/lib/i18n";
 import FactoryBrollLoop from "@/components/FactoryBrollLoop";
+import { RawMaterialSection, GlobalShippingTrustStrip } from "@/components/about/FactoryTrustSections";
 export const metadata: Metadata = {
   title: "About Us — Sincere Glass",
   description: "Founded in 2005, Sincere Glass operates two modern factories in Hubei, China. 20,000㎡ total area, 120+ employees, 3C certified. Learn about our story, leadership, and capabilities.",
@@ -63,10 +64,12 @@ export default function AboutPage() {
         </section>
 
         <CompanyIntro />
+        <RawMaterialSection />
         <Timeline />
         <DualFactories />
         <Leadership />
         <Certifications />
+        <GlobalShippingTrustStrip />
         <AboutCTA />
       </main>
     </>
