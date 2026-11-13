@@ -1489,6 +1489,43 @@ export const blogArticles: BlogArticle[] = [
       { q: 'Lead time for argon vs krypton IGU?', a: 'Argon: 10-15 working days from order confirmation. Krypton: 15-20 working days, since we batch krypton runs once per week to minimize gas waste.' },
     ],
   },
+  {
+    slug: 'u-factor-and-shgc-explained',
+    title: "U-Factor and SHGC Explained: What the Two Numbers on a Window Label Actually Mean",
+    excerpt: "U-factor rates heat loss; SHGC rates solar heat gain. One decides your winter bill, the other decides summer overheating - and the Low-E coating sets them independently. A factory guide to the two numbers every energy code checks first.",
+    targetKeyword: 'u factor windows',
+    secondaryKeywords: [
+      'shgc',
+      'solar heat gain coefficient',
+      'u factor vs shgc',
+      'what is shgc',
+      'u value windows',
+    ],
+    searchKeywords: [
+      'u factor windows', 'what is u factor', 'u-factor', 'u factor vs shgc',
+      'shgc', 'solar heat gain coefficient', 'what is shgc', 'u value windows',
+      'r value windows', 'nfrc label', 'nfrc ratings', 'visible transmittance', 'VT',
+      'Low-E', 'IECC climate zone', 'window energy rating',
+      '\u7A97\u6237U\u503C', '\u592A\u9633\u5F97\u70ED\u7CFB\u6570', 'SHGC \u662F\u4EC0\u4E48', 'U\u503C \u7A97\u6237',
+    ],
+    publishDate: '2026-11-12',
+    category: 'Technical Guide' as const,
+    tags: ['insulated glass', 'U-factor', 'SHGC', 'Low-E', 'window performance', 'energy code'],
+    heroImage: '/images/blog/u-factor-and-shgc-explained-hero.webp',
+    heroImageAlt: "A single architectural glass pane on dark polished concrete, left half raked by warm low sun to suggest solar heat gain, right half cool with a faint Low-E gold sheen to suggest heat retention",
+    heroImagePrompt: "Studio product photography: a single large architectural insulated glass pane standing upright on polished dark concrete, lit so that the left half is raked by warm amber low-angle sunlight suggesting solar heat gain through the glass, while the right half sits in cool blue shadow with a faint breath of condensation fog near the base suggesting heat held inside. A subtle gold Low-E coating sheen runs across the whole pane. Visible slim aluminum spacer bar and dual seal at the bottom edge showing it is an insulated glass unit. 25-degree slightly elevated camera angle, shallow depth of field on the glass surface, dramatic split warm and cool lighting. Clean dark #1C1F26 background, no humans, no text, no brand logos, no label graphics. 16:9 cinematic composition. 4K photorealistic, museum-exhibit quality, documentary industrial photography style.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 12,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'technical' as const,
+    cluster: 'technical',
+    relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-11-12', note: 'Initial publish - Insulated cluster technical spoke (W2-8): U-factor + SHGC' },
+    ],
+  },
 ];
 
 // ---- Utility functions ----
