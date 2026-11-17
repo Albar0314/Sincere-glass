@@ -1526,6 +1526,36 @@ export const blogArticles: BlogArticle[] = [
       { date: '2026-11-12', note: 'Initial publish - Insulated cluster technical spoke (W2-8): U-factor + SHGC' },
     ],
   },
+  {
+    slug: 'insulated-glass-spacer-warm-edge-vs-aluminum',
+    title: "Insulated Glass Spacer: Warm Edge vs Aluminum, and When the Upgrade Pays",
+    excerpt: "The spacer sets how cold the glass edge gets. Warm edge lifts the edge a few degrees Celsius, cutting condensation and improving the whole-window U-factor. A factory guide to psi-values, the four warm edge families, and which to specify by climate.",
+    targetKeyword: 'insulated glass spacer',
+    secondaryKeywords: [
+      'warm edge spacer',
+      'aluminum spacer bar',
+      'warm edge vs aluminum',
+      'igu spacer bar',
+      'spacer bar conductivity',
+    ],
+    searchKeywords: [
+      'insulated glass spacer', 'warm edge spacer', 'aluminum spacer bar',
+      'warm edge vs aluminum', 'igu spacer', 'spacer bar',
+      'TGI spacer', 'TPS spacer', 'foam spacer', 'stainless steel spacer',
+      'psi value spacer', 'edge of glass temperature', 'warm edge condensation',
+      '\u4e2d\u7a7a\u73bb\u7483\u95f4\u9694\u6761', '\u6696\u8fb9\u95f4\u9694\u6761', '\u94dd\u95f4\u9694\u6761',
+    ],
+    publishDate: '2026-11-14',
+    category: 'Technical Guide' as const,
+    tags: ['insulated glass', 'IGU', 'spacer', 'warm edge', 'condensation', 'thermal bridge'],
+    heroImage: '/images/blog/insulated-glass-spacer-warm-edge-vs-aluminum-hero.webp',
+    heroImageAlt: "Macro cross-section of an insulated glass unit edge showing the spacer bar, desiccant and dual seal between two glass panes on a dark background",
+    author: DEFAULT_AUTHOR,
+    cluster: 'technical' as const,
+    articleType: 'technical' as const,
+    readingTime: 11,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+  },
 ];
 
 // ---- Utility functions ----
