@@ -1,12 +1,20 @@
 import { Metadata } from "next";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "@/components/LocalizedLink";
 import { products, getProduct } from "@/lib/products";
 import ProductDetailClient from "@/components/products/ProductDetailClient";
 import { makeAlternates } from "@/lib/i18n";
+// SG-SLUG-DEDUP-V1: slugs with a dedicated src/app/products/<slug>/page.tsx are served by that page.
+// Do not pre-render them here too, or two routes emit the same path.
+function hasDedicatedPage(slug: string): boolean {
+  return existsSync(join(process.cwd(), "src", "app", "products", slug, "page.tsx"));
+}
+
 export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  return products.filter((p) => !hasDedicatedPage(p.slug)).map((p) => ({ slug: p.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
