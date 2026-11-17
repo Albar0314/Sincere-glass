@@ -8,7 +8,7 @@ import type { ToolCategory } from "@/lib/tools-registry";
 import { makeAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Free Glass Calculators and Tools | Sincere Glass",
+  title: "Free Glass Calculators and Tools",
   description:
     "Free interactive calculators for architectural glass buyers: max panel size, triple pane ROI, container load and more. Built by Sincere Glass, a Wuhan manufacturer.",
   alternates: makeAlternates("/tools"),

@@ -16,8 +16,8 @@ import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
-  title: "Fabricante de Vidrio Laminado en China — Lámina Intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus) | Sincere Glass",
-  description: "Vidrio laminado de seguridad personalizado de China. Opciones de lámina intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus), bloqueo UV del 99%, aislamiento acústico superior. Autoclave de hasta 3.3.3 m × 15 m. Certificado 3C.",
+  title: "Fabricante de Vidrio Laminado en China — Lámina Intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus)",
+  description: "Vidrio laminado de seguridad personalizado de China. Opciones de lámina intermedia PVB (polivinil butiral) y SGP (SentryGlas Plus), bloqueo UV del 99%, aislamiento acústico superior. Autoclave de hasta 3.3 m × 15 m. Certificado 3C.",
   openGraph: {
     title: "Fabricante de Vidrio Laminado — Sincere Glass",
     description: "Vidrio laminado de seguridad con lámina intermedia PVB (polivinil butiral)/SGP (SentryGlas Plus). Bloqueo UV del 99%, aislamiento acústico, resistencia a la intrusión. Certificación 3C.",
@@ -42,7 +42,7 @@ const faqItems = [{
   a: "Yes. Laminated glass is one of the most effective glazing options for sound reduction, particularly in the 1000–2000Hz range (speech, traffic, urban noise). A multilayer laminated unit can achieve 35–45dB reduction depending on configuration."
 }, {
   q: "What sizes can you produce?",
-  a: "Our high-pressure autoclaves can process laminated glass panels up to 3.3.3 m × 15 m. We produce both standard and jumbo laminated units for architectural applications including skylights, facades, and glass floors."
+  a: "Our high-pressure autoclaves can process laminated glass panels up to 3.3 m × 15 m. We produce both standard and jumbo laminated units for architectural applications including skylights, facades, and glass floors."
 }, {
   q: "Is laminated glass bulletproof?",
   a: "Multi-layer laminated glass can be configured for ballistic resistance, but true bullet-resistant glass requires specific tested configurations (typically 3+ layers with SGP interlayer). We manufacture to order based on the required protection level."

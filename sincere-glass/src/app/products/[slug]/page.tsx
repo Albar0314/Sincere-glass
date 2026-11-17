@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const product = getProduct(params.slug);
   if (!product) return {};
   return {
-    title: product.name + " Manufacturer — Sincere Glass",
+    title: product.name + " Manufacturer",
     description: product.tagline + ". " + product.description[0].slice(0, 120) + "...",
     openGraph: {
       title: product.name + " | Sincere Glass",

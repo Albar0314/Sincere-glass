@@ -62,7 +62,7 @@ const faqItems = [
   },
   {
     q: "What is the lead time for IGU from a Chinese factory?",
-    a: "Standard commercial IGU (6-12A-6 or 6-12A-6 with Low-E) lead time from Sincere Glass is 4 to 6 weeks for a 20 ft container, starting after design freeze and drawing approval. Lead time grows with complexity: adding lamination adds 1 week, triple pane adds 1 to 2 weeks, jumbo sizes (above 3.3 m x 6 m) add 2 to 3 weeks. Shipping time is additional: 30 to 45 days ocean to US West Coast, 35 to 50 days to US East Coast or Europe.",
+    a: "Standard commercial IGU (6-12A-6 or 6-12A-6 with Low-E) lead time from Sincere Glass is 4 to 6 weeks for a 20 ft container, starting after design freeze and drawing approval. Lead time grows with complexity: adding lamination adds 1 week, triple pane adds 1 to 2 weeks, jumbo sizes (above 3 m x 6 m) add 2 to 3 weeks. Shipping time is additional: 30 to 45 days ocean to US West Coast, 35 to 50 days to US East Coast or Europe.",
   },
   {
     q: "Is argon fill really worth the premium?",
@@ -176,7 +176,7 @@ export default function Page() {
             <strong>Cold (ASHRAE Zone 4-5, Chinese cold):</strong> Double IGU, 6-16Ar-6 with Low-E on surface 2. Target U at or below 1.4 W/m2K.
           </li>
           <li>
-            <strong>Temperate (ASHRAE Zone 3, Chinese hot-summer cold-winter):</strong> Double IGU, 6-12Ar-6 with Low-E on surface 2. Target U around 1.5 to 1.8.
+            <strong>Temperate (ASHRAE Zone 3, Chinese hot-summer cold-winter):</strong> Double IGU, 6-12Ar-6 with Low-E on surface 2. Target U around 1.3 to 1.5.
           </li>
           <li>
             <strong>Hot-humid (ASHRAE Zone 1-2, Chinese hot-summer warm-winter):</strong> Double IGU with solar-control Low-E on surface 2. Optimize for SHGC below 0.3, not for U. Argon still advisable to prevent cavity convection in high outdoor temperatures.
@@ -232,7 +232,7 @@ export default function Page() {
           Standard IGU production tops out at around 3 m x 6 m on most lines. Above that size three things change: the spacer bar must become structurally rigid (standard aluminum spacers deflect), the glass lites typically must be tempered or heat-strengthened to resist wind load, and the secondary seal must be applied on a dedicated large-format assembly line to avoid partial coverage.
         </p>
         <p>
-          Our Wuhan facility manufactures jumbo IGU up to 3.3 m x 15 m on dedicated lines, with jumbo tempering furnace and jumbo autoclave capacity matched to the IGU assembly. Projects specifying jumbo IGU should plan for 1 to 2 week lead time penalty, 30 to 50% per-m2 price premium over standard sizes, and crated land transport constraints (jumbo IGU shipping requires air-ride suspension flatbed with standing A-frame; container-only shipments cap at roughly 3 m x 6 m).
+          Our Wuhan facility manufactures jumbo IGU up to 3.3 m x 15 m on dedicated lines, with jumbo tempering furnace and jumbo autoclave capacity matched to the IGU assembly. Projects specifying jumbo IGU should plan for 2 to 3 week lead time penalty, a roughly 3x per-m2 price premium over standard sizes, and crated land transport constraints (jumbo IGU shipping requires air-ride suspension flatbed with standing A-frame; container-only shipments cap at roughly 3 m x 6 m).
         </p>
 
         <h2 id="procurement">Procurement Reality: MOQ, Lead Time, Cost</h2>
@@ -252,7 +252,7 @@ export default function Page() {
           <tbody>
             <tr>
               <td>MOQ</td>
-              <td>20 ft container, approx 300 m2</td>
+              <td>20 ft container, approx 300 to 400 m2</td>
               <td>20 ft container, approx 250 m2</td>
               <td>Negotiable, project-based</td>
             </tr>
@@ -260,7 +260,7 @@ export default function Page() {
               <td>Lead time (after design freeze)</td>
               <td>4 to 6 weeks</td>
               <td>5 to 8 weeks</td>
-              <td>7 to 10 weeks</td>
+              <td>6 to 9 weeks</td>
             </tr>
             <tr>
               <td>FOB Wuhan reference price (USD per m2)</td>
@@ -292,7 +292,6 @@ export default function Page() {
           description="11-page reference covering US IBC/ASTM, EU EN, China GB and Australia AS requirements for tempered, laminated, insulated, and Low-E glass applications."
         />
 
-        <h2 id="faq">Frequently Asked Questions</h2>
         {/* GROK-INSERT-V1:triple-pane */}
         <p className="my-6 rounded-lg border-l-4 border-amber-500 bg-amber-50 p-4 text-sm text-slate-700">
           <strong>Related:</strong> Choosing between double and triple pane for your IGU spec? Full decision matrix, ROI calculator, and climate-zone guide:{" "}

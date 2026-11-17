@@ -16,7 +16,7 @@ import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Fabricante de Vidrio de Baja Emisividad (Low-E) en China — Vidrio con Recubrimiento Energéticamente Eficiente | Sincere Glass",
+  title: "Fabricante de Vidrio de Baja Emisividad (Low-E) en China — Vidrio con Recubrimiento Energéticamente Eficiente",
   description: "Vidrio de baja emisividad (Low-E) personalizado desde China. Opciones de capa blanda y capa dura, ahorro energético del 30–50%, alta transmitancia visible. Combinado con UVA (Unidad de Vidrio Aislante) para un rendimiento térmico máximo.",
   openGraph: {
     title: "Fabricante de Vidrio de Baja Emisividad (Low-E) — Sincere Glass",

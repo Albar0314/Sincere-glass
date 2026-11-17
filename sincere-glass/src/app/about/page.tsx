@@ -10,7 +10,7 @@ import { makeAlternates } from "@/lib/i18n";
 import FactoryBrollLoop from "@/components/FactoryBrollLoop";
 import { RawMaterialSection, GlobalShippingTrustStrip } from "@/components/about/FactoryTrustSections";
 export const metadata: Metadata = {
-  title: "About Us — Sincere Glass",
+  title: "About Us",
   description: "Founded in 2005, Sincere Glass operates two modern factories in Hubei, China. 20,000㎡ total area, 120+ employees, 3C certified. Learn about our story, leadership, and capabilities.",
   openGraph: {
     title: "About Sincere Glass — Two Factories, One Mission",

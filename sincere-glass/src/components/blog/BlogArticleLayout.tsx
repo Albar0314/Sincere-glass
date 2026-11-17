@@ -28,7 +28,7 @@ interface Props {
 /** Generates Next.js Metadata for the article page */
 export function generateArticleMetadata(article: BlogArticle): Metadata {
   return {
-    title: `${article.title} | Sincere Glass Blog`,
+    title: `${article.title}`,
     description: article.excerpt,
     keywords: [article.targetKeyword, ...(article.secondaryKeywords || []), ...article.tags],
     authors: [{ name: article.author.name, url: article.author.url }],

@@ -17,7 +17,7 @@ import InlineQuoteCTA from "@/_i18n/es/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Fabricante de Vidrio Esmaltado en China — Colores y Patrones Personalizados | Sincere Glass",
+  title: "Fabricante de Vidrio Esmaltado en China — Colores y Patrones Personalizados",
   description: "Vidrio esmaltado (con frita cerámica) personalizado desde China. Igualación de color RAL/Pantone, patrones personalizados, resistente a ácidos y abrasión. Color permanente que nunca desaparece. Certificación 3C.",
   openGraph: {
     title: "Fabricante de Vidrio Esmaltado — Sincere Glass",

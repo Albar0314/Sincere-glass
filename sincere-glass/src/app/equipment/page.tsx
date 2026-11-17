@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import EquipmentGallerySection from "@/components/EquipmentGallerySection";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Factory Equipment & Capabilities — Virtual Tour | Sincere Glass",
+  title: "Factory Equipment & Capabilities — Virtual Tour",
   description: "Tour our two factories: 4 CNC cutting lines, 4 edge polishing lines, 2 tempering furnaces (3.3 m × 15 m), 2 insulated glass lines, 2 autoclaves. See our production capabilities.",
   openGraph: {
     title: "Equipment & Production Capabilities | Sincere Glass",

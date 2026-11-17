@@ -22,11 +22,11 @@ import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import VideoSchema from "@/components/VideoSchema";
 export const metadata: Metadata = {
-  title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3.3 m × 15 m | Sincere Glass",
-  description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
+  title: "Tempered Glass Manufacturer China — Custom Sizes up to 3.3 m × 15 m",
+  description: "Custom tempered glass from China. 3.8-19mm, panels up to 3.3 m × 15 m, 3C certified. 4-5× stronger than annealed glass. Factory-direct pricing, 7-15 day lead time.",
   openGraph: {
     title: "Tempered Glass Manufacturer — Sincere Glass",
-    description: "Custom architectural tempered glass. Flat & bent, 3.8-19mm, max 3.3.3 m × 15 m. 3C certified, factory direct.",
+    description: "Custom architectural tempered glass. Flat & bent, 3.8-19mm, max 3.3 m × 15 m. 3C certified, factory direct.",
     url: "https://sincereglass.com/products/tempered-glass",
     images: [{
       url: "https://sincereglass.com/images/products/tempered.jpg"
@@ -70,7 +70,7 @@ const productSchema = {
   "@type": "Service",
   serviceType: "Architectural Glass Manufacturing",
   name: "Tempered Glass",
-  description: "Custom architectural tempered glass, 3.8-19mm, panels up to 3.3.3 m × 15 m. 3C certified.",
+  description: "Custom architectural tempered glass, 3.8-19mm, panels up to 3.3 m × 15 m. 3C certified.",
   image: "https://sincereglass.com/images/products/tempered.jpg",
   category: "Architectural Glass",
   provider: {

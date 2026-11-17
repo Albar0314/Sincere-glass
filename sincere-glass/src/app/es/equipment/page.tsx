@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import EquipmentGallerySection from "@/_i18n/es/components/EquipmentGallerySection";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Equipamiento y Capacidades de Fábrica — Tour Virtual | Sincere Glass",
+  title: "Equipamiento y Capacidades de Fábrica — Tour Virtual",
   description: "Recorra nuestras dos fábricas: 4 líneas de corte CNC, 4 líneas de pulido de bordes, 2 hornos de templado (3,3 m × 15 m), 2 líneas de vidrio aislante, 2 autoclaves. Conozca nuestras capacidades de producción.",
   openGraph: {
     title: "Equipamiento y Capacidades de Producción | Sincere Glass",

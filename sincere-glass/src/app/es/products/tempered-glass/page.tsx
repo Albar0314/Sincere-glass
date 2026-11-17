@@ -20,11 +20,11 @@ import { products } from "@/lib/products";
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
-  title: "Fabricante de Vidrio Templado en China — Medidas Personalizadas hasta 3.3.3 m × 15 m | Sincere Glass",
-  description: "Vidrio templado personalizado de China. 3,8-19 mm, paneles de hasta 3.3.3 m × 15 m, certificado 3C. 4-5× más resistente que el vidrio recocido. Precios directos de fábrica, plazo de entrega de 7-15 días.",
+  title: "Fabricante de Vidrio Templado en China — Medidas Personalizadas hasta 3.3 m × 15 m",
+  description: "Vidrio templado personalizado de China. 3,8-19 mm, paneles de hasta 3.3 m × 15 m, certificado 3C. 4-5× más resistente que el vidrio recocido. Precios directos de fábrica, plazo de entrega de 7-15 días.",
   openGraph: {
     title: "Fabricante de Vidrio Templado — Sincere Glass",
-    description: "Vidrio templado arquitectónico personalizado. Plano y curvado, 3,8-19 mm, máx. 3.3.3 m × 15 m. Certificado 3C, directo de fábrica.",
+    description: "Vidrio templado arquitectónico personalizado. Plano y curvado, 3,8-19 mm, máx. 3.3 m × 15 m. Certificado 3C, directo de fábrica.",
     url: "https://sincereglass.com/products/tempered-glass",
     images: [{
       url: "https://sincereglass.com/images/products/tempered.jpg"
@@ -68,7 +68,7 @@ const productSchema = {
   "@type": "Service",
   serviceType: "Architectural Glass Manufacturing",
   name: "Vidrio templado",
-  description: "Vidrio templado arquitectónico personalizado, 3,8-19 mm, paneles de hasta 3.3.3 m × 15 m. Certificado 3C.",
+  description: "Vidrio templado arquitectónico personalizado, 3,8-19 mm, paneles de hasta 3.3 m × 15 m. Certificado 3C.",
   image: "https://sincereglass.com/images/products/tempered.jpg",
   category: "Vidrio arquitectónico",
   provider: {

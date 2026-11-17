@@ -5,7 +5,7 @@ import ClusterTabs from "@/_i18n/es/components/blog/ClusterTabs";
 import { BlogHero, BlogEmptyState } from "@/_i18n/es/components/blog/BlogListingChrome";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Perspectivas del sector del vidrio y guías técnicas | Blog de Sincere Glass",
+  title: "Perspectivas del sector del vidrio y guías técnicas",
   description: "Artículos especializados sobre vidrio arquitectónico: vidrio templado, vidrio aislante, vidrio laminado, vidrio de baja emisividad (Low-E) y vidrio esmaltado. Guías técnicas, recursos para compradores y noticias del sector de Sincere Glass.",
   keywords: ["glass industry blog", "architectural glass guide", "tempered glass technical guide", "insulated glass guide", "glass manufacturer blog"],
   alternates: makeAlternates("/blog", "es")

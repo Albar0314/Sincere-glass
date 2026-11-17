@@ -17,7 +17,7 @@ import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Enameled Glass Manufacturer China — Custom Colors & Patterns | Sincere Glass",
+  title: "Enameled Glass Manufacturer China — Custom Colors & Patterns",
   description: "Custom enameled (ceramic frit) glass from China. RAL/Pantone color matching, custom patterns, acid & abrasion resistant. Permanent color that never fades. 3C certified.",
   openGraph: {
     title: "Enameled Glass Manufacturer — Sincere Glass",

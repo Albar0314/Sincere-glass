@@ -5,7 +5,7 @@ import FeasibilityChecker from "@/_i18n/es/components/products/curved-tempered/F
 import { makeAlternates } from "@/lib/i18n";
 import ProductEquipmentShowcase from "@/_i18n/es/components/ProductEquipmentShowcase";
 export const metadata: Metadata = {
-  title: "Vidrio Templado Curvado | Curvado en Caliente hasta R500 mm — Sincere Glass",
+  title: "Vidrio Templado Curvado | Curvado en Caliente hasta R500 mm",
   description: "Fabricante chino de vidrio templado curvado. Curvado en caliente con radio mínimo de 500 mm, hasta 3.300 × 15.000 mm por panel. Geometrías cilíndricas, esféricas y de forma libre. Conforme a GB 15763.2 / EN 12150.",
   keywords: ["curved tempered glass", "bent tempered glass", "curved glass manufacturer", "cylindrical glass", "spherical glass", "hot-bent glass", "cold-bent glass", "弯钢玻璃", "热弯玻璃", "curved glass china supplier"],
   openGraph: {

@@ -6,7 +6,7 @@ const advantages = [{
   stat: 15,
   suffix: "m",
   label: "Longitud máxima de autoclave",
-  desc: "Nuestro autoclave de alta presión procesa paneles de hasta 3.3.3 m × 15 m — ideal para claraboyas de gran formato y muros singulares que los fabricantes de menor capacidad no pueden producir."
+  desc: "Nuestro autoclave de alta presión procesa paneles de hasta 3.3 m × 15 m — ideal para claraboyas de gran formato y muros singulares que los fabricantes de menor capacidad no pueden producir."
 }, {
   stat: 2,
   suffix: "",

@@ -3,7 +3,7 @@ import ProjectsClient from "@/_i18n/es/components/projects/ProjectsClient";
 import { makeAlternates } from "@/lib/i18n";
 import YouTubeEmbed from "@/_i18n/es/components/YouTubeEmbed";
 export const metadata: Metadata = {
-  title: "Casos de Proyectos — Más de 2.600 Proyectos de Referencia | Sincere Glass",
+  title: "Casos de Proyectos — Más de 2.600 Proyectos de Referencia",
   description: "Vea nuestro vidrio en acción: Estación de Wuhan, Terminal T3 del Aeropuerto Tianhe, Centro de Exposiciones y más de 2.600 proyectos adicionales. Vidrio templado, vidrio aislante, vidrio laminado y vidrio esmaltado para los edificios emblemáticos de China.",
   openGraph: {
     title: "Casos de Proyectos de Ingeniería | Sincere Glass",

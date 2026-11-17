@@ -6,7 +6,7 @@ import { BlogHero, BlogEmptyState } from "@/components/blog/BlogListingChrome";
 import { makeAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Glass Industry Insights & Technical Guides | Sincere Glass Blog",
+  title: "Glass Industry Insights & Technical Guides",
   description:
     "Expert articles on architectural glass: tempered, insulated, laminated, Low-E and enameled glass. Technical guides, buyer resources and industry news from Sincere Glass.",
   keywords: [

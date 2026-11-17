@@ -16,7 +16,7 @@ import InlineQuoteCTA from "@/components/products/InlineQuoteCTA";
 import ProductEquipmentShowcase from "@/components/ProductEquipmentShowcase";
 import { makeAlternates } from "@/lib/i18n";
 export const metadata: Metadata = {
-  title: "Low-E Glass Manufacturer China — Energy-Efficient Coated Glass | Sincere Glass",
+  title: "Low-E Glass Manufacturer China — Energy-Efficient Coated Glass",
   description: "Custom Low-E glass from China. Soft-coat and hard-coat options, 30-50% energy savings, high visible light transmission. Combined with IGUs for maximum thermal performance.",
   openGraph: {
     title: "Low-E Glass Manufacturer — Sincere Glass",

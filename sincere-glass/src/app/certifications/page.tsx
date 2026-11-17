@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "@/components/LocalizedLink";
 import CertificationsClient from "@/components/certifications/CertificationsClient";
 import manifest from "@/lib/test-reports-manifest.json";
+const WITC_REPORT_COUNT = ["tempered", "laminated", "insulated", "lowE"].reduce((n, k) => n + (((manifest as any)[k])?.length || 0), 0);
 import { makeAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Certifications & Independent Test Reports | Sincere Glass",
+  title: "Certifications & Independent Test Reports",
   description:
-    "95 independent test reports from WITC (CMA-accredited lab), covering every architectural glass specification Sincere Glass produces. Verified under GB 15763.2-2005.",
+    `${WITC_REPORT_COUNT} independent test reports from WITC (CMA-accredited lab), covering every architectural glass specification Sincere Glass produces. Verified under GB 15763.2-2005.`,
   alternates: makeAlternates("/certifications"),
 };
 
@@ -36,7 +37,7 @@ export default function CertificationsPage() {
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <span className="px-4 py-2 border border-[#DAA745]/40 rounded-full text-[#DAA745]">CMA Accredited Lab</span>
             <span className="px-4 py-2 border border-white/20 rounded-full">GB 15763.2-2005</span>
-            <span className="px-4 py-2 border border-white/20 rounded-full">95 Reports Available</span>
+            <span className="px-4 py-2 border border-white/20 rounded-full">{WITC_REPORT_COUNT} Reports Available</span>
           </div>
         </div>
       </section>

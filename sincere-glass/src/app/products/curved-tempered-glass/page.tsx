@@ -11,7 +11,7 @@ import VideoSchema from "@/components/VideoSchema";
 const CANONICAL = '/products/curved-tempered-glass';
 
 export const metadata: Metadata = {
-  title: 'Curved Tempered Glass | Sincere Glass — Rₘᵢₙ 500mm at 6mm, Up to 2.6m Tall',
+  title: 'Curved Tempered Glass — Rₘᵢₙ 500mm at 6mm, Up to 2.6m Tall',
   description:
     'Single-axis curved tempered glass manufactured on our Wuhan bending-tempering line. Minimum radius 500mm at 6mm, maximum panel height 2.6m, arc length up to 3m. Full specs, production journey, and application envelope from a 20,000 m² architectural glass factory.',
   keywords: [
@@ -437,7 +437,7 @@ export default function CurvedTemperedGlassPage() {
           <InlineQuoteCTA variant="default" />
 
           <div className="mt-10 pt-8 border-t border-[#3A4250]/40 text-sm text-[#8B95A5]">
-            Related reading: <Link href="/blog/curved-tempered-glass-vs-flat-tempered-glass" className="text-[#DAA745] underline">When curved beats flat tempered</Link> &middot; <Link href="/products/tempered-glass" className="text-[#DAA745] underline">Flat tempered glass</Link> &middot; <Link href="/products/laminated-glass" className="text-[#DAA745] underline">Laminated glass</Link>
+            Related reading: <Link href="/blog/curved-glass-vs-flat-glass" className="text-[#DAA745] underline">When curved beats flat tempered</Link> &middot; <Link href="/products/tempered-glass" className="text-[#DAA745] underline">Flat tempered glass</Link> &middot; <Link href="/products/laminated-glass" className="text-[#DAA745] underline">Laminated glass</Link>
           </div>
         </div>
       </section>

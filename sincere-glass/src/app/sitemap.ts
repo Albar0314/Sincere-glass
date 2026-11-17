@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "laminated-glass",
     "enameled-glass",
     "low-e-glass",
+    "curved-tempered-glass",
   ];
 
   const entries: MetadataRoute.Sitemap = [];

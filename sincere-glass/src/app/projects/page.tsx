@@ -4,7 +4,7 @@ import { makeAlternates } from "@/lib/i18n";
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 export const metadata: Metadata = {
-  title: "Project Cases — 2,600+ Landmark Projects | Sincere Glass",
+  title: "Project Cases — 2,600+ Landmark Projects",
   description: "See our glass in action: Wuhan Station, Tianhe Airport T3, Expo Center, and 2,600+ more. Tempered, insulated, laminated, and enameled glass for China's landmark buildings.",
   openGraph: {
     title: "Engineering Project Cases | Sincere Glass",

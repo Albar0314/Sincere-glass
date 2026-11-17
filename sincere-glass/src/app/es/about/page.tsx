@@ -9,7 +9,7 @@ import AboutCTA from "@/_i18n/es/components/about/AboutCTA";
 import { makeAlternates } from "@/lib/i18n";
 import FactoryBrollLoop from "@/_i18n/es/components/FactoryBrollLoop";
 export const metadata: Metadata = {
-  title: "Sobre Nosotros — Sincere Glass",
+  title: "Sobre Nosotros",
   description: "Fundada en 2005, Sincere Glass opera dos fábricas modernas en Hubei, China. 20.000 m² de superficie total, más de 120 empleados, certificación 3C. Conozca nuestra historia, liderazgo y capacidades.",
   openGraph: {
     title: "Sobre Sincere Glass — Dos Fábricas, Una Misión",
