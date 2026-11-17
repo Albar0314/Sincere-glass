@@ -52,7 +52,7 @@ export default function IGUDiagram() {
             <div className="mt-4 space-y-3 text-sm text-brand-muted leading-relaxed">
               <p>Two or more glass panes are separated by a spacer bar and hermetically sealed. The sealed cavity traps a layer of still air or inert gas (argon) that resists heat conduction and convection.</p>
               <p>The <span className="text-brand-accent font-medium">dual-seal system</span> uses a PIB (polyisobutylene) primary seal for gas retention and a structural silicone secondary seal for mechanical strength and moisture resistance.</p>
-              <p>An optional <span className="text-brand-accent font-medium">Low-E coating</span> on surface #3 (inner face of the outer pane) reflects long-wave infrared radiation back into the room in winter and away from the building in summer.</p>
+              <p>An optional <span className="text-brand-accent font-medium">Low-E coating</span> on surface #2 (inner face of the outer pane) reflects long-wave infrared radiation back into the room in winter and away from the building in summer.</p>
               <p>The result: U-values as low as <span className="text-brand-dark font-medium">1.4 W/m²·K</span> — a 60–70% improvement over single glazing.</p>
             </div>
           </div>

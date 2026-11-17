@@ -11,12 +11,12 @@ const CAVITIES: number[] = [6, 9, 12, 15, 20];
 const U_TABLE: Record<string, Record<string, Record<string, number[]>>> = {
   double: {
     none: { air: [3.3, 3.0, 2.8, 2.7, 2.8], argon: [3.1, 2.8, 2.7, 2.6, 2.6] },
-    single: { air: [2.5, 2.1, 1.8, 1.6, 1.7], argon: [2.1, 1.7, 1.5, 1.4, 1.4] },
+    single: { air: [2.5, 2.1, 1.8, 1.6, 1.7], argon: [2.1, 1.7, 1.6, 1.4, 1.4] },
     double: { air: [2.4, 1.9, 1.6, 1.4, 1.4], argon: [1.9, 1.5, 1.3, 1.1, 1.1] },
   },
   triple: {
     none: { air: [2.4, 2.1, 1.9, 1.8, 1.8], argon: [2.2, 2.0, 1.8, 1.7, 1.7] },
-    single: { air: [1.8, 1.4, 1.1, 1.0, 1.0], argon: [1.4, 1.1, 0.9, 0.8, 0.8] },
+    single: { air: [1.8, 1.4, 1.1, 1.0, 1.0], argon: [1.4, 1.1, 1.0, 0.9, 0.9] },
     double: { air: [1.7, 1.3, 1.0, 0.9, 0.9], argon: [1.3, 0.9, 0.7, 0.6, 0.6] },
   },
 };
@@ -139,7 +139,7 @@ export default function IGUSpecBuilder() {
           Pick the pane count, glass thickness, coating, cavity width and gas fill. The builder writes the make-up
           string a glazing schedule uses, then estimates overall thickness, weight (2.5 kg per m2 for each mm of glass)
           and an indicative center-of-glass U-value from an EN 673 lookup. The default shown is 6T Low-E#2 + 12Ar + 6T:
-          24 mm overall, 30 kg/m2, about 1.5 W/m2K.
+          24 mm overall, 30 kg/m2, about 1.6 W/m2K.
         </p>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-8">

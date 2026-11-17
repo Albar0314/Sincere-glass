@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Insulated Glass Manufacturer China — Double & Triple Glazing | Sincere Glass",
+  title: "Insulated Glass Manufacturer China — Double & Triple Glazing",
   description: "Custom insulated glass units (IGUs) from China. Argon gas fill, Low-E coating options, spacers from 6-20mm. 1.5× wind resistance, 3C certified. Factory-direct pricing.",
   openGraph: {
     title: "Insulated Glass (IGU) Manufacturer — Sincere Glass",

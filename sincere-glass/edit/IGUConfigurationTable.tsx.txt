@@ -4,11 +4,11 @@
 const ROWS: { makeup: string; total: string; weight: string; u: string; use: string }[] = [
   { makeup: "6 + 12A + 6", total: "24 mm", weight: "30", u: "2.8", use: "Interior partitions, mild climates, budget retrofits" },
   { makeup: "6 Low-E#2 + 12A + 6", total: "24 mm", weight: "30", u: "1.8", use: "Entry-level energy code compliance" },
-  { makeup: "6T Low-E#2 + 12Ar + 6T", total: "24 mm", weight: "30", u: "1.5", use: "Standard commercial windows and storefronts" },
-  { makeup: "6T double-silver Low-E#2 + 15Ar + 6T", total: "27 mm", weight: "30", u: "1.1", use: "Curtain walls in hot or mixed climates" },
-  { makeup: "8T Low-E#2 + 12Ar + 8T", total: "28 mm", weight: "40", u: "1.5", use: "Large lites and higher wind load zones" },
-  { makeup: "6T Low-E#2 + 12Ar + 5+0.76PVB+5 laminated", total: "28.76 mm", weight: "41", u: "1.5", use: "Overhead glazing, acoustic and safety-rated facades" },
-  { makeup: "6T Low-E#2 + 12Ar + 6T + 12Ar + 6T Low-E#5 (double silver)", total: "42 mm", weight: "45", u: "0.7", use: "Cold climates and Passive House level targets" },
+  { makeup: "6T Low-E#2 + 12Ar + 6T", total: "24 mm", weight: "30", u: "1.6", use: "Standard commercial windows and storefronts" },
+  { makeup: "6T Low-E#2 + 15Ar + 6T", total: "27 mm", weight: "30", u: "1.4", use: "Curtain walls and higher energy targets" },
+  { makeup: "8T Low-E#2 + 12Ar + 8T", total: "28 mm", weight: "40", u: "1.6", use: "Large lites and higher wind load zones" },
+  { makeup: "6T Low-E#2 + 12Ar + 5+0.76PVB+5 laminated", total: "28.76 mm", weight: "41", u: "1.6", use: "Overhead glazing, acoustic and safety-rated facades" },
+  { makeup: "6T Low-E#2 + 12Ar + 6T + 12Ar + 6T Low-E#5", total: "42 mm", weight: "45", u: "1.0", use: "Cold climates and high-performance envelopes" },
 ];
 
 export default function IGUConfigurationTable() {
@@ -21,8 +21,7 @@ export default function IGUConfigurationTable() {
         </h2>
         <p className="mt-3 text-brand-muted max-w-3xl">
           If you need one default for a commercial window, specify 6T Low-E#2 + 12Ar + 6T: 24 mm overall and about
-          1.5 W/m2K. If the project is a curtain wall in a hot climate, move to a double-silver coating and a 15 mm
-          argon cavity. If it is a cold climate, go triple. In the make-up string, the number is glass thickness in mm,
+          1.6 W/m2K. If the project is a curtain wall or has a higher energy target, widen the argon cavity to 15 mm. If it is a cold climate, go triple. In the make-up string, the number is glass thickness in mm,
           T means tempered, A is an air cavity, Ar is an argon cavity, and #2 or #5 is the surface that carries the
           Low-E coating, counted from outside.
         </p>
