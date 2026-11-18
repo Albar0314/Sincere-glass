@@ -1,3 +1,4 @@
+import ClusterHub from "@/components/blog/ClusterHub";
 import { blogArticles, type BlogArticle } from '@/lib/blog-registry';
 import BlogArticleLayout, {
   generateArticleMetadata,
@@ -365,7 +366,9 @@ export default function Page() {
           variant="footer"
           articleSlug="low-iron-glass-complete-guide"
         />
-      </BlogArticleLayout>
+            {/* SG-CLUSTER-HUB-V1 */}
+      <ClusterHub pillarSlug="low-iron-glass-complete-guide" />
+    </BlogArticleLayout>
     </>
   );
 }

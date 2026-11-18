@@ -28,7 +28,7 @@ interface Props {
 /** Generates Next.js Metadata for the article page */
 export function generateArticleMetadata(article: BlogArticle): Metadata {
   return {
-    title: `${article.title}`,
+    title: `${article.title} | Sincere Glass Blog`,
     description: article.excerpt,
     keywords: [article.targetKeyword, ...(article.secondaryKeywords || []), ...article.tags],
     authors: [{ name: article.author.name, url: article.author.url }],
@@ -48,34 +48,48 @@ export function generateArticleMetadata(article: BlogArticle): Metadata {
   };
 }
 
-/** Generates Article + FAQ structured data */
+/**
+ * Generates Article + FAQ structured data as a connected @graph.
+ * The Article node references the site-wide Organization (#organization)
+ * and WebSite (#website) entities defined in src/lib/schema.ts via @id,
+ * so every article plugs into one site entity graph instead of standing
+ * alone. Pillar pages additionally emit an ItemList (see ClusterHub) whose
+ * @id points back at this Article's #article node.
+ */
 export function articleJsonLd(article: BlogArticle, faqItems?: { q: string; a: string }[]) {
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: article.title,
-    description: article.excerpt,
-    image: article.heroImage,
-    datePublished: article.publishDate,
-    dateModified: article.updatedDate || article.publishDate,
-    author: {
-      '@type': 'Person',
-      name: article.author.name,
-      url: article.author.url,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Sincere Glass',
-      url: 'https://sincereglass.com',
-    },
-  };
+  const SITE = 'https://sincereglass.com';
+  const url = `${SITE}/blog/${article.slug}`;
+  const image = article.heroImage
+    ? article.heroImage.startsWith('http')
+      ? article.heroImage
+      : `${SITE}${article.heroImage}`
+    : undefined;
 
-  const schemas: object[] = [articleSchema];
+  const graph: object[] = [
+    {
+      '@type': 'Article',
+      '@id': `${url}#article`,
+      headline: article.title,
+      description: article.excerpt,
+      image,
+      datePublished: article.publishDate,
+      dateModified: article.updatedDate || article.publishDate,
+      inLanguage: 'en',
+      mainEntityOfPage: { '@id': url },
+      isPartOf: { '@id': `${SITE}/#website` },
+      author: {
+        '@type': 'Person',
+        name: article.author.name,
+        url: article.author.url,
+      },
+      publisher: { '@id': `${SITE}/#organization` },
+    },
+  ];
 
   if (faqItems && faqItems.length > 0) {
-    schemas.push({
-      '@context': 'https://schema.org',
+    graph.push({
       '@type': 'FAQPage',
+      '@id': `${url}#faq`,
       mainEntity: faqItems.map((item) => ({
         '@type': 'Question',
         name: item.q,
@@ -84,7 +98,7 @@ export function articleJsonLd(article: BlogArticle, faqItems?: { q: string; a: s
     });
   }
 
-  return schemas;
+  return [{ '@context': 'https://schema.org', '@graph': graph }];
 }
 
 export default function BlogArticleLayout({

@@ -1,3 +1,4 @@
+import ClusterHub from "@/components/blog/ClusterHub";
 import type { Metadata } from "next";
 import BlogArticleLayout, {
   generateArticleMetadata,
@@ -317,7 +318,9 @@ export default function Page() {
         <FAQ items={faqItems} title="Frequently Asked Questions" />
 
         <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} heading="Products commonly specified as or with IGU construction" />
-      </BlogArticleLayout>
+            {/* SG-CLUSTER-HUB-V1 */}
+      <ClusterHub pillarSlug="insulated-glass-complete-guide" />
+    </BlogArticleLayout>
     </>
   );
 }
