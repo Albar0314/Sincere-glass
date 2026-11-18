@@ -1,37 +1,34 @@
 /**
  * Hard-coded product map keeps this component decoupled from products.ts shape.
  * Edit this map if product slugs or taglines change.
+ * NOTE: image paths must match real files in /public/images/products/
+ * (same files the product pages use — the old *-card.jpg paths never existed).
  */
 const PRODUCT_MAP: Record<string, { title: string; tagline: string; image: string }> = {
   'tempered-glass': {
     title: 'Tempered Glass',
-    tagline: '4\u20135\u00d7 stronger than annealed. Jumbo panels up to 3m \u00d7 15m.',
-    image: '/images/products/tempered-glass-card.jpg',
+    tagline: '4–5× stronger than annealed. Jumbo panels up to 3m × 15m.',
+    image: '/images/products/tempered.jpg',
   },
   'laminated-glass': {
     title: 'Laminated Glass',
     tagline: 'PVB or SGP interlayer. Fragment-retention safety glass.',
-    image: '/images/products/laminated-glass-card.jpg',
+    image: '/images/products/laminated.jpg',
   },
   'insulated-glass': {
     title: 'Insulated Glass (IGU)',
     tagline: 'Low-E coated, argon-filled. Energy-efficient glazing.',
-    image: '/images/products/insulated-glass-card.jpg',
+    image: '/images/products/insulated.jpg',
   },
   'low-e-glass': {
     title: 'Low-E Glass',
     tagline: 'Soft-coat and hard-coat options for thermal control.',
-    image: '/images/products/low-e-glass-card.jpg',
+    image: '/images/products/insulated.jpg',
   },
   'enameled-glass': {
     title: 'Enameled Glass',
     tagline: 'Ceramic frit for color, pattern, and solar control.',
-    image: '/images/products/enameled-glass-card.jpg',
-  },
-  'curved-tempered-glass': {
-    title: 'Curved Tempered Glass',
-    tagline: 'Hot-bent from a 500 mm minimum radius. Up to 3.3 m \u00d7 15 m per panel.',
-    image: '/images/products/curved-tempered.jpg',
+    image: '/images/products/enameled.jpg',
   },
 };
 
@@ -78,7 +75,7 @@ export default function RelatedProductsCards({
               </h3>
               <p className="text-xs text-[#8B95A5] leading-relaxed m-0">{p.tagline}</p>
               <p className="text-xs text-[#DAA745] mt-3 m-0 font-medium">
-                View product \u2192
+                View product →
               </p>
             </div>
           </a>
