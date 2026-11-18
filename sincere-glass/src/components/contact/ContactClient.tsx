@@ -269,7 +269,7 @@ export default function ContactClient() {
               <div className="p-5 rounded-xl bg-brand-lighter border border-brand-light">
                 <h3 className="font-semibold text-brand-dark text-sm mb-3">Online</h3>
                 <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-brand-muted">Website</span><a href="https://www.xcglass.net" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">www.xcglass.net</a></div>
+                  <div className="flex justify-between"><span className="text-brand-muted">Website</span><a href="https://sincereglass.com" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">sincereglass.com</a></div>
                 </div>
               </div>
               {/* Factory visual proof — closes the sidebar */}
