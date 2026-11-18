@@ -1237,9 +1237,9 @@ export const blogArticles: BlogArticle[] = [
     secondaryKeywords: [
       "ultra clear glass",
       "extra clear glass",
-      "low iron tempered glass",
       "is low iron glass worth it",
     ],
+    // LIT-PURGE-V1:a31-litempered-24: purged low-iron-tempered terms (ownership -> low-iron-tempered-glass)
     searchKeywords: [
       "low iron glass",
       "ultra clear glass",
@@ -1309,6 +1309,7 @@ export const blogArticles: BlogArticle[] = [
       "low iron glass premium",
       "when to use low iron glass",
     ],
+    // LIT-PURGE-V1:a31-litempered-25: scanned, nothing to purge
     searchKeywords: [
       "low iron glass vs clear glass",
       "low iron vs clear",
@@ -1555,6 +1556,55 @@ export const blogArticles: BlogArticle[] = [
     articleType: 'technical' as const,
     readingTime: 11,
     reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+  },
+  {
+    slug: 'low-iron-tempered-glass',
+    title: "Low Iron Tempered Glass: Specification Guide",
+    excerpt: "Low iron tempered glass is ultra-clear glass that has been toughened - same strength as standard tempered, far better clarity and no green tint. A factory guide to thickness, heat soak, clarity gains, cost premium and how to spec it.",
+    targetKeyword: 'low iron tempered glass',
+    secondaryKeywords: [
+      'low iron toughened glass',
+      'ultra clear tempered glass',
+      'starphire tempered glass',
+      'low iron safety glass',
+      'tempered low iron glass',
+    ],
+    searchKeywords: [
+      'low iron tempered glass', 'low iron toughened glass', 'ultra clear tempered glass',
+      'starphire tempered glass', 'optiwhite tempered', 'low iron safety glass',
+      'tempered low iron glass', 'ultra clear toughened glass', 'low iron glass',
+      'tempered glass', 'EN 12150', 'EN 14179', 'ASTM C1048', 'heat soak test',
+      '\u8d85\u767d\u94a2\u5316\u73bb\u7483', '\u4f4e\u94c1\u94a2\u5316\u73bb\u7483', '\u8d85\u767d\u73bb\u7483',
+    ],
+    publishDate: '2026-11-17',
+    category: 'Product Knowledge' as const,
+    tags: ['low iron glass', 'tempered glass', 'ultra clear', 'safety glass', 'specification'],
+    heroImage: '/images/blog/low-iron-tempered-glass-hero.webp',
+    heroImageAlt: "A thick low iron tempered glass fin standing upright on dark polished concrete beside a standard clear pane, the clear pane showing a green edge while the low iron pane stays colorless, raked warm side lighting across both edges",
+    heroImagePrompt: "Studio product photography: two upright architectural glass fins side by side on polished dark concrete. Left fin is standard clear tempered glass showing a distinct green edge and faint green body tint. Right fin is low iron tempered glass, completely colorless with a near-clear edge. Both are thick 15mm panes with crisp polished edges, lit from above-left with warm amber raking light that catches the edges and reveals the color difference. 25-degree slightly elevated camera angle, shallow depth of field on the two edges. Clean dark #1C1F26 background, no humans, no text, no brand logos. 16:9 cinematic composition. 4K photorealistic, museum-exhibit quality, documentary industrial photography. Matches the #26/#27/#28/#29/#30 dark-concrete series.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 11,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'technical' as const,
+    cluster: 'product',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-11-17', note: "Initial publish - W3-#11 Low Iron cluster product spoke" },
+    ],
+    tldr: [
+      "Low iron tempered glass is ultra-clear glass that has been toughened. Same strength as standard tempered, far better clarity and no green tint.",
+      "The iron content has no effect on tempering. Any thickness from 4 to 19 mm that we temper in clear, we temper in low iron.",
+      "The clarity gap grows with thickness - obvious on thick railings, floors and fins; optional on thin framed glass.",
+      "Heat soak is driven by the application (railings, overhead, floors), not by choosing low iron.",
+      "Budget about 20 to 25 percent over standard clear tempered for the glass, a smaller share once the whole job is priced.",
+    ],
+    buyerFaq: [
+      { q: "Can you temper low iron at the thickness and size I need?", a: "We temper low iron from 4 to 19 mm on the same line as clear glass. Send the panel sizes and we will confirm oven capacity and practical limits before quoting." },
+      { q: "Do you heat soak low iron tempered, and can you certify it?", a: "Yes. We heat soak to EN 14179 on request and it is standard on railings, overhead and floors. Certificates travel with the shipment." },
+      { q: "What is the lead time on low iron tempered?", a: "Typically 10 to 15 working days for tempered-only, 15 to 20 with heat soak, from order confirmation at our Wuhan facility." },
+    ],
   },
 ];
 

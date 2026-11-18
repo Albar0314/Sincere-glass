@@ -298,6 +298,17 @@ export default function Page() {
         </section>
 
         <h2 id="faq">Frequently Asked Questions</h2>
+        {/* RECIP-W3-V1:a25-to-31 */}
+        <aside className="my-8 rounded-2xl border border-sky-200 bg-sky-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-sky-800">Related product guide</div>
+          <p className="mt-2 text-sm text-slate-700">
+            Need the ultra-clear glass toughened for a shower, railing or floor? Our
+            specification guide covers temperability, heat soak and the real cost premium.
+          </p>
+          <a href="/blog/low-iron-tempered-glass" className="mt-3 inline-block text-sm font-semibold text-sky-900 underline">
+            Read: Low Iron Tempered Glass Specification Guide &rarr;
+          </a>
+        </aside>
         <FAQ items={faqItems} />
 
         <section className="my-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">

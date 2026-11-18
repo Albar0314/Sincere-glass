@@ -300,6 +300,20 @@ export default function Page() {
           </a>
         </p>
 
+        {/* RECIP-W2-V1:a26-to-2930 */}
+        <aside className="my-8 rounded-2xl border border-sky-200 bg-sky-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-sky-800">Related technical deep-dives</div>
+          <ul className="mt-2 space-y-2 text-sm text-slate-700">
+            <li>
+              <a href="/blog/u-factor-and-shgc-explained" className="font-semibold text-sky-900 underline">How to read U-factor and SHGC</a>
+              {" "}- the two numbers on every NFRC label, decoded.
+            </li>
+            <li>
+              <a href="/blog/insulated-glass-spacer-warm-edge-vs-aluminum" className="font-semibold text-sky-900 underline">Warm edge vs aluminum spacers</a>
+              {" "}- how the edge seal moves your whole-window U-factor.
+            </li>
+          </ul>
+        </aside>
         <FAQ items={faqItems} title="Frequently Asked Questions" />
 
         <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} heading="Products commonly specified as or with IGU construction" />

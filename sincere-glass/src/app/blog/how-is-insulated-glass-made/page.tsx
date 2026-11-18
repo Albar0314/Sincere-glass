@@ -373,6 +373,16 @@ export default function Page() {
           </p>
         </TechNote>
 
+        {/* RECIP-W2-V1:a5-to-30 */}
+        <aside className="my-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-amber-800">Related deep-dive</div>
+          <p className="mt-2 text-sm text-slate-700">
+            Once the unit is assembled, the spacer you pick drives edge condensation and thermal performance.
+          </p>
+          <a href="/blog/insulated-glass-spacer-warm-edge-vs-aluminum" className="mt-3 inline-block text-sm font-semibold text-amber-900 underline">
+            Read: Warm Edge vs Aluminum Spacers &rarr;
+          </a>
+        </aside>
         <FAQ items={buyerFaqItems} />
 
         

@@ -334,6 +334,16 @@ export default function Page() {
           <InlineQuoteCTA variant="default" />
         </section>
 
+        {/* RECIP-W2-V1:a29-to-30 */}
+        <aside className="my-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-amber-800">Related deep-dive</div>
+          <p className="mt-2 text-sm text-slate-700">
+            The spacer at the glass edge is where a lot of your U-factor is won or lost.
+          </p>
+          <a href="/blog/insulated-glass-spacer-warm-edge-vs-aluminum" className="mt-3 inline-block text-sm font-semibold text-amber-900 underline">
+            Read: Warm Edge vs Aluminum Spacers &rarr;
+          </a>
+        </aside>
         <section id="faq">
           <h2>FAQ</h2>
           <FAQ items={faqItems} />
