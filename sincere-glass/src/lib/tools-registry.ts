@@ -58,7 +58,8 @@ export const CATEGORY_DESCRIPTIONS: Record<ToolCategory, string> = {
 
 export type ToolComponent =
   | "MaxPanelSize"
-  | "TriplePaneROI";
+  | "TriplePaneROI"
+  | "ContainerLoad";
 
 export const tools: Tool[] = [
   {
@@ -224,6 +225,92 @@ export const tools: Tool[] = [
       "insulated-glass-complete-guide",
     ],
     publishDate: "2026-11-10",
+    featured: true,
+  },
+  {
+    slug: "glass-container-load-calculator",
+    title:
+      "Glass Container Loading Calculator: How Much Glass Fits in a Container | Sincere Glass",
+    shortTitle: "Container Loading Calculator",
+    description:
+      "Estimate how many square meters of architectural glass fit in a 20ft or 40ft container, the loaded weight, and whether the load is weight-limited or volume-limited, by glass thickness and crate strategy.",
+    metaDescription:
+      "Free glass container loading calculator. Enter container type, glass thickness and crate strategy to estimate m2 per container, loaded weight in tonnes, and the limiting factor for your sea freight.",
+    targetKeyword: "glass container load calculator",
+    secondaryKeywords: [
+      "container loading calculator",
+      "how much glass fits in a container",
+      "glass shipping weight calculator",
+      "40hq glass capacity",
+    ],
+    searchKeywords: [
+      "glass container load",
+      "container loading calculator",
+      "how much glass per container",
+      "glass shipping weight",
+      "40hq glass capacity",
+      "20ft container glass",
+      "glass m2 per container",
+      "FCL glass load",
+      "container payload glass",
+      "\u73bb\u7483\u88c5\u67dc\u8ba1\u7b97",
+      "\u4e00\u4e2a\u67dc\u88c5\u591a\u5c11\u73bb\u7483",
+      "\u73bb\u7483\u6d77\u8fd0\u91cd\u91cf",
+    ],
+    category: "logistics",
+    component: "ContainerLoad",
+    howToName: "How to estimate a glass container load",
+    howToSteps: [
+      {
+        name: "Pick the container type",
+        text:
+          "Choose the container you plan to ship in: 20ft dry, 40ft high-cube, or 40ft open-top. Each has a different payload limit, which is usually what caps a glass load.",
+      },
+      {
+        name: "Pick the glass thickness or build-up",
+        text:
+          "Select the product: 6 to 12 mm monolithic, an insulated glass unit, or a laminated build-up. This sets the weight per square meter, from about 15 to 36 kg/m2.",
+      },
+      {
+        name: "Pick the crate strategy",
+        text:
+          "Choose A-frame crates, L-type crates, or fumigated wooden boxes. The crate strategy sets both the usable packing density and the share of payload taken by the crates themselves.",
+      },
+      {
+        name: "Read the capacity, weight and limiting factor",
+        text:
+          "The calculator returns indicative square meters per container, the loaded weight in tonnes, and whether the load is weight-limited or volume-limited, plus a damage-risk note for the combination.",
+      },
+      {
+        name: "Confirm against a real packing list",
+        text:
+          "Figures use industry-default packing assumptions. Send your exact panel sizes and quantities so we can confirm real capacity, crate count and freight before you book.",
+      },
+    ],
+    faq: [
+      {
+        q: "How many square meters of glass fit in a 40ft container?",
+        a: "It depends on thickness. A 40ft high-cube typically carries roughly 800 to 1,900 m2 of glass depending on whether it is thin monolithic or heavy IGU/laminated, because glass fills on weight before volume. Use the calculator for your exact build-up.",
+      },
+      {
+        q: "Is a glass container load limited by weight or by volume?",
+        a: "Almost always weight. Glass is dense (2,500 kg/m3), so a container usually hits its payload limit well before the floor is full. The calculator shows which limit is reached first for your configuration.",
+      },
+      {
+        q: "Does the estimate include the weight of the crates?",
+        a: "Yes. The loaded weight adds the crate weight back on top of the glass, using a 12 to 28 percent crate share depending on the crate strategy. The payload check is against the full crated weight.",
+      },
+      {
+        q: "Is this calculator a formal quote?",
+        a: "No. It uses industry-default packing assumptions, not your exact panel sizes or our live crate specs. It is for planning. Use the quote button to have us confirm real capacity, crate count and freight.",
+      },
+    ],
+    relatedProductSlugs: ["insulated-glass", "laminated-glass", "tempered-glass"],
+    relatedArticleSlugs: [
+      "glass-shipping-container-loading-guide",
+      "how-to-import-glass-from-china",
+    ],
+    publishDate: "2026-11-18",
     featured: true,
   },
 ];
