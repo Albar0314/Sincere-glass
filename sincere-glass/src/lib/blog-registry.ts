@@ -1239,6 +1239,7 @@ export const blogArticles: BlogArticle[] = [
       "extra clear glass",
       "is low iron glass worth it",
     ],
+    // SHOWER-PURGE-V1:a32-shower-24: scanned, nothing to purge
     // LIT-PURGE-V1:a31-litempered-24: purged low-iron-tempered terms (ownership -> low-iron-tempered-glass)
     searchKeywords: [
       "low iron glass",
@@ -1309,6 +1310,7 @@ export const blogArticles: BlogArticle[] = [
       "low iron glass premium",
       "when to use low iron glass",
     ],
+    // SHOWER-PURGE-V1:a32-shower-25: scanned, nothing to purge
     // LIT-PURGE-V1:a31-litempered-25: scanned, nothing to purge
     searchKeywords: [
       "low iron glass vs clear glass",
@@ -1569,6 +1571,7 @@ export const blogArticles: BlogArticle[] = [
       'low iron safety glass',
       'tempered low iron glass',
     ],
+    // SHOWER-PURGE-V1:a32-shower-31: scanned, nothing to purge
     searchKeywords: [
       'low iron tempered glass', 'low iron toughened glass', 'ultra clear tempered glass',
       'starphire tempered glass', 'optiwhite tempered', 'low iron safety glass',
@@ -1604,6 +1607,55 @@ export const blogArticles: BlogArticle[] = [
       { q: "Can you temper low iron at the thickness and size I need?", a: "We temper low iron from 4 to 19 mm on the same line as clear glass. Send the panel sizes and we will confirm oven capacity and practical limits before quoting." },
       { q: "Do you heat soak low iron tempered, and can you certify it?", a: "Yes. We heat soak to EN 14179 on request and it is standard on railings, overhead and floors. Certificates travel with the shipment." },
       { q: "What is the lead time on low iron tempered?", a: "Typically 10 to 15 working days for tempered-only, 15 to 20 with heat soak, from order confirmation at our Wuhan facility." },
+    ],
+  },
+  {
+    slug: 'low-iron-glass-shower-door',
+    title: "Low Iron Glass for Shower Doors: Is It Worth It?",
+    excerpt: "A shower door is tempered safety glass either way - low iron just removes the green tint at the edge. A factory buyer guide to when it is worth the premium, which thickness, heat soak, coatings and the real cost on a shower job.",
+    targetKeyword: 'low iron glass shower door',
+    secondaryKeywords: [
+      'low iron shower glass',
+      'ultra clear shower door',
+      'starphire shower glass',
+      'frameless low iron shower',
+      'low iron shower screen',
+    ],
+    searchKeywords: [
+      'low iron glass shower door', 'low iron shower glass', 'ultra clear shower door',
+      'starphire shower glass', 'frameless low iron shower', 'low iron shower screen',
+      'low iron glass', 'frameless shower glass', 'shower glass green tint',
+      'tempered shower glass', 'EN 12150', 'EN 14179', 'ASTM C1048',
+      '\u6dcb\u6d74\u623f\u8d85\u767d\u73bb\u7483', '\u4f4e\u94c1\u6dcb\u6d74\u95e8', '\u8d85\u767d\u6dcb\u6d74\u73bb\u7483',
+    ],
+    publishDate: '2026-11-18',
+    category: 'Buyer Guide' as const,
+    tags: ['low iron glass', 'shower door', 'frameless shower', 'ultra clear', 'tempered glass'],
+    heroImage: '/images/blog/low-iron-glass-shower-door-hero.webp',
+    heroImageAlt: "A frameless walk-in shower with thick low iron glass panels showing a colorless polished edge, beside a standard clear glass panel with a visible green edge, warm bathroom lighting on dark stone tile",
+    heroImagePrompt: "Interior architectural photography: a modern frameless walk-in shower enclosure built from thick 12mm glass panels on dark natural stone tile. The main panel is low iron glass with a completely colorless, crisp polished edge. A second panel at the left edge of frame is standard clear glass showing a distinct green edge for contrast. Warm diffused bathroom lighting rakes across the polished glass edges to reveal the color difference. Clean minimalist spa bathroom, no humans, no text, no brand logos, no visible fixtures clutter. 16:9 cinematic composition, 4K photorealistic, architectural digest quality. Matches the #26/#27/#28/#29/#30/#31 dark-material series.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 10,
+    featured: false,
+    reviewedBy: { name: 'Albar', title: 'Technical Lead' },
+    articleType: 'buyer-guide' as const,
+    cluster: 'application',
+    relatedProductSlugs: ['tempered-glass', 'laminated-glass'],
+    translations: {},
+    changelog: [
+      { date: '2026-11-18', note: "Initial publish - W3-#12 Low Iron cluster application spoke" },
+    ],
+    tldr: [
+      "Low iron shower glass is the ultra-clear version of a normal tempered shower panel - same strength, no green tint.",
+      "Worth the premium on frameless 8-12 mm enclosures where the edge is exposed; optional on thin framed screens.",
+      "The green of standard glass compounds with thickness, so thicker and more exposed panels make the strongest case.",
+      "Heat soak is advised for frameless panels and is an application decision, not a low iron one.",
+      "Budget about 20 to 25 percent over standard clear on the glass, a smaller share once hardware and install are counted.",
+    ],
+    buyerFaq: [
+      { q: "Can you cut low iron shower panels to my hinge and handle cut-outs?", a: "Yes. Send the panel sizes with hinge and handle cut-out positions and we confirm temperability and edgework before quoting." },
+      { q: "Do you heat soak and certify frameless shower panels?", a: "Yes, to EN 14179 on request, which we advise for frameless panels. Certificates travel with the shipment." },
+      { q: "What is the lead time on low iron shower glass?", a: "Typically 10 to 15 working days tempered-only, 15 to 20 with heat soak or an easy-clean coating, from order confirmation at our Wuhan facility." },
     ],
   },
 ];

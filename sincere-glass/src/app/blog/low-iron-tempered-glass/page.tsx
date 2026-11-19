@@ -249,6 +249,17 @@ export default function Page() {
         </p>
 
         <h2 id="faq">FAQ</h2>
+        {/* RECIP-W3-V1:a31-to-32 */}
+        <aside className="my-8 rounded-2xl border border-sky-200 bg-sky-50 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wide text-sky-800">Related buyer guide</div>
+          <p className="mt-2 text-sm text-slate-700">
+            Fitting out a frameless shower? Our buyer guide covers when ultra-clear glass
+            is worth the premium, the right thickness, heat soak and the real cost on a shower job.
+          </p>
+          <a href="/blog/low-iron-glass-shower-door" className="mt-3 inline-block text-sm font-semibold text-sky-900 underline">
+            Read: Low Iron Glass for Shower Doors - Is It Worth It? &rarr;
+          </a>
+        </aside>
         <FAQ items={faqItems} />
 
         <RelatedProductsCards
