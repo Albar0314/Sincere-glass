@@ -361,6 +361,12 @@ export default function Page() {
             Read: Low Iron Glass for Shower Doors - Is It Worth It? &rarr;
           </a>
         </aside>
+        {/* SG-RECIP-W3-13-V1 */}
+        <p>
+          Choosing between brands of ultra-clear glass? See{" "}
+          <a href="/blog/starphire-vs-low-iron">whether the Starphire name is worth paying for</a>{" "}
+          versus generic low-iron.
+        </p>
         <FAQ items={faqItems} />
 
         <h2 id="buyer-faq" className="text-2xl font-semibold text-[#F2F0ED] mt-12 mb-6">

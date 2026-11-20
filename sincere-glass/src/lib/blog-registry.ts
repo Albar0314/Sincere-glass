@@ -133,7 +133,7 @@ export const blogArticles: BlogArticle[] = [
       'difference between tempered and laminated glass',
       'toughened glass vs laminated glass',
       'tempered laminated glass',
-      'safety glass comparison',
+      'safety glass comparison'
     ],
     publishDate: '2026-10-06',
     updatedDate: '2026-10-07',
@@ -153,7 +153,7 @@ export const blogArticles: BlogArticle[] = [
     translations: {},
     changelog: [
       { date: '2026-10-06', note: 'Initial publish' },
-      { date: '2026-10-07', note: 'SOP v2 rewrite: factory POV, standards citations, buyer FAQ, lead magnet CTA, related products' },
+      { date: '2026-10-07', note: 'SOP v2 rewrite: factory POV, standards citations, buyer FAQ, lead magnet CTA, related products' }
     ],
   },
 
@@ -167,7 +167,7 @@ export const blogArticles: BlogArticle[] = [
       'insulated vs laminated', 'laminated vs insulated', 'IGU vs laminated',
       'IG vs laminated', 'double glazing vs laminated', 'thermal vs acoustic glass',
       'IGU', 'PVB', 'SGP', 'U-value', 'STC', 'Low-E', 'argon fill',
-      '中空玻璃 夹胶玻璃', '中空 夹胶 对比', '隔音 隔热 玻璃', '玻璃选型 中空 夹胶',
+      '中空玻璃 夹胶玻璃', '中空 夹胶 对比', '隔音 隔热 玻璃', '玻璃选型 中空 夹胶'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -185,7 +185,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'laminated-glass', 'low-e-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish' },
+      { date: '2026-10-07', note: 'Initial publish' }
     ],
   },
 
@@ -200,7 +200,7 @@ export const blogArticles: BlogArticle[] = [
       'tempered vs float glass', 'what is annealed glass', 'is annealed glass safe',
       'float glass', 'annealed float', 'surface compressive stress',
       'GB 15763', 'ASTM C1048', 'EN 12150',
-      '钢化玻璃 普通玻璃', '退火玻璃 钢化玻璃', '浮法玻璃 钢化', '安全玻璃 普通玻璃',
+      '钢化玻璃 普通玻璃', '退火玻璃 钢化玻璃', '浮法玻璃 钢化', '安全玻璃 普通玻璃'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -218,7 +218,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish' },
+      { date: '2026-10-07', note: 'Initial publish' }
     ],
   },
 
@@ -233,7 +233,7 @@ export const blogArticles: BlogArticle[] = [
       'how to choose architectural glass', 'glass buyer guide', 'glass pillar guide',
       'architectural glass family', 'glass selection framework',
       'IGU', 'PVB', 'SGP', 'Low-E', 'tempered laminated insulated',
-      '建筑玻璃分类', '建筑玻璃选型', '建筑玻璃种类', '玻璃选型指南', '玻璃产品分类',
+      '建筑玻璃分类', '建筑玻璃选型', '建筑玻璃种类', '玻璃选型指南', '玻璃产品分类'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -252,7 +252,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial pillar publish' },
+      { date: '2026-10-07', note: 'Initial pillar publish' }
     ],
   },
 
@@ -267,7 +267,7 @@ export const blogArticles: BlogArticle[] = [
       'glass tempering process', 'how to temper glass', 'tempered glass production line',
       'glass quenching process', 'glass heat treatment', 'glass furnace tempering',
       'tempering furnace', 'quench', 'surface compressive stress', 'NiS inclusion',
-      '钢化玻璃生产', '钢化玻璃工艺', '玻璃钢化流程', '玻璃淬火',
+      '钢化玻璃生产', '钢化玻璃工艺', '玻璃钢化流程', '玻璃淬火'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -285,7 +285,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish — first article in Technical Guides cluster' },
+      { date: '2026-10-07', note: 'Initial publish — first article in Technical Guides cluster' }
     ],
   },
 
@@ -300,7 +300,7 @@ export const blogArticles: BlogArticle[] = [
       'glass lamination process', 'how to laminate glass', 'laminated glass production line',
       'autoclave lamination', 'PVB lamination', 'SGP lamination',
       'autoclave', 'PVB', 'SGP', 'SentryGlas', 'EVA interlayer', 'acoustic PVB',
-      '夹胶玻璃生产', '夹胶玻璃工艺', '玻璃夹胶流程', 'PVB夹胶',
+      '夹胶玻璃生产', '夹胶玻璃工艺', '玻璃夹胶流程', 'PVB夹胶'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -318,7 +318,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['laminated-glass', 'tempered-glass', 'insulated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish — second article in Technical Guides cluster' },
+      { date: '2026-10-07', note: 'Initial publish — second article in Technical Guides cluster' }
     ],
   },
 
@@ -333,7 +333,7 @@ export const blogArticles: BlogArticle[] = [
       'double glazing production', 'IGU assembly', 'insulated glass unit production',
       'how to make IGU', 'argon fill IGU', 'warm edge spacer', 'IGU dual seal',
       'IGU', 'DGU', 'spacer bar', 'desiccant', 'PIB', 'silicone secondary seal',
-      '中空玻璃生产', '中空玻璃工艺', '中空玻璃组装', '氩气填充',
+      '中空玻璃生产', '中空玻璃工艺', '中空玻璃组装', '氩气填充'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -351,7 +351,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish — third article in Technical Guides cluster (unlocks Pillar)' },
+      { date: '2026-10-07', note: 'Initial publish — third article in Technical Guides cluster (unlocks Pillar)' }
     ],
   },
 
@@ -367,7 +367,7 @@ export const blogArticles: BlogArticle[] = [
       'tempering lamination IGU', 'glass processing', 'glass factory process',
       'tempering', 'lamination', 'IGU assembly', 'autoclave', 'glass furnace',
       'glass pillar guide', 'glass manufacturing hub',
-      '建筑玻璃生产', '建筑玻璃工艺', '玻璃深加工', '玻璃制造流程',
+      '建筑玻璃生产', '建筑玻璃工艺', '玻璃深加工', '玻璃制造流程'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -386,7 +386,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish — Pillar Page for Technical Guides cluster' },
+      { date: '2026-10-07', note: 'Initial publish — Pillar Page for Technical Guides cluster' }
     ],
   },
 
@@ -401,7 +401,7 @@ export const blogArticles: BlogArticle[] = [
       'curtain wall glazing', 'facade glass', 'curtain wall glass types', 'facade glass specification',
       'curtain wall IGU', 'curtain wall laminated glass', 'high-rise glass spec',
       'curtain wall', 'facade', 'Low-E IGU', 'laminated IGU', 'SGP curtain wall',
-      '幕墙玻璃', '幕墙玻璃规格', '建筑幕墙玻璃', '幕墙玻璃选型', '幕墙中空玻璃',
+      '幕墙玻璃', '幕墙玻璃规格', '建筑幕墙玻璃', '幕墙玻璃选型', '幕墙中空玻璃'
     ],
     publishDate: '2026-10-07',
     updatedDate: '2026-10-07',
@@ -419,7 +419,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'laminated-glass', 'tempered-glass', 'low-e-glass', 'enameled-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-07', note: 'Initial publish — first article in Application cluster' },
+      { date: '2026-10-07', note: 'Initial publish — first article in Application cluster' }
     ],
   },
   {
@@ -433,7 +433,7 @@ export const blogArticles: BlogArticle[] = [
       '10mm vs 12mm shower glass', 'how thick should shower glass be', 'shower enclosure glass',
       'walk-in shower glass thickness', 'tempered shower door glass',
       'CPSC 1201', 'EN 14428', 'GB 15763.2', 'AS 1288', 'tempered glass', 'safety glazing',
-      '淋浴房玻璃厚度', '淋浴玻璃', '钢化淋浴房', '无框淋浴房 厚度',
+      '淋浴房玻璃厚度', '淋浴玻璃', '钢化淋浴房', '无框淋浴房 厚度'
     ],
     publishDate: '2026-10-12',
     updatedDate: '2026-10-12',
@@ -451,7 +451,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-12', note: 'Initial publish — second article in Application cluster' },
+      { date: '2026-10-12', note: 'Initial publish — second article in Application cluster' }
     ],
   },
 
@@ -466,7 +466,7 @@ export const blogArticles: BlogArticle[] = [
       'glass railing specification',
       'balcony glass specification',
       'frameless glass balustrade',
-      'laminated glass balustrade',
+      'laminated glass balustrade'
     ],
     searchKeywords: [
       'balustrade glass', 'balustrade glass specification', 'glass balustrade',
@@ -475,7 +475,7 @@ export const blogArticles: BlogArticle[] = [
       'balcony glass thickness', 'glass railing thickness',
       'EN 12600', 'EN 1991-1-1', 'ASCE 7', 'IBC 2407', 'AS 1288', 'GB 50210',
       'SGP SentryGlas', 'PVB laminated', 'pendulum impact test',
-      '栏杆玻璃', '玻璃栏杆', '阳台玻璃栏杆', '夹胶玻璃栏板', '栏板玻璃',
+      '栏杆玻璃', '玻璃栏杆', '阳台玻璃栏杆', '夹胶玻璃栏板', '栏板玻璃'
     ],
     publishDate: '2026-10-12',
     updatedDate: '2026-10-12',
@@ -497,7 +497,7 @@ export const blogArticles: BlogArticle[] = [
       'Monolithic tempered is now restricted in most codes for guard duty. The default commercial build-up is 8+1.52+8 PVB (framed) or 10+1.52+10 SGP (frameless).',
       'EN 12600 Class 1(B)1 — 1200 mm pendulum drop — is required for frameless or public-access balustrades. Class 2(B)2 (450 mm) is the residential minimum.',
       'Mounting hardware drives the glass spec. Base shoe allows the thinnest viable build-up; standoff fittings and spigots step the glass up one notch.',
-      'Heat-soaked (EN 14179) tempered is non-optional for balustrade work. The ~15% cost premium eliminates spontaneous NiS failure after installation.',
+      'Heat-soaked (EN 14179) tempered is non-optional for balustrade work. The ~15% cost premium eliminates spontaneous NiS failure after installation.'
     ],
     buyerFaq: [
       {
@@ -511,11 +511,11 @@ export const blogArticles: BlogArticle[] = [
       {
         q: 'What test certificates do you provide with balustrade glass shipments?',
         a: 'Every shipment includes mill test certificates for the base glass, EN 12150 or ASTM C1048 tempering certificates with surface compressive stress values, EN 12600 or equivalent pendulum impact test reports for the specific build-up, EN 14179 heat-soak test certificates when specified, and SGP/PVB interlayer MSDS and performance datasheets. For EU shipments we provide CE marking documentation per EN 14449.',
-      },
+      }
     ],
     translations: {},
     changelog: [
-      { date: '2026-10-12', note: 'Initial publish — third article in Application cluster, unlocks Pillar eligibility' },
+      { date: '2026-10-12', note: 'Initial publish — third article in Application cluster, unlocks Pillar eligibility' }
     ],
   },
 
@@ -529,7 +529,7 @@ export const blogArticles: BlogArticle[] = [
       'glass selection by application',
       'architectural glazing applications',
       'glass application guide',
-      'glazing applications guide',
+      'glazing applications guide'
     ],
     searchKeywords: [
       'architectural glass applications', 'glass applications', 'glazing applications',
@@ -538,7 +538,7 @@ export const blogArticles: BlogArticle[] = [
       'glazing schedule', 'glass spec sheet', 'glass application matrix',
       'facade glass', 'balustrade glass', 'shower glass', 'skylight glass', 'interior glass',
       'glass floor', 'glass stair', 'IGU facade', 'laminated balustrade',
-      '建筑玻璃应用', '建筑玻璃选型', '幕墙 栏杆 淋浴 天窗', '玻璃应用场景', '按应用选玻璃',
+      '建筑玻璃应用', '建筑玻璃选型', '幕墙 栏杆 淋浴 天窗', '玻璃应用场景', '按应用选玻璃'
     ],
     publishDate: '2026-10-12',
     updatedDate: '2026-10-12',
@@ -561,7 +561,7 @@ export const blogArticles: BlogArticle[] = [
       'The decision flows in one direction: application → loads → required failure mode → build-up → certification. Starting from a product and working backward produces over-engineered facades and under-engineered balustrades.',
       'Tempered monolithic is restricted or forbidden in most life-safety applications (balustrade, skylight, floor) because it offers zero post-breakage retention. The shower is the one zone where it dominates.',
       'IGU and Low-E IGU dominate facade and overhead zones but are explicitly inappropriate for balustrade, shower, and floor applications. Any "IGU" outside facade/overhead is a probable specification error.',
-      'One project typically has 3–5 distinct glass marks. A single "project glass" is almost always wrong — it either over-specifies partitions or under-specifies safety-critical zones.',
+      'One project typically has 3–5 distinct glass marks. A single "project glass" is almost always wrong — it either over-specifies partitions or under-specifies safety-critical zones.'
     ],
     buyerFaq: [
       {
@@ -575,11 +575,11 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "Can you work from an architect's drawing set directly, or do you need a glass schedule?",
         a: 'Both. Our estimating team routinely reads full drawing sets (plans, sections, elevations) and extracts a glass schedule when the architect has not provided one — this is included in the quote process for projects over 500 m². For smaller projects we ask for the schedule or a filled-in RFQ template; working from scratch for small volumes delays the quote by 2-3 days.',
-      },
+      }
     ],
     translations: {},
     changelog: [
-      { date: '2026-10-12', note: 'Initial pillar publish — Application cluster Pillar Page, completing the three-pillar architecture (Types / Manufacturing / Applications)' },
+      { date: '2026-10-12', note: 'Initial pillar publish — Application cluster Pillar Page, completing the three-pillar architecture (Types / Manufacturing / Applications)' }
     ],
   },
 
@@ -594,7 +594,7 @@ export const blogArticles: BlogArticle[] = [
       "architectural glass sourcing China",
       "China glass FOB CIF",
       "import tempered glass from China",
-      "import laminated glass from China to US",
+      "import laminated glass from China to US"
     ],
     searchKeywords: [
       "import glass from China", "how to import glass", "China glass supplier",
@@ -603,7 +603,7 @@ export const blogArticles: BlogArticle[] = [
       "FOB glass China", "CIF glass China", "DDP glass",
       "Incoterms 2020 glass", "VGM SOLAS glass", "glass container loading",
       "architectural glass import", "China glass MOQ", "China glass CCC verification",
-      "进口中国玻璃", "中国玻璃供应商", "玻璃出口", "玻璃外贸", "幕墙玻璃采购",
+      "进口中国玻璃", "中国玻璃供应商", "玻璃出口", "玻璃外贸", "幕墙玻璃采购"
     ],
     publishDate: "2026-10-13",
     updatedDate: "2026-10-13",
@@ -625,7 +625,7 @@ export const blogArticles: BlogArticle[] = [
       "The 5-stage journey: shortlist (3–5 vetted factories) → verify (credentials + sample + audit) → specify (unambiguous RFQ) → logistics (Incoterms + VGM) → QC (pre-shipment inspection + container loading).",
       "FOB is the right default Incoterm for most glass buyers; CIF buries freight you can't verify; DDP sounds attractive but is rarely well executed.",
       "A 20-foot container is the right choice for architectural glass: the limit is weight (~24 tonnes), not cube (33 m³) — a 40' HQ earns its place only when panels exceed ~2.6 m height.",
-      "Worked example: 100 panels of 6-1.52-6 laminate (375 m²) land in Los Angeles at ~USD 34/m² all-in, versus ~USD 55–80/m² from a local distributor.",
+      "Worked example: 100 panels of 6-1.52-6 laminate (375 m²) land in Los Angeles at ~USD 34/m² all-in, versus ~USD 55–80/m² from a local distributor."
     ],
     buyerFaq: [
       {
@@ -655,10 +655,10 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "What payment terms should I expect from a Chinese glass factory?",
         a: "Industry norm for first orders is 30% T/T deposit on PO confirmation, 70% T/T balance against a copy of the bill of lading (or against pre-shipment inspection report, if third-party inspection is used). L/C at sight is accepted for larger orders. 100% advance payment is a red flag — a serious factory should not need it. For repeat business some suppliers extend to 20/80 or offer OA (open account) terms after 2–3 successful shipments.",
-      },
+      }
     ],
     changelog: [
-      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster. v1.1: SSR methodology shadow + table caption + US FAQ" },
+      { date: "2026-10-13", note: "Initial publish — first article in Buyer's Guide cluster. v1.1: SSR methodology shadow + table caption + US FAQ" }
     ],
   },
 
@@ -673,7 +673,7 @@ export const blogArticles: BlogArticle[] = [
       'glass container packaging',
       'glass FCL vs LCL',
       'how to ship glass from china',
-      'glass sea freight packaging',
+      'glass sea freight packaging'
     ],
     searchKeywords: [
       'glass container shipping', 'shipping glass in containers', 'glass container loading',
@@ -681,7 +681,7 @@ export const blogArticles: BlogArticle[] = [
       'glass packaging export', 'glass crate types', 'A-frame glass crate',
       'L-type glass crate', 'glass container weight', '20DC glass', '40HQ glass',
       'ISPM-15', 'ICC A clause', 'marine insurance glass', 'HS code 7007', 'HS code 7008',
-      '玻璃海运', '玻璃集装箱', '玻璃出口装柜', '玻璃海运包装',
+      '玻璃海运', '玻璃集装箱', '玻璃出口装柜', '玻璃海运包装'
     ],
     publishDate: '2026-10-14',
     updatedDate: '2026-10-14',
@@ -699,7 +699,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-14', note: 'Initial publish — Buyer-Guide cluster article 2 of 3 (Pillar activates at 3)' },
+      { date: '2026-10-14', note: 'Initial publish — Buyer-Guide cluster article 2 of 3 (Pillar activates at 3)' }
     ],
   },
   {
@@ -712,7 +712,7 @@ export const blogArticles: BlogArticle[] = [
       "vet glass manufacturer china",
       "glass factory audit checklist",
       "verify china glass factory",
-      "chinese glass supplier verification",
+      "chinese glass supplier verification"
     ],
     searchKeywords: [
       "how to vet a china glass supplier",
@@ -734,7 +734,7 @@ export const blogArticles: BlogArticle[] = [
       "玻璃厂验厂",
       "供应商审核清单",
       "营业执照查询",
-      "企查查 天眼查",
+      "企查查 天眼查"
     ],
     publishDate: "2026-10-15",
     updatedDate: "2026-10-15",
@@ -749,7 +749,7 @@ export const blogArticles: BlogArticle[] = [
       "EN 12150",
       "CE marking",
       "ANSI Z97.1",
-      "buyer guide",
+      "buyer guide"
     ],
     heroImage: "/images/blog/supplier-vetting-hero.webp",
     heroImageAlt: "A buyer on a video call conducting a live factory audit, laptop showing a split view of a Chinese glass tempering furnace line next to a vetting checklist, business licence document on the desk",
@@ -763,7 +763,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ["tempered-glass", "laminated-glass", "insulated-glass"],
     translations: {},
     changelog: [
-      { date: "2026-10-15", note: "Initial publish — third article in Buyer-Guide cluster (unlocks Pillar activation)" },
+      { date: "2026-10-15", note: "Initial publish — third article in Buyer-Guide cluster (unlocks Pillar activation)" }
     ],
   },
 
@@ -778,7 +778,7 @@ export const blogArticles: BlogArticle[] = [
       'china glass sourcing guide',
       'how to buy glass from china manufacturer',
       'architectural glass procurement china',
-      'china architectural glass sourcing',
+      'china architectural glass sourcing'
     ],
     searchKeywords: [
       'architectural glass china buyer guide', 'china glass sourcing', 'buying glass from china',
@@ -786,7 +786,7 @@ export const blogArticles: BlogArticle[] = [
       'buyer guide glass china', 'china glass factory buyer', 'importing glass china guide',
       'china glass supplier guide', 'glass sourcing hub china',
       '中国建筑玻璃采购', '从中国采购玻璃', '中国玻璃厂采购指南', '中国建筑玻璃供应商选择',
-      'FOB', 'IGU', 'landed cost', 'HS code glass',
+      'FOB', 'IGU', 'landed cost', 'HS code glass'
     ],
     publishDate: '2026-10-19',
     updatedDate: '2026-10-19',
@@ -805,7 +805,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-19', note: 'Initial publish — Pillar Page for Buyer-Guide cluster (hub for #13 import, #14 shipping, #15 vetting)' },
+      { date: '2026-10-19', note: 'Initial publish — Pillar Page for Buyer-Guide cluster (hub for #13 import, #14 shipping, #15 vetting)' }
     ],
   },
   {
@@ -837,7 +837,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'low-e-glass'],
     translations: {},
     changelog: [
-      { date: '2026-10-20', note: 'Initial publish \u2014 first article in Product Deep Dives cluster' },
+      { date: '2026-10-20', note: 'Initial publish \u2014 first article in Product Deep Dives cluster' }
     ],
   },
   {
@@ -851,7 +851,7 @@ export const blogArticles: BlogArticle[] = [
       'pvb vs sgp price difference',
       'ionoplast vs pvb cost',
       'sentryglas vs pvb cost',
-      'when to use sgp instead of pvb',
+      'when to use sgp instead of pvb'
     ],
     searchKeywords: [
       'sgp vs pvb cost', 'sgp interlayer price', 'pvb vs sgp price difference',
@@ -880,7 +880,7 @@ export const blogArticles: BlogArticle[] = [
       "SGP is not an acoustic upgrade. Standard PVB outperforms SGP on STC at the same build-up; acoustic PVB beats both.",
       "Mix PVB and SGP in the same project. Facade IGUs and interior partitions: PVB. Balustrade, overhead, and open-edge details: SGP.",
       "Edge sealing, delamination remediation, and the hardware upside of thinner SGP build-ups are hidden cost lines that quietly swing lifecycle math.",
-      "Decision rule: if the application is structural or safety-critical, or the edge is exposed, or the warranty is 10+ years, SGP wins on lifecycle cost even when PVB wins on day 0.",
+      "Decision rule: if the application is structural or safety-critical, or the edge is exposed, or the warranty is 10+ years, SGP wins on lifecycle cost even when PVB wins on day 0."
     ],
     buyerFaq: [
       {
@@ -902,11 +902,11 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "How do I RFQ an SGP vs PVB cost comparison from your plant?",
         a: "Send the glass schedule with each mark's build-up (e.g. '10-1.52-10 tempered SGP') plus the quantities per mark. We return a line-by-line PVB and SGP comparison for marks where both are credible, so you see the real delta for your specific project rather than a generic index.",
-      },
+      }
     ],
     translations: {},
     changelog: [
-      { date: '2026-10-21', note: 'Initial publish — second article in Product Deep Dives cluster' },
+      { date: '2026-10-21', note: 'Initial publish — second article in Product Deep Dives cluster' }
     ],
   },
   {
@@ -920,7 +920,7 @@ export const blogArticles: BlogArticle[] = [
       'jumbo tempered glass size',
       'maximum glass panel size',
       '3.3.3m x 15m glass',
-      'oversized architectural glass',
+      'oversized architectural glass'
     ],
     searchKeywords: [
       'jumbo glass', 'jumbo architectural glass', 'oversized glass panels',
@@ -951,7 +951,7 @@ export const blogArticles: BlogArticle[] = [
       "The Sincere Wuhan envelope is 3 x 15 m tempering, 3 x 15 m dry-laminating autoclave, and 3 x 6 m sealed IG. Beyond 3 x 15 m, the global supplier count collapses to the low hundreds.",
       "Transport almost never bottlenecks jumbo. 40 ft high-cube handles up to 11.8 m longest side; flat rack covers 12 m; breakbulk handles the rest. Port handling and site crane access collapse projects first.",
       "Three failure modes become serious at jumbo scale: uneven quench thermal breakage, roller wave distortion, and delamination edge creep. Supplier quality systems that catch these are the ones that survive the warranty period.",
-      "On RFQ, the five confirm-explicitly questions a jumbo-capable factory should answer in its first reply are the shortlist filter. A supplier who dodges question one is not jumbo-ready.",
+      "On RFQ, the five confirm-explicitly questions a jumbo-capable factory should answer in its first reply are the shortlist filter. A supplier who dodges question one is not jumbo-ready."
     ],
     buyerFaq: [
       {
@@ -973,11 +973,11 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "How do I RFQ jumbo glass from your plant?",
         a: "Use the RFQ builder in this article to generate a 10-field RFQ block, then send it to our export team at the address on our contact page. The 10 fields are the minimum we need to quote accurately; the five confirm-explicitly questions in the generated RFQ are the ones we answer in our first reply so you can shortlist us against other suppliers on equal information.",
-      },
+      }
     ],
     translations: {},
     changelog: [
-      { date: '2026-10-22', note: 'Initial publish \u2014 third article in Product Deep Dives cluster (activates Pillar threshold)' },
+      { date: '2026-10-22', note: 'Initial publish \u2014 third article in Product Deep Dives cluster (activates Pillar threshold)' }
     ],
   },
 
@@ -991,7 +991,7 @@ export const blogArticles: BlogArticle[] = [
       "architectural glass spec sheet",
       "glass specification guide",
       "architectural glass specifications",
-      "custom architectural glass specification",
+      "custom architectural glass specification"
     ],
     searchKeywords: [
       "architectural glass specification",
@@ -1023,7 +1023,7 @@ export const blogArticles: BlogArticle[] = [
       "\u73bb\u7483 \u89c4\u683c \u6307\u5357",
       "\u73bb\u7483 \u89c4\u683c \u6a21\u677f",
       "\u73bb\u7483 \u914d\u7f6e \u7f16\u7801",
-      "\u73bb\u7483 \u89c4\u683c \u8bbe\u8ba1",
+      "\u73bb\u7483 \u89c4\u683c \u8bbe\u8ba1"
     ],
     publishDate: "2026-10-23",
     updatedDate: "2026-10-23",
@@ -1035,7 +1035,7 @@ export const blogArticles: BlogArticle[] = [
       "glass codes",
       "capability envelope",
       "product deep dives",
-      "procurement",
+      "procurement"
     ],
     heroImage: "/images/blog/architectural-glass-specification-hero.webp",
     heroImageAlt: "Flat-lay of a glass specification schedule document with DWG shop drawings and six physical glass samples arranged in a decision-tree layout, representing the six-attribute architectural glass specification framework",
@@ -1050,7 +1050,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ["tempered-glass", "laminated-glass", "insulated-glass", "low-e-glass", "enameled-glass"],
     translations: {},
     changelog: [
-      { date: "2026-10-23", note: "Initial publish \u2014 Pillar Page for Product Deep Dives cluster (activated at 3-article threshold with articles 16, 17, 18)." },
+      { date: "2026-10-23", note: "Initial publish \u2014 Pillar Page for Product Deep Dives cluster (activated at 3-article threshold with articles 16, 17, 18)." }
     ],
   },
   {
@@ -1064,7 +1064,7 @@ export const blogArticles: BlogArticle[] = [
       'bent glass vs flat glass',
       'when to use curved glass',
       'curved vs flat facade',
-      'curved glass cost comparison',
+      'curved glass cost comparison'
     ],
     searchKeywords: [
       'curved glass vs flat glass', 'curved vs flat tempered', 'bent glass vs flat',
@@ -1093,7 +1093,7 @@ export const blogArticles: BlogArticle[] = [
       "Flat still wins on cost per square meter, panel-size envelope, repair availability, standards uniformity, and container shipping efficiency (650-800 m2 per 40ft vs 350-550 m2 curved).",
       "Curved earns the premium when: (1) geometry physically demands it, (2) visual continuity matters at the viewing distance, (3) panels are large enough that facet joints would read, (4) budget absorbs the premium. Fewer than four pressure factors usually means hybrid is the right answer.",
       "Hybrid strategy keeps the glass premium under 25 percent of pure-curved budget: curved at ground-floor focal zones, faceted flat for upper floors and back-of-house.",
-      "Lead time delta: 25-35 days curved cylindrical, 35-55 days spherical, 45-70 days free-form (vs 20-30 days flat). Budget mold archival and 1-2 spare panels on high-risk ground-floor curved installations.",
+      "Lead time delta: 25-35 days curved cylindrical, 35-55 days spherical, 45-70 days free-form (vs 20-30 days flat). Budget mold archival and 1-2 spare panels on high-risk ground-floor curved installations."
     ],
     buyerFaq: [
       {
@@ -1115,11 +1115,11 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "How do I lock down a quote for a project that is still in design development?",
         a: "Send what you have — even a schematic layout and target radius range is enough for a planning-grade quote. We mark it clearly as planning estimate on the RFQ response and lock it only when the drawings are at construction-document stage. This lets your design team budget the glass line without waiting for final drawings.",
-      },
+      }
     ],
     translations: {},
     changelog: [
-      { date: '2026-10-26', note: 'Initial publish — fourth article in Comparison cluster, first curved-glass article in blog' },
+      { date: '2026-10-26', note: 'Initial publish — fourth article in Comparison cluster, first curved-glass article in blog' }
     ],
   },
 {
@@ -1132,7 +1132,7 @@ export const blogArticles: BlogArticle[] = [
       "heat soak testing EN 14179",
       "nickel sulfide tempered glass",
       "spontaneous breakage tempered glass",
-      "HST tempered glass certificate",
+      "HST tempered glass certificate"
     ],
     searchKeywords: [
       "heat soaked tempered glass", "heat soak testing", "heat soak test tempered",
@@ -1160,16 +1160,16 @@ export const blogArticles: BlogArticle[] = [
       "HST is required for overhead glazing almost everywhere, and for high-rise facades with public access below under most European codes. It is strongly recommended for mid-rise facades and elevated balustrades, and optional for interior partitions and small low-rise panels.",
       "Cost premium is +15–25% over standard tempered on the per-m² EXW price; lead time adds 3–5 working days. One oven cycle runs 7–8 hours end to end.",
       "HST reduces spontaneous fracture rate from ~1 per 400 tonnes shipped to ~1 per 2,000–4,000 tonnes — roughly an order of magnitude. Residual risk is non-zero but insurable at standard rates.",
-      "Specify EN 14179-1:2016 as the test method even on US and AU projects, since no equivalent standard exists in ASTM C1048 or AS 1288. Always ask for per-batch compliance certificates at RFQ.",
+      "Specify EN 14179-1:2016 as the test method even on US and AU projects, since no equivalent standard exists in ASTM C1048 or AS 1288. Always ask for per-batch compliance certificates at RFQ."
     ],
     buyerFaq: [
       { q: "Does Sincere Glass issue EN 14179-1 compliance certificates per batch?", a: "Yes, on request at RFQ. Default delivery includes a batch-level test report with time-temperature log; the formal EN 14179-1:2016 compliance certificate is issued on request and adds about one working day for paperwork." },
-      { q: "Can HST be scheduled on the same lead time as standard tempered?", a: "Add 3–5 working days to standard tempered lead time. For orders under 20 m² we batch with other projects on the same cycle; expect a 2–4 day scheduling window on top." },
+      { q: "Can HST be scheduled on the same lead time as standard tempered?", a: "Add 3–5 working days to standard tempered lead time. For orders under 20 m² we batch with other projects on the same cycle; expect a 2–4 day scheduling window on top." }
     ],
     relatedProductSlugs: ["tempered-glass", "laminated-glass", "insulated-glass"],
     translations: {},
     changelog: [
-      { date: "2026-10-28", note: "Initial publish — fourth article in Technical Guides cluster" },
+      { date: "2026-10-28", note: "Initial publish — fourth article in Technical Guides cluster" }
     ],
   },  {
     slug: "spandrel-glass-guide",
@@ -1182,7 +1182,7 @@ export const blogArticles: BlogArticle[] = [
       "spandrel vs vision glass",
       "shadow box vs spandrel",
       "ceramic frit spandrel",
-      "spandrel panel construction",
+      "spandrel panel construction"
     ],
     searchKeywords: [
       "spandrel glass",
@@ -1197,7 +1197,7 @@ export const blogArticles: BlogArticle[] = [
       "spandrel facade",
       "幕墙非视觉区玻璃",
       "彩釉背衬玻璃",
-      "层间玻璃",
+      "层间玻璃"
     ],
     publishDate: "2026-10-29",
     updatedDate: "2026-10-29",
@@ -1208,7 +1208,7 @@ export const blogArticles: BlogArticle[] = [
       "curtain wall",
       "thermal stress",
       "facade",
-      "heat-strengthened",
+      "heat-strengthened"
     ],
     heroImage: "/images/blog/spandrel-glass-hero.webp",
     heroImageAlt:
@@ -1222,7 +1222,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ["enameled-glass", "tempered-glass", "insulated-glass"],
     translations: {},
     changelog: [
-      { date: "2026-10-29", note: "Initial publish — Application cluster, 4th article" },
+      { date: "2026-10-29", note: "Initial publish — Application cluster, 4th article" }
     ],
     readingTime: 15,
     featured: false,
@@ -1237,7 +1237,7 @@ export const blogArticles: BlogArticle[] = [
     secondaryKeywords: [
       "ultra clear glass",
       "extra clear glass",
-      "is low iron glass worth it",
+      "is low iron glass worth it"
     ],
     // SHOWER-PURGE-V1:a32-shower-24: scanned, nothing to purge
     // LIT-PURGE-V1:a31-litempered-24: purged low-iron-tempered terms (ownership -> low-iron-tempered-glass)
@@ -1255,7 +1255,7 @@ export const blogArticles: BlogArticle[] = [
       "high transparency glass",
       "iron free glass",
       "超白玻璃",
-      "低铁玻璃",
+      "低铁玻璃"
     ],
     publishDate: "2026-11-03",
     updatedDate: "2026-11-03",
@@ -1274,7 +1274,7 @@ export const blogArticles: BlogArticle[] = [
       "The decision rule is simple: thickness over 10 mm, exposed frameless edges, or a need for color fidelity behind the glass all justify low iron. Thin facade vision glass viewed from distance usually does not.",
       "Expect a 30 to 100 percent price premium over standard clear, widening at thinner sizes and narrowing at jumbo sizes. A 500 m2 tempered facade order sees roughly 40 to 60 percent total cost uplift.",
       "Low iron is sold under brand names including Starphire, Optiwhite, UltraClear, and Diamant, but the generic product from reputable manufacturers has essentially identical optical performance at lower cost.",
-      "Our 20,000 m2 Wuhan facility processes low iron substrate on the same tempering, laminating, and IGU lines as standard clear, including jumbo panels up to 3.3 by 15 meters.",
+      "Our 20,000 m2 Wuhan facility processes low iron substrate on the same tempering, laminating, and IGU lines as standard clear, including jumbo panels up to 3.3 by 15 meters."
     ],
     buyerFaq: [
       {
@@ -1288,14 +1288,14 @@ export const blogArticles: BlogArticle[] = [
       {
         q: "Can you supply low iron glass with ASTM C1036 certification?",
         a: "Yes. Our low iron substrate meets ASTM C1036 clear glass requirements and can be supplied with mill test reports. We also provide EN 572 compliance documentation for EU buyers and GB 11614 ultra clear float documentation for mixed-market projects. Specify your required standard in the inquiry.",
-      },
+      }
     ],
     relatedProductSlugs: ["tempered-glass", "laminated-glass", "enameled-glass"],
     articleType: "buyer-guide" as const,
     cluster: "product",
     translations: {},
     changelog: [
-      { date: "2026-11-03", note: "Initial pillar publish" },
+      { date: "2026-11-03", note: "Initial pillar publish" }
     ],
   },
   {
@@ -1308,7 +1308,7 @@ export const blogArticles: BlogArticle[] = [
       "ultra clear glass vs clear glass",
       "starphire vs clear glass",
       "low iron glass premium",
-      "when to use low iron glass",
+      "when to use low iron glass"
     ],
     // SHOWER-PURGE-V1:a32-shower-25: scanned, nothing to purge
     // LIT-PURGE-V1:a31-litempered-25: scanned, nothing to purge
@@ -1331,7 +1331,7 @@ export const blogArticles: BlogArticle[] = [
       "超白玻璃 对比",
       "超白 普白",
       "低铁玻璃 普通玻璃",
-      "玻璃选型 超白",
+      "玻璃选型 超白"
     ],
     publishDate: "2026-11-03",
     updatedDate: "2026-11-03",
@@ -1355,7 +1355,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ["laminated-glass", "tempered-glass", "insulated-glass"],
     translations: {},
     changelog: [
-      { date: "2026-11-03", note: "Initial publish - Low Iron cluster article #1 under Pillar /blog/low-iron-glass-complete-guide" },
+      { date: "2026-11-03", note: "Initial publish - Low Iron cluster article #1 under Pillar /blog/low-iron-glass-complete-guide" }
     ],
   },
   {
@@ -1367,7 +1367,7 @@ export const blogArticles: BlogArticle[] = [
       'insulated glass unit guide',
       'igu specification',
       'double glazing complete guide',
-      'insulated glass performance',
+      'insulated glass performance'
     ],
     searchKeywords: [
       'insulated glass', 'insulated glass unit', 'IGU', 'double glazed unit', 'DGU',
@@ -1393,7 +1393,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-11-04', note: 'Initial publish — complete guide for Insulated Glass in Product Deep Dives cluster' },
+      { date: '2026-11-04', note: 'Initial publish — complete guide for Insulated Glass in Product Deep Dives cluster' }
     ],
   },
 
@@ -1407,7 +1407,7 @@ export const blogArticles: BlogArticle[] = [
       'triple pane glass',
       'triple glazing vs double glazing',
       'triple glazed windows',
-      'is triple pane worth it',
+      'is triple pane worth it'
     ],
     searchKeywords: [
       'double pane vs triple pane', 'triple pane windows', 'triple glazing',
@@ -1415,7 +1415,7 @@ export const blogArticles: BlogArticle[] = [
       'is triple pane worth it', 'triple pane cost',
       'IGU', 'U-factor', 'argon fill', 'Low-E coating', 'warm-edge spacer',
       'Passive House windows', 'IECC climate zone',
-      '\u4e09\u5c42\u4e2d\u7a7a\u73bb\u7483', '\u4e09\u5c42\u73bb\u7483 \u53cc\u5c42\u73bb\u7483', '\u4e09\u5c42\u4e2d\u7a7a \u53cc\u5c42\u4e2d\u7a7a',
+      '\u4e09\u5c42\u4e2d\u7a7a\u73bb\u7483', '\u4e09\u5c42\u73bb\u7483 \u53cc\u5c42\u73bb\u7483', '\u4e09\u5c42\u4e2d\u7a7a \u53cc\u5c42\u4e2d\u7a7a'
     ],
     publishDate: '2026-11-09',
     category: 'Buyer Guide' as const,
@@ -1435,11 +1435,11 @@ export const blogArticles: BlogArticle[] = [
       "Factory-gate premium 55-70%; installed premium 35-50%. Payback 8-12 years in cold climates, 20+ years in warm ones.",
       "IECC zone 5 and colder: specify triple. Zone 3 and below: stick with premium double pane.",
       "Triple pane is the wrong solution for noise - use laminated glass with dissimilar panes instead.",
-      "Retrofit into existing double-pane sashes almost never works - plan for new frames.",
+      "Retrofit into existing double-pane sashes almost never works - plan for new frames."
     ],
     translations: {},
     changelog: [
-      { date: '2026-11-09', note: 'Initial publish - Insulated cluster spoke under Pillar #26' },
+      { date: '2026-11-09', note: 'Initial publish - Insulated cluster spoke under Pillar #26' }
     ],
   },
   {
@@ -1452,7 +1452,7 @@ export const blogArticles: BlogArticle[] = [
       'argon vs krypton',
       'igu gas fill',
       'gas filled windows',
-      'argon filled double glazing',
+      'argon filled double glazing'
     ],
     searchKeywords: [
       'argon gas windows', 'krypton gas windows', 'argon vs krypton',
@@ -1460,7 +1460,7 @@ export const blogArticles: BlogArticle[] = [
       'krypton gas fill', 'IGU argon fill rate', 'noble gas fill IGU',
       'IGU', 'U-factor', 'EN 1279-3', 'EN 673', 'Low-E', 'warm edge spacer',
       'Passive House windows', 'thermal conductivity gas fill',
-      '\u6c29\u6c14\u4e2d\u7a7a\u73bb\u7483', '\u6c2a\u6c14\u4e2d\u7a7a\u73bb\u7483', '\u60f0\u6027\u6c14\u4f53 \u4e2d\u7a7a',
+      '\u6c29\u6c14\u4e2d\u7a7a\u73bb\u7483', '\u6c2a\u6c14\u4e2d\u7a7a\u73bb\u7483', '\u60f0\u6027\u6c14\u4f53 \u4e2d\u7a7a'
     ],
     publishDate: '2026-11-11',
     category: 'Technical Guide' as const,
@@ -1477,19 +1477,19 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-11-11', note: 'Initial publish - W2-#7 Insulated Glass cluster spoke' },
+      { date: '2026-11-11', note: 'Initial publish - W2-#7 Insulated Glass cluster spoke' }
     ],
     tldr: [
       'Argon is the right fill for 95% of IGU orders. Spec 90% minimum at 12-16mm cavity width.',
       'Krypton is only worth the 10x premium when the cavity must stay below 10mm - a Passive House retrofit or slim-profile curtain wall.',
       'Krypton optimizes at 8-10mm; argon optimizes at 14-16mm. At 20mm both give the same U-value.',
       'Every IGU leaks. Dual-seal with PIB primary and silicone secondary hits 0.3-0.7% argon loss per year under EN 1279-3.',
-      'Xenon is thermally superior and commercially irrelevant - price it against a better Low-E coating or an extra pane instead.',
+      'Xenon is thermally superior and commercially irrelevant - price it against a better Low-E coating or an extra pane instead.'
     ],
     buyerFaq: [
       { q: 'What is your MOQ for krypton-filled IGU?', a: 'Minimum 50 m2 per spec per order for krypton fill, due to batch economics of noble gas handling. Argon has no krypton-related MOQ - it runs on our standard IGU line.' },
       { q: 'Do you provide EN 1279-3 test certificates?', a: 'Yes. Every IGU production lot at our Wuhan facility is tested per EN 1279-3 accelerated protocol; certificates travel with the shipment paperwork.' },
-      { q: 'Lead time for argon vs krypton IGU?', a: 'Argon: 10-15 working days from order confirmation. Krypton: 15-20 working days, since we batch krypton runs once per week to minimize gas waste.' },
+      { q: 'Lead time for argon vs krypton IGU?', a: 'Argon: 10-15 working days from order confirmation. Krypton: 15-20 working days, since we batch krypton runs once per week to minimize gas waste.' }
     ],
   },
   {
@@ -1502,14 +1502,14 @@ export const blogArticles: BlogArticle[] = [
       'solar heat gain coefficient',
       'u factor vs shgc',
       'what is shgc',
-      'u value windows',
+      'u value windows'
     ],
     searchKeywords: [
       'u factor windows', 'what is u factor', 'u-factor', 'u factor vs shgc',
       'shgc', 'solar heat gain coefficient', 'what is shgc', 'u value windows',
       'r value windows', 'nfrc label', 'nfrc ratings', 'visible transmittance', 'VT',
       'Low-E', 'IECC climate zone', 'window energy rating',
-      '\u7A97\u6237U\u503C', '\u592A\u9633\u5F97\u70ED\u7CFB\u6570', 'SHGC \u662F\u4EC0\u4E48', 'U\u503C \u7A97\u6237',
+      '\u7A97\u6237U\u503C', '\u592A\u9633\u5F97\u70ED\u7CFB\u6570', 'SHGC \u662F\u4EC0\u4E48', 'U\u503C \u7A97\u6237'
     ],
     publishDate: '2026-11-12',
     category: 'Technical Guide' as const,
@@ -1526,7 +1526,7 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['insulated-glass', 'low-e-glass', 'laminated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-11-12', note: 'Initial publish - Insulated cluster technical spoke (W2-8): U-factor + SHGC' },
+      { date: '2026-11-12', note: 'Initial publish - Insulated cluster technical spoke (W2-8): U-factor + SHGC' }
     ],
   },
   {
@@ -1539,14 +1539,14 @@ export const blogArticles: BlogArticle[] = [
       'aluminum spacer bar',
       'warm edge vs aluminum',
       'igu spacer bar',
-      'spacer bar conductivity',
+      'spacer bar conductivity'
     ],
     searchKeywords: [
       'insulated glass spacer', 'warm edge spacer', 'aluminum spacer bar',
       'warm edge vs aluminum', 'igu spacer', 'spacer bar',
       'TGI spacer', 'TPS spacer', 'foam spacer', 'stainless steel spacer',
       'psi value spacer', 'edge of glass temperature', 'warm edge condensation',
-      '\u4e2d\u7a7a\u73bb\u7483\u95f4\u9694\u6761', '\u6696\u8fb9\u95f4\u9694\u6761', '\u94dd\u95f4\u9694\u6761',
+      '\u4e2d\u7a7a\u73bb\u7483\u95f4\u9694\u6761', '\u6696\u8fb9\u95f4\u9694\u6761', '\u94dd\u95f4\u9694\u6761'
     ],
     publishDate: '2026-11-14',
     category: 'Technical Guide' as const,
@@ -1569,7 +1569,7 @@ export const blogArticles: BlogArticle[] = [
       'ultra clear tempered glass',
       'starphire tempered glass',
       'low iron safety glass',
-      'tempered low iron glass',
+      'tempered low iron glass'
     ],
     // SHOWER-PURGE-V1:a32-shower-31: scanned, nothing to purge
     searchKeywords: [
@@ -1577,7 +1577,7 @@ export const blogArticles: BlogArticle[] = [
       'starphire tempered glass', 'optiwhite tempered', 'low iron safety glass',
       'tempered low iron glass', 'ultra clear toughened glass', 'low iron glass',
       'tempered glass', 'EN 12150', 'EN 14179', 'ASTM C1048', 'heat soak test',
-      '\u8d85\u767d\u94a2\u5316\u73bb\u7483', '\u4f4e\u94c1\u94a2\u5316\u73bb\u7483', '\u8d85\u767d\u73bb\u7483',
+      '\u8d85\u767d\u94a2\u5316\u73bb\u7483', '\u4f4e\u94c1\u94a2\u5316\u73bb\u7483', '\u8d85\u767d\u73bb\u7483'
     ],
     publishDate: '2026-11-17',
     category: 'Product Knowledge' as const,
@@ -1594,19 +1594,19 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass', 'insulated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-11-17', note: "Initial publish - W3-#11 Low Iron cluster product spoke" },
+      { date: '2026-11-17', note: "Initial publish - W3-#11 Low Iron cluster product spoke" }
     ],
     tldr: [
       "Low iron tempered glass is ultra-clear glass that has been toughened. Same strength as standard tempered, far better clarity and no green tint.",
       "The iron content has no effect on tempering. Any thickness from 4 to 19 mm that we temper in clear, we temper in low iron.",
       "The clarity gap grows with thickness - obvious on thick railings, floors and fins; optional on thin framed glass.",
       "Heat soak is driven by the application (railings, overhead, floors), not by choosing low iron.",
-      "Budget about 20 to 25 percent over standard clear tempered for the glass, a smaller share once the whole job is priced.",
+      "Budget about 20 to 25 percent over standard clear tempered for the glass, a smaller share once the whole job is priced."
     ],
     buyerFaq: [
       { q: "Can you temper low iron at the thickness and size I need?", a: "We temper low iron from 4 to 19 mm on the same line as clear glass. Send the panel sizes and we will confirm oven capacity and practical limits before quoting." },
       { q: "Do you heat soak low iron tempered, and can you certify it?", a: "Yes. We heat soak to EN 14179 on request and it is standard on railings, overhead and floors. Certificates travel with the shipment." },
-      { q: "What is the lead time on low iron tempered?", a: "Typically 10 to 15 working days for tempered-only, 15 to 20 with heat soak, from order confirmation at our Wuhan facility." },
+      { q: "What is the lead time on low iron tempered?", a: "Typically 10 to 15 working days for tempered-only, 15 to 20 with heat soak, from order confirmation at our Wuhan facility." }
     ],
   },
   {
@@ -1619,14 +1619,14 @@ export const blogArticles: BlogArticle[] = [
       'ultra clear shower door',
       'starphire shower glass',
       'frameless low iron shower',
-      'low iron shower screen',
+      'low iron shower screen'
     ],
     searchKeywords: [
       'low iron glass shower door', 'low iron shower glass', 'ultra clear shower door',
       'starphire shower glass', 'frameless low iron shower', 'low iron shower screen',
       'low iron glass', 'frameless shower glass', 'shower glass green tint',
       'tempered shower glass', 'EN 12150', 'EN 14179', 'ASTM C1048',
-      '\u6dcb\u6d74\u623f\u8d85\u767d\u73bb\u7483', '\u4f4e\u94c1\u6dcb\u6d74\u95e8', '\u8d85\u767d\u6dcb\u6d74\u73bb\u7483',
+      '\u6dcb\u6d74\u623f\u8d85\u767d\u73bb\u7483', '\u4f4e\u94c1\u6dcb\u6d74\u95e8', '\u8d85\u767d\u6dcb\u6d74\u73bb\u7483'
     ],
     publishDate: '2026-11-18',
     category: 'Buyer Guide' as const,
@@ -1643,21 +1643,69 @@ export const blogArticles: BlogArticle[] = [
     relatedProductSlugs: ['tempered-glass', 'laminated-glass'],
     translations: {},
     changelog: [
-      { date: '2026-11-18', note: "Initial publish - W3-#12 Low Iron cluster application spoke" },
+      { date: '2026-11-18', note: "Initial publish - W3-#12 Low Iron cluster application spoke" }
     ],
     tldr: [
       "Low iron shower glass is the ultra-clear version of a normal tempered shower panel - same strength, no green tint.",
       "Worth the premium on frameless 8-12 mm enclosures where the edge is exposed; optional on thin framed screens.",
       "The green of standard glass compounds with thickness, so thicker and more exposed panels make the strongest case.",
       "Heat soak is advised for frameless panels and is an application decision, not a low iron one.",
-      "Budget about 20 to 25 percent over standard clear on the glass, a smaller share once hardware and install are counted.",
+      "Budget about 20 to 25 percent over standard clear on the glass, a smaller share once hardware and install are counted."
     ],
     buyerFaq: [
       { q: "Can you cut low iron shower panels to my hinge and handle cut-outs?", a: "Yes. Send the panel sizes with hinge and handle cut-out positions and we confirm temperability and edgework before quoting." },
       { q: "Do you heat soak and certify frameless shower panels?", a: "Yes, to EN 14179 on request, which we advise for frameless panels. Certificates travel with the shipment." },
-      { q: "What is the lead time on low iron shower glass?", a: "Typically 10 to 15 working days tempered-only, 15 to 20 with heat soak or an easy-clean coating, from order confirmation at our Wuhan facility." },
+      { q: "What is the lead time on low iron shower glass?", a: "Typically 10 to 15 working days tempered-only, 15 to 20 with heat soak or an easy-clean coating, from order confirmation at our Wuhan facility." }
     ],
   },
+  {
+    slug: 'starphire-vs-low-iron',
+    title: 'Starphire vs Low Iron Glass: Is the Brand Worth It?',
+    excerpt:
+      'Starphire is a brand of low iron glass, not a clearer material. See how it compares with Optiwhite, Diamant and generic low-iron, what the brand premium costs, and when it is actually worth paying for.',
+    targetKeyword: 'starphire vs low iron',
+    secondaryKeywords: [
+      'starphire glass',
+      'starphire vs optiwhite',
+      'low iron glass brands',
+      'ppg starphire glass',
+      'is starphire glass worth it'
+    ],
+    searchKeywords: [
+      
+      'starphire glass',
+      'starphire vs optiwhite',
+      'starphire vs diamant',
+      'low iron glass brands',
+      'ultra clear glass brands',
+      'ppg starphire',
+      'vitro starphire',
+      'is starphire worth it',
+      'starphire glass price',
+      'low iron glass vs starphire',
+      'best low iron glass'
+    ],
+    publishDate: '2026-11-19',
+    category: 'Buyer Guide',
+    cluster: 'comparison',
+    articleType: 'comparison',
+    tags: ['low iron glass', 'starphire', 'ultra clear glass', 'glass comparison', 'buyer guide'],
+    heroImage: '/images/blog/starphire-vs-low-iron-hero.webp',
+    heroImageAlt:
+      'Two low iron glass panels edge-on next to a standard clear panel with a visible green edge, comparing brand clarity.',
+    heroImagePrompt:
+      'Studio product photography: three thick glass panels standing edge-on in a row on a dark matte surface, lit to reveal edge color. Two left panels are low iron with near-colorless polished edges; the right panel is standard clear float with a distinct green edge. Soft raking light, dark background, no text, no logos, no humans. 16:9 cinematic, 4K photorealistic, architectural digest quality. Matches the dark-material blog hero series.',
+    author: DEFAULT_AUTHOR,
+    reviewedBy: { name: 'Albar', title: 'Technical Reviewer' },
+    readingTime: 9,
+    tldr: [
+      'Starphire is Vitro (ex-PPG) brand low-iron glass, not a separate glass type.',
+      'Starphire, Optiwhite and Diamant share one optical class: ~0.01% Fe2O3, ~91% light transmittance.',
+      'The brand premium is roughly 20-30% over generic low-iron, for consistency and paperwork, not clarity.',
+      'The comparison that matters for most buyers is low-iron vs standard clear, not brand vs brand.'
+    ],
+    featured: false,
+  }
 ];
 
 // ---- Utility functions ----

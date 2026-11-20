@@ -309,6 +309,11 @@ export default function Page() {
             Read: Low Iron Tempered Glass Specification Guide &rarr;
           </a>
         </aside>
+        {/* SG-RECIP-W3-13-V1 */}
+        <p>
+          Already sold on low iron and now picking a brand? Compare{" "}
+          <a href="/blog/starphire-vs-low-iron">Starphire against other low-iron options</a>.
+        </p>
         <FAQ items={faqItems} />
 
         <section className="my-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
