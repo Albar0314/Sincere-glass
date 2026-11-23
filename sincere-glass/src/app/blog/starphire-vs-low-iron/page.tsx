@@ -296,7 +296,10 @@ export default function Page() {
             <strong>Looking beyond brand markup?</strong> Explore how cutting yield, MOQ, fabrication dilution, and ocean freight shape your final rate in our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">full low iron glass cost stack (FOB vs. landed)</a>.
           </div>
 
-          <FAQ items={faqItems} />
+          
+        {/* SG-ART35-RECIP-V1 */}
+        <p>When evaluating Chinese Tier-1 low-iron fabricators against branded float distributors, follow our <a href="/blog/low-iron-glass-suppliers">low iron glass supplier verification checklist</a> to prevent semi-clear substitution and lock single-batch color consistency.</p>
+        <FAQ items={faqItems} />
         </section>
 
         <RelatedProductsCards slugs={["tempered-glass", "laminated-glass"]} />

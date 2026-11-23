@@ -635,6 +635,9 @@ export default function Page() {
         <InlineQuoteCTA variant="dark" />
 
         <h2 id="buyer-faq">Buyer FAQ: Pricing, MOQ, and Sourcing</h2>
+        
+        {/* SG-ART35-RECIP-V1 */}
+        <p>Before locking in a factory quote that looks unusually cheap, run the vendor through our <a href="/blog/low-iron-glass-suppliers">low iron glass suppliers audit checklist</a> to confirm float mill provenance, HST kiln logs, and export crating standards.</p>
         <FAQ items={faqItems} title="" />
 
         <RelatedProductsCards

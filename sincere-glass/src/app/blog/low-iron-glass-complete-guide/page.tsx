@@ -372,6 +372,9 @@ export default function Page() {
           <strong>Need line-by-line FOB Wuhan numbers?</strong> See our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">2026 low iron glass cost breakdown by thickness and assembly</a>, including a 1,200 m2 BOQ value-engineering simulator.
         </div>
 
+        
+        {/* SG-ART35-RECIP-V1 */}
+        <p>Ready to shortlist factories? Use our <a href="/blog/low-iron-glass-suppliers">low iron glass suppliers buyer&apos;s checklist and 100-point audit scorecard</a> to verify mill Fe2O3 certificates, in-house furnace ownership, and ISPM-15 export crating before paying a deposit.</p>
         <FAQ items={faqItems} />
 
         <h2 id="buyer-faq" className="text-2xl font-semibold text-[#F2F0ED] mt-12 mb-6">
