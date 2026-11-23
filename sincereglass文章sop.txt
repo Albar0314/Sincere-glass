@@ -1,0 +1,274 @@
+Sincere Glass Blog SOP v2.3
+
+Status: Active (supersedes v2.2)
+Updated: 2026-10-13
+Scope: All English-language SEO blog articles published to sincereglass.com/blog
+
+What changed in v2.3:
+
+C21 (new): Interactive-Component SSR Shadow — every React component must be preceded by a 50–100-word plain-text methodology paragraph so AI crawlers (which do not execute JS) see the component's logic.
+C22 (new): Table Captions, Aria Labels & Inline Data Traceability — every <table> gets a <caption> + aria-label, and any row with external-source data gets an inline source note or link.
+Rationale: articles are component-heavy by design. Without C21/C22, Perplexity / ChatGPT / Google AI Overview see an empty shell where the interactive is, and tables of indicative data lack verifiable provenance.
+1. Pre-Write Phase (before any content is drafted)
+1.1 Keyword Cannibalization Audit — DUAL CHECK
+
+Run two scans, in order:
+
+Blog ↔ Blog: Call auditKeyword(targetKeyword) from blog-registry.ts. If conflict → either merge/update the existing article or redirect to a longer-tail variant.
+Blog ↔ Product Page: Grep H1 / H2 / meta description across src/app/products/*/page.tsx. If the target keyword matches a product-page primary term, pivot the blog to a transactional-adjacent long-tail (e.g., tempered glass price is a product-page keyword — blog instead targets tempered glass vs annealed cost comparison).
+
+Record both check results in the delivery doc. No article is written before this passes.
+
+1.2 H2 Structure Variety Check
+
+Pull the last 5 published articles' H2 lists. The new article's H2 skeleton must differ structurally — no two consecutive articles may use the same logic path (e.g., What Is X / What Is Y / Differences / Applications / FAQ). Vary with: problem-solution, buyer-journey, chronological, scenario-based, comparison matrix, decision tree.
+
+1.3 Article Type Classification
+
+Every article is one of four types; this picks the component template:
+
+Type	Example	Required components
+Comparison	tempered vs laminated	Decision matrix, side-by-side table, 3rd-option mention
+Technical	How tempered glass is made	Process diagram, factory POV, quality data
+Buyer Guide	How to source glass from China	Supplier checklist, cert table, logistics breakdown
+Case/Project	Hotel façade project	Project photos, specs sheet, outcome metrics
+1.4 Factory Data Confirmation
+
+Before writing, re-check the factory capability facts in memory (sincere-glass-project.md → "Factory hard data" section). All factory POV claims in the article must be grounded in these facts. Never fabricate overseas customer counts, export experience, or shipping data — company is pre-export; lean on production capability and 15-year domestic track record only.
+
+1.5 Topic Cluster Assignment (v2.1)
+
+Every article must be assigned to exactly one of the 5 topic clusters defined in blog-registry.ts:
+
+Cluster key	Display name	Focus
+comparison	Glass Comparisons	Side-by-side glass type comparisons and selection guides
+technical	Technical Guides	Manufacturing processes, standards, specifications
+application	Applications	Real-world architectural use cases and project scenarios
+buyer-guide	Buyer's Guide	Sourcing, importing, MOQ, logistics, certifications
+product	Product Deep Dives	Long-tail product keywords, pricing, detailed specs
+
+Rules:
+
+The cluster field is required in blog-registry.ts — articles without it fail the build.
+Cluster determines the breadcrumb hierarchy: Home > Blog > [Cluster Name] > [Article Title]
+URL remains flat: /blog/[slug] — no cluster in the URL path.
+When a cluster reaches 3+ published articles, create a Pillar Page at /blog/[cluster-keyword-slug] that links to all sub-articles (see §6 below).
+2. Content Requirements by Component (22 items — all mandatory unless marked optional)
+E-E-A-T CORE (highest SEO impact)
+
+C1. Author Bio Box (end of article, above comments)
+
+Image: /public/images/author-images.jpg
+Name: Li Cheng
+Title + credentials: 1-2 sentences on real industry background
+Reviewed-by line (if applicable): "Technical review: [factory engineer name]"
+Author schema: { "@type": "Person", "name": "Li Cheng", "url": "https://sincereglass.com/about", "image": "..." }
+
+C2. Factory First-Person POV (minimum 3 instances per article) Replace generic claims with factory-grounded language:
+
+Instead of "manufacturers typically...": "In our 20,000 m² Wuhan facility, we..."
+Instead of "glass can be made up to...": "Our 3m × 15m tempering furnace produces jumbo panels up to..."
+Instead of "lead times vary...": "Our standard production cycle for laminated glass is 10–15 working days from order confirmation..."
+
+C3. Specific Standards Citation Not just "IBC" — write "IBC 2021 §2406.4.1". Not just "GB": write "GB 15763.3-2009 §5.2.1". Not just "ANSI": write "ANSI Z97.1-2015, Class A". For every standard mentioned, cite clause/edition.
+
+C4. External Authority Links (minimum 2 per article) Link out to:
+
+Standards bodies (IBC, ANSI Z97.1, GB 15763.x, EN 14449, AS/NZS 2208)
+Material suppliers (Kuraray — PVB; Eastman Saflex; Trosifol; Dupont SentryGlas)
+Industry associations (NGA — National Glass Association; GANA; Glass for Europe)
+CONVERSION CORE (direct revenue impact)
+
+C5. Internal Links to Product Pages (minimum 3 per article) Every mention of a product category must link to its product page. Natural anchor text (not "click here"). Examples:
+
+"...where tempered glass is specified..."
+"...applications better suited to laminated glass..."
+Keep anchors unique within a single article (no 3 links to the same page with identical anchor text).
+
+C6. Related Products Component (end of article) 3 product cards (image + name + short tagline + "Request Quote" button) linking to the most relevant product pages for this article's topic. Reusable component: <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'low-e-glass']} />
+
+C7. Lead Magnet CTA (mid-article + end) PDF: "Global Architectural Glass Building Codes Comparison (US IBC / EU EN / China GB / Australia AS)" Flow: email capture modal → immediate download link → opt-in checkbox for sales follow-up Component: <LeadMagnetCTA variant="inline|footer" /> Backend: POST email to API Route → store in list + trigger auto-email with PDF link Why this mechanic (not "we send PDF via first follow-up email"): email capture is trackable, immediate value for the reader builds trust, opt-in is explicit for sales nurture.
+
+C8. Buyer-Intent FAQ (replaces or supplements spec FAQ) 3-5 questions from buyer-journey, not spec curiosity:
+
+"What's the MOQ for [product] export orders from China?"
+"Can Sincere Glass ship DDP to [target region]?"
+"What certifications do you provide with export shipments?"
+"What's the warranty on [product]?"
+"What's your typical lead time for custom [product] orders?" Each answer: 2-3 sentences, honest (no fake export history), with a soft CTA to Contact page.
+CONTENT QUALITY
+
+C9. TL;DR / Key Takeaways Box (top of article, below hero) 3-5 bullet points summarizing the article's conclusions. Targets Featured Snippets and Google AI Overviews. Visually distinct (bordered box, left accent bar).
+
+C10. 3rd-Option Mention (comparison articles only) A short section acknowledging adjacent options the buyer may be considering (e.g., for tempered vs laminated: brief mention of annealed, heat-strengthened, chemically strengthened). Pre-empts search-intent mismatch and demonstrates breadth of knowledge.
+
+C11. Cost Disclaimer Any price in an article is followed by: "2026 reference pricing, FOB Wuhan factory, subject to formal quotation. Prices vary with thickness, coatings, size, order volume, and USD/CNY exchange rate."
+
+C12. "Updated On" + Version Note Below byline: Published 2026-10-15 · Last updated 2026-10-15 At end of article (optional, longer articles): Changelog: [date] Added IBC 2024 code references · [date] Updated pricing to Q4 2026
+
+TOPIC CLUSTER & INTERNAL LINKING (v2.1)
+
+C18. Intra-Cluster Internal Links (minimum 2 per article, when available) Every article must link to at least 2 other articles in the same cluster, if they exist. These are separate from C5 (product page links). Use natural in-context anchors, not "Related Articles" blocks. Example for a comparison cluster article:
+
+"For a deeper look at insulated glass energy ratings, see our guide to insulated vs laminated glass."
+If the cluster has <2 other articles, link to whatever is available (even 0 is OK for first article in a cluster).
+When publishing a new article, also go back and add a link to it from existing cluster articles (see §3 Post-Publish Checklist).
+
+C19. Cluster Navigation Component (end of article, above Related Products) A "More in [Cluster Name]" section listing 3-5 articles from the same cluster. Component: <ClusterNav cluster={article.cluster} currentSlug={article.slug} />
+
+If cluster has <2 other articles, this component renders nothing (no empty state).
+Links to /blog?cluster=[key] as the "View all" link.
+AI SEARCH VISIBILITY (new in v2.3)
+
+C21. Interactive-Component SSR Shadow (REQUIRED for every "use client" component in an article) Every interactive React component must be preceded, in the article body, by a 50–100 word plain-prose paragraph that explains the component's methodology — inputs, outputs, scoring/formula logic, and the rule it applies. This paragraph is server-rendered and sits in the article HTML even when the component itself is a client-rendered empty shell at crawl time.
+
+Format:
+
+Lead with a bolded phrase like **How the scorecard works:** or **The formula:** or **How the four terms differ:** so AI engines parse the handoff.
+Name every threshold / weight / formula constant explicitly (e.g., "81+ Preferred, 61–80 Qualified, 31–60 Caution, 0–30 High Risk" — not "a tiered rating").
+Place the paragraph immediately before the <Component /> invocation so the association is unambiguous to a crawler.
+Component props do not substitute for this paragraph — a prop like title="Interactive" is not crawlable content.
+
+Why it matters: PerplexityBot, ChatGPT-User, Google-Extended, and current Google AI Overview infrastructure frequently do not execute client-side JavaScript. A "use client" component with uninitialized state (score=0, default input values, hidden tab panels) is semantically empty to these crawlers. The SSR shadow paragraph is what AI engines will quote. Without it, our site shows up only in traditional "ten blue links" results and loses the AI Overview / Perplexity / ChatGPT referrals that compound year-over-year.
+
+Scope: Applies to every component Albar or Claude authors as part of article delivery (SupplierVerificationScorecard, IncotermsExplorer, ContainerLoadCalculator, decision trees, build-up labs, impact simulators — any article-N/*.tsx client component). Does NOT apply to shared infra components (TLDRBox, FAQ, LeadMagnetCTA, CostDisclaimer) which already render crawlable text via props.
+
+CONTENT QUALITY (continued)
+
+C22. Table Captions, Aria Labels & Inline Data Traceability (new in v2.3)
+
+Every <table> written inline in an article page (or passed via ComparisonTable's caption prop) must include:
+
+A <caption> with a one-line summary of what the table shows, plus a "Data verified: YYYY-MM-DD" verification stamp when the data is time-sensitive (pricing, freight rates, tariffs, lead times, exchange-dependent figures).
+An aria-label on the <table> mirroring the caption text, for screen readers that bypass caption, and for AI crawlers that index aria attributes.
+Scope attributes on <th> elements (scope="col" for column headers, scope="row" where applicable).
+Inline source notes or links on any row containing a figure from an external source (standard clause, published tariff, duty rate, test spec). Format examples:
+4.9% MFN rate per 2026 USITC HTS; verify current classification at [hts.usitc.gov](https://hts.usitc.gov/)
+Impact Class 2 per EN 12600:2002 (pendulum test)
+All-in ocean freight range per Freightos Baltic Index Q4 2026; verify live with your forwarder
+
+Why it matters: Table <caption> is the single most AI-crawler-friendly way to summarize a data block — Google AI Overview and Perplexity preferentially cite tables when they have captions. Inline source links convert claims into verifiable facts, which both E-E-A-T and AI engine source attribution reward. Aria labels close the accessibility gap for screen-reader users and give AI crawlers a second indexed string per table.
+
+Companion rule for prose: when a hard figure is quoted outside a table (duty rate, standard clause, test threshold) and comes from an external source, include a source link or parenthetical citation inline — not just as a general footer. Example: "…4.9% MFN rate per HTSUS 7007…" beats "…4.9% duty…" with no attribution.
+
+UX & TECHNICAL
+
+C13. Mobile-First TOC + Decision Matrix
+
+Sidebar TOC collapses to top-of-article accordion on mobile (not hidden)
+Any table with >4 columns renders as cards on md: breakpoint (not horizontal-scroll)
+Decision matrices use expandable rows (already done in article #1 — standardize this pattern)
+
+C14. BreadcrumbList Schema (sitewide, plus article-level) JSON-LD breadcrumbs: Home > Blog > [Cluster Name] > [Article]. Shown in SERP enhanced results.
+
+Cluster name comes from CLUSTER_LABELS[article.cluster] in blog-registry.ts.
+Cluster breadcrumb links to /blog?cluster=[key] (listing page filter, not a separate URL).
+URL stays flat /blog/[slug] — hierarchy is expressed only through breadcrumbs and internal links.
+
+C15. Open Graph Image (custom, not reused hero) 1200×630 PNG with:
+
+Article title (large, Space Grotesk)
+Sincere Glass logo + "Blog" eyebrow
+Brand palette (dark #1C1F26 bg + amber #DAA745 accent)
+Named: /public/images/blog/[slug]-og.png
+
+C16. Image Asset Standards
+
+Filename: descriptive kebab-case, not hero.jpg (e.g., tempered-vs-laminated-breakage-pattern.webp)
+Format: WebP primary, PNG fallback
+Explicit width/height to prevent CLS
+loading="lazy" except hero (preload hero)
+Alt text: real description, not stuffed keywords
+At least 1 original SVG + 1 factory photo (avoid 100% AI imagery — may trigger authenticity penalty)
+
+C17. Hreflang Scaffolding (multi-language ready) Current URL: /blog/[slug] Future URL: /[locale]/blog/[slug] (subdirectory, not subdomain — simpler Next.js i18n) Even single-language articles include <link rel="alternate" hreflang="x-default" /> + hreflang="en" self-reference. When languages activate, SOP's translation workflow (TBD) adds additional hreflangs.
+
+SITE SEARCH DISCOVERABILITY (v2.2)
+
+C20. Search Keywords (required searchKeywords: string[] field in registry) Every article's blog-registry.ts entry must include a searchKeywords array with at least 10 entries covering:
+
+≥5 English synonyms / phrasings of the target keyword (e.g., "tempered vs laminated", "tempered or laminated", "safety glass comparison", "laminated vs tempered", "glass selection")
+≥3 industry abbreviations / technical terms likely to appear in searches (e.g., "PVB", "SGP", "IGU", "STC", "Low-E", "SHGC")
+≥2 Chinese equivalents of the primary topic — because WeChat-sourced visitors may search in Chinese (e.g., "钢化玻璃 夹胶玻璃", "安全玻璃 对比")
+
+Why: The site search is powered by Fuse.js fuzzy matching, which weights searchKeywords 2× over the description. Without this array, a buyer who types "soundproof", "隔音玻璃", "IGU", or "temperd" (typo) may not find the article even if it's relevant.
+
+The TypeScript interface declares searchKeywords: string[] as required — a missing field fails the build. Same rule applies to products.ts: every new product entry must include a populated searchKeywords array.
+
+3. Post-Publish Checklist (required for every article)
+[ ] Push to GitHub → Vercel auto-deploys
+[ ] Verify article renders at production URL
+[ ] Submit URL to Google Search Console → "Request Indexing"
+[ ] Confirm article appears in /sitemap.xml
+[ ] Add 3+ internal links from existing older articles to this new one (strengthens topic cluster)
+[ ] Add link to this article from existing same-cluster articles (reciprocal cluster linking — C18)
+[ ] Verify article appears in site search by testing 2-3 of its searchKeywords live on the deployed /blog (v2.2)
+[ ] Open the article in a browser with JS disabled, confirm each interactive component is preceded by its SSR methodology paragraph (C21), and that all tables have a visible caption (C22) (new in v2.3)
+[ ] Share to WeChat 公众号 (if content localizes well)
+[ ] Record publish date + target keyword + cluster + searchKeywords in blog-registry.ts (should already be done via patch script)
+[ ] Spot-check: Core Web Vitals (LCP < 2.5s, CLS < 0.1), mobile Lighthouse ≥ 90
+4. SOP v2.3 Compliance Scorecard
+
+Each article delivery includes a self-check table at the bottom of the delivery doc:
+
+Item	Status
+C1 Author bio	✅ / ⚠️ / ❌
+C2 Factory POV (3+ instances)	✅
+C3 Standards clauses cited	✅
+C4 External authority links (2+)	✅
+C5 Product page internal links (3+)	✅
+C6 Related Products component	✅
+C7 Lead Magnet CTA	✅
+C8 Buyer-Intent FAQ	✅
+C9 TL;DR box	✅
+C10 3rd-option mention (comparison only)	✅ / N/A
+C11 Cost disclaimer (if prices mentioned)	✅ / N/A
+C12 Updated-on date	✅
+C13 Mobile TOC + card view	✅
+C14 BreadcrumbList schema (with cluster)	✅
+C15 OG image	✅
+C16 Image standards	✅
+C17 Hreflang	✅
+C18 Intra-cluster links (2+)	✅ / N/A (first in cluster)
+C19 ClusterNav component	✅
+C20 searchKeywords (≥10: 5 EN + 3 abbrev + 2 CN)	✅
+C21 SSR methodology paragraph before every interactive	✅
+C22 Table caption + aria-label + inline source links	✅ / N/A (no table)
+Cluster assigned in registry	✅
+
+An article with any ❌ is not shipped. ⚠️ (e.g., "author photo pending client") is acceptable with explicit note.
+
+5. Open Questions for Albar
+Author credentials: Need Li Cheng's actual title + 1-2 sentence background to put in the bio. (Currently placeholder: "Export Manager at Sincere Glass".)
+Language roadmap: Which 3-4 languages? (Spanish / German / Arabic / French / Russian all common for architectural glass export.) Hreflang scaffolding is ready; language picks drive content translation plan.
+Lead magnet PDF: Who produces the actual PDF? If Claude drafts it, this is a separate deliverable (~15 pages, 4 code systems compared). Timeline?
+Reviewed-by: Is there a factory engineer whose name can go on technical articles as reviewer (adds E-E-A-T)?
+Freight / tariff data refresh cadence: C22 verification stamps go stale on buyer-guide articles fastest. Propose quarterly review for articles tagged buyer-guide or product, semi-annual for comparison and technical, annual for application. Confirm cadence.
+6. Topic Cluster Pillar Page Activation (v2.1)
+
+When: A cluster reaches 3+ published articles.
+
+What: A long-form Pillar Page at /blog/[descriptive-slug] (e.g., /blog/architectural-glass-comparison-guide) that:
+
+Targets the cluster's head keyword (high-volume, short-tail)
+Summarizes the cluster theme in 800-1200 words
+Links to every sub-article in the cluster with a 2-3 sentence description per article
+Includes its own TL;DR, FAQ schema, and lead magnet CTA
+Is registered in blog-registry.ts with a special isPillar: true flag
+
+Pillar Page internal linking rules:
+
+Every sub-article links back to the Pillar Page (add to C18 audit)
+Pillar Page links out to every sub-article
+Pillar Page is the canonical cluster entry point in the blog listing page
+
+Current cluster article counts (as of 2026-10-13):
+
+Cluster	Published	Pillar status
+comparison	1 Pillar + 3 articles	✅ Pillar active
+technical	1 Pillar + 3 articles	✅ Pillar active
+application	1 Pillar + 3 articles	✅ Pillar active
+buyer-guide	1	❌ Need 2 more
+product	0	❌ Need 3
+
+Update this table each time an article ships.

@@ -1,0 +1,673 @@
+Sincere Glass Components
+Last updated
+Nov 18, 2026
+Summary
+Sincere Glass blog/product component import paths, export forms, AND verified Props signatures. Check before writing any new article page.tsx — never guess Props.
+
+Details
+ALL blog/product components are default export — use import X from "path", never import { X } from "path"
+Verified paths (via project_read 2026-10-29)
+Component	Path
+BlogArticleLayout	@/components/blog/BlogArticleLayout
+TLDRBox	@/components/blog/TLDRBox
+AuthorBioBox	@/components/blog/AuthorBioBox
+RelatedProductsCards	@/components/blog/RelatedProductsCards
+LeadMagnetCTA	@/components/blog/LeadMagnetCTA (NOT blog/blocks/; outer is canonical, blocks/ one is dupe)
+CostDisclaimer	@/components/blog/CostDisclaimer
+FAQ	@/components/blog/blocks/FAQ
+TechNote	@/components/blog/blocks/TechNote
+InlineQuoteCTA	@/components/products/InlineQuoteCTA (NOT components/ root)
+Verified Props signatures (2026-10-29)
+BlogArticleLayout
+ts
+interface Props {
+  article: BlogArticle;   // FULL object — pass blogArticles.find(a=>a.slug===SLUG)!
+  toc: TOCItem[];         // required — build manually from H2 ids
+  children: React.ReactNode;
+  ctaTitle?: string;
+  ctaDescription?: string;
+}
+Layout internally renders: BreadcrumbSchema, ReadingProgress, Hero (title+excerpt+AuthorCard+heroImage), TableOfContents, AuthorBioBox, BlogCTA, RelatedPosts — DO NOT re-render these in page.tsx
+Also exports helpers: generateArticleMetadata(article): Metadata and articleJsonLd(article, faqItems?): object[] — use these, not hand-written metadata/JSON-LD
+TLDRBox
+ts
+{ takeaways: string[]; className?: string }
+AuthorBioBox
+ts
+{ article: BlogArticle }  // takes whole article object, not individual fields
+RelatedProductsCards
+ts
+{ slugs: string[]; heading?: string }  // prop is `slugs` NOT `productSlugs`
+Only 5 slugs supported: tempered-glass, laminated-glass, insulated-glass, low-e-glass, enameled-glass (hard-coded PRODUCT_MAP inside component). Any other slug is silently filtered out.
+LeadMagnetCTA
+ts
+{
+  variant?: 'inline' | 'footer';
+  articleSlug: string;         // required
+  title?: string;              // NOT `headline`
+  description?: string;        // NOT `subtext`
+}
+CostDisclaimer
+ts
+{ variant?: 'default' | 'compact' }
+FAQ (blocks/)
+ts
+{ items: Array<{q: string; a: string}>; title?: string }
+TechNote (blocks/)
+ts
+{ type?: 'tip' | 'warning' | 'note'; title?: string; children: React.ReactNode }
+InlineQuoteCTA (products/)
+Only takes variant prop — DOES NOT accept headline, subtext, or any custom text. If you need custom CTA copy, use a different pattern (write inline markup). variant accepts only 'default' | 'compact' | 'dark' — NOT 'inline' (Article #31 build failed on variant="inline", 2026-11-17).
+BlogArticle interface — registry entry schema
+Required fields:
+
+slug: string
+title: string
+excerpt: string ← NOT description
+targetKeyword: string
+searchKeywords: string[] (≥10 per SOP v2.2 C20)
+publishDate: string (YYYY-MM-DD)
+category: BlogCategory — literal union: 'Technical Guide' | 'Industry News' | 'Product Knowledge' | 'Project Case Study' | 'Buyer Guide' | 'Manufacturing'
+tags: string[]
+heroImage: string
+heroImageAlt: string ← REQUIRED, not optional
+author: { name, url, title?, bio?, image? } — object, NOT string. Use exported DEFAULT_AUTHOR constant.
+cluster: BlogCluster — literal union: 'comparison' | 'technical' | 'application' | 'buyer-guide' | 'product'
+readingTime: number
+Optional:
+
+secondaryKeywords?: string[]
+updatedDate?: string
+heroImagePrompt?: string
+reviewedBy?: { name: string; title?: string } — object, not string
+tldr?: string[]
+buyerFaq?: Array<{q,a}>
+relatedProductSlugs?: string[]
+articleType?: 'comparison' | 'technical' | 'buyer-guide' | 'case-study' — DIFFERENT from category; limited to these 4 lowercase values
+translations?: Partial<Record<'es'|'de'|'ar'|'fr'|'ru', string>>
+changelog?: Array<{date, note}>
+featured?: boolean
+isPillar?: boolean
+DEFAULT_AUTHOR (exported from blog-registry.ts)
+ts
+{
+  name: 'Li Cheng',
+  url: 'https://sincereglass.com/about',
+  title: 'CEO at Sincere Glass',
+  bio: 'CEO at Sincere Glass (欣城玻璃) with 10+ years in architectural glass. Oversees production and quality at our 20,000 m² Wuhan facility.',
+  image: '/images/author-images.jpg',
+}
+Import and use DEFAULT_AUTHOR; do not hand-write the author object. It is already set to the correct Sincere Glass author (Li Cheng), overriding account-level Yang Ruosong preference for this project.
+Canonical page.tsx skeleton for new blog articles
+tsx
+import type { Metadata } from "next";
+import BlogArticleLayout, {
+  generateArticleMetadata,
+  articleJsonLd,
+  type TOCItem,
+} from "@/components/blog/BlogArticleLayout";
+import TLDRBox from "@/components/blog/TLDRBox";
+import FAQ from "@/components/blog/blocks/FAQ";
+import { blogArticles } from "@/lib/blog-registry";
+import { makeAlternates } from "@/lib/i18n";
+
+const SLUG = "your-slug";
+const article = blogArticles.find((a) => a.slug === SLUG)!;
+
+export const metadata: Metadata = {
+  ...generateArticleMetadata(article),
+  alternates: makeAlternates(`/blog/${SLUG}`),
+};
+
+const toc: TOCItem[] = [
+  { id: "h2-id", text: "H2 Text", level: 2 },
+];
+
+const faqItems = [{ q: "...", a: "..." }];
+
+export default function Page() {
+  const schemas = articleJsonLd(article, faqItems);
+  return (
+    <>
+      {schemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(s)}} />
+      ))}
+      <BlogArticleLayout article={article} toc={toc}>
+        {/* body */}
+      </BlogArticleLayout>
+    </>
+  );
+}
+Common wrong assumptions (previous failures catalog)
+2026-10-29 full-session Props disaster on Article #23: named imports for all 8 components, wrong paths for TLDRBox + InlineQuoteCTA, BlogArticleLayout treated like a dumb wrapper (passed slug/title/faqItems), author/reviewedBy as strings, category field used articleType values, RelatedProductsCards used productSlugs, LeadMagnetCTA used headline/subtext. All avoidable by project_read before writing. Root cause: did not call project_info + project_read at the start of writing — relied on memory which was wrong on many details.
+Workflow rule: BEFORE writing or editing any blog article page.tsx or registry entry, project_read BlogArticleLayout.tsx + blog-registry.ts + the specific components the article will use. Do NOT guess from memory; this cheatsheet is the fallback but project_read is the ground truth.
+RelatedProductsCards image-path bug (fixed 2026-11-18, SG-RELATED-CARDS-FIX-V1)
+PRODUCT_MAP in RelatedProductsCards.tsx used /images/products/*-card.jpg which never existed → every blog product card showed broken image. Correct paths = the files products.ts actually uses: tempered.jpg / laminated.jpg / insulated.jpg / enameled.jpg (low-e-glass reuses insulated.jpg). When adding product cards, point image at a file that exists in public/images/products/, not an invented -card variant.
+Gotcha: an arrow written as → in JSX text (between tags) renders literally as "→" — JSX text does not process backslash escapes. Use the real → character or {"→"} as a JS expression. (Taglines worked because –/× sit inside JS string literals where escapes do apply.)
+Deploy purge-comma bug — recurs, fix at source (2026-11-18, #31 then #32)
+The purgeEntry function copied across article deploy scripts inserts its marker comment right after the secondaryKeywords closing ], which pushes the array's trailing comma onto the end of the // comment line (commenting it out) → build fails Expected ',', got 'searchKeywords'. Hit on #31 (fix-registry-purge-comma.mjs) and again on #32 (fix-article-32-purge-comma.mjs). Future deploy scripts: fix at source — place the marker comment BEFORE ], or emit ] + comma on the same line then the comment, so the array's terminating comma stays on the ] line.
+
+
+Sincere Glass Content Plan
+Last updated
+Nov 18, 2026
+Summary
+Sincere Glass blog content strategy — topical authority cluster matrix approach; current month's pillar + cluster plan
+
+Details
+Strategy shift (2026-11-02)
+Shifted blog strategy from "wide net" (one-off articles across clusters) to "topical authority cluster matrix": each major seed keyword gets 1 Pillar + 5-8 cluster articles forming a tight internal-link web, chosen so Google can recognize Sincere as the authority on that specific topic rather than a generalist glass site
+Decision rule: run Semrush Keyword Magic Tool on seed keywords, build decision table scoring Pillar Vol x (100-KD) x Intent weight x Cluster balance x existing-content conflict, then pick Top 2 clusters per cycle (not Top 1 — avoids single-topic fatigue)
+Pace: ~4 articles/week stable + 1 buffer slot; Hero images generated per-article alongside deploy (not batched)
+Current cycle: 2026-11 (4-week sprint, started 2026-11-02)
+Top 2 clusters chosen for this month: Low Iron Glass (Pillar KD 18, Vol 1,300, zero existing-content conflict) + Insulated Glass (Pillar main word Intent=C, Vol 2,400+1,900, 3 existing articles to patch into cluster)
+Target: ~17 articles over 4 weeks = 2 Pillars + 9 new cluster articles + 3 patches of existing insulated articles + 1 new /products/low-iron-glass product page + buffer/review
+Low Iron Pillar sequenced first (lower KD, faster ROI signal); Insulated Pillar second (higher commercial intent, longer ROI)
+Deferred to later cycle: Low-E Glass cluster (Q1 2027), Tempered Glass cluster (full restructure deferred to Q2 2027 — 5 existing tempered articles will get Pillar patch rather than new Pillar in near term)
+Articles published this cycle
+Article #24 (2026-11-03): /blog/low-iron-glass-complete-guide — Pillar, product cluster, target "low iron glass" (Vol 1,300 / KD 18); 3 interactive components (IronContentComparator / WhenToUseDecisionMatrix / CostPremiumCalculator); build passed, hero uploaded, URL live
+Article #25 (2026-11-03): /blog/low-iron-glass-vs-clear-glass — Low Iron cluster child #1 under Pillar #24, target "low iron glass vs clear glass"; 3 interactive components (EdgeColorViewer / LightTransmittanceComparator / CostPremiumCalculatorV2 — V2 suffix to avoid name collision with Pillar #24's CostPremiumCalculator); build passed, hero uploaded, pushed, URL live. Pending internal-link TODO: once /products/low-iron-glass product page ships, patch article to add inline link + add low-iron-glass to RelatedProductsCards PRODUCT_MAP
+Article #26 (2026-11-04): /blog/insulated-glass-complete-guide — Insulated Glass Pillar, product cluster, target "insulated glass" (Vol 2,400 Intent=C / KD 30); 3 interactive components (IGUConfigurator / ThermalPerformanceChart / CondensationRiskSimulator); build passed, pushed; Week 1 two-pillar foundation complete
+Article #27 (2026-11-09, W2-#6 Mon): /blog/double-pane-vs-triple-pane-glass — Insulated cluster spoke under Pillar #26, target triple pane windows (Vol 5,400 / KD 29), comparison cluster; 3 interactive components (PaneConfigurationComparator / TriplePaneROICalculator / ClimateZoneDecisionMatrix); deploy script auto-scanned #26 secondaryKeywords for Pillar-spoke cannib and auto-inserted reciprocal links into #26 + insulated-glass-vs-laminated-glass; build passed, pushed, URL live
+Article #28 (2026-11-11, W2-#7 Wed): /blog/argon-vs-krypton-gas-fill-igu — Insulated cluster spoke under Pillar #26, target argon gas windows (Vol 720 / KD 16), technical cluster; 3 interactive components (GasConductivityComparator / CavityWidthOptimizer / GasCostROICalculator); deploy script purges argon/krypton/gas-fill terms from #26 secondaryKeywords + strips argon fill IGU from #5 (how-is-insulated-glass-made) secondaryKeywords; auto-inserts reciprocal link callouts into #26 Pillar, #27, and #5 (the #5 patch also adds #26 Pillar inbound link, paying down the W1-#4 debt in the same pass); delivery files in edit/ and claude/article-28-delivery.md; build + hero + push 已完成，URL 已上线
+Full week-by-week plan (locked 2026-11-02, Semrush-derived)
+Week 1 (11/02-11/08): double pillar + 2 patches
+W1-#1 Mon-Tue: Low Iron Glass Pillar — target low iron glass (Vol 1,300 / KD 18) — Pillar/product, isPillar+featured
+W1-#2 Wed: Insulated Glass Pillar — target insulated glass (Vol 2,400 Intent=C / KD 30) — Pillar/product, isPillar+featured
+W1-#3 Thu: Patch insulated-glass-vs-laminated-glass + Insulated Pillar inbound link
+W1-#4 Fri: Patch how-is-insulated-glass-made + Insulated Pillar inbound link
+W1-#5 Sat: Buffer slot
+Week 2 (11/09-11/15): Insulated cluster full expansion
+W2-#6 Mon: Double Pane vs Triple Pane Glass — target triple pane windows (Vol 5,400 / KD 29) — comparison
+W2-#7 Wed: Argon vs Krypton Gas Fill for IGU — target argon gas windows (Vol 720 / KD 16) — technical
+W2-#8 Thu: U-Factor and SHGC Explained — target u factor windows + shgc (Vol 880+1,600 / KD 12/21) — technical
+W2-#9 Fri: Patch /products/insulated-glass product page upgrade (+ Pillar link + spec builder)
+W2-#10 Sat: Insulated Glass Spacer: Warm Edge vs Aluminum — target insulated glass spacer (Vol n/a US) — technical
+Week 3 (11/16-11/22): Low Iron cluster full expansion
+W3-#11 Mon: Low Iron Tempered Glass: Specification Guide — target low iron tempered glass (Vol 260 / KD 9) — product
+W3-#12 Wed: Low Iron Glass for Shower Doors: Worth It? — target low iron glass shower door (Vol 210 / KD 11) — application
+W3-#13 Thu: Starphire vs Low Iron Glass — target starphire vs low iron (Vol 160 / KD ~9) — buyer-guide
+W3-#14 Fri: Low Iron Glass Cost: Worth the Premium? — target cost / worth it merged (~100 agg / KD <10) — buyer-guide
+W3-#15 Sat: Buffer slot
+Week 4 (11/23-11/30): wrap + product page + review
+W4-#16 Mon: Low Iron Glass Suppliers: Buyer's Checklist — target low iron suppliers/manufacturers (Vol 20+20 / KD <5) — buyer-guide
+W4-#17 Wed: 4/5/6/10mm Low Iron Glass: Which Thickness — target mm-size merged (~80 agg / KD 1-5) — product
+W4-#18 Thu: New /products/low-iron-glass product page (anchors Low Iron cluster)
+W4-#19 Fri: Buffer / incident recovery
+W4-#20 Sat: Monthly review + GSC data check (no article)
+Deferred clusters
+Low-E Glass cluster — Pillar main low-e glass merged Vol ~4,800 / KD 28-34 — deferred to Q1 2027
+Tempered Glass cluster — Pillar main Vol 22,200 / KD 43 but 5 existing scattered articles make full restructure a Q2 2027 project; near-term only Pillar-patch of existing 5
+Decisions 2026-11-16
+新文章继续维持每篇 3 个交互组件（未采纳降到 0-1 个的建议）
+W2 欠账顺序：先补 W2-#9 /products/insulated-glass 产品页升级，再回到后续排期
+2026-11-16: W2-#9 /products/insulated-glass 产品页升级 patch（marker SG-IGU-PRODUCT-UPGRADE-V1）本机 build 已通过；Albar 确认该页原本就是薄内容，这次升级就是为解决薄内容。下一项 W2-#10 Spacer 文章
+2026-11-16: W2-#9 上线后线上页面起初无变化，Albar 跑完 products/[slug] 路由去重 patch（marker SG-SLUG-DEDUP-V1）后确认"已修完"；W2-#9 收工，W2-#10 Spacer 文章尚未开始
+2026-11-16: 站内视频问题 Albar 决定晚点处理，YouTube 账号问题由他先自行确认；在此之前先做 /products/insulated-glass 的三项站内修复 patch（标题重复品牌名 / Low-E 镀膜面 / U 值口径）
+2026-11-16: /products/insulated-glass 三项站内修复 patch（marker SG-IGU-FIXES-V1）Albar 已 push 完成
+Decision 2026-11-18 — blog cluster hubs + @graph (SG-CLUSTER-HUB-V1)
+Decided NOT to make the blog into a visual knowledge-graph page; instead build crawlable topic-cluster hubs + tighten schema. Delivered: new src/lib/blog-clusters.ts (TOPIC_CLUSTERS map, pillar slug → spoke slugs; resolver only returns published spokes) + new src/components/blog/ClusterHub.tsx (server-rendered hub list + embedded ItemList @graph) injected into the two Nov-cycle pillars (#24 low-iron-glass-complete-guide, #26 insulated-glass-complete-guide). Also upgraded articleJsonLd in BlogArticleLayout.tsx: Article now emits a connected @graph referencing site-wide #organization / #website via @id (was an isolated Article w/ inline publisher) — affects all articles, backward-compatible.
+
+
+Sincere Glass Project
+Last updated
+Oct 27, 2026
+Summary
+Albar's agency project for 武汉欣城玻璃/湖北欣之城玻璃 (glass manufacturer) independent site build + SEO
+
+Details
+Albar's agency has become the 代运营 (managed operations) provider for 武汉欣城玻璃有限公司 and 湖北欣之城玻璃有限公司 (same entity, China-based glass manufacturer), handling site build plus onsite/offsite SEO from scratch
+English brand name decided: Sincere Glass
+Product lines: full range — architectural glass (tempered/insulated/laminated/Low-E), industrial glass, and decorative glass
+Target export market: global, not restricted to a specific region
+Both factories have 15+ years in domestic (China) glass sales, but zero prior export/foreign trade experience — this is their first push into international markets
+Factory production capability described as mid-tier: 中型工厂，标准产线齐全 (standard production lines, not small workshop, not highly automated large-scale)
+Quality/system certifications (domestic or international, e.g. ISO 9001, CE, SGCC) status unconfirmed as of this conversation — needs verification with factory
+Tech stack decided: headless WordPress (content/CMS backend via WPGraphQL) + Next.js frontend, frontend deployed on Vercel
+Domain confirmed: sincereglass.com
+WordPress backend hosted on SiteGround; database table prefix is ogl_ (not default wp_)
+GitHub repo: albar0314/sincere-glass; Vercel project imported and deployed (sincere-glass.vercel.app)
+WordPress backend plugins installed and verified: WPGraphQL, WPGraphQL for ACF, ACF PRO, Yoast SEO, WPGraphQL for Yoast SEO; GraphQL endpoint at sincereglass.com/graphql confirmed working
+Headless blank theme installed on WordPress to disable frontend rendering (redirects to Next.js)
+Next.js project scaffold created (App Router, TypeScript, Tailwind, GraphQL client, Yoast SEO integration, page skeletons for Home/Products/About/Blog/Contact); ready to push to GitHub and import into Vercel
+ACF PRO version 6.8.1; Product CPT registered (post type key: product, GraphQL enabled); field group "Product Specifications" created with fields: Glass Type (select), Thickness Range, Max Size, Color Options, Standards & Certifications, Processing Capabilities, Applications; Gallery and Repeater fields deferred until PRO upgrade
+ACF → WPGraphQL data pipeline verified end-to-end (all 7 fields queryable); certifications field GraphQL name manually set to certifications (was auto standardsCertifications)
+Vercel deployment live at sincere-glass.vercel.app; homepage rendering confirmed
+DNS managed via Cloudflare; sincereglass.com and www both CNAME → cname.vercel-dns.com (Proxied); cms.sincereglass.com A → SiteGround 34.4.31.174 (Proxied); wildcard DNS-only
+wp-config.php updated with WP_HOME and WP_SITEURL set to https://cms.sincereglass.com; WordPress admin accessible at cms.sincereglass.com/wp-admin
+Vercel domains configured: sincereglass.com as primary (Production), www.sincereglass.com 308 redirects to sincereglass.com; Vercel env vars updated to point at cms.sincereglass.com/graphql
+Redirect loop on sincereglass.com diagnosed: caused by local HTTP proxy (Clash/V2Ray on port 10809) stripping HTTPS headers; site works correctly without proxy and for overseas visitors
+Cloudflare (free plan) activated for sincereglass.com; NS changed from SiteGround to Cloudflare (bonnie.ns.cloudflare.com, nile.ns.cloudflare.com); SSL/TLS set to Full (strict); sincereglass.com and www proxied, cms and wildcard DNS-only
+2026-10-26: client delivered equipment photos (6 folders in public/images/equipment-raw/); EquipmentGallery shipped (prepare-equipment-images.mjs + src/lib/equipment-gallery.ts + Gallery/Section/HomepagePhotoStrip)
+ACF field keys: glass_type=field_6ab5180b25fe3, thickness_range=field_6ab51ed020d17, max_size=field_6ab51ef920d18, color_options=field_6ab51f0c20d19, certifications=field_6ab51f47b2d92, processing=field_6ab51f56b2d93, applications=field_6ab51f6cb2d94
+ACF glass_type select field choices: tempered, laminated, insulated, low-e, enameled (and possibly more)
+ACF field name for "Processing Capabilities" is processing (not processing_capabilities)
+4 main products published: Tempered Glass (ID 19), Insulated Glass (ID 20), Laminated Glass (ID 21), Ceramic Frit Glass (ID 22); ACF data written via phpMyAdmin SQL (REST API meta write didn't work — WP silently ignores unregistered meta keys; ACF REST API key also not working); all 7 fields + reference keys verified correct via GraphQL
+Test product (title "1") deleted via SQL
+Product data also exported to Excel (Sincere_Glass_Product_Data.xlsx) with 5 sheets: Products, Additional Products, Company Info, Certifications, Project Cases
+WP REST API limitations discovered: ACF acf key returns 400 (field group REST not enabled); bulk meta key silently ignored; individual meta key writes value but not _fieldname reference — direct DB write is the reliable method for this setup
+Products listing page + detail page ([slug]) code committed to GitHub (queries.ts, wordpress.ts, types, products/page.tsx, products/[slug]/page.tsx); seo.ts also patched (opengraphImage needed | null)
+Cloudflare SSL/TLS mode changed from Full (strict) to Full to fix Origin Certificate verification; cms.sincereglass.com now Proxied (orange cloud) and SSL working
+SiteGround WAF blocks Vercel build-time requests to /graphql (403 Forbidden); .htaccess rewrite added but WAF fires before Apache so it didn't help; workaround: both product pages use export const dynamic = "force-dynamic" and generateStaticParams wrapped in try/catch returning [] on failure — pages render at request time, not build time
+Vercel build succeeded after force-dynamic change; products pages deployed to production
+Root cause of 403: SiteGround sgcaptcha (Robot Challenge) blocking automated requests; SiteGround Senior Support (Nikolay Ar.) confirmed WAF filter adjusted to allow /graphql programmatic requests for domain and all subdomains
+.htaccess rewrite rules added earlier broke WordPress routing (caused 404 on /graphql); removed them and endpoint restored
+graphql-client.ts updated with standard Chrome User-Agent per SiteGround recommendation; products/page.tsx has try/catch so page shows empty list instead of crashing on fetch failure
+Products listing + detail pages fully working end-to-end with live WPGraphQL data, featuredImage, ACF specs; graphql-client.ts uses fetch with cache: "no-store" to bypass Cloudflare/Vercel data caching
+Product CPT thumbnail support added via add_theme_support('post-thumbnails') + add_post_type_support('product', 'thumbnail') in functions.php
+sincereglass.com domain access resolved (proxy/SSL issues fixed); cms.sincereglass.com SSL certificate working correctly
+Local project path: D:\桌面\sincere-glass\sincere-glass\ (corrected from earlier D:\下载)
+Project uses src/ directory structure: src/app/, src/components/, src/lib/, src/types/
+Preferred code delivery method: single Node.js setup script run from project root; all patch scripts stored in edit\ subdirectory (D:\桌面\sincere-glass\sincere-glass\edit), invoked as node edit\patch-xxx.mjs
+Next.js version in use: 14.2.35
+Node.js installed on local machine; PowerShell execution policy set to RemoteSigned
+git push from local machine fails due to proxy blocking github.com:443; GitHub web UI used as workaround for committing code
+Homepage design+SEO plan created as a Claude Doc; fonts Inter + Space Grotesk
+Final brand palette: Smoke Glass B3 "Soft Amber" — dark 
+#1C1F26, primary 
+#3A4250, secondary 
+#8B95A5, accent 
+#DAA745, light 
+#F2F0ED, lighter 
+#FAFAF8 (rejected initial deep-blue palette for lacking 通透感; chose B Smoke glass direction, then refined accent from 
+#C08B4A to 
+#DAA745 for brightness)
+All 9 homepage sections complete and rendering locally: HeroSection, TrustBar, ProductsOverview, WhyUs, CompanySnapshot, ProjectCases, EquipmentGrid (accordion cards), QuoteForm, BlogTeaser (placeholder data); plus Mega Menu Header (Products dropdown with 5 items+descriptions, sticky+scroll), Footer (4-column+dual factory), WhatsApp floating button
+tailwind.config.ts was missing from project entirely (brand-navy/brand-sky/brand-glass colors in globals.css never worked); created via patch script with brand colors + legacy aliases
+Animation strategy: CSS scroll-triggered animations via useInView hook (no Framer Motion yet), visual continuity theme of dark/light section alternation mimicking glass refraction
+About page complete: 7 sections (Hero, CompanyIntro, Timeline 2005-2024, DualFactories cards, Leadership Li Chuanren, Certifications grid, CTA)
+Products listing page complete; all 4 product detail pages upgraded to premium dedicated pages with unique layouts per page — tempered (step selector + breakage animation + stress SVG), insulated (IGU diagram + U-value bars + gas fill comparison), laminated (layer builder + dB meter + security tiers), enameled (split hero + color picker + pattern gallery + solar SVG); each has FAQ Schema, WhySincere competitive section, inline CTAs, and differentiated module layouts; remaining pages: Projects, Equipment, Contact
+Design principle for product pages: each product page's modules should use different layouts (not just different content) to avoid repetitive feel across the site
+Product pages design direction: wants rich interactive content leveraging Next.js, not thin parameter pages; each product page should be an educational guide with SEO value
+Design principle: each product page's modules use different layouts (not just content) to avoid repetitive feel; Claude should proactively add own design suggestions
+All CTA/quote buttons trigger on-page QuoteModal popup (React Context in layout.tsx), not page jumps; InlineQuoteCTA component interspersed between educational sections
+Product page architecture: 5 pillar pages (tempered/insulated/laminated/enameled/low-e); future SKU subpages from WP Product CPT when client provides SKU list
+ALL 11 PAGES COMPLETE (as of 2026-10-06):
+Homepage: 9 sections + Mega Menu Header + Footer + WhatsAppFloat
+About: 7 sections (Hero, Intro, Timeline 2005-2024, DualFactories, Leadership, Certifications, CTA)
+Products listing: 2×2 grid showing all 5 products from src/lib/products.ts
+Tempered Glass (premium, V3): 15 sections — Hero(parallax) → WhatIs → StressDiagram(SVG) → RequestSample → ManufacturingProcess(auto-rotate 5-step) → BreakageComparison(auto-switch with key-based remount) → Advantages(countUp) → WhySincere(4 competitive cards) → Specs → InlineCTA → GlassComparison(9-row table, mobile cards) → Applications → FAQ(6Q+Schema) → SocialProof → CTA
+Insulated Glass (premium): 10 sections — Hero → WhatIs → IGUDiagram(SVG cross-section dual seal+Low-E) → EnergyPerformance(animated U-value bars) → GasFillComparison(auto-switch Air/Argon) → WhySincereIGU → Specs → Applications → FAQ(6Q+Schema) → SocialProof
+Laminated Glass (premium): CENTER-aligned hero → 3-col highlight cards → LayerBuilder(interactive PVB/SGP reversed grid) → SoundReduction(animated dB meter+bars auto-switch) → SecurityTiers(4 vertical escalating cards colored left borders) → WhySincereLam(single-col stacked left-aligned big numbers) → Specs(alternating rows) → Apps(horizontal scroll) → FAQ+Schema
+Enameled Glass (premium): SPLIT-SCREEN hero(text left image right) → WhatIs(side color strip) → ColorPalette(INTERACTIVE 4×4 color grid + detail popup + "Quote This Color") → PatternGallery(2×4 SVG patterns) → EnamelProcess(horizontal timeline desktop vertical mobile) → SolarControl(animated SVG sun/glass rays) → WhySincereEnamel(horizontal scroll cards) → Specs(accordion) → Apps(CSS columns masonry) → FAQ+Schema
+Low-E Glass (premium): WARM-TO-COOL GRADIENT hero(orange→blue) → WhatIs → HeatFlowDiagram(side-by-side before/after SVG animated arrows) → CoatingComparison(Soft vs Hard coat toggle with performance bars) → SeasonalPerformance(SUMMER/WINTER auto-switch) → WhySincereLowE → Specs → Apps → FAQ+Schema
+Projects page: Hero with animated stats (2600+/15+/15+), filterable gallery (All/Transportation/Commercial/Residential/Public/Cultural), 12 projects from PDF, featured projects span 2 cols, glass type tags
+Equipment page (V2): production flow animation (5-stage auto-advancing pipeline with SVG icons, click→expand category), equipment deep dive accordion (6 categories with VIDEO PLACEHOLDERS at /public/videos/*.mp4), capacity dashboard (6 stat cards SVG icons), competitive comparison bars (5 metrics Sincere vs Typical)
+Contact page: 3 quick contact cards (WhatsApp/Email/Phone with response times), full form (6 fields + subject dropdown), business hours sidebar, dual factory cards (EN+CN address, map placeholder, Google Maps links)
+Shared components:
+src/lib/useInView.ts (IntersectionObserver), useCountUp.ts (number animation), QuoteContext.tsx (global modal state), products.ts (5 products data), projects.ts (12 projects data)
+src/components/QuoteModal.tsx, InlineQuoteCTA.tsx (default/dark/compact variants), WhatsAppFloat.tsx, SocialProof.tsx (reused across product pages)
+globals.css includes fadeUp/fadeIn/scaleIn keyframe animations + scrollbar-hide utility
+Blog architecture (decided 2026-10-06):
+Blog does NOT use WordPress/WPGraphQL — articles are standalone Next.js TSX pages with custom interactive components (same quality as product pages)
+Blog registry at src/lib/blog-registry.ts tracks all articles (slug, targetKeyword, metadata); includes auditKeyword() for keyword cannibalization checks
+Each article lives at src/app/blog/<slug>/page.tsx as a dedicated page with full React customization
+Reusable content block components in src/components/blog/blocks/ (ComparisonTable, ProcessFlow, DataHighlight, TechNote, FAQ)
+BlogArticleLayout wrapper provides: ReadingProgress bar, TOC sidebar, AuthorCard, RelatedPosts, BlogCTA, Article+FAQ JSON-LD
+Blog listing page at src/app/blog/page.tsx reads from registry; homepage BlogTeaser replaced with BlogTeaserLive (also reads registry)
+Article prose styling in src/styles/blog-prose.css (imported in globals.css)
+Blog SOP v1.0 confirmed — adapted from another project's SOP v7.1; key rules: keyword cannibalization audit (pre-write + pre-delivery), H2 architecture must differ from last 5 articles (no repeated logic paths), SEO titles must have variety (no colon-list format), SVG/interactive visuals preferred over tables, at least 1 inline SVG per article, Article JSON-LD author = Li Cheng (changed from Yang Ruosong)
+Agreed workflow: Albar gives Claude a target keyword → Claude produces complete article (SEO long-form + interactive SVG/components + patch script + hero image prompt + keyword cannibalization audit) → Albar runs patch script and pushes
+Blog keyword plan created as Claude Doc (40 keywords across 5 clusters: Comparison/Decision, Technical/Spec, Application/Use Case, Buyer/Sourcing, Product Long-Tail); first 10 articles prioritized starting with "tempered glass vs laminated glass"
+GitHub Desktop installed for git operations; git proxy configured (http://127.0.0.1:10809) to push through Clash
+GitHub repo has code nested under sincere-glass/ subdirectory; Vercel Root Directory set to sincere-glass in Build and Deployment settings to match
+All 152 files (11 pages + blog infrastructure) force-pushed to GitHub; Vercel auto-deploys from main branch
+Form backend (decided 2026-10-07):
+Form backend approach: pure Next.js API Routes + Resend email (no WordPress involvement for forms)
+Resend account created; sincereglass.com domain verified in Resend (DKIM via Cloudflare, verified 2026-10-06)
+Three API routes created: /api/quote, /api/contact, /api/lead-magnet — all use Resend, honeypot anti-spam, rate limiting
+QuoteModal.tsx rewritten with real form submission to /api/quote (was UI-only)
+ContactClient.tsx (src/components/contact/ContactClient.tsx) rewritten with real form submission to /api/contact; fields changed from "Full Name + Company" to "First Name + Last Name" to match API
+LeadMagnetCTA.tsx updated to submit to /api/lead-magnet via Resend
+Vercel env vars set: RESEND_API_KEY, RESEND_FROM_EMAIL, NOTIFICATION_EMAIL
+Resend registered email: lic537963@gmail.com (testing restriction before domain verification)
+Contact page architecture: page.tsx (Server Component with metadata) → imports ContactClient (client component with all form + factory UI)
+COMPLETED (2026-10-07):
+Contact form backend verified working end-to-end (Resend email delivered successfully)
+Logo integration: XC logo (public/images/logo.png) added to Header (Image+text combo), Footer (Image+text combo), and browser favicon (src/app/icon.png) via patch scripts
+Lead magnet PDF created: "Global Architectural Glass Building Codes Comparison" (11 pages, A4, covers US IBC/ASTM, EU EN, China GB, Australia AS for tempered/laminated/insulated/Low-E glass + application requirements + certification systems + cross-map); placed at public/downloads/glass-building-codes-comparison.pdf
+PENDING:
+Replace placeholder images with client high-res photos
+Add equipment videos to public/videos/ (6 files)
+Mobile testing and refinement
+SEO blog articles — Article #1 "tempered glass vs laminated glass" delivered (patch script, 3 interactive components, ~2800 words, not yet pushed); remaining 39 keywords queued
+All 3 forms (Contact + Quote + Lead Magnet) verified working end-to-end (2026-10-07)
+Google Search Console sitemap.xml submitted; URL inspection confirmed Googlebot can read it (sitemap dashboard status still refreshing)
+Factory hard data (from 欣城 PDF — for E-E-A-T in blog content):
+工厂面积 20,000 m² (20,000 square meters total facility)
+4 intelligent cutting lines (智能切割线4条)
+4 edge-grinding lines (磨边连线4条)
+2 tempering furnaces; max panel size 3.3m × 15m (jumbo size — key differentiator; corrected 2026-10-23 from earlier 3m figure)
+2 insulated glass lines (one is ultra-large automatic gas-fill)
+2 high-pressure laminating autoclaves; one is 3.3m × 15m (jumbo laminated capability — key differentiator)
+1 warehousing/storage system
+Capable of producing ultra-large (超大) IG and dry-laminated (干夹) glass
+Product lines per PDF: Low-E IG, dry-laminated (干夹), ceramic frit (彩釉), curved tempered (弯钢), various coated glass — curved tempered is a 6th product line not yet reflected in 5-page product architecture
+"No overseas customer base yet" positioning: do NOT fabricate export track record in blog content — instead lean on factory capability credentials (20,000 m², jumbo 3m×15m lines, 15+ years domestic track record)
+Blog SOP v2.2 (confirmed 2026-10-07, supersedes v2.1):
+V2.2 adds site search infrastructure + C20 (searchKeywords required field, ≥10 entries: 5 EN synonyms + 3 industry abbrevs + 2 CN terms); SOP doc updated at claude/blog-sop-v2.md
+Site search: Cmd+K / Ctrl+K modal in Header (desktop icon + mobile menu entry), powered by Fuse.js fuzzy matching; searches products (from src/lib/products.ts) + blog articles (from registry) with weighted scoring (title ×3, searchKeywords ×2, description ×1), threshold 0.4
+SearchProvider wraps QuoteProvider in layout.tsx; SearchModal.tsx is single source — imports from products.ts (not hardcoded) so new products auto-indexed
+Both Product and BlogArticle TypeScript interfaces now require searchKeywords: string[] — missing field fails build; all 5 existing products backfilled with EN+CN synonym sets
+Blog SOP v2.1 (superseded by v2.2):
+V2.1 SOP document stored as project doc claude/blog-sop-v2.md; v2.1 adds topic cluster system on top of v2.0's 17 component upgrades
+Topic clusters: 5 clusters defined — comparison (Glass Comparisons), technical (Technical Guides), application (Applications), buyer-guide (Buyer's Guide), product (Product Deep Dives); cluster is a required field in blog-registry.ts
+Cluster URL strategy: URL stays flat /blog/[slug] — no cluster in URL path; hierarchy expressed only through BreadcrumbList JSON-LD (Home > Blog > [Cluster Name] > [Article]) and internal linking
+Blog listing page /blog has ClusterTabs (pill-style filter buttons); URL param ?cluster=comparison filters to that cluster
+SOP v2.1 new rules: C18 (intra-cluster internal links, ≥2 per article when available + reciprocal linking on publish), C19 (ClusterNav component at end of article showing same-cluster articles), §6 Pillar Page activation when cluster reaches 3+ articles
+Cluster infrastructure patch delivered (blog-registry.ts + BlogArticleLayout.tsx + blog/page.tsx rewrite); Article #1 assigned cluster: 'comparison'
+Key V2 additions: author bio with photo + credentials box, 3-5 internal links to product pages per article, factory first-person POV ("in our Wuhan plant"), buyer-intent FAQ (MOQ/shipping/cert), lead magnet (building code PDF via email capture), BreadcrumbList schema, mobile card view for tables, TL;DR box, specific standard clause citations, 3rd option mentions, external authority links, cost disclaimer, updated date, related products component, publish checklist
+Lead magnet mechanic: email capture → immediate PDF download link + opt-in checkbox for sales follow-up (NOT send-after-inquiry which loses lead tracking); PDF content = "Global Architectural Glass Building Codes Comparison (US IBC / EU EN / China GB / Australia AS)"
+Author bio: Li Cheng, Export Manager @ Sincere Glass (title TBD by client); photo at /public/images/author-images.jpg; brief credential paragraph needs client input
+Multi-language planned (3-4 languages, TBD); SOP includes hreflang scaffolding and /[locale]/blog/ URL structure placeholder, but language choice deferred
+Blog SOP v2.0 — confirmed decisions (2026-10-07):
+Author bio text: "Li Cheng, CEO at Sincere Glass (欣城玻璃), 10+ years in architectural glass"
+Author image path: /public/images/author-images.jpg (client to provide file)
+Technical reviewer: Albar, title "Technical Lead" (shown as "Reviewed by: Albar, Technical Lead" on technical articles)
+Multi-language roadmap locked at 5 languages: ES / DE / AR / FR / RU (plus English). URL structure: /[locale]/blog/[slug] subdirectory
+Lead magnet PDF ("Global Architectural Glass Building Codes Comparison") to be drafted by Claude on demand per Albar's instruction — not auto-generated
+Blog V2 rollout path: Patch 2a (infrastructure) → Patch 2b (article #1 SOP v2 rewrite)
+Patch 2a COMPLETE (2026-10-06): AuthorBioBox, RelatedProductsCards, LeadMagnetCTA, TLDRBox, CostDisclaimer, BreadcrumbSchema, hreflang, lead-magnet API route, registry schema upgrade — all deployed to Vercel
+Patch 2b COMPLETE (2026-10-06): Article #1 fully rewritten with all 17 SOP v2 components (C1–C17); old inline CTA bug fixed (prose-custom overriding link color); buyer FAQ added (MOQ, certs, lead time, shipping); registry entry updated with reviewedBy/articleType/changelog — deployed to Vercel
+Also fixed during 2b deploy: insulated-glass/page.tsx had "use client" + metadata export conflict (moved metadata to layout.tsx)
+Brand social accounts (2026-10-07):
+YouTube: https://www.youtube.com/@XinchenGlass
+Facebook: https://www.facebook.com/people/SincereGlass/61594988708395/
+LinkedIn: no company page yet; CEO Li Cheng personal profile at https://www.linkedin.com/in/%E5%9F%8E-%E6%9D%8E-3136a7441/
+Microsoft Clarity Project ID: ytuys5fd7j (preferred over GA4 — hates GA4's ?_gl= URL params)
+COMPLETED (2026-10-07, cont'd):
+Resend API key regenerated (previously exposed key handled)
+sitemap.ts + robots.ts created (dynamic sitemap pulls from blog-registry; /sitemap.xml verified live)
+Microsoft Clarity tracking injected into layout.tsx via Next.js Script component (afterInteractive)
+Organization + WebSite JSON-LD schema added site-wide via layout.tsx (src/components/JsonLd.tsx + src/lib/schema.ts); sameAs includes YouTube/Facebook/LinkedIn
+5 product pages already had Product + FAQ schema inline (no patch needed)
+contact/page.tsx cleaned up: unused import ContactForm from "@/components/ContactForm" removed (page uses ContactClient only)
+Google Search Console sitemap re-submission showed stale "cannot read" status (last fetched 2026-10-06 before deploy); URL Inspection "Test Live URL" confirmed "URL is available to Google" ✅ — Sitemaps dashboard just lagging, no action needed
+PENDING (as of 2026-10-07 end of session):
+Replace placeholder images with client high-res photos (waiting on client assets)
+Add 6 equipment videos to public/videos/ (waiting on client assets)
+Continue SEO blog articles — Article #1 live; 39 keywords remaining in queue
+Mobile testing and refinement
+Review Microsoft Clarity heatmap data after 1-2 weeks of traffic
+Submit sitemap to Bing Webmaster Tools (optional, external market relevant)
+Add brand's social URLs (YouTube/Facebook) in their own About sections pointing back to sincereglass.com — helps Google verify Organization sameAs reciprocal link
+Blog content build-out — overnight session (2026-10-07):
+Comparison cluster — COMPLETE
+Pillar: /blog/architectural-glass-types-guide (target: 'architectural glass types', isPillar: true, featured: true) — interactive GlassSelectorFlowchart (3-step decision tree) + GlassFamilyMap (SVG topology of 5 families); components live at src/components/blog/pillar-arch-glass/
+Article #1 (pre-existing): /blog/tempered-glass-vs-laminated-glass
+Article #2: /blog/insulated-glass-vs-laminated-glass — BuyerScenarioPicker (5 scenarios) + PerformanceRadarChart (5 metrics) + IGUvsLamiCrossSection
+Article #3: /blog/tempered-glass-vs-annealed-glass — StrengthSimulator (4-type stress bars) + BreakagePatternViewer (SVG shards vs granules); components at src/components/blog/article-3/
+Technical cluster — COMPLETE
+Pillar: /blog/architectural-glass-manufacturing-guide (target: 'architectural glass manufacturing process', isPillar: true, featured: true) — ProcessSelector (1-step → 4 outcomes) + ProcessFamilyMap (SVG 3 processes → 5 products); components at src/components/blog/pillar-tech/
+Technical #1 (Article #4): /blog/how-is-tempered-glass-made — ProductionLineTimeline (7-phase) + TemperatureCurveChart (SVG curve, 8 datapoints) + StressVisualization (annealed vs tempered); components at src/components/blog/article-4/
+Technical #2 (Article #5): /blog/how-is-laminated-glass-made — PVBvsSGPComparison (4-interlayer multi-select) + AutoclaveCurveChart (SVG dual-curve temp+pressure) + DelaminationFailureViewer (5 defects); components at src/components/blog/article-5/
+Technical #3 (Article #6): /blog/how-is-insulated-glass-made — IGUAnatomyExplorer (5-component clickable SVG) + GasConductivityChart (gas comparison bars) + SealLifespanTimeline (25-year failure curves); components at src/components/blog/article-6/
+Application cluster — OPEN (2/3)
+Article #8: /blog/curtain-wall-glass-specification — CurtainWallSpecSelector (2-step decision) + BuildupCrossSection (4-type layer explorer) + RegionalCodeTable (IBC/EN/GB/AS × 5 topics); components at src/components/blog/article-8/
+Article #10 (2026-10-12): /blog/shower-glass-thickness-guide — ThicknessCalculator (4-input decision selector with hardware warnings) + HardwareLoadVisualizer (SVG door + hinge-load utilization bars for 6/8/10/12mm) + GlobalCodeMatrix (US CPSC 1201 / EU EN 14428 / CN GB 15763.2 / AU AS 1288 tabs); components at src/components/blog/article-10/; registry entry appended; reciprocal link added to curtain-wall article via deploy script; Application cluster now 2/3 — one more unlocks Pillar
+Article #11 (2026-10-12): /blog/balustrade-glass-specification — LoadCaseSelector (4 use cases w/ EN+ASCE line/point/infill loads + make-up recommendation) + BuildupLab (3 build-ups: 12mm Mono Temp / 8-1.52-8 PVB / 10-1.52-10 SGP with SVG cross-section + 4 perf bars) + PendulumImpactSimulator (EN 12600 animated pendulum, 3 impact classes with pass/fail matrix); components at src/components/blog/article-11/; Application cluster now 3/3 — Pillar activation unlocked
+Article #12 Application PILLAR (2026-10-12): /blog/architectural-glass-applications-guide (target: 'architectural glass applications', isPillar: true, featured: true) — ApplicationZoneExplorer (clickable building cross-section SVG with 6 zones: facade/interior/balustrade/shower/skylight/floor → typical glass + code + deep-dive link) + ApplicationGlassMatrix (6 zones × 5 products standard/acceptable/rare/forbidden grid, desktop table + mobile cards) + GlazingScheduleReader (4 fictional spec rows decoded line-by-line: 6T+12A(Ar)+6T Low-E#2 → each token explained); components at src/components/blog/article-12/; completes three-pillar architecture (Types / Manufacturing / Applications)
+makeAlternates helper lives in src/lib/i18n.ts (NOT in hreflang.ts — hreflang.ts only exports hreflangAlternates and buildLocalizedUrl). All new page.tsx files that need the alternates metadata override must import { makeAlternates } from '@/lib/i18n';. Article #10 initial delivery got this wrong (imported from hreflang), fix1 over-corrected by removing the import entirely, fix2 restored it with the correct path. Lesson: verify lib-helper location with findstr/grep before importing in new pages, not just component Props.
+Blog architecture upgrades (2026-10-07):
+Topic Clusters system shipped: BlogCluster type (comparison/technical/application/buyer-guide/product) + CLUSTER_LABELS + CLUSTER_DESCRIPTIONS in blog-registry.ts; cluster field required on all articles
+URL stays flat /blog/[slug] — cluster hierarchy via BreadcrumbList JSON-LD only (Home > Blog > [Cluster Name] > Article)
+Blog listing /blog has ClusterTabs pill filter + ?cluster=xxx URL filtering; empty-state per cluster
+Site-wide search shipped: Cmd+K / Ctrl+K modal via SearchModal.tsx + SearchProvider wrapping QuoteProvider in layout.tsx; Fuse.js fuzzy matching (title ×3, searchKeywords ×2, description ×1, threshold 0.4); auto-indexes products from products.ts + articles from registry
+isPillar?: boolean field added to BlogArticle interface for Pillar Page identification; Pillar articles get featured: true to show as Featured cards on listing page
+All 5 products backfilled with searchKeywords (EN synonyms + industry abbrevs + CN terms); Product and BlogArticle TypeScript interfaces both require searchKeywords (build fails if missing)
+Deployment workflow evolution:
+Early patch scripts (large embedded TSX strings) kept hitting template-string nesting bugs — reverted to safer "4 files + 1 script" pattern using .tsx.txt templates read via readFileSync
+Current workflow for new articles: Claude delivers N .tsx.txt template files (interactive components + article page) + 1 deploy-xxx.mjs script that readFileSync copies templates to final paths and appends registry entry + adds reciprocal cluster links; Albar drops all files into edit\ folder and runs node edit\deploy-xxx.mjs
+All component Props must be verified by reading source before writing new articles (previous failures: TLDRBox expects takeaways not items; LeadMagnetCTA requires articleSlug; etc.) — triggered addition of preferences rule to always Read component source first
+Hero images status (all pending client generation per prompts in registry):
+architectural-glass-types-hero.webp (Comparison Pillar)
+architectural-glass-manufacturing-hero.webp (Technical Pillar)
+how-tempered-glass-made-hero.webp (Technical #1)
+how-laminated-glass-made-hero.webp (Technical #2)
+how-insulated-glass-made-hero.webp (Technical #3)
+curtain-wall-glass-hero.webp (Application #1)
+Comparison #2 and #3 hero images already generated and in place (insulated-vs-laminated-hero.webp, tempered-vs-annealed-hero.webp)
+Blog state snapshot (updated 2026-10-23):
+21 published/delivered articles (5 Pillars + 16 cluster articles) — all 5 cluster pillars activated
+Comparison cluster: 1 Pillar + 4 articles (Pillar activated; curved-glass-vs-flat-glass added by 2026-10-26)
+Technical cluster: 1 Pillar + 3 articles (Pillar activated)
+Application cluster: 1 Pillar + 3 articles (Pillar activated 2026-10-12)
+Buyer-Guide cluster: 1 Pillar + 3 articles (Pillar activated 2026-10-19)
+Product cluster: 1 Pillar + 3 articles (Pillar activated 2026-10-23 — Article #19 architectural-glass-specification-guide, 6-attribute decision + SpecificationBuilder + AttributeCascadeDiagram + CapabilityEnvelopeMatrix; deploy script auto-inserts reciprocal pillar link into #16/#17/#18 by anchoring on <FAQ items={faqItems})
+Pending next-session work:
+Generate remaining hero images (prompts in each registry entry's heroImagePrompt field)
+Request indexing in Google Search Console for all blog URLs
+Payment terms LC vs TT remains an open buyer-guide candidate for later
+Multilingual pilot — started 2026-10-07
+Pilot language: ES (Spanish) first; other 4 languages (DE/AR/FR/RU) deferred until ES validates
+URL scheme locked: EN stays at root sincereglass.com/, ES gets /es/ prefix; supersedes earlier /[locale]/ plan from SOP
+Translation stack: AI via Albar's 国内中转站 — Anthropic-native SDK format (NOT OpenAI-compatible as earlier noted); .env uses ANTHROPIC_API_KEY / ANTHROPIC_BASE_URL / BACKUP_API_KEY / BACKUP_BASE_URL / PRIMARY_MODEL / BACKUP_MODEL with primary→backup auto-fallback; all translation runs on Claude (dropped GPT-4o-mini plan to keep terminology consistency with one model)
+Infrastructure scaffold delivered as patch edit\scaffold-i18n.mjs (new files only, no modifications): src/lib/i18n.ts (locale constants + localizedPath/stripLocale helpers), src/middleware.ts (locale detection via URL, no auto-redirect), src/components/LanguageSwitcher.tsx (dropdown, not yet integrated into Header), src/components/Hreflang.tsx (buildAlternates helper + component), translation/glossary/es.json (50+ EN→ES glass terms across productTypes/components/performance/processes/applications/standards/business), translation/config.example.mjs, translation/README.md, translation/.gitignore
+Translation pipeline v1 delivered as scripts/translate-page.mjs + scripts/translation-lib.mjs; stack: @anthropic-ai/sdk + @babel/parser/traverse/generator + dotenv (reads .env directly, not config.mjs); extracts JSXText + translatable attrs (title/description/alt/placeholder/aria-label/label) + metadata object fields via Babel AST; batches 15 strings per API call with numbered-list format; primary→backup fallback on API failure; hash-based cache at translation/cache/<locale>.json; audit reports at translation/reports/<locale>-<timestamp>.md; glossary hard-enforced via system prompt
+V1 pipeline limitation (known): translates ONLY the specified file, does NOT recurse into locally-imported components (listed in report for later v2 recursive translator)
+Pilot translation target chosen: About page (src/app/about/page.tsx → src/app/es/about/page.tsx) — 7 sections, mid complexity, high glass-terminology density; validates glossary before expanding to products/homepage/blog
+Architecture status corrections (2026-10-07):
+Product pages are now fully local — src/lib/products.ts is the single source of truth; no WPGraphQL calls in products/page.tsx or products/[slug]/page.tsx; both pages already static (no force-dynamic, generateStaticParams returns products.map((p) => ({ slug: p.slug }))); earlier force-dynamic workaround for SiteGround WAF is gone; phase 0 ISR optimization not needed
+WordPress backend at cms.sincereglass.com is currently unused by the live site — all content (products, blog, pages) lives in TSX; WP/SiteGround/ACF/WPGraphQL infrastructure operational but serving zero live traffic; decommission decision deferred until after multilingual rollout and 3 months SEO data
+Multilingual pilot — V2 pipeline delivered (2026-10-07 evening):
+V1 dry run on About page validated end-to-end: translated 4 metadata fields; terminology correct (vidrio templado, 20.000 m² with ES thousands separator, "más de 15 años"); brand "Sincere Glass" + proper nouns preserved; relay endpoint confirmed as https://api.ikuncode.cc
+Dotenv config now reads .env.local first (Next.js convention) then .env as fallback — translation API keys live alongside Resend keys in .env.local
+V2 pipeline supersedes V1: scripts/translation-lib.mjs + scripts/translate-page.mjs rewritten to walk the import graph recursively; follows @/components/* and relative imports; MAX_FILES=100 safety limit; shared Context providers auto-excluded by regex createContext\s*[(<] to prevent Provider-instance mismatch (would break useQuote etc. in mirror tree)
+V2 mirror path convention: pages at src/app/<locale>/<rel>, components at src/_i18n/<locale>/components/<rel>; @/components/* imports in mirror files auto-rewritten to @/_i18n/<locale>/components/*; relative imports left unchanged (resolve naturally in mirror location)
+V2 known leak zone (documented in audit report): shared top-level components not in subfolders (Header, Footer, QuoteModal, WhatsAppFloat) remain English on ES pages because they're reached through Context providers or kept shared — these need V3 (locale-prop injection or dict lookup) later
+@/lib/* imports intentionally NOT followed in V2 (keeps scope manageable); products.ts translation deferred to V3 when Homepage/Products pages are localized
+Multilingual pilot — V3 pipeline validated (2026-10-07 late evening):
+V3 extractor extends V2 to pull translatable strings from data arrays/objects (const timelineEvents = [{title, description, ...}] pattern) and module-scope const strings (const sectionTitle = "Leadership"), using a 100+ property-name whitelist (title/description/name/role/address/feature/milestone/award/certification/etc.) to safely identify user-facing text vs technical fields (icon/href/color/slug/className skipped); shouldTranslate() also filters hex colors, CSS units (rem/em/px/vh/%), asset path extensions
+About page ES translation validated end-to-end: Hero/CompanyIntro/CTA/Leadership-bio/DualFactories-headings/Certifications-heading all translated with high quality per Albar; terminology (vidrio arquitectónico, Low-E con glosa, certificación 3C) correct; ES inverted ¿ punctuation handled; translation-lib.mjs is now the V3 version in scripts/
+V3 known gaps (same as V2): shared top-level components reached via Context (Header/Footer/QuoteModal/WhatsAppFloat) still show English — handled by future V3+ with locale-prop or dict lookup, not by the extractor
+Multilingual pilot — full-site rollout (2026-10-08 overnight):
+scripts/translate-all.mjs added — whole-site orchestrator: discovers all page.tsx under src/app/ (excludes locale subdirs + api/), unions import graphs, shares cache + translator across all entries, saves cache every 60 strings (crash-resilient)
+translation-lib.mjs extended with fixDangerousJSXText (runs inside generateCode): detects JSXText nodes containing <, >, {, } and converts to {"..."} JSXExpressionContainer so SWC parses correctly (fixes translation leaks like "< 2 horas" that otherwise look like JSX tag starts)
+translation-lib.mjs also now handles export { X } from 'Y' and export * from 'Y' re-exports in both import-graph walk and rewriteImports — barrel files like src/components/blog/blocks/index.ts needed this to pull sibling modules into the mirror set
+@babel/types must use namespace import (import * as typesModule from '@babel/types') under Node 24 ESM strict CJS interop; default import fails with "does not provide an export named 'default'"
+Full-site ES translation state (2026-10-08): 22 entry pages discovered, 137 files mirrored under src/_i18n/es/components/ and src/app/es/, 1849 unique strings cached in translation/cache/es.json, 0 shared Context providers excluded in this run
+Header integrated with LanguageSwitcher (desktop between search icon + Request Quote; mobile menu above Request Quote CTA with divider+justify-center); component rewritten in dark theme (globe icon + uppercase locale code + chevron) matching Header's bg-brand-dark/95 backdrop-blur-xl style
+sitemap.ts upgraded for i18n: makeEntry() helper generates one entry per URL × per locale with full alternates.languages map including x-default (points at EN); uses LOCALES + localizedPath from src/lib/i18n.ts so adding languages later just needs LOCALES update
+Prettier installed as devDep; useful for debugging Babel-generated TSX issues (its errors are clearer than SWC's for identifier/syntax problems), but not required in the pipeline — the fixDangerousJSXText fix is the real resolution
+Multilingual — SHIPPED to production (2026-10-12):
+LocalizedLink wrapper (src/components/LocalizedLink.tsx) added — drop-in replacement for next/link that auto-prefixes href with current locale via usePathname + getLocaleFromPath; patch-localized-link.mjs replaced import Link from "next/link" with import Link from "@/components/LocalizedLink" across src/components and src/app (excluding es mirrors); fixes "clicking any nav link from ES page jumps back to EN" issue
+Page-level hreflang shipped: patch-page-hreflang.mjs auto-injects alternates: makeAlternates("/path") into every static page.tsx metadata object + adds makeAlternates import; dynamic routes (products/[slug]/page.tsx) manually fixed with alternates: makeAlternates(\/products/${params.slug}`)` inside generateMetadata
+makeAlternates helper now takes optional locale param (defaults to DEFAULT_LOCALE); canonical URL correctly points at current locale version (not always EN); translate-all.mjs auto-injects locale as 2nd arg in all makeAlternates(x) calls inside ES mirror files via Babel AST pass (injectLocaleIntoMakeAlternates); fixes GSC "URL is not indexable" error that previously showed on ES pages because their canonical pointed back at EN original
+Caveats encountered: patch-fix-canonical.mjs's regex didn't fully strip old makeAlternates function body leaving orphan code "{ ... canonical: SITE_URL + canonicalPath ... }" appended after the new function — caused "Return statement not allowed here" build error on Vercel; manual cleanup required by deleting orphan block; lesson: don't use regex to replace nested-brace function bodies, use Babel AST
+Full multilingual stack verified in production: ES pages render correctly, LanguageSwitcher works, nav links preserve locale, sitemap.xml has hreflang alternates on 50 URLs, page-level <link rel="alternate" hreflang> tags present, canonical URLs self-reference per page, technicalseo.com hreflang tool shows all green ✓ with 3 valid alternates per page (en/es/x-default)
+Multilingual pilot complete; ready for Google Search Console sitemap resubmission + 1-14 day wait for ES page indexing + GSC Performance tracking of ES-speaking country traffic
+Blog listing + deploy workflow fixes (2026-10-12):
+src/app/blog/page.tsx patched: cluster-filtered hero now filtered.find(a => a.isPillar) || filtered[0] instead of plain filtered[0], so any cluster's Pillar wins the featured hero slot on ?cluster=xxx views
+Lesson: article deploy templates must use unique page filenames (e.g. page-article-NN-<slug>.tsx) — a plain page.tsx in edit/ gets overwritten/left-over across deploys and the deploy script silently copies the wrong article's page into the new URL (symptom: URL+blog card correct, page body shows previous article's content)
+Lesson: registry entry strings containing an English apostrophe (architect's, can't, don't, it's) must be wrapped in double quotes, not single quotes, or escaped — unescaped apostrophe inside '...' breaks TS parse at Vercel build
+Blog Article #13 — Buyer-Guide cluster opened (2026-10-13):
+Article #13: /blog/how-to-import-glass-from-china (cluster: buyer-guide, ~3,000 words, 17 min); 3 interactive components at src/components/blog/article-13/: SupplierVerificationScorecard (10-item ring gauge, 4-tier verdict at 31/61/81 thresholds), IncotermsExplorer (EXW/FOB/CIF/DDP SVG route with seller-coverage overlay + risk-transfer pin), ContainerLoadCalculator (W×H×thickness×count → 20'DC/40'HQ count + 5-lane ocean freight USD ranges); H2 structure = buyer-journey chronological (Who/5-stage/Stage 1-5/landed cost/red flags/FAQ) — distinct from last 5 articles' spec-matrix patterns
+Blog SOP v2.3 (confirmed 2026-10-13, supersedes v2.2):
+V2.3 adds C21 (interactive-component SSR methodology shadow — every "use client" article component must be preceded by 50-100 word plain-prose paragraph explaining its logic, inputs, outputs and thresholds, so AI crawlers that don't execute JS see the methodology) + C22 (every <table> gets <caption> + aria-label + scope attrs, with "Data verified: YYYY-MM-DD" stamp on time-sensitive data and inline source links on externally-sourced figures; companion rule for prose figures too); triggered by Grok critique on Article #13 pointing out that "use client" components with uninitialized state are semantically empty to PerplexityBot/ChatGPT-User/Google-Extended; SOP doc updated at claude/blog-sop-v2.md; Article #13 patched to v1.1 as first SOP v2.3-compliant article (SSR shadows added before all 3 interactives, landed-cost table caption+aria+HTSUS source link added, "How we calculated" methodology paragraph added, US destination-pair buyerFaq entry added for long-tail capture)
+Post-publish checklist additions in v2.3: load article with JS disabled and verify every interactive has its SSR shadow paragraph + every table has visible caption; also added open question on data refresh cadence per cluster (buyer-guide fastest, application slowest)
+Lesson (Article #14 build fix): a let x: 'A' | 'B' | 'C' = 'A' whose code paths never assign 'C' gets its useMemo-return type narrowed by TS 5.x control-flow analysis to 'A' | 'B', so later === 'C' comparisons fail with "no overlap". Fix: ensure every union member has a real assignment path (preferred — also forces honest semantics), or cast at the return site. Applies to any article interactive component with tiered state (riskTier/level/band).
+Factory b-roll on YouTube (TDjYxiRUZOM, 12s montage); 3 reusable video components added 2026-10-20: FactoryBrollLoop (self-hosted mp4 loop), YouTubeEmbed (click-load), VideoSchema (JSON-LD)
+2026-10-23: factory max panel corrected to 3.3m × 15m (was 3m, applies to furnace+autoclave); added 6th product Curved Tempered Glass (R_min 500mm, /products/curved-tempered-glass)
+
+Sincere Glass Social
+Last updated
+Nov 2, 2026
+Summary
+Sincere Glass LinkedIn + Facebook posting cadence and SOP
+
+Details
+2026-10-29: Facebook social posting kicked off for Sincere Glass; Facebook account prepared
+LinkedIn company page creation currently requires verification that can't be bypassed; account needs to be aged first to avoid risk control, so LinkedIn posting is deferred until account matures (Facebook-only in the meantime)
+First Facebook posts (2026-10-30, truck-shipment theme): Reel https://www.facebook.com/reel/3609290065908713 and image post https://www.facebook.com/share/p/19hAa4obJg/
+Cadence: 3 posts/week — Mon product/工艺 knowledge, Wed factory daily/生产 dynamics, Fri project case/发货 (social proof)
+Workflow: Albar requests copy from Claude, posts manually to both platforms
+Platform split: LinkedIn = B2B buyer/professional tone; Facebook = picture-first, more conversational
+
+Sincere Glass Tools
+Last updated
+Nov 9, 2026
+Summary
+Sincere Glass /tools section — interactive calculators as SEO landing pages, backlink magnets, and Quote lead capture surface
+
+Details
+2026-11-10: Tools Hub Phase 1 shipped — new /tools section as EEAT/backlink play separate from blog. Registry at src/lib/tools-registry.ts follows blog-registry pattern (interface, cannibalization audit, utility fns). Category taxonomy: specification / roi / logistics / comparison.
+2 launch tools live:
+/tools/glass-max-panel-size-calculator — standalone port of MaxPanelSizeCalculator (originally from article-16); B2B angle leveraging 3.3m x 15m jumbo envelope
+/tools/triple-pane-roi-calculator — dark-theme port of TriplePaneROICalculator (originally from article-27); IECC climate zone + fuel-rate payback model
+Architecture decisions locked in Phase 1:
+Component reuse strategy: COPY+upgrade (option B) — standalone tool components live at src/components/tools/*, blog-embedded originals stay untouched; standalone versions get hash state + QuoteModal prefill that blog versions don't need
+URL state: hash fragment (#support=point&wind=high), NOT query string — zero crawl-budget risk since Google never sees hash
+Visual theme: dark brand palette (
+#1C1F26 / 
+#DAA745) unified across all tools; TriplePaneROI was repainted from original slate-light theme
+Lead capture: tool result → "Get quote for this spec" button → QuoteModal opens with message textarea pre-filled with formatted spec + verdict
+QuoteContext extended (backward-compatible): openQuote(product?, prefillMessage?) signature; Provider state adds prefillMessage; QuoteModal textarea rows 3→5 + defaultValue={prefillMessage}. Marker TOOLS-HUB-V1:QuoteContext.prefillMessage.
+lib/schema.ts gained 4 helpers: getSoftwareApplicationSchema (price 0, no fake aggregateRating), getHowToSchema, getFaqSchema, getBreadcrumbSchema. All tool pages emit SoftwareApplication + HowTo + FAQPage + BreadcrumbList JSON-LD.
+Reusable hash-state hook at src/lib/useHashState.ts — generic useHashState<T>(initial, parseFn) with validate-on-read; handles SSR guard, no-history replaceState.
+Deploy flow: edit/deploy-tools-hub.mjs (CRLF-tolerant, anchor-based patches with unique markers, writes .bak backups). 8-file package delivered as tools-hub-phase1.zip.
+2026-11-10: Phase 2 shipped — site integration patches to sitemap.ts (new /tools + 2 tool URLs with hreflang alternates, weekly freq 0.8 for hub + monthly 0.7 for tools), Header.tsx (Tools nav entry between Blog and Contact, desktop + mobile; "Tools" label hard-coded inline fallback since nav.tools dict key not yet added — future dict migration documented), SearchModal.tsx (Cmd+K index extended with tools, independent "Tools" section with gold badge distinct from grey article badges, placeholder + chip hints updated). Delivered as edit/deploy-tools-phase2.mjs single-script, markers TOOLS-PHASE2-V1:*. ES mirror via translate-all.mjs runs separately.
+2026-11-10: npm run build OOM'd at V8 Zone Allocation (default ~2GB heap too small for i18n'd project with 150+ TSX files). Fixed by editing package.json build script to node --max-old-space-size=6144 node_modules/next/dist/bin/next build — standing requirement for this project, not a one-off fix.
+Hero image path convention for future tool pages: public/images/tools/<slug>-hero.webp; Phase 1 tool pages intentionally SKIP hero images (text-only hero keeps calculator fold-above for better UX and dwell time).
+
+Sincere Glass Video Assets
+Last updated
+Nov 11, 2026
+Summary
+Sincere Glass YouTube factory/production video asset registry — video ID + intended site deep link per asset
+
+Details
+2026-11-03: 12 factory/production videos saved to local public/video/ folder (singular, code uses /videos/ plural — rename folder or adjust refs); renamed to kebab-case ASCII; uploading to YouTube Public on channel @XinchenGlass for site embed via existing YouTubeEmbed component (click-load, Vercel bandwidth saved); each with EN title {Equipment} — Sincere Glass Factory | Wuhan, China + description deep-linking primary product/about page
+9 of 12 uploaded 2026-11-03 (remaining 3 hit YouTube daily upload limit, pending next day):
+furnace-tempering → youtu.be/expE_icthfo → /products/tempered-glass
+furnace-curved-tempered → youtu.be/FUGOpDGbca0 → /products/curved-tempered-glass
+warehouse-curved-tempered → youtu.be/Ct-LqD0WTVg → /products/curved-tempered-glass
+autoclave-laminated-1 → youtu.be/inNYYEAnWOo → /products/laminated-glass
+autoclave-laminated-2 → youtu.be/wzr8--CuX9Y → /products/laminated-glass
+line-insulated-glass → youtu.be/qcSV4WG8nL0 → /products/insulated-glass
+line-cutting → youtu.be/YLkfJbK1XpA → /products
+line-edge-grinding → youtu.be/1XwGWynxkJE → /products
+warehouse-finished-products → youtu.be/SiFnUYgcjqQ → /products
+Pending upload (all 3 → /about, used for homepage HeroSection ambient background + Equipment page top feature slot): line-automated-production, factory-aerial-overview, factory-interior-drone
+Equipment page 6 category accordion video needs now covered by uploaded 9 (Cutting / Edge Grinding / Tempering / Curved Tempered / Laminating / IG); warehouse-finished-products available as extra Finished Goods slot
+Agreed next step after upload: Equipment page patch via edit\patch-equipment-videos.mjs (replace mp4 placeholders with YouTubeEmbed + VideoSchema JSON-LD per video, deep link via productUrl)
+2026-11-03: Equipment page architecture clarified during video patch — /equipment page renders EquipmentGallerySection (NOT EquipmentClient.tsx, which is dead code); 6 categories live in auto-generated src/lib/equipment-gallery.ts (regenerated by edit/prepare-equipment-images.mjs from public/images/equipment-raw/); video registry split into separate hand-maintained src/lib/equipment-videos.ts keyed by category.key so photo auto-regen can't clobber videos. Real category keys: tempering / cutting / edging / laminating / insulating / enameling (enameling has no video asset — renders photos-only). Patch delivered: 3-file bundle (equipment-videos.ts.txt + EquipmentGallery.tsx.txt + patch-equipment-videos.mjs) adding Video/Photos tab switcher (video default when available) + injecting all 5 VideoSchema JSON-LD into section top for Google visibility across tabs. Idempotency anchor SG-EQUIP-VIDEO-V1.
+2026-11-03: Equipment page video patch SHIPPED — npm run build passed; 5 videos (tempering/cutting/edging/laminating/insulating) now embedded via Video/Photos tabs with VideoSchema JSON-LD. Pending: ES mirror sync via scripts/translate-all.mjs; Curved Tempered product page video integration (furnace + warehouse clips) is next.
+2026-11-04: Raw mp4 archive lives at D:\桌面\sincereglass-videos (moved out of public/video/ to keep git push small; deliberately NEVER committed). Standing architectural decision: no mp4 in repo, all video via YouTube embed; FactoryBrollLoop converted from autoplay <video> to static <Image> poster (defaults to /images/hero-factory.jpg, callers can override via new poster prop) because YouTube iframe can't deliver clean no-UI background loops. About page VideoSchema removed (no video on About after FactoryBrollLoop poster swap — misleading structured data was Google policy risk). Equipment page EquipmentClient.tsx was still shipping /videos/*.mp4 refs today (causing 404s on live site) — patched to YouTubeEmbed per category using the 2026-11-03 mapping; 11-03 note about "EquipmentClient.tsx is dead code" was wrong, it's live.
+2026-11-11 实际状态核查：4 个产品页已 shipped YouTubeEmbed（videoId 与本注册表一致）——tempered-glass L121 expE_icthfo / curved-tempered-glass L261 FUGOpDGbca0 + L415 Ct-LqD0WTVg / laminated-glass L106 inNYYEAnWOo / insulated-glass L85 qcSV4WG8nL0。此前 memory 把 Curved Tempered 产品页集成记为"next/pending"，实际已上线。遗留缺口三项：(1) 全部 4 个产品页缺 VideoSchema JSON-LD（Google video rich result 未启用）；(2) laminated-glass 只用了 autoclave-laminated-1（inNYYEAnWOo），autoclave-laminated-2（wzr8--CuX9Y）未上页（可能冗余，待决策）；(3) /products hub 完全未做视频，待插 3 条（line-cutting YLkfJbK1XpA / line-edge-grinding 1XwGWynxkJE / warehouse-finished-products SiFnUYgcjqQ）
+2026-11-11 SHIPPED patch-product-video-schema.mjs（marker SG-PRODUCT-VIDEO-SCHEMA-V1）：build 通过 + push 完成。实际落地：(1) 4 个产品页全部加 VideoSchema JSON-LD（tempered/curved-tempered×2/laminated/insulated）；(2) /products hub 新增 "Our production lines" 3 列 grid section，含 cutting (YLkfJbK1XpA) + edge-grinding (1XwGWynxkJE) + finished-goods (SiFnUYgcjqQ) 三个 YouTubeEmbed + 对应 VideoSchema。laminated autoclave-laminated-2 (wzr8--CuX9Y) 按决策不上页（避免视觉冗余，预留未来 blog 内嵌用）。剩余 video 工作全部清零；下一步回 content-plan，W2-#8 U-Factor/SHGC 待写
+2026-11-11 工厂真实照片素材 17 张到位（source: D:\xwechat_files...\外贸拍摄素材\）：切割×1 / 磨边×2 / 夹胶×3 / 中空×4 / 异形中空×1 / 弯钢×2 / 镀银×1 / 原片×3 / 发货×1。交付 edit/place-factory-photos.ps1.txt（marker SG-FACTORY-PHOTOS-V1）一次性批量落地：11 张进 public/images/equipment-raw/{cutting,edging,laminating,insulating,tempering,enameling}/（填补 enameling 分类长期空缺）+ 4 张进 public/images/about/（原片库存 + 物流 trust strip）+ 3 张 Hero 源进 public/images/blog/_source/（#24 Low Iron Pillar←原片1 / #26 Insulated Pillar←中空1 / #27 Double-vs-Triple←中空3）。镀银 Albar 确认实际是彩釉玻璃（ceramic frit），文件名改 ceramic-frit-1.png，非电镀。弯钢归到 tempering（prepare-equipment-images.mjs 认 6 固定 category key，不单建 curved）。Hero WebP 转换不自动做（PowerShell 无原生 webp，不引依赖），Albar 手动用 Squoosh/cwebp 转 1600×900 q85 覆盖现有 AI 生成 hero.webp，page.tsx 无需改。#28 argon-krypton Hero 保留 AI 图（无对应真实对比照）。待 Albar 本机执行脚本 + regen + 转 webp + build + push
+2026-11-11 Equipment 页照片部分 SHIPPED（commit 8f86e23 "39"）：regen 跑通，14 张新 webp + equipment-gallery.ts 已上线。最终每 category 数量：cutting 4 / edging 6 / enameling 4 / insulating 11 / laminating 6 / tempering 8（共 39 张，比合并前 22 张老素材翻近一倍）。过程踩坑两个，都在 edit/ 里留了修复工具：(1) prepare-equipment-images.mjs 的 CATEGORY_MAP 一个 key 对应多个 folder 别名（如 cutting 匹配 "cutting" 和 "cutting equipment"），equipment-raw/ 下同时存在新旧两个 folder 时脚本会处理两次，第二次 wipe 步骤 unlink 第一次刚写的 webp 遇 Windows EBUSY 崩溃——不是外部进程锁，是脚本自锁。修复：edit/merge-new-into-legacy-folders.ps1.txt（marker SG-MERGE-EQUIPMENT-RAW-V1）把新 folder 文件 move 进对应 legacy folder 做连续编号追加，然后删空的新 folder。(2) edit/run-regen-with-retry.mjs.txt（marker SG-REGEN-RETRY-V2）是 fs.unlinkSync 的 monkey-patch wrapper，EBUSY/EPERM 重试 8 次后吞错让 sharp 自己 overwrite，ENOENT 当成功——未来再加 equipment 照片只要按 legacy folder 名（"cutting equipment"/"Edge grinding equipment"/"Hollow device"/"Laminating equipment"/"Tempering equipment"/"Colored glaze equipment"）追加编号即可，不要新建别名 folder。剩余 2 项仍 pending：(a) About 页组件未改，raw-stock-1~3.png + shipping-1.png 已在 repo 但未在页面显示（叙事方案 B：原片进 "Raw material inventory" 3 列 section + 发货进 "Global shipping" trust strip，待 Albar 拍板后出 patch）；(b) 3 个 Pillar Hero WebP 未转换（_source/*.png 已在 repo，/blog/{low-iron,insulated,double-pane-vs-triple-pane}-hero.webp 仍是旧 AI 图，Albar 手动 Squoosh 转完覆盖即可）
+
+Article Review Checklist
+Last updated
+Nov 10, 2026
+Summary
+Pre-publish review checklist for Sincere Glass comparison/decision articles — SEO + GEO + practicality. Covers structure, data trust, GEO extractability, cannibalization audit.
+
+Details
+适用范围：欣城玻璃站所有对比类/决策类长文发布前必走一遍
+结构检查
+H1下方150字内必须有"一句话判决+适用条件"块（供AI摘要直接citation）
+关键对比用真 <table> + <thead>，不用div伪表格（提升结构化提取）
+所有交互组件（计算器/选择器/切换卡）必须有静态fallback文本或卡片，确保无JS环境下关键结论可见
+FAQ Schema的answer字段≤160字，便于Google AI Overviews抓取
+每个H2段落首句即为该段结论，不要埋在中间
+数据可信度
+所有价格/交期/规格区间标注数据来源与时间窗口（如 "FOB Wuhan, 2024 Q1 – 2026 Q3"）
+必加non-quote免责声明："Reference pricing only; subject to spec, coating, FX. Not a formal quote."
+更新日期保持真实节奏，不要为SEO频繁假更新
+作者与Schema
+Sincere Glass 项目作者署名 Li Cheng (CEO at Sincere Glass)，账户名 Albar 不出现在前台；技术审核 Albar 通过 reviewedBy 字段展示
+JSON-LD author URL 为 https://sincereglass.com/about
+作者信息集中在 DEFAULT_AUTHOR 常量（lib/blog-registry.ts），不要在单篇文章 entry 里硬编码 author 字段
+GEO专项
+决策规则用 "If X and Y, then Z" 句式，比叙述句更易被AI重组
+关键数字用阿拉伯数字（$140 not "one hundred forty"）
+价格/交期/装载/MOQ优先用表格呈现
+关键词蚕食审计 v2（2026-11-05升级，账户preferences要求）
+立项前（每篇文章必走）
+候选文章必须先确定 primary keyword（一个精确短语）+ 3-5 个 secondary keywords，写入 blog-registry.ts 的 entry
+在 Search Console 查 primary keyword：若已有页面对该词已有 impressions（任意数量），必须判定"优化旧文"vs"新建"，不得默认新建
+判定"新建"的硬条件（三条必须全满足）：① 现有文章的 primary keyword 与新文章字面不同；② 两篇 top 10 target keywords 的 Jaccard 相似度 < 0.3；③ 搜索意图分型不同（informational / commercial comparison / transactional buyer-guide）
+判定"优化旧文"则不写新文章，直接增补旧文并记录改动到 blog-registry entry
+Slug 和 H1 预检
+决定新建后，执行：findstr /n "slug:" src\lib\blog-registry.ts 导出全部 slug
+用新文章 primary keyword 的核心词（如 "architectural glass"、"low iron"、"insulated glass"）过滤匹配，命中 >1 条即进入人工语义比对，不得凭"slug 字面不同"直接放行
+新 H1 必须和冲突候选的 H1 做语义差异检查：两个 H1 若在回答同一个用户问题，就是蚕食（不是字面相同才算）
+批量产出（content-plan 执行时额外规则）
+按 cluster 批量 >=3 篇时，每篇写完立即 append 到当批 cluster registry（slug + primary keyword + H1 + target intent）
+批量全部写完、发布前必须跑 cluster 内两两交叉比对：任意两篇 primary keyword 字面重叠 >=2 个实词 → 红色标记，暂停发布，人工决策
+批量发布完成 48h 后必须跑一次全站 blog-registry 全量交叉比对，输出蚕食风险报告归档
+冲突处理
+判定蚕食后处理路径：保留 GSC impressions 高者作为 canonical，低者 301 重定向；或重写低分文的 H1 + primary keyword + 前 200 字彻底重定位到不同意图
+新建通过时规划 canonical / internal link 策略，内链锚文本必须差异化，避免同一短语多篇互链
+判定硬规则（2026-11-05审计后补充）
+硬规则 1：任何一篇文章的 secondaryKeywords 数组不得包含另一篇文章的 targetKeyword——这是最隐蔽也最常见的蚕食形态（自己的 pillar 和自己的 spoke 抢同一个词），立项时必须用新 targetKeyword 扫描全站所有现有 entry 的 targetKeyword + secondaryKeywords
+硬规则 2：slug 前缀相似 ≠ 蚕食。多篇文章共享同一主题前缀（如 architectural-glass-*）但 targetKeyword 分别对应不同 pillar cluster（types / applications / manufacturing / specification / buyer-guide）是正当的 hub-and-spoke 架构，必须放行。判定只看 targetKeyword 字面 + 搜索意图 + cluster 字段，不看 slug 前缀
+蚕食判定命令：node audit-cannib.mjs（从 blog-registry.ts 提取每个 slug 的 targetKeyword + secondaryKeywords + cluster + articleType，按 group 输出便于交叉比对）；脚本保留在项目根目录
+本次审计实际结果（2026-11-05）
+architectural-glass-*（6 篇）：非蚕食，是 5 cluster pillar + 1 spoke 的合法矩阵（types/applications/manufacturing/specification/china-buyer-guide + supplier-vetting spoke），targetKeyword 全不同，意图正交，不动
+insulated-glass（3 篇）：轻度蚕食。处理：从 insulated-glass-complete-guide 的 secondaryKeywords 删除 'igu build up' 和 'igu anatomy'，让 how-is-insulated-glass-made 独占 anatomy/工艺意图；insulated-glass-vs-laminated-glass 独立无风险
+low-iron-glass（2 篇）：直接蚕食——low-iron-glass-complete-guide 的 secondaryKeywords 把 vs-clear-glass 的 targetKeyword 直接列入自己。处理：从 complete-guide 的 secondaryKeywords 删除 'low iron glass vs clear glass' 和 'starphire vs low iron glass'，vs 意图让给 vs-clear-glass 文章
+根因教训：① slug 前缀相似误导了初判（6 篇 architectural-glass-* 被我误判为蚕食）；② 缺少"secondaryKeywords 不得包含他人 targetKeyword"这条硬规则；③ 批量产出时 secondaryKeywords 是最容易被随手塞进去的字段，但恰好也是蚕食最隐蔽的入口
+工单归档：cannib-audit-v2-2026-11-05-08-27.md（原始数据）+ 本次教训条目（本文件）
+交付物
+SEO交付文档必须包含Hero图的AI生成提示词（image prompt）
+归档hero prompt便于后续同系列文章复用视觉风格
+Entity SEO与内链
+正文或Schema显式提及relevant entities：相关标准（EN 12150、ASTM C1048）、知名竞品（Guardian Glass、Saint-Gobain等），强化topical authority
+内链锚文本多样化，不要全用同一个核心词；混用product name、descriptive phrase、spec-based变体
+跨语言
+hreflang版本（en/es等）的"一句话判决"要同样精炼，不是机器直译
+可用 searchfit-seo:translate-content skill 跑本地化翻译
+新增产品的字典同步（2026-10-27事故教训）
+欣城站Header + Footer + QuoteModal走 t('product.${key}.name') 和 .desc，字典在 src/lib/dict.ts
+新增产品时除了 src/lib/products.ts + Header/Footer productLinks数组，必须同步在 src/lib/dict.ts EN块和ES块各加两条（.name + .desc）
+否则UI会字面渲染出 product.xxx.name 这种占位符，被Grok/爬虫/用户看到
+验证命令：findstr /n "新key名" src\lib\dict.ts 应该返回4条（EN name/desc + ES name/desc）
+Windows findstr 与 UTF-8（2026-10-27）
+Windows cmd 的 findstr 用系统 ANSI 码页（简中环境是 GBK）解码文件；UTF-8 文件里的非 ASCII 字符（如 Rₘᵢₙ、中文、西语重音）会显示乱码并可能触发"写入错误"
+验证文件实际内容必须用 PowerShell + -Encoding UTF8：powershell -command "Get-Content <file> -Encoding UTF8 | Select-Object -Index N"（Index 是 0-based，所以第35行是 Index 34）
+项目所有 .ts/.tsx/.json 源文件都是无 BOM 的 UTF-8，Node 脚本写入时直接 writeFileSync utf8 不会破坏
+Deploy脚本安全规则（2026-10-27事故教训）
+永远不要用 lastIndexOf('];') 定位 blog-registry.ts 数组末尾插入点——其他地方（如 BlogArticle[]、函数返回类型）也有 ];，可能匹配到那里把 entry 塞进函数签名
+正确做法：用更具体的 anchor，如 /\n\];\s*\n\s*\n\/\/ ---- Utility functions/、或字符串   },\n];\n\n// ---- Utility functions
+新文章 deploy 脚本必须先 if (registrySrc.includes(\slug: '${SLUG}'`))` 检查是否已有 entry，有则跳过，避免二次插入
+跑 deploy 脚本后立刻 npm run build 验证，不要积累多个 deploy 再统一 build
+新文章命名与蚕食审计（2026-10-27事故教训）
+新文章 slug 必须先和现有文章做字面+语义重叠审计，不仅是字面匹配
+curved-tempered-glass-vs-flat-tempered-glass 和 curved-glass-vs-flat-glass 是严重重复——都针对 "curved vs flat" 买家决策意图，前者更窄但不构成独立关键词
+Claude memory 对本项目可能有延迟（memory 停在某日期后的产品/文章新增可能未反映）；写新文章前必须跑完整 slug 列表核查：findstr /n "slug:" src\lib\blog-registry.ts
+blog-registry.ts L110 存在注释掉的预留slot soundproof-laminated-glass-guide，新文章不要撞这个 slug
+增量 patch 比重写更安全（2026-10-27教训）
+对已部署的高流量文章做改进，默认用 "anchor-based 增量插入 patch" 而不是整文件重写：风险小、幂等、可回滚
+Patch 块必须加唯一标记（如 GROK-INSERT-V1:xxx）供下次脚本检测跳过，实现幂等
+Patch 脚本必须先 writeFileSync(bak, original) 自动备份原文件，回滚只需 copy /Y
+文章改动若涉及新交互组件，才需要走完整 deploy 脚本流程；纯静态内容增强（表格/卡片/callout）用 anchor patch 即可
+
+Preferences
+Last updated
+Nov 17, 2026
+Summary
+Sincere Glass project-specific preferences — overrides account-level where applicable
+
+Details
+SEO文章交付文档中需包含对应Hero图的AI生成提示词（image prompt）
+Sincere Glass项目SEO文章署名作者为 Li Cheng（非 Yang Ruosong；Yang Ruosong 是 onerchem 项目的署名，两个项目要分清）
+Sincere Glass项目JSON-LD中作者URL应为 https://sincereglass.com/about
+文章生成SOP中必须包含站内文章关键词蚕食审计步骤：检查新文章关键词是否与已有文章冲突，如确定应优化而非新建则标注出来
+写新文章或patch脚本前必须先Read现有组件的Props定义（TLDRBox / LeadMagnetCTA / RelatedProductsCards 等），不要凭记忆猜prop名字。Albar已多次因此报错（例：TLDRBox的prop是takeaways不是items；文章#1 registry条目的cluster字段正则匹配失败；products.ts的searchKeywords被插入到specs数组内部造成语法错误）。规则：patch脚本写入现有文件前先Read该文件；调用现有组件前先Read组件源码确认API。
+Sincere Glass 产品页/服务页 JSON-LD schema 默认用 Service（@type: Service），不用 Product——B2B 定制产品不符合 Product rich result 要求的 offers/review/aggregateRating 字段；伪造评分违反 Google 政策。provider=Organization(Sincere Glass)，serviceType="Architectural Glass Manufacturing"，category="Architectural Glass"，areaServed=Worldwide，audience=BusinessAudience。FAQPage schema 保留（Google 对 B2B FAQ 富媒体仍开着）。参考 edit\convert-product-to-service-schema.mjs。
+生成registry entry或任何注入到.ts文件的长字符串时，涉及人话里的撇号（can't / don't / it's / architect's / client's等）必须用双引号"..."或反引号包裹，不能用单引号'...'——Article #12部署时buyerFaq的architect's在单引号串内未转义导致Vercel构建失败。
+开始任何新 blog 文章任务（新 slug / 新主题 / 新关键词）第一步必须先完整列出当前 registry 的所有 slug：findstr /n "slug:" src\lib\blog-registry.ts，不要依赖 memory 里的文章列表（memory 对项目信息可能滞后数天），完整列表到手后再做关键词蚕食审计。2026-10-27 事故：Claude 基于 10-23 的 memory 起了 curved-tempered-glass-vs-flat-tempered-glass，和 10-26 已发的 curved-glass-vs-flat-glass 严重语义重叠。
+Deploy 脚本禁用 lastIndexOf('];') 定位 registry 数组末尾——文件里其他地方（函数签名、util 返回类型 BlogArticle[]）也含 ];，会错位插入。用更具体的 anchor，如字符串   },\n];\n\n// ---- Utility functions。每个 deploy 脚本必须先检查 registrySrc.includes(\slug: '${SLUG}'`)`，已存在则跳过。
+已部署文章的改进默认走 anchor-based 增量 patch 脚本，不走整文件覆盖：风险小、幂等、可回滚。Patch 块必须加唯一标记（如 GROK-INSERT-V1:xxx）用于再次运行时跳过；脚本必须先 writeFileSync 一份 .bak 备份。只有需要新增交互组件时才走完整 deploy 脚本流程。
+每次 deploy 脚本或 patch 脚本执行后，立刻跑 npm run build 验证，不要积累多个变更一起 build——出错时定位困难，且 Vercel push 后 build 失败回滚更麻烦。
+2026-10-30 事故：Phase A /certifications deploy 脚本的 sitemap.ts anchor 替换把 "/about" 直接替换成 "/about",\n  "/certifications"，但 sitemap.ts 的实际写法是 { path: "/about", freq: ..., priority: ... }，anchor 处在对象字面量字段里，插入后破坏了对象语法。规则：任何 patch 脚本做字符串替换前，先 Read 目标文件确认 anchor 的句法上下文；anchor 必须是语法上完整的一行或完整的句法单元，不要用裸字段值。对结构化数据（对象/数组字面量），优先在整行后换行追加同类项，而不是在字段中间插入。
+2026-10-30 事故 Phase B TestReportDownload.tsx 反复 SWC "Expected jsx identifier" 报错：根因是 Node writeFileSync 把 UTF-8 字节在中文 Windows PowerShell 环境里再次经 GBK 转码，—/×/· 等 Unicode 字符变成 鈥?/脳/路 乱码字节序列，SWC 解析失败后把前面的 Record<Bucket, ...> 泛型 < 当成 JSX 开始，连锁导致真正的 <section> 位置报错。规则：生成 Sincere Glass TSX 组件模板时，正文一律用 ASCII 字符（em dash 用 -、× 用 times、· 用 and、& 用 and），把 Unicode 排版符号留给运行时的 CSS/JS 生成（如需）或用 HTML entities。PowerShell writeFileSync 的 .tsx.txt 模板必须用 [System.IO.File]::WriteAllText(path, content, (New-Object System.Text.UTF8Encoding $false)) 以无 BOM UTF-8 写入，避免 BOM 或 GBK 混用。
+Sincere Glass 项目 TSX 组件避免在 as unknown as 后直接跟泛型 Record<Bucket, Report[]>，Next.js 14 SWC 在类型断言+JSX 返回场景下有时会把泛型 < 当成 JSX 开始；改用 const x = data as any; const y = x[key] as Report[] 两步走。
+Sincere Glass 项目 tsconfig strict 开启，TSX 组件 props 必须显式类型声明（即使只用一个 prop，也写 props: { bucket: string }），对象字面量以 string 索引时需 (obj as any)[key] 跳过索引签名检查。
+2026-11-03 事故：Article #25 deploy 脚本的字面字符串 anchor "  },\n];\n\n// ---- Utility functions" 在 Windows 项目下匹配失败，因为 blog-registry.ts 的行尾是 CRLF (\r\n) 不是 LF (\n)。规则：Windows 项目的 deploy/patch 脚本 anchor 必须用 CRLF-tolerant 正则（如 /\r?\n/），不要用字面 \n 拼字符串匹配。脚本还要先 detect 文件实际行尾（const EOL = raw.includes("\r\n") ? "\r\n" : "\n"），生成的插入内容用同样的行尾，避免 CRLF/LF 混用触发 git / lint 噪音。失败时打印文件 tail 400 字符到 stderr 便于远程诊断。
+回答本项目"今天做什么 / 进度到哪了 / 下一步"类问题时，优先读项目记忆（/projects/01a0cf08-65a7-776f-a616-27d05c993e07/ 下的 areas/*, content-plan 等），不要依赖账户级 /topics/recent-work.md——账户记忆对 Sincere Glass 项目状态可能滞后
+2026-11-16 事故：patch 脚本把 .tsx 源文件的备份原样镜像到 edit\_bak_03\...\X.tsx，npm run build 的 tsc 把 tsconfig **/*.tsx include 下的备份副本也纳入类型检查，备份副本的相对 import（如 ./ReadingProgress）在备份目录解析不到，报 "Cannot find module" 构建失败（src 本身已 ✓ Compiled successfully，只败在类型检查备份）。规则：patch/deploy 脚本的备份一律写成 <原文件>.bak（.bak 后缀 tsc 不扫），紧挨原文件；绝不在 edit\ 下或任何位置生成保留 .tsx/.ts 后缀的备份副本，也不要镜像目录。回滚/审查首选 git diff + git checkout，.bak 只做即时兜底。可选永久隔离：tsconfig exclude 加 "edit"。
+2026-11-17 事故：deploy-article-31 的 purge 函数正则 (\]) 只捕获了 secondaryKeywords 的闭合 ]，没捕获其后的属性分隔逗号，替换时把那个逗号挤到了插入的注释行末尾被 // 吃掉，导致 secondaryKeywords 与 searchKeywords 之间缺逗号、build 报 "Expected ',', got 'searchKeywords'"。规则：patch/purge 脚本在数组或对象字面量闭合处插注释时，正则要把尾逗号一起捕获——(\]) 改成 (\]\s*,?)，注释放到 ], 之后换行，绝不插在 ] 和 , 之间。

@@ -367,6 +367,11 @@ export default function Page() {
           <a href="/blog/starphire-vs-low-iron">whether the Starphire name is worth paying for</a>{" "}
           versus generic low-iron.
         </p>
+        {/* SG-ART34-RECIP-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/30 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Need line-by-line FOB Wuhan numbers?</strong> See our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">2026 low iron glass cost breakdown by thickness and assembly</a>, including a 1,200 m2 BOQ value-engineering simulator.
+        </div>
+
         <FAQ items={faqItems} />
 
         <h2 id="buyer-faq" className="text-2xl font-semibold text-[#F2F0ED] mt-12 mb-6">

@@ -291,6 +291,11 @@ export default function Page() {
 
         <section id="faq">
           <h2>FAQ</h2>
+          {/* SG-ART34-RECIP-V1 */}
+          <div className="my-8 rounded-xl border border-[#DAA745]/30 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+            <strong>Looking beyond brand markup?</strong> Explore how cutting yield, MOQ, fabrication dilution, and ocean freight shape your final rate in our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">full low iron glass cost stack (FOB vs. landed)</a>.
+          </div>
+
           <FAQ items={faqItems} />
         </section>
 

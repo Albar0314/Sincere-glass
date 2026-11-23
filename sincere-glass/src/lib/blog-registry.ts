@@ -1237,8 +1237,7 @@ export const blogArticles: BlogArticle[] = [
     secondaryKeywords: [
       "ultra clear glass",
       "extra clear glass",
-      "is low iron glass worth it"
-    ],
+      ],
     // SHOWER-PURGE-V1:a32-shower-24: scanned, nothing to purge
     // LIT-PURGE-V1:a31-litempered-24: purged low-iron-tempered terms (ownership -> low-iron-tempered-glass)
     searchKeywords: [
@@ -1705,7 +1704,51 @@ export const blogArticles: BlogArticle[] = [
       'The comparison that matters for most buyers is low-iron vs standard clear, not brand vs brand.'
     ],
     featured: false,
-  }
+  },
+  {
+    slug: "low-iron-glass-cost",
+    title: "Low Iron Glass Cost Breakdown (2026): Factory Pricing, Dilution Math & Budget Rules",
+    excerpt: "2026 FOB Wuhan pricing for low iron vs. standard clear glass (6-19 mm). See how tempering, lamination, cutting yield, and ocean freight compress the real premium - plus a 1,200 m2 BOQ value-engineering model.",
+    targetKeyword: "low iron glass cost",
+    secondaryKeywords: [
+      "low iron glass price per m2",
+      "is low iron glass worth it",
+      "ultra clear glass cost china",
+      "low iron vs clear glass price difference",
+    ],
+    searchKeywords: [
+      "low iron glass cost",
+      "low iron glass price",
+      "ultra clear glass price per sqm",
+      "is low iron glass worth it",
+      "low iron vs clear cost",
+      "Fe2O3",
+      "VLT",
+      "IGU",
+      "FOB",
+      "HST",
+      "\u8d85\u767d\u73bb\u7483\u4ef7\u683c",
+      "\u4f4e\u94c1\u73bb\u7483\u6210\u672c",
+    ],
+    publishDate: "2026-11-22",
+    updatedDate: "2026-11-22",
+    category: "Buyer Guide" as const,
+    tags: ["low iron glass", "pricing", "FOB China", "value engineering", "BOQ", "buyer guide"],
+    heroImage: "/images/blog/low-iron-glass-cost-hero.webp",
+    heroImageAlt: "Stepped cross-section comparison of standard clear float, low iron tempered, low iron laminated, and low iron insulated glass samples on a dark slate workbench",
+    heroImagePrompt: "Macro architectural studio photograph showing a stepped comparison of four vertical glass cross-section samples standing upright on a dark matte slate workbench: 6mm clear float on the far left showing a subtle green edge, followed by 10mm low-iron tempered glass, 10+1.52+10 low-iron laminated glass, and a 6+12Ar+6 low-iron insulated glass unit with a grey warm-edge spacer. Raking warm amber rim light (#DAA745) illuminates the crisp, colorless polished edges of the low-iron samples. Muted dark navy-charcoal industrial workshop background (#1C1F26), shallow depth of field, 85mm macro lens, documentary engineering catalog aesthetic, 16:9 composition. No text, no numbers, no watermarks, no logos, no human hands or faces.",
+    author: DEFAULT_AUTHOR,
+    readingTime: 15,
+    featured: false,
+    reviewedBy: { name: "Albar", title: "Technical Lead" },
+    articleType: "buyer-guide" as const,
+    cluster: "buyer-guide",
+    relatedProductSlugs: ["tempered-glass", "laminated-glass", "insulated-glass", "low-e-glass"],
+    translations: {},
+    changelog: [
+      { date: "2026-11-22", note: "Initial publish - W3-#14 Low Iron Glass Cost Breakdown (SOP v2.3)" },
+    ],
+  },
 ];
 
 // ---- Utility functions ----

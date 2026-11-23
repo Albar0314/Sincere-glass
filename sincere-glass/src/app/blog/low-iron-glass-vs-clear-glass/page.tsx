@@ -314,6 +314,11 @@ export default function Page() {
           Already sold on low iron and now picking a brand? Compare{" "}
           <a href="/blog/starphire-vs-low-iron">Starphire against other low-iron options</a>.
         </p>
+        {/* SG-ART34-RECIP-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/30 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Planning a mixed-zone project budget?</strong> Review our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">factory pricing and zone-split budget guide for low iron glass</a> to cut substrate uplift by 45% to 65%.
+        </div>
+
         <FAQ items={faqItems} />
 
         <section className="my-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
