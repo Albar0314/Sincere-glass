@@ -46,6 +46,15 @@ const buyerFaqItems = [
     q: "What certifications ship with tempered glass to international markets?",
     a: "All tempered glass we produce is 3C (CCC) certified under China's mandatory product certification system, tested per GB 15763.2-2005. For export orders, we provide third-party test reports suitable for ASTM C1048 compliance review (US), EN 12150 (EU), and AS/NZS 2208 (Australia/NZ). We cannot ship CE-marked product directly — buyers requiring CE must coordinate with an EU-based assessment body.",
   },
+  // SG-GSC-OPT-202611-V1:faq-annealed-gsc
+  {
+    q: "What is annealed float glass and where is it still allowed by code?",
+    a: "Annealed float glass is standard flat glass cooled slowly in an annealing lehr to relieve internal stress, allowing it to be cut, drilled, or edged after manufacture. Under IBC Section 2406 and EN 12600, annealed glass is permitted in non-hazardous locations such as upper-floor fixed windows above sill height, interior display cases, and mirror substrates, but is prohibited in doors, sidelites, shower enclosures, and low-level glazing.",
+  },
+  {
+    q: "What is the difference between annealed glass and standard float glass?",
+    a: "All standard float glass starts as annealed glass: float refers to the tin-bath forming method, while annealed refers to the slow-cooling heat treatment that leaves the sheet unstressed. Glass only ceases to be annealed when it undergoes secondary heat-strengthening or full tempering in a 620-650 C furnace.",
+  },
 ];
 
 export default function Page() {

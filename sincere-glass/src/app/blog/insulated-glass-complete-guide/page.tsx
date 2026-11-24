@@ -315,6 +315,17 @@ export default function Page() {
             </li>
           </ul>
         </aside>
+      {/* SG-GSC-OPT-202611-V1:link-to-igu-vs-lam-and-ufactor-from-pillar26 */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Related Insulated Glass Deep Dives
+        </p>
+        <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li>Weighing acoustic and impact safety against thermal savings? See our <a href="/blog/insulated-glass-vs-laminated-glass" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">insulated glass vs. laminated glass comparison (including laminated IGU hybrids)</a>.</li>
+          <li>Need exact thermal targets for your climate zone? Read our <a href="/blog/u-factor-and-shgc-explained" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">U-factor vs. SHGC and European g-value climate selection guide</a>.</li>
+        </ul>
+      </div>
+
         <FAQ items={faqItems} title="Frequently Asked Questions" />
 
         <RelatedProductsCards slugs={["insulated-glass", "low-e-glass", "laminated-glass"]} heading="Products commonly specified as or with IGU construction" />

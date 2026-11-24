@@ -364,6 +364,17 @@ export default function Page() {
           </p>
         </TechNote>
 
+      {/* SG-GSC-OPT-202611-V1:link-to-annealed-and-igulam-from-types-pillar */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Key Decision Guides in This Cluster
+        </p>
+        <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li>Unsure where standard float glazing stops and safety codes begin? Start with our <a href="/blog/tempered-glass-vs-annealed-glass" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">annealed float glass vs. tempered safety glass strength and code guide</a>.</li>
+          <li>Balancing energy code compliance with STC acoustic targets? Compare <a href="/blog/insulated-glass-vs-laminated-glass" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">acoustic and thermal trade-offs between insulated and laminated glass</a>.</li>
+        </ul>
+      </div>
+
         <FAQ items={faqItems} />
 
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass']} />

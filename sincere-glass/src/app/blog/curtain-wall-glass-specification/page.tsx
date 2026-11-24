@@ -348,6 +348,17 @@ export default function Page() {
           </p>
         </TechNote>
 
+      {/* SG-GSC-OPT-202611-V1:link-to-spandrel-and-spec-from-art8 */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Complete Your Facade Glazing Schedule
+        </p>
+        <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li>Detailing opaque slab-edge zones? Review our <a href="/blog/spandrel-glass-guide" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">ceramic frit spandrel glass thermal-breakage and ASTM C1048 guide</a>.</li>
+          <li>For a complete end-to-end spec workflow, use our <a href="/blog/architectural-glass-specification-guide" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">6-step architectural glass specification and glazing schedule guide</a>.</li>
+        </ul>
+      </div>
+
         <FAQ items={buyerFaqItems} />
 
         <RelatedProductsCards slugs={['insulated-glass', 'laminated-glass', 'tempered-glass', 'low-e-glass', 'enameled-glass']} />

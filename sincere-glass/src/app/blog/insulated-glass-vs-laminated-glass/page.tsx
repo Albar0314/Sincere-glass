@@ -45,6 +45,11 @@ const buyerFaqItems = [
     q: "What's a typical lead time for a combined laminated IGU order?",
     a: 'For a custom laminated IGU order, our standard production cycle is 15-20 working days from order confirmation, depending on coating availability (Low-E) and the complexity of edge treatments. Simple IGU-only or laminated-only orders ship in 10-15 working days.',
   },
+  // SG-GSC-OPT-202611-V1:faq-igu-lam-gsc
+  {
+    q: "Can you combine laminated glass and insulated glass into one unit?",
+    a: "Yes. A laminated insulated glass unit (laminated IGU) uses a laminated pane on one or both sides of the sealed air or argon cavity - for example, 6+1.52 PVB+6 laminated outer lite + 12A argon spacer + 6mm Low-E tempered inner lite. This hybrid delivers both low U-value thermal insulation and high STC acoustic damping plus overhead or hurricane safety compliance.",
+  },
 ];
 
 export default function Page() {

@@ -476,6 +476,14 @@ export default function Page() {
         </aside>
         <section id="faq">
           <h2>FAQ</h2>
+      {/* SG-GSC-OPT-202611-V1:link-to-ufactor-from-art27 */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Decoding U-Factor, SHGC, and G-Value Targets
+        </p>
+        <p className="text-sm text-slate-700 dark:text-slate-300">Before deciding whether triple glazing pays back in your region, check <a href="/blog/u-factor-and-shgc-explained" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">how U-factor and SHGC targets shift across climate zones</a>.</p>
+      </div>
+
           <FAQ items={faqItems} />
         </section>
       </BlogArticleLayout>

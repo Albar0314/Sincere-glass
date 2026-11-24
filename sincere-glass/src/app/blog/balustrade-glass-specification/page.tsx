@@ -386,6 +386,14 @@ export default function Page() {
           works through the equivalent decision tree.
         </p>
 
+      {/* SG-GSC-OPT-202611-V1:link-to-12mm-from-balustrade */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Comparing 12mm Monolithic vs. Laminated Guardrails?
+        </p>
+        <p className="text-sm text-slate-700 dark:text-slate-300">When local codes permit monolithic safety glazing, review our <Link href="/blog/12mm-tempered-glass-specifications" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">12mm monolithic tempered glass load limits and specifications</Link> for panel weight (30 kg/m2) and edge-clearance rules.</p>
+      </div>
+
         <FAQ items={faqItems} />
 
         {article.buyerFaq && article.buyerFaq.length > 0 && (

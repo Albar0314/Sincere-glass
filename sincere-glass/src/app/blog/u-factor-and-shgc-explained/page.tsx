@@ -72,6 +72,11 @@ const faqItems: Array<{ q: string; a: string }> = [
     q: "Can Sincere Glass hit a target U-factor and SHGC?",
     a: "Yes. We build the IGU to a stated center-of-glass U-factor and SHGC by choosing the Low-E coating, cavity width, and gas fill, with test data on request.",
   },
+  // SG-GSC-OPT-202611-V1:faq-shgc-gvalue-gsc
+  {
+    q: "What is the difference between SHGC and European g-value?",
+    a: "SHGC (Solar Heat Gain Coefficient, NFRC 200) and European g-value (EN 410) measure the same property: the fraction of incident solar radiation admitted through glazing, expressed from 0 to 1. Because NFRC 200 and EN 410 use slightly different standard boundary temperatures and solar spectra, a unit's SHGC and g-value typically differ by 0.01 to 0.03.",
+  },
 ];
 
 export default function Page() {

@@ -337,6 +337,14 @@ export default function Page() {
           </p>
         </TechNote>
 
+      {/* SG-GSC-OPT-202611-V1:link-to-annealed-from-art4 */}
+      <div className="my-8 rounded-xl border border-amber-500/30 bg-slate-900/5 p-5 dark:bg-slate-800/40">
+        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Annealed Float Substrate vs. Finished Tempered Glass
+        </p>
+        <p className="text-sm text-slate-700 dark:text-slate-300">Every tempered lite begins as annealed float glass before entering the 620-650 C furnace. See <a href="/blog/tempered-glass-vs-annealed-glass" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">how annealed float glass compares to finished tempered glass</a> across modulus of rupture, breakage pattern, and cutting rules.</p>
+      </div>
+
         <FAQ items={buyerFaqItems} />
 
         

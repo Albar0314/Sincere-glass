@@ -159,8 +159,8 @@ export const blogArticles: BlogArticle[] = [
 
   {
     slug: 'insulated-glass-vs-laminated-glass',
-    title: 'Insulated Glass vs Laminated Glass: Which One Does Your Project Actually Need?',
-    excerpt: 'IGU for thermal insulation. Laminated for safety and sound. Pick by scenario (not by spec sheet) with 5 buyer archetypes, performance radar comparison, and cost reality from a Wuhan factory.',
+    title: "Insulated vs. Laminated Glass: U-Value, STC & Hybrid IGUs",
+    excerpt: "Insulated glass vs. laminated glass compared by U-value, acoustic STC rating, impact safety, and cost - plus when to specify a laminated IGU hybrid unit.",
     targetKeyword: 'insulated glass vs laminated glass',
     secondaryKeywords: ['IGU vs laminated glass', 'laminated vs insulated', 'double glazing vs laminated', 'IG vs PVB glass'],
     searchKeywords: [
@@ -170,7 +170,7 @@ export const blogArticles: BlogArticle[] = [
       '中空玻璃 夹胶玻璃', '中空 夹胶 对比', '隔音 隔热 玻璃', '玻璃选型 中空 夹胶'
     ],
     publishDate: '2026-10-07',
-    updatedDate: '2026-10-07',
+    updatedDate: "2026-11-24" /* SG-GSC-OPT-202611-V1:insulated-glass-vs-laminated-glass */,
     category: 'Buyer Guide' as const,
     tags: ['insulated glass', 'laminated glass', 'IGU', 'PVB', 'acoustic glass', 'thermal performance'],
     heroImage: '/images/blog/insulated-vs-laminated-hero.webp',
@@ -191,8 +191,8 @@ export const blogArticles: BlogArticle[] = [
 
   {
     slug: 'tempered-glass-vs-annealed-glass',
-    title: "Tempered Glass vs Annealed Glass: Why 'Regular' Glass Isn't Safe Enough for Most Modern Buildings",
-    excerpt: "Annealed is the raw float glass; tempered is annealed that's been heat-treated to 4-5× the strength with safe breakage. Here's where code forbids one and when annealed is still the right choice.",
+    title: "Annealed vs. Tempered Glass: Definition, Strength & Codes",
+    excerpt: "What is annealed float glass vs. tempered safety glass? Compare 4-5x impact strength, breakage patterns, cutting rules, and IBC/EN code mandates side by side.",
     targetKeyword: 'tempered glass vs annealed glass',
     secondaryKeywords: ['annealed vs tempered glass', 'tempered vs regular glass', 'float glass vs tempered', 'what is annealed glass'],
     searchKeywords: [
@@ -203,7 +203,7 @@ export const blogArticles: BlogArticle[] = [
       '钢化玻璃 普通玻璃', '退火玻璃 钢化玻璃', '浮法玻璃 钢化', '安全玻璃 普通玻璃'
     ],
     publishDate: '2026-10-07',
-    updatedDate: '2026-10-07',
+    updatedDate: "2026-11-24" /* SG-GSC-OPT-202611-V1:tempered-glass-vs-annealed-glass */,
     category: 'Buyer Guide' as const,
     tags: ['tempered glass', 'annealed glass', 'float glass', 'safety glazing', 'building codes'],
     heroImage: '/images/blog/tempered-vs-annealed-hero.webp',
@@ -810,8 +810,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: '12mm-tempered-glass-specifications',
-    title: "12mm Tempered Glass: Specifications, Panel Limits, and When It's the Right Choice",
-    excerpt: "Why 12mm is the specification sweet spot for frameless balustrades, long-span canopies, and large-area storefronts \u2014 plus panel-size limits, thickness tolerance, edge options, and the cost factors buyers rarely see on a quotation.",
+    title: "12mm Tempered Glass Specs: Weight, Max Size & Code Guide",
+    excerpt: "Complete 12mm tempered glass specifications: 30 kg/m2 weight, ASTM C1048 & EN 12150 strength, max jumbo size (3.3x15m), and balustrade/door load limits.",
     targetKeyword: '12mm tempered glass',
     secondaryKeywords: ['12mm toughened glass', '12mm tempered glass specifications', '12mm tempered glass max size', '12mm tempered glass price', '12mm safety glass'],
     searchKeywords: [
@@ -822,7 +822,7 @@ export const blogArticles: BlogArticle[] = [
       '12\u6beb\u7c73\u94a2\u5316\u73bb\u7483', '12mm\u94a2\u5316\u73bb\u7483', '12\u539a\u94a2\u5316', '\u680f\u6746\u94a2\u5316\u73bb\u7483', '\u94a2\u5316\u539a\u5ea6'
     ],
     publishDate: '2026-10-20',
-    updatedDate: '2026-10-20',
+    updatedDate: "2026-11-24" /* SG-GSC-OPT-202611-V1:12mm-tempered-glass-specifications */,
     category: 'Product Knowledge' as const,
     tags: ['tempered glass', '12mm', 'specifications', 'balustrade', 'storefront', 'product deep dive'],
     heroImage: '/images/blog/12mm-tempered-glass-hero.webp',
@@ -983,8 +983,8 @@ export const blogArticles: BlogArticle[] = [
 
   {
     slug: "architectural-glass-specification-guide",
-    title: "Architectural Glass Specification: The Complete 6-Attribute Decision Guide",
-    excerpt: "An architectural glass specification is six decisions, not one: substrate, processing, thickness, assembly, coating, and panel size. The pillar guide to writing specs that quote in one working day, with glass-code conventions, capability envelopes, and the five pitfalls that cost real money.",
+    title: "Architectural Glass Specifications: 6-Step Spec Guide",
+    excerpt: "Write airtight architectural glass specifications. Compare ASTM C1048 & EN 12150 tolerances, thickness limits up to 3.3x15m, and glazing schedule formats.",
     targetKeyword: "architectural glass specification",
     secondaryKeywords: [
       "how to specify architectural glass",
@@ -1026,7 +1026,7 @@ export const blogArticles: BlogArticle[] = [
       "\u73bb\u7483 \u89c4\u683c \u8bbe\u8ba1"
     ],
     publishDate: "2026-10-23",
-    updatedDate: "2026-10-23",
+    updatedDate: "2026-11-24" /* SG-GSC-OPT-202611-V1:architectural-glass-specification-guide */,
     category: "Product Knowledge",
     tags: [
       "pillar",
@@ -1173,9 +1173,9 @@ export const blogArticles: BlogArticle[] = [
     ],
   },  {
     slug: "spandrel-glass-guide",
-    title: "Spandrel Glass: Construction Methods, Thermal Stress & Specification Guide",
+    title: "Spandrel Glass Guide: Ceramic Frit, ASTM C1048 & Specs",
     excerpt:
-      "How to specify spandrel glass across 4 construction methods, prevent thermal breakage, match color to vision glass, and avoid the 5 most common facade spec mistakes. Factory-floor view from Wuhan.",
+      "Prevent thermal breakage and color mismatch in facade spandrel glass. Compare ceramic frit vs. opacifier film, heat-strengthened specs, and fallout rules.",
     targetKeyword: "spandrel glass",
     secondaryKeywords: [
       "spandrel glass thickness",
@@ -1200,7 +1200,7 @@ export const blogArticles: BlogArticle[] = [
       "层间玻璃"
     ],
     publishDate: "2026-10-29",
-    updatedDate: "2026-10-29",
+    updatedDate: "2026-11-24" /* SG-GSC-OPT-202611-V1:spandrel-glass-guide */,
     category: "Technical Guide" as const,
     tags: [
       "spandrel glass",
@@ -1493,8 +1493,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'u-factor-and-shgc-explained',
-    title: "U-Factor and SHGC Explained: What the Two Numbers on a Window Label Actually Mean",
-    excerpt: "U-factor rates heat loss; SHGC rates solar heat gain. One decides your winter bill, the other decides summer overheating - and the Low-E coating sets them independently. A factory guide to the two numbers every energy code checks first.",
+    title: "U-Factor vs. SHGC (G-Value): Window Glass Climate Guide",
+    excerpt: "What is SHGC vs. U-factor (U-value) and European g-value? Learn target glazing numbers by climate zone and how Low-E coatings tune solar heat gain.",
     targetKeyword: 'u factor windows',
     secondaryKeywords: [
       'shgc',
@@ -1511,6 +1511,7 @@ export const blogArticles: BlogArticle[] = [
       '\u7A97\u6237U\u503C', '\u592A\u9633\u5F97\u70ED\u7CFB\u6570', 'SHGC \u662F\u4EC0\u4E48', 'U\u503C \u7A97\u6237'
     ],
     publishDate: '2026-11-12',
+    updatedDate: "2026-11-24", // SG-GSC-OPT-202611-V1:u-factor-and-shgc-explained
     category: 'Technical Guide' as const,
     tags: ['insulated glass', 'U-factor', 'SHGC', 'Low-E', 'window performance', 'energy code'],
     heroImage: '/images/blog/u-factor-and-shgc-explained-hero.webp',
