@@ -1,0 +1,115 @@
+"use client";
+
+import React, { useState } from "react";
+import { useQuote } from "@/components/QuoteContext";
+
+interface ApplicationZone {
+  id: string;
+  title: string;
+  thickness: string;
+  assembly: string;
+  whyLowIron: string;
+  codes: string;
+}
+
+const ZONES: ApplicationZone[] = [
+  {
+    id: "frameless-shower-balustrade",
+    title: "Frameless Showers & Balustrades",
+    thickness: "10mm, 12mm, or 8+1.52+8mm Laminated",
+    assembly: "Monolithic Tempered or PVB/SGP Laminated",
+    whyLowIron: "Exposed polished edges viewed under 1.5m show stark bottle-green tint in standard clear glass; low iron delivers crystal-neutral edges against white tile or stone.",
+    codes: "IBC 2407 / EN 14428 / AS 1288 / GB 15763.2"
+  },
+  {
+    id: "retail-museum",
+    title: "Luxury Retail Storefronts & Museum Vitrines",
+    thickness: "10mm, 12mm, 15mm, or 6+1.52+6mm Laminated",
+    assembly: "Low Iron Laminated (optional anti-reflective)",
+    whyLowIron: "Color Rendering Index (CRI 98-99) preserves true fabric, jewelry, and artwork colors without green distortion under showroom LED lighting.",
+    codes: "ASTM C1172 / EN 14449 / ANSI Z97.1"
+  },
+  {
+    id: "white-spandrel",
+    title: "White & Pastel Back-Painted Spandrels",
+    thickness: "6mm or 8mm Tempered",
+    assembly: "Ceramic Frit / Enamel Fired on Low Iron",
+    whyLowIron: "Standard clear glass shifts pure white ceramic frit (RAL 9003/9010) toward mint-green. Low iron is mandatory for accurate architectural color matching.",
+    codes: "ASTM C1048 / EN 12150"
+  },
+  {
+    id: "jumbo-facade",
+    title: "Ground-Floor Lobbies & Jumbo Curtain Walls",
+    thickness: "12mm, 15mm, 19mm Fins or 8T+12Ar+8T IGU",
+    assembly: "Jumbo Tempered / Hybrid Outboard-Only IGU",
+    whyLowIron: "Maximizes daylight transmittance in deep lobby elevations. Sincere Glass fabricates oversized low-iron panels up to 3.3m x 15m in-house.",
+    codes: "ASTM E2190 / EN 1279 / EN 14179 (HST)"
+  }
+];
+
+export default function LowIronApplicationsMatrix() {
+  const [activeId, setActiveId] = useState<string>(ZONES[0].id);
+  const { openQuote } = useQuote();
+  const active = ZONES.find((z) => z.id === activeId) || ZONES[0];
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+      <div className="flex flex-wrap gap-2 border-b border-slate-100 pb-5" role="tablist" aria-label="Low iron glass application zones">
+        {ZONES.map((z) => (
+          <button
+            key={z.id}
+            type="button"
+            role="tab"
+            aria-selected={activeId === z.id}
+            onClick={() => setActiveId(z.id)}
+            className={`rounded-lg px-4 py-2.5 text-sm font-semibold transition ${
+              activeId === z.id
+                ? "bg-slate-900 text-white"
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }`}
+          >
+            {z.title}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="md:col-span-2">
+          <h3 className="text-xl font-bold text-slate-900">{active.title}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">{active.whyLowIron}</p>
+          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="rounded-lg bg-slate-50 p-3.5">
+              <div className="text-xs font-semibold uppercase text-slate-500">Typical Thickness</div>
+              <div className="mt-1 text-sm font-bold text-slate-900">{active.thickness}</div>
+            </div>
+            <div className="rounded-lg bg-slate-50 p-3.5">
+              <div className="text-xs font-semibold uppercase text-slate-500">Recommended Build-Up</div>
+              <div className="mt-1 text-sm font-bold text-slate-900">{active.assembly}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Applicable Building Codes
+            </div>
+            <div className="mt-2 text-sm font-semibold text-slate-900">{active.codes}</div>
+          </div>
+          <button
+            type="button"
+            onClick={() =>
+              openQuote(
+                "Low Iron Glass",
+                `Application: ${active.title} | Typical Thickness: ${active.thickness} | Build-Up: ${active.assembly}`
+              )
+            }
+            className="mt-6 w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700"
+          >
+            Request Application Quote
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

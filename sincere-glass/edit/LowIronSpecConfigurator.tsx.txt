@@ -1,0 +1,244 @@
+"use client";
+
+import React, { useState } from "react";
+import { useQuote } from "@/components/QuoteContext";
+
+type AssemblyType =
+  | "monolithic-tempered"
+  | "laminated-pvb"
+  | "laminated-sgp"
+  | "igu-outboard-only"
+  | "igu-full-low-iron"
+  | "ceramic-frit-white";
+
+interface AssemblyConfig {
+  id: AssemblyType;
+  label: string;
+  desc: string;
+  leadDays: string;
+  premiumRange: string;
+  weightMultiplier: number;
+  standardRef: string;
+}
+
+const ASSEMBLIES: AssemblyConfig[] = [
+  {
+    id: "monolithic-tempered",
+    label: "Monolithic Low Iron Tempered",
+    desc: "Single toughened pane for frameless shower doors, storefronts, and partitions.",
+    leadDays: "15-20 working days",
+    premiumRange: "+50% to +60% vs clear tempered",
+    weightMultiplier: 1.0,
+    standardRef: "ASTM C1048 / EN 12150 / GB 15763.2"
+  },
+  {
+    id: "laminated-pvb",
+    label: "Low Iron PVB Laminated (2 Lites)",
+    desc: "Dual low-iron lites bonded with crystal-clear PVB for balustrades and overhead glazing.",
+    leadDays: "20-25 working days",
+    premiumRange: "+50% to +55% vs clear laminated",
+    weightMultiplier: 2.05,
+    standardRef: "ASTM C1172 / EN 14449 / GB 15763.3"
+  },
+  {
+    id: "laminated-sgp",
+    label: "Low Iron SGP Structural Laminated",
+    desc: "High-stiffness SentryGlas interlayer for frameless railings, glass fins, and hurricane zones.",
+    leadDays: "22-28 working days",
+    premiumRange: "+55% to +65% vs clear SGP",
+    weightMultiplier: 2.08,
+    standardRef: "ASTM C1172 / EN 14449"
+  },
+  {
+    id: "igu-outboard-only",
+    label: "Hybrid IGU (Outboard Low Iron Only)",
+    desc: "Value-engineered double glazing: low-iron outer lite + clear inner lite cuts uplift ~45%.",
+    leadDays: "18-22 working days",
+    premiumRange: "+22% to +25% vs clear IGU",
+    weightMultiplier: 2.0,
+    standardRef: "ASTM E2190 / EN 1279 / GB/T 11944"
+  },
+  {
+    id: "igu-full-low-iron",
+    label: "Full Low Iron + Low-E IGU",
+    desc: "Both lites low iron with soft-coat Low-E and argon fill for maximum facade neutrality.",
+    leadDays: "20-25 working days",
+    premiumRange: "+40% to +45% vs clear Low-E IGU",
+    weightMultiplier: 2.0,
+    standardRef: "ASTM E2190 / EN 1279"
+  },
+  {
+    id: "ceramic-frit-white",
+    label: "White Back-Painted / Ceramic Frit",
+    desc: "Eliminates green shift on pure white, RAL 9003/9010, and pastel spandrel panels.",
+    leadDays: "18-24 working days",
+    premiumRange: "+35% to +45% vs clear frit",
+    weightMultiplier: 1.02,
+    standardRef: "ASTM C1048 / EN 12150"
+  }
+];
+
+export default function LowIronSpecConfigurator() {
+  const [assembly, setAssembly] = useState<AssemblyType>("monolithic-tempered");
+  const [thicknessMm, setThicknessMm] = useState<number>(10);
+  const [areaM2, setAreaM2] = useState<number>(250);
+  const [hstRequired, setHstRequired] = useState<boolean>(false);
+  const { openQuote } = useQuote();
+
+  const cfg = ASSEMBLIES.find((a) => a.id === assembly) || ASSEMBLIES[0];
+  const unitWeight = +(thicknessMm * 2.5 * cfg.weightMultiplier).toFixed(1);
+  const totalTons = +((unitWeight * areaM2) / 1000).toFixed(2);
+  const containers20gp = Math.max(1, Math.ceil(totalTons / 19.5));
+  const moqStatus =
+    areaM2 < 100
+      ? "Below 100 m2 stock MOQ (small-batch nesting surcharge may apply)"
+      : "Meets standard Wuhan factory MOQ";
+
+  const handlePrefillQuote = () => {
+    const msg = [
+      `Product: Low Iron Glass (${cfg.label})`,
+      `Nominal Lite Thickness: ${thicknessMm}mm`,
+      `Estimated Project Area: ${areaM2} m2 (~${totalTons} metric tons, ~${containers20gp} x 20'GP)`,
+      `Heat-Soak Testing (EN 14179): ${hstRequired ? "Yes" : "No"}`,
+      `Target Standards: ${cfg.standardRef}`
+    ].join(" | ");
+    openQuote("Low Iron Glass", msg);
+  };
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
+      <div className="mb-6">
+        <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-800">
+          Wuhan Factory Spec Builder
+        </span>
+        <h3 className="mt-2 text-2xl font-bold text-slate-900">
+          Configure Your Low Iron Build-Up &amp; Estimate Weight
+        </h3>
+        <p className="mt-1 text-sm text-slate-600">
+          Our 20,000 m2 Wuhan plant processes jumbo low-iron panels up to 3.3m x 15m across tempering, laminating, and IGU lines.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+        {/* Controls */}
+        <div className="space-y-5 lg:col-span-7">
+          <div>
+            <label htmlFor="li-assembly" className="block text-sm font-semibold text-slate-800">
+              1. Fabrication Assembly
+            </label>
+            <select
+              id="li-assembly"
+              aria-label="Fabrication Assembly"
+              value={assembly}
+              onChange={(e) => setAssembly(e.target.value as AssemblyType)}
+              className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20"
+            >
+              {ASSEMBLIES.map((a) => (
+                <option key={a.id} value={a.id}>
+                  {a.label}
+                </option>
+              ))}
+            </select>
+            <p className="mt-1.5 text-xs text-slate-600">{cfg.desc}</p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="li-thickness" className="block text-sm font-semibold text-slate-800">
+                2. Nominal Lite Thickness (mm)
+              </label>
+              <select
+                id="li-thickness"
+                aria-label="Nominal Lite Thickness in millimeters"
+                value={thicknessMm}
+                onChange={(e) => setThicknessMm(Number(e.target.value))}
+                className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:outline-none"
+              >
+                {[5, 6, 8, 10, 12, 15, 19].map((mm) => (
+                  <option key={mm} value={mm}>
+                    {mm} mm
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="li-area" className="block text-sm font-semibold text-slate-800">
+                3. Estimated Order Area (m2)
+              </label>
+              <input
+                id="li-area"
+                aria-label="Estimated Order Area in square meters"
+                type="number"
+                min={10}
+                max={50000}
+                step={10}
+                value={areaM2}
+                onChange={(e) => setAreaM2(Math.max(10, Number(e.target.value) || 10))}
+                className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3.5">
+            <input
+              id="li-hst"
+              type="checkbox"
+              checked={hstRequired}
+              onChange={(e) => setHstRequired(e.target.checked)}
+              className="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+            />
+            <label htmlFor="li-hst" className="text-sm text-slate-700">
+              Add <strong>Heat-Soak Testing (EN 14179-1)</strong> for high-rise facades or overhead balustrades (+2-3 working days)
+            </label>
+          </div>
+        </div>
+
+        {/* Live Output Card */}
+        <div className="flex flex-col justify-between rounded-xl bg-slate-900 p-6 text-white lg:col-span-5">
+          <div className="space-y-4">
+            <div className="border-b border-slate-800 pb-3">
+              <div className="text-xs uppercase tracking-wider text-slate-400">Configured Summary</div>
+              <div className="mt-1 text-lg font-bold text-white">{cfg.label}</div>
+              <div className="text-xs text-sky-400">{cfg.standardRef}</div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div className="rounded-lg bg-slate-800/80 p-3">
+                <div className="text-xs text-slate-400">Unit Weight</div>
+                <div className="mt-0.5 font-bold">{unitWeight} kg/m2</div>
+              </div>
+              <div className="rounded-lg bg-slate-800/80 p-3">
+                <div className="text-xs text-slate-400">Total Glass Weight</div>
+                <div className="mt-0.5 font-bold">{totalTons} MT</div>
+              </div>
+              <div className="rounded-lg bg-slate-800/80 p-3">
+                <div className="text-xs text-slate-400">Est. 20&apos;GP Containers</div>
+                <div className="mt-0.5 font-bold">{containers20gp} container(s)</div>
+              </div>
+              <div className="rounded-lg bg-slate-800/80 p-3">
+                <div className="text-xs text-slate-400">Factory Lead Time</div>
+                <div className="mt-0.5 font-bold">
+                  {hstRequired ? `${cfg.leadDays} (+HST)` : cfg.leadDays}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-slate-700 bg-slate-800/40 p-3 text-xs text-slate-300">
+              <div><strong>Typical Cost Delta:</strong> {cfg.premiumRange}</div>
+              <div className="mt-1"><strong>MOQ Check:</strong> {moqStatus}</div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={handlePrefillQuote}
+            className="mt-6 w-full rounded-lg bg-sky-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-400"
+          >
+            Get Factory Quote for This Spec
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

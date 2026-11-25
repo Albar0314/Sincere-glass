@@ -223,6 +223,81 @@ export const products: Product[] = [
     standard: "GB 15763.2-2005 + EN 12150 \u2014 Curved Tempered Safety Glass",
     searchKeywords: ["curved tempered", "bent glass", "curved glass", "bent tempered glass", "hot bent glass", "cold bent glass", "cylindrical glass", "spherical glass", "free-form glass", "curved facade glass", "curved curtain wall", "curved lift glass", "\u5f2f\u94a2\u73bb\u7483", "\u70ed\u5f2f\u73bb\u7483", "\u5f2f\u5f62\u73bb\u7483"],
   },
+  {
+    "slug": "low-iron-glass",
+    "name": "Low Iron Glass",
+    "tagline": "Ultra-clear architectural float (Fe2O3 < 0.01%) with up to 91.5% VLT",
+    "description": [
+      "Low iron glass (ultra-clear float) reduces ferric oxide (Fe2O3) below 0.01%, eliminating the green edge tint of standard clear glass and lifting visible light transmittance to 90%-91.5%.",
+      "Fabricated in our 20,000 m2 Wuhan facility into monolithic tempered, PVB/SGP laminated, Low-E insulated, and white ceramic frit panels up to 3.3m x 15m."
+    ],
+    "image": "/images/products/low-iron.jpg",
+    "specs": [
+      {
+        "label": "Iron Oxide (Fe2O3)",
+        "value": "< 0.01% by weight"
+      },
+      {
+        "label": "Thickness",
+        "value": "4mm - 19mm"
+      },
+      {
+        "label": "Max Panel Size",
+        "value": "3,300mm x 15,000mm"
+      },
+      {
+        "label": "Light Transmittance",
+        "value": "91.2% at 6mm (CRI 99)"
+      },
+      {
+        "label": "Processing",
+        "value": "Tempered, HST, Laminated, IGU, Ceramic Frit"
+      },
+      {
+        "label": "Certification",
+        "value": "China 3C (CCC) / Mill Test Certificates"
+      }
+    ],
+    "features": [
+      {
+        "title": "Crystal-Neutral Edges",
+        "desc": "Eliminates bottle-green tint on thick 10-19mm exposed edges for frameless balustrades and shower doors."
+      },
+      {
+        "title": "True Color Rendering",
+        "desc": "CRI 98-99 preserves exact whites and product colors for luxury retail storefronts, museums, and back-painted spandrels."
+      },
+      {
+        "title": "Jumbo Capability",
+        "desc": "In-house 3.3m x 15m tempering furnaces and laminating autoclaves handle oversized lobby and facade panels."
+      },
+      {
+        "title": "Flexible Build-Ups",
+        "desc": "Available as monolithic tempered, PVB/SGP laminated, hybrid outboard-only IGU, or full low-iron Low-E IGU."
+      }
+    ],
+    "applications": [
+      "Frameless shower doors and balustrades",
+      "Luxury retail storefronts and museum vitrines",
+      "White and pastel back-painted spandrels",
+      "Ground-floor lobbies and jumbo curtain walls",
+      "Structural glass fins and skylights",
+      "Interior partitions and architectural doors"
+    ],
+    "standard": "GB 11614-2022 / ASTM C1036-21 / EN 572-2 - Ultra-Clear Low Iron Float Glass",
+    "searchKeywords": [
+      "low iron glass",
+      "ultra clear glass",
+      "extra clear float glass",
+      "starphire alternative",
+      "crystal clear architectural glass",
+      "Fe2O3",
+      "VLT",
+      "IGU",
+      "超白玻璃",
+      "低铁玻璃"
+    ]
+  },
 ];
 
 export function getProduct(slug: string) {

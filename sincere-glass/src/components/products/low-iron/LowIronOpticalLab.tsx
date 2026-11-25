@@ -1,0 +1,278 @@
+"use client";
+
+import React, { useState } from "react";
+import { useQuote } from "@/lib/QuoteContext";
+
+interface ThicknessOpticalData {
+  mm: number;
+  clearVlt: number;
+  lowIronVlt: number;
+  clearCri: number;
+  lowIronCri: number;
+  weightKgM2: number;
+  clearEdgeHex: string;
+  lowIronEdgeHex: string;
+  edgeNote: string;
+}
+
+const OPTICAL_DATA: ThicknessOpticalData[] = [
+  {
+    mm: 4,
+    clearVlt: 90.0,
+    lowIronVlt: 91.5,
+    clearCri: 97,
+    lowIronCri: 99,
+    weightKgM2: 10.0,
+    clearEdgeHex: "#9ec4b0",
+    lowIronEdgeHex: "#e6f2f5",
+    edgeNote: "Subtle green tint visible on exposed edges; low iron preferred for white back-painted glass."
+  },
+  {
+    mm: 6,
+    clearVlt: 89.0,
+    lowIronVlt: 91.2,
+    clearCri: 96,
+    lowIronCri: 99,
+    weightKgM2: 15.0,
+    clearEdgeHex: "#7eb097",
+    lowIronEdgeHex: "#dff0f4",
+    edgeNote: "Noticeable green shift on standard clear; low iron unlocks +2.2% VLT and neutral whites."
+  },
+  {
+    mm: 8,
+    clearVlt: 87.5,
+    lowIronVlt: 90.8,
+    clearCri: 95,
+    lowIronCri: 99,
+    weightKgM2: 20.0,
+    clearEdgeHex: "#5d9b7e",
+    lowIronEdgeHex: "#d7ecf2",
+    edgeNote: "Frameless shower doors and interior partitions show clear edge contrast at 8 mm."
+  },
+  {
+    mm: 10,
+    clearVlt: 86.0,
+    lowIronVlt: 90.4,
+    clearCri: 94,
+    lowIronCri: 99,
+    weightKgM2: 25.0,
+    clearEdgeHex: "#3e8364",
+    lowIronEdgeHex: "#cfe8f0",
+    edgeNote: "Commercial threshold: standard clear turns distinctly bottle-green; low iron stays water-white."
+  },
+  {
+    mm: 12,
+    clearVlt: 84.5,
+    lowIronVlt: 89.9,
+    clearCri: 93,
+    lowIronCri: 98,
+    weightKgM2: 30.0,
+    clearEdgeHex: "#2a6e50",
+    lowIronEdgeHex: "#c6e3ed",
+    edgeNote: "Balustrades, retail storefronts, and frameless doors gain +5.4% VLT with low iron."
+  },
+  {
+    mm: 15,
+    clearVlt: 82.0,
+    lowIronVlt: 89.2,
+    clearCri: 91,
+    lowIronCri: 98,
+    weightKgM2: 37.5,
+    clearEdgeHex: "#1d583e",
+    lowIronEdgeHex: "#bddfea",
+    edgeNote: "Heavy structural fins and jumbo lobbies: standard clear looks dark emerald on polished edges."
+  },
+  {
+    mm: 19,
+    clearVlt: 79.0,
+    lowIronVlt: 88.4,
+    clearCri: 89,
+    lowIronCri: 98,
+    weightKgM2: 47.5,
+    clearEdgeHex: "#12422d",
+    lowIronEdgeHex: "#b3dae7",
+    edgeNote: "Maximum clarity delta (+9.4% VLT). Low iron is mandatory for 19 mm architectural features."
+  }
+];
+
+export default function LowIronOpticalLab() {
+  const [selectedMm, setSelectedMm] = useState<number>(10);
+  const { openQuote } = useQuote();
+
+  const current = OPTICAL_DATA.find((d) => d.mm === selectedMm) || OPTICAL_DATA[3];
+  const vltGain = (current.lowIronVlt - current.clearVlt).toFixed(1);
+
+  const handleQuote = () => {
+    openQuote(
+      "Low Iron Glass",
+      `Interested in ${current.mm}mm Low Iron Glass (VLT ~${current.lowIronVlt}%, Fe2O3 < 0.01%). Please provide FOB Wuhan pricing and lead time.`
+    );
+  };
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+      <div className="flex flex-col justify-between gap-4 border-b border-slate-100 pb-6 md:flex-row md:items-center">
+        <div>
+          <span className="inline-block rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-sky-700">
+            Interactive Optical Lab
+          </span>
+          <h3 className="mt-2 text-2xl font-bold text-slate-900">
+            Edge-Color &amp; VLT Comparator by Thickness
+          </h3>
+          <p className="mt-1 text-sm text-slate-600">
+            Select a nominal thickness to compare standard clear float (Fe2O3 ~0.11%) against Sincere Low Iron (Fe2O3 &lt; 0.01%).
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Select glass thickness in millimeters">
+          {OPTICAL_DATA.map((item) => (
+            <button
+              key={item.mm}
+              type="button"
+              onClick={() => setSelectedMm(item.mm)}
+              aria-pressed={selectedMm === item.mm}
+              className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition-all ${
+                selectedMm === item.mm
+                  ? "bg-slate-900 text-white shadow-sm"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+              }`}
+            >
+              {item.mm}mm
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        {/* Visual SVG Edge Cross-Section */}
+        <div className="flex flex-col justify-between rounded-xl bg-slate-950 p-6 text-white">
+          <div className="flex items-center justify-between text-xs uppercase tracking-wider text-slate-400">
+            <span>Simulated Polished Edge View</span>
+            <span>{current.mm} mm Nominal Thickness</span>
+          </div>
+
+          <div className="my-6">
+            <svg
+              viewBox="0 0 420 170"
+              className="h-auto w-full"
+              role="img"
+              aria-label={`Edge color comparison at ${current.mm}mm between standard clear glass and low iron glass`}
+            >
+              {/* Standard Clear Panel */}
+              <g transform="translate(20, 20)">
+                <text x="0" y="0" fill="#94a3b8" fontSize="11" fontWeight="600">
+                  STANDARD CLEAR FLOAT (Fe2O3 ~0.11%)
+                </text>
+                <rect
+                  x="0"
+                  y="12"
+                  width="380"
+                  height={Math.min(44, 14 + current.mm * 1.5)}
+                  rx="3"
+                  fill={current.clearEdgeHex}
+                  stroke="#ffffff"
+                  strokeOpacity="0.25"
+                />
+                <text x="12" y={12 + Math.min(44, 14 + current.mm * 1.5) / 2 + 4} fill="#ffffff" fontSize="12" fontWeight="700">
+                  VLT {current.clearVlt.toFixed(1)}% | CRI {current.clearCri}
+                </text>
+              </g>
+
+              {/* Low Iron Panel */}
+              <g transform="translate(20, 95)">
+                <text x="0" y="0" fill="#38bdf8" fontSize="11" fontWeight="600">
+                  SINCERE LOW IRON GLASS (Fe2O3 &lt; 0.01%)
+                </text>
+                <rect
+                  x="0"
+                  y="12"
+                  width="380"
+                  height={Math.min(44, 14 + current.mm * 1.5)}
+                  rx="3"
+                  fill={current.lowIronEdgeHex}
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                />
+                <text x="12" y={12 + Math.min(44, 14 + current.mm * 1.5) / 2 + 4} fill="#0f172a" fontSize="12" fontWeight="700">
+                  VLT {current.lowIronVlt.toFixed(1)}% | CRI {current.lowIronCri} (+{vltGain}% VLT)
+                </text>
+              </g>
+            </svg>
+          </div>
+
+          <p className="rounded-lg bg-slate-900 p-3.5 text-sm leading-relaxed text-slate-300">
+            <strong className="text-sky-400">Engineer Note ({current.mm}mm):</strong> {current.edgeNote}
+          </p>
+        </div>
+
+        {/* Quantitative Performance Bars */}
+        <div className="flex flex-col justify-between space-y-6">
+          <div className="space-y-5">
+            <div>
+              <div className="mb-1.5 flex items-center justify-between text-sm">
+                <span className="font-semibold text-slate-800">Visible Light Transmittance (VLT)</span>
+                <span className="font-bold text-sky-700">+{vltGain}% gain</span>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <div className="flex justify-between text-xs text-slate-500">
+                    <span>Low Iron ({current.mm}mm)</span>
+                    <span className="font-semibold text-slate-900">{current.lowIronVlt.toFixed(1)}%</span>
+                  </div>
+                  <div className="mt-1 h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      className="h-full rounded-full bg-sky-600 transition-all duration-300"
+                      style={{ width: `${current.lowIronVlt}%` }}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between text-xs text-slate-500">
+                    <span>Standard Clear ({current.mm}mm)</span>
+                    <span className="font-semibold text-slate-700">{current.clearVlt.toFixed(1)}%</span>
+                  </div>
+                  <div className="mt-1 h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      className="h-full rounded-full bg-emerald-600/70 transition-all duration-300"
+                      style={{ width: `${current.clearVlt}%` }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-center">
+                <div className="text-xs font-medium text-slate-500">Iron Oxide</div>
+                <div className="mt-1 text-lg font-bold text-slate-900">&lt;0.01%</div>
+                <div className="text-[11px] text-slate-500">Fe2O3 by wt</div>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-center">
+                <div className="text-xs font-medium text-slate-500">Color Index</div>
+                <div className="mt-1 text-lg font-bold text-slate-900">CRI {current.lowIronCri}</div>
+                <div className="text-[11px] text-slate-500">vs {current.clearCri} clear</div>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-center">
+                <div className="text-xs font-medium text-slate-500">Unit Weight</div>
+                <div className="mt-1 text-lg font-bold text-slate-900">{current.weightKgM2.toFixed(1)}</div>
+                <div className="text-[11px] text-slate-500">kg/m2</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 rounded-xl border border-sky-100 bg-sky-50/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="text-sm text-slate-700">
+              Need <strong>{current.mm}mm</strong> low-iron samples or mill test certificates?
+            </div>
+            <button
+              type="button"
+              onClick={handleQuote}
+              className="shrink-0 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700"
+            >
+              Quote {current.mm}mm Low Iron
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

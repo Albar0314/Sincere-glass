@@ -30,6 +30,11 @@ const PRODUCT_MAP: Record<string, { title: string; tagline: string; image: strin
     tagline: 'Ceramic frit for color, pattern, and solar control.',
     image: '/images/products/enameled.jpg',
   },
+  "low-iron-glass": {
+    title: "Low Iron Glass",
+    tagline: "Ultra-clear float (<0.01% Fe2O3) up to 3.3m x 15m",
+    image: "/images/products/low-iron.jpg",
+  },
 };
 
 interface Props {
