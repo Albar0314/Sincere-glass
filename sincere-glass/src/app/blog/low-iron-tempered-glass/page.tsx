@@ -260,10 +260,15 @@ export default function Page() {
             Read: Low Iron Glass for Shower Doors - Is It Worth It? &rarr;
           </a>
         </aside>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Sourcing toughened ultra-clear panels for your project?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">factory-direct low iron architectural glass (tempered, HST, laminated & IGU)</a> with in-house jumbo processing up to 3.3m x 15m.
+        </div>
+
         <FAQ items={faqItems} />
 
         <RelatedProductsCards
-          slugs={["tempered-glass", "laminated-glass", "insulated-glass"]}
+          slugs={["low-iron-glass", "tempered-glass", "laminated-glass", "insulated-glass"]}
         />
       </BlogArticleLayout>
     </>

@@ -11,6 +11,7 @@ const productLinks = [
   { key: "enameled",  href: "/products/enameled-glass" },
   { key: "lowE",      href: "/products/low-e-glass" },
   { key: "curvedTempered",  href: "/products/curved-tempered-glass" },
+  { key: "lowIron",         href: "/products/low-iron-glass" },
 ];
 
 const companyLinks = [

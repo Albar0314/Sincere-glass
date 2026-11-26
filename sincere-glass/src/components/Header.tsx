@@ -17,6 +17,7 @@ const products = [
   { key: "curvedTempered", href: "/products/curved-tempered-glass",  image: "/images/products/curved-tempered.jpg" },
   { key: "enameled",       href: "/products/enameled-glass",         image: "/images/products/enameled.jpg" },
   { key: "lowE",           href: "/products/low-e-glass",            image: "/images/products/low-e.jpg" },
+  { key: "lowIron",        href: "/products/low-iron-glass",         image: "/images/products/low-iron.jpg" },
 ];
 
 const companyLinks = [

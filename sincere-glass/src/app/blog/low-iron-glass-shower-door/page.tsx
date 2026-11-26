@@ -231,9 +231,14 @@ export default function Page() {
         </p>
 
         <h2 id="faq">FAQ</h2>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Ordering 10mm or 12mm ultra-clear shower enclosures in volume?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">low iron glass factory specifications and custom fabrication options</a> covering CNC cutouts, polished edges, and export crating from Wuhan.
+        </div>
+
         <FAQ items={faqItems} />
 
-        <RelatedProductsCards slugs={["tempered-glass", "laminated-glass"]} />
+        <RelatedProductsCards slugs={["low-iron-glass", "tempered-glass", "laminated-glass"]} />
       </BlogArticleLayout>
     </>
   );

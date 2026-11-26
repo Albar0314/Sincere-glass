@@ -319,6 +319,11 @@ export default function Page() {
           <strong>Planning a mixed-zone project budget?</strong> Review our <a href="/blog/low-iron-glass-cost" className="text-[#DAA745] underline">factory pricing and zone-split budget guide for low iron glass</a> to cut substrate uplift by 45% to 65%.
         </div>
 
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Decided on low iron over standard clear?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">custom low iron glass manufacturing in 4-19mm thicknesses</a> including interactive edge-color comparisons and direct FOB Wuhan quotes.
+        </div>
+
         <FAQ items={faqItems} />
 
         <section className="my-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
@@ -346,7 +351,7 @@ export default function Page() {
         </section>
 
         <RelatedProductsCards
-          slugs={["laminated-glass", "tempered-glass", "insulated-glass"]}
+          slugs={["low-iron-glass", "laminated-glass", "tempered-glass", "insulated-glass"]}
           heading="Products commonly specified with Low Iron substrate"
         />
       </BlogArticleLayout>

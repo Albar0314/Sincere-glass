@@ -375,6 +375,11 @@ export default function Page() {
         
         {/* SG-ART35-RECIP-V1 */}
         <p>Ready to shortlist factories? Use our <a href="/blog/low-iron-glass-suppliers">low iron glass suppliers buyer&apos;s checklist and 100-point audit scorecard</a> to verify mill Fe2O3 certificates, in-house furnace ownership, and ISPM-15 export crating before paying a deposit.</p>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Ready to specify ultra-clear architectural glass?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">Sincere Glass low iron glass product specifications (4-19mm, up to 3.3m x 15m)</a> for Wuhan factory capabilities, VLT data, and container weight estimates.
+        </div>
+
         <FAQ items={faqItems} />
 
         <h2 id="buyer-faq" className="text-2xl font-semibold text-[#F2F0ED] mt-12 mb-6">
@@ -383,7 +388,7 @@ export default function Page() {
         <FAQ items={buyerFaqItems} title="" />
 
         <RelatedProductsCards
-          slugs={['tempered-glass', 'laminated-glass', 'enameled-glass']}
+          slugs={['low-iron-glass', 'tempered-glass', 'laminated-glass', 'enameled-glass']}
           heading="Products available in low iron substrate"
         />
 

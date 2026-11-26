@@ -638,10 +638,15 @@ export default function Page() {
         
         {/* SG-ART35-RECIP-V1 */}
         <p>Before locking in a factory quote that looks unusually cheap, run the vendor through our <a href="/blog/low-iron-glass-suppliers">low iron glass suppliers audit checklist</a> to confirm float mill provenance, HST kiln logs, and export crating standards.</p>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Need an itemized factory quote for your glazing schedule?</strong> Explore our <Link href="/products/low-iron-glass" className="text-[#DAA745] underline">low iron glass product hub and build-up configurator</Link> to estimate panel weight, 20'GP container count, and Wuhan lead times.
+        </div>
+
         <FAQ items={faqItems} title="" />
 
         <RelatedProductsCards
-          slugs={["tempered-glass", "laminated-glass", "insulated-glass", "low-e-glass"]}
+          slugs={["low-iron-glass", "tempered-glass", "laminated-glass", "insulated-glass", "low-e-glass"]}
           heading="Architectural Glass Lines Available in Low Iron Substrate"
         />
 

@@ -594,6 +594,11 @@ export default function LowIronGlassSuppliersPage() {
 
         {/* H2 #7 FAQ */}
         <h2 id="faq">Buyer FAQ: Sourcing Low Iron Glass Suppliers</h2>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Evaluating Chinese ultra-clear glass factories?</strong> Explore our <Link href="/products/low-iron-glass" className="text-[#DAA745] underline">Sincere Glass low iron glass manufacturing capabilities</Link> for direct 20,000 m2 Wuhan plant specs, MOQ terms, and sample requests.
+        </div>
+
         <FAQ items={faqItems} title="Frequently Asked Questions About Low Iron Glass Suppliers" />
 
         <LeadMagnetCTA
@@ -604,7 +609,7 @@ export default function LowIronGlassSuppliersPage() {
         />
 
         <RelatedProductsCards
-          slugs={["tempered-glass", "laminated-glass", "insulated-glass"]}
+          slugs={["low-iron-glass", "tempered-glass", "laminated-glass", "insulated-glass"]}
           heading="Low Iron Compatible Architectural Glass Products"
         />
       </BlogArticleLayout>

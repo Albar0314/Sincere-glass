@@ -38,6 +38,8 @@ const en: Dict = {
   'product.lowE.desc': 'Energy-efficient coating',
   'product.curvedTempered.name': 'Curved Tempered Glass',
   'product.curvedTempered.desc': 'Single-axis bent, Rₘᵢₙ 500mm at 6mm',
+  'product.lowIron.name': 'Low Iron Glass',
+  'product.lowIron.desc': 'Ultra-clear float (<0.01% Fe2O3), up to 91.5% VLT',
 
   // ─── Footer ─────────────────────────────────────────────────────────
   'footer.productsHeader': 'Products',
@@ -145,6 +147,8 @@ const es: Dict = {
   'product.lowE.desc': 'Recubrimiento de bajo consumo energético',
   'product.curvedTempered.name': 'Vidrio templado curvo',
   'product.curvedTempered.desc': 'Curvatura mono-axial, Rₘᵢₙ 500mm en 6mm',
+  'product.lowIron.name': 'Vidrio bajo en hierro',
+  'product.lowIron.desc': 'Vidrio flotado extraclaro (<0.01% Fe2O3), hasta 91.5% VLT',
 
   // ─── Footer ─────────────────────────────────────────────────────────
   'footer.productsHeader': 'Productos',

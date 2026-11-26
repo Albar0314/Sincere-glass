@@ -299,10 +299,15 @@ export default function Page() {
           
         {/* SG-ART35-RECIP-V1 */}
         <p>When evaluating Chinese Tier-1 low-iron fabricators against branded float distributors, follow our <a href="/blog/low-iron-glass-suppliers">low iron glass supplier verification checklist</a> to prevent semi-clear substitution and lock single-batch color consistency.</p>
+        {/* SG-LOW-IRON-PROD-LINK-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/35 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Comparing Tier-1 ultra-clear float against branded imports?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">Sincere Glass ultra-clear low iron glass (&lt;0.01% Fe2O3)</a> with full mill test certificates and 20%-40% substrate savings.
+        </div>
+
         <FAQ items={faqItems} />
         </section>
 
-        <RelatedProductsCards slugs={["tempered-glass", "laminated-glass"]} />
+        <RelatedProductsCards slugs={["low-iron-glass", "tempered-glass", "laminated-glass"]} />
       </BlogArticleLayout>
     </>
   );
