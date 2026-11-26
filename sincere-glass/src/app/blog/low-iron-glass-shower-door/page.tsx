@@ -236,6 +236,11 @@ export default function Page() {
           <strong>Ordering 10mm or 12mm ultra-clear shower enclosures in volume?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">low iron glass factory specifications and custom fabrication options</a> covering CNC cutouts, polished edges, and export crating from Wuhan.
         </div>
 
+        {/* SG-ART36-RECIP-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/30 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Weighing 8mm vs. 10mm vs. 12mm for frameless wet areas or partitions?</strong> Check hinge weight per square meter and code limits in our <a href="/blog/low-iron-glass-thickness" className="text-[#DAA745] underline">complete low iron glass thickness chart (4mm to 19mm)</a>.
+        </div>
+
         <FAQ items={faqItems} />
 
         <RelatedProductsCards slugs={["low-iron-glass", "tempered-glass", "laminated-glass"]} />

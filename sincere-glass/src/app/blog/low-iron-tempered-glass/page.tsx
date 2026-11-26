@@ -265,6 +265,11 @@ export default function Page() {
           <strong>Sourcing toughened ultra-clear panels for your project?</strong> Explore our <a href="/products/low-iron-glass" className="text-[#DAA745] underline">factory-direct low iron architectural glass (tempered, HST, laminated & IGU)</a> with in-house jumbo processing up to 3.3m x 15m.
         </div>
 
+        {/* SG-ART36-RECIP-V1 */}
+        <div className="my-8 rounded-xl border border-[#DAA745]/30 bg-[#3A4250]/15 p-5 text-sm text-[#F2F0ED]">
+          <strong>Unsure whether your span needs 10mm, 12mm, or 15mm toughened low iron?</strong> Compare VLT retention, deflection tolerances, and laminated equivalents in our <a href="/blog/low-iron-glass-thickness" className="text-[#DAA745] underline">4mm-19mm low iron glass thickness selection guide</a>.
+        </div>
+
         <FAQ items={faqItems} />
 
         <RelatedProductsCards
