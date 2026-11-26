@@ -65,6 +65,55 @@ export function articleJsonLd(article: BlogArticle, faqItems?: { q: string; a: s
       : `${SITE}${article.heroImage}`
     : undefined;
 
+// SG-GEO-INFRA-V1: Entity graph linking for GEO / AI search disambiguation
+  const ENTITY_URI_MAP: Record<string, string> = {
+    "low iron glass": "https://www.wikidata.org/wiki/Q1069727",
+    "ultra-clear glass": "https://www.wikidata.org/wiki/Q1069727",
+    "tempered glass": "https://www.wikidata.org/wiki/Q239891",
+    "laminated glass": "https://www.wikidata.org/wiki/Q1458565",
+    "insulated glass": "https://www.wikidata.org/wiki/Q1191295",
+    "low-e glass": "https://www.wikidata.org/wiki/Q2643083",
+    "astm c1036": "https://www.astm.org/c1036-21.html",
+    "astm c1048": "https://www.astm.org/c1048-18.html",
+    "astm e1300": "https://www.astm.org/e1300-16.html",
+    "astm e2190": "https://www.astm.org/e2190-19.html",
+    "en 12150": "https://standards.cencenelec.eu/",
+    "en 1279": "https://standards.cencenelec.eu/",
+    "en 14449": "https://standards.cencenelec.eu/",
+    "en 14179": "https://standards.cencenelec.eu/",
+    "starphire": "https://www.wikidata.org/wiki/Q7601532",
+    "optiwhite": "https://www.wikidata.org/wiki/Q1458565",
+    "saint-gobain": "https://www.wikidata.org/wiki/Q164974",
+    "guardian glass": "https://www.wikidata.org/wiki/Q1554873",
+  };
+
+  const toEntityNode = (label: string) => {
+    const clean = label.trim();
+    const uri = ENTITY_URI_MAP[clean.toLowerCase()];
+    return uri
+      ? { '@type': 'Thing', name: clean, sameAs: uri }
+      : { '@type': 'Thing', name: clean };
+  };
+
+  const aboutEntities = [
+    toEntityNode(article.targetKeyword),
+    ...(article.tags || []).slice(0, 2).map(toEntityNode),
+  ];
+
+  const mentionCandidates = [
+    ...(article.secondaryKeywords || []).slice(0, 4),
+    ...(article.relatedProductSlugs || []).map((s) => s.replace(/-/g, ' ')),
+  ];
+  const seenNames = new Set<string>(aboutEntities.map((e) => String(e.name).toLowerCase()));
+  const mentionEntities = [];
+  for (const cand of mentionCandidates) {
+    const key = cand.trim().toLowerCase();
+    if (!key || seenNames.has(key)) continue;
+    seenNames.add(key);
+    mentionEntities.push(toEntityNode(cand));
+    if (mentionEntities.length >= 6) break;
+  }
+
   const graph: object[] = [
     {
       '@type': 'Article',
@@ -83,6 +132,8 @@ export function articleJsonLd(article: BlogArticle, faqItems?: { q: string; a: s
         url: article.author.url,
       },
       publisher: { '@id': `${SITE}/#organization` },
+      about: aboutEntities,
+      ...(mentionEntities.length > 0 ? { mentions: mentionEntities } : {}),
     },
   ];
 

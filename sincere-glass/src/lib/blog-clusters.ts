@@ -17,7 +17,7 @@ export const TOPIC_CLUSTERS: Record<string, string[]> = {
     "low-iron-glass-vs-clear-glass",        // #25  live
     "low-iron-tempered-glass",              // #31  live
     "low-iron-glass-shower-door",           // W3-12  VERIFY slug when published
-    "starphire-vs-low-iron-glass",          // W3-13  VERIFY slug when published
+    "starphire-vs-low-iron",          // W3-13  VERIFY slug when published
     "low-iron-glass-cost",                  // W3-14  VERIFY slug when published
     "low-iron-glass-suppliers",             // W4-16  VERIFY slug when published
     "low-iron-glass-thickness",             // W4-17  VERIFY slug when published
