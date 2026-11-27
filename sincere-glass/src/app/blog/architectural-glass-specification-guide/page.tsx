@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import { blogArticles, type BlogArticle } from "@/lib/blog-registry";
 import BlogArticleLayout, {
@@ -282,6 +283,11 @@ export default function Page() {
           For a comprehensive view of how specification writing fits inside the full procurement cycle, see our <a href="/blog/architectural-glass-china-buyer-guide" className="text-[#DAA745] hover:underline">buyer-guide pillar</a>. For the manufacturing processes that make each specified product possible, see the <a href="/blog/architectural-glass-manufacturing-guide" className="text-[#DAA745] hover:underline">manufacturing pillar</a>. For how specifications map to real building applications, see the <a href="/blog/architectural-glass-applications-guide" className="text-[#DAA745] hover:underline">applications pillar</a>.
         </p>
 
+        {/* SG-ORPHAN-LINKS-202611 */}
+        <div className="my-8 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
+          <strong className="text-slate-900">Related Guide: </strong>
+          For opaque facade zones where heat buildup, ceramic frit coverage, and fallout retention govern the spec, read our <Link href="/blog/spandrel-glass-guide" className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">spandrel glass opacifier, fallout, and heat-strengthening guide</Link>.
+        </div>
         <FAQ items={faqItems} />
 
         <LeadMagnetCTA

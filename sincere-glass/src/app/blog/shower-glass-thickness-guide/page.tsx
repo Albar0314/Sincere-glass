@@ -253,6 +253,11 @@ export default function Page() {
 
         <LeadMagnetCTA variant="footer" articleSlug={SLUG} />
 
+        {/* SG-ORPHAN-LINKS-202611 */}
+        <div className="my-8 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
+          <strong className="text-slate-900">Related Guide: </strong>
+          Coordinating bathroom enclosures with balustrades, partitions, and exterior glazing on the same project? See our <Link href="/blog/architectural-glass-applications-guide" className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">complete architectural glass applications guide</Link> for a unified building-zone specification matrix.
+        </div>
         <FAQ items={buyerFaq} title="Buyer FAQ: MOQ, certification, lead time, shipping" />
 
         <h2 id="buyer-faq" className="sr-only">Buyer FAQ</h2>

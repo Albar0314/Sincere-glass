@@ -318,6 +318,11 @@ export default function Page() {
           description="A 20-page side-by-side reference comparing architectural glass code requirements across IBC, EN, GB and AS standards — organized by application zone."
         />
 
+        {/* SG-ORPHAN-LINKS-202611 */}
+        <div className="my-8 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
+          <strong className="text-slate-900">Related Guide: </strong>
+          Specifying opaque slab-edge or shadow-box panels alongside vision glazing? See our <Link href="/blog/spandrel-glass-guide" className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">spandrel glass specification and thermal-stress guide</Link> covering ceramic frit, opacifiers, and heat-strengthening requirements.
+        </div>
         <FAQ items={faqItems} />
 
         {article.buyerFaq && article.buyerFaq.length > 0 && (

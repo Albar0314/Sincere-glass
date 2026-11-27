@@ -394,6 +394,11 @@ export default function Page() {
         <p className="text-sm text-slate-700 dark:text-slate-300">When local codes permit monolithic safety glazing, review our <Link href="/blog/12mm-tempered-glass-specifications" className="font-medium text-amber-700 underline underline-offset-2 hover:text-amber-600 dark:text-amber-400">12mm monolithic tempered glass load limits and specifications</Link> for panel weight (30 kg/m2) and edge-clearance rules.</p>
       </div>
 
+        {/* SG-ORPHAN-LINKS-202611 */}
+        <div className="my-8 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
+          <strong className="text-slate-900">Related Guide: </strong>
+          Need to align railing build-ups with curtain wall, skylight, and interior partition schedules? Check our <Link href="/blog/architectural-glass-applications-guide" className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">architectural glass applications matrix by building zone</Link> for cross-zone glass selection rules.
+        </div>
         <FAQ items={faqItems} />
 
         {article.buyerFaq && article.buyerFaq.length > 0 && (

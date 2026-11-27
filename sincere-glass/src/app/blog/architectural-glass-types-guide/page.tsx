@@ -1,4 +1,5 @@
 import { blogArticles, type BlogArticle } from '@/lib/blog-registry';
+import Link from "next/link";
 import BlogArticleLayout, {
   generateArticleMetadata,
   articleJsonLd,
@@ -375,6 +376,11 @@ export default function Page() {
         </ul>
       </div>
 
+        {/* SG-ORPHAN-LINKS-202611 */}
+        <div className="my-8 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
+          <strong className="text-slate-900">Related Guide: </strong>
+          Considering cylindrical or bent elevations instead of segmented flat panels? Explore minimum bend radii, optical tolerances, and cost trade-offs in our <Link href="/blog/curved-glass-vs-flat-glass" className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">curved glass vs. flat glass design and cost comparison</Link>.
+        </div>
         <FAQ items={faqItems} />
 
         <RelatedProductsCards slugs={['tempered-glass', 'laminated-glass', 'insulated-glass', 'low-e-glass', 'enameled-glass']} />
